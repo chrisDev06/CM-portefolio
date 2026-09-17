@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Spotlight } from "./spotlight";
 
 /* --- Icônes : une seule famille, trait 1.5, grille 24. --------------------- */
 
@@ -96,7 +97,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative overflow-hidden border-t border-line py-20 sm:py-28 ${className}`}
+      className={`hairline relative overflow-hidden py-20 sm:py-28 ${className}`}
     >
       {children}
     </section>
@@ -141,9 +142,9 @@ const BUTTON_BASE =
 
 const BUTTON_VARIANTS = {
   primary:
-    "bg-linear-to-r from-violet to-magenta text-ink shadow-[0_0_24px_-6px_var(--color-magenta)] hover:shadow-[0_0_36px_-4px_var(--color-magenta)]",
+    "sheen bg-linear-to-r from-violet to-magenta text-ink shadow-[0_0_28px_-8px_var(--color-magenta)] hover:shadow-[0_0_44px_-6px_var(--color-magenta)]",
   ghost:
-    "border border-line-strong text-ink-muted hover:border-violet hover:text-ink",
+    "border border-line-strong text-ink-muted hover:border-violet hover:text-ink hover:shadow-[0_0_28px_-10px_var(--color-violet)]",
   quiet: "text-ink-muted hover:text-ink",
 } as const;
 
@@ -177,21 +178,25 @@ export function Card({
   children,
   className = "",
   interactive = false,
+  accent,
 }: {
   children: ReactNode;
   className?: string;
   interactive?: boolean;
+  /** Teinte du halo ; par défaut le violet de la marque. */
+  accent?: string;
 }) {
+  const base = `relative rounded-lg border border-line bg-surface/60 p-6 ${className}`;
+
+  if (!interactive) return <div className={base}>{children}</div>;
+
   return (
-    <div
-      className={`relative rounded-lg border border-line bg-surface/60 p-6 transition-all duration-300 ease-brand ${
-        interactive
-          ? "hover:-translate-y-1 hover:border-violet/50 hover:bg-surface"
-          : ""
-      } ${className}`}
+    <Spotlight
+      className={`glow-card ${base}`}
+      style={accent ? ({ "--card-accent": accent } as React.CSSProperties) : undefined}
     >
       {children}
-    </div>
+    </Spotlight>
   );
 }
 
@@ -224,7 +229,7 @@ export function CheckList({
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-full border border-line bg-surface-2 px-3 py-1 text-xs text-ink-muted">
+    <span className="rounded-full border border-line bg-surface-2 px-3 py-1 text-xs text-ink-muted transition-colors duration-200 ease-brand hover:border-violet/50 hover:text-ink">
       {children}
     </span>
   );
@@ -254,7 +259,7 @@ export function CtaBand({
   secondary?: { href: string; label: string };
 }) {
   return (
-    <Section className="border-b">
+    <Section className="border-b border-line">
       <Glow className="left-1/2 top-0 size-[600px] -translate-x-1/2" />
       <Container>
         <div className="flex flex-col items-start gap-8 rounded-lg border border-line bg-linear-to-br from-surface-2 to-surface p-8 sm:p-12 lg:flex-row lg:items-center lg:justify-between">

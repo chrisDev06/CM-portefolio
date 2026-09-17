@@ -11,6 +11,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import {
   HOME_DESKTOP_MODEL,
   HOME_MOBILE_MODEL,
+  MODEL_ACCENTS,
   modelAssets,
 } from "@/lib/model-assets";
 import { DeviceDuo } from "./device";
@@ -93,7 +94,7 @@ export function ModelCard({
   const assets = modelAssets(id);
   return (
     <Link href={modelPath(id, locale)} className="group block">
-      <Card interactive className="h-full p-4">
+      <Card interactive accent={MODEL_ACCENTS[id]} className="h-full p-4">
         <div className="overflow-hidden rounded-md border border-line bg-surface-2">
           {assets.demoHost ? (
             <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
@@ -112,7 +113,7 @@ export function ModelCard({
             height={1000}
             unoptimized
             sizes="(max-width: 640px) 100vw, 45vw"
-            className="block h-auto w-full transition-transform duration-500 ease-brand group-hover:scale-[1.03]"
+            className="block h-auto w-full transition-[transform,filter] duration-700 ease-brand group-hover:scale-[1.04] group-hover:brightness-110"
           />
         </div>
         <div className="flex flex-wrap items-center gap-2 px-2 pt-5">

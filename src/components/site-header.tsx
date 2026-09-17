@@ -50,7 +50,7 @@ export function SiteHeader({
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-ink-muted transition-colors hover:text-ink"
+              className="nav-glow text-sm text-ink-muted"
             >
               {link.label}
             </Link>
