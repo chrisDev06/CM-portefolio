@@ -1,6 +1,8 @@
 # Plan du site — C&M Agency
 
-> État : cadrage validé le 17/09/2026. Décisions prises en §2. Dossier projet vide, aucun code écrit.
+> État : cadrage validé le 17/09/2026. Décisions prises en §2.
+> **Site construit** : 44 pages statiques (22 par langue), build et lint verts.
+> **Bloquant avant mise en ligne** : le contenu manque d'authenticité (§12) et les assets réels manquent ([ASSETS.md](ASSETS.md)).
 
 ---
 
@@ -169,16 +171,20 @@ Sortie : un mail structuré à Manon + un accusé de réception au prospect + st
 
 **Le `&` de C&M Agency est le motif de l'identité.** Il signifie littéralement ce que vend le site : Manon **&** Christopher, le commercial **&** le technique, le client **&** son développeur. Il doit vivre ailleurs que dans le logo — en filigrane géant dans le bloc « binôme », comme séparateur de sections, comme puce de liste. Une identité tient quand un seul signe est répété avec conviction ; c'est nettement plus distinctif que d'empiler des halos violets.
 
+> ⚠️ **Pas encore tenu.** Le `&` n'existe aujourd'hui que dans le logo du header. Tant qu'il ne structure pas les pages, le site reste un thème sombre générique de plus. C'est le premier chantier d'identité à ouvrir.
+
 Tokens à figer avant la première ligne de CSS :
 
 - **Couleurs** — base `#08080C` / surfaces `#0F0F16`, `#15151F` / bordures `rgba(255,255,255,.08)` / texte `#F5F5F7`, `#A8A8B8` (remonté pour AA) / accent dégradé violet `#7C3AED` → magenta `#D946EF` → un soupçon d'ambre `#F59E0B` uniquement en détail. Variante claire prévue dès le départ (tokens CSS), même si on ne l'expose pas en V1.
-- **Typographie** — display + texte, deux familles maximum, échelle fluide en `clamp()` : 12 / 14 / 16 / 18 / 21 / 28 / 36 / 48 / 64 / 88. Interlignage 1.1 sur les titres, 1.6 sur le corps.
+- **Typographie** — display + texte, deux familles maximum, échelle fluide en `clamp()`, en pixels rendus : 12 / 14 / 16 / 18 / 20–22 / 24–28 / 30–36 / 36–48 / 40–56 / 44–80. Interlignage 1.08 sur les titres, 1.6 sur le corps. *(Les bornes hautes ont été redescendues après essai : à 1280 px, un titre de 88 px débordait sur trois lignes dans une colonne de 640 px.)*
 - **Espacement** — grille de 4 px, échelle 4/8/12/16/24/32/48/64/96/128/180.
 - **Rayons** — 8 / 12 / 20 / 999. Un seul rayon par famille de composant.
 - **Élévation** — pas d'ombre portée classique : bordure 1 px + halo coloré très diffus, deux niveaux maximum.
 - **Mouvement** — 160 ms (hover), 240 ms (apparition), 400 ms (transition de page). Courbe unique `cubic-bezier(.16,1,.3,1)`. Tout désactivable par `prefers-reduced-motion`.
+- **Effets néon** — quatre effets, pas un de plus : halo de bordure et lueur interne qui suivent le curseur sur les cartes (`.glow-card`, teinte réglable par carte) ; balayage de lumière sur les boutons pleins (`.sheen`) ; filet dégradé en séparateur de section (`.hairline`) ; grain fixe à 3 % sur toute la page. La règle reste la même : le halo se voit quand on interagit, pas en permanence.
 
-Composants à construire (~24) : header + nav mobile plein écran, bouton (3 variantes), carte service, carte projet, filtre, accordéon FAQ, étape numérotée, stat, citation, logo technologie, champ de formulaire (5 types), stepper, bloc binôme, bandeau CTA, footer, breadcrumb, toast, skeleton, séparateur lumineux.
+Composants — **construits** : header + nav mobile plein écran, bouton (3 variantes), carte service, carte modèle, filtre, accordéon FAQ, étape numérotée, stat, logo technologie, champ de formulaire (5 types), stepper du configurateur, bloc binôme, bandeau CTA, footer, cadres d'appareil (navigateur + téléphone), séparateur lumineux.
+**Restent à faire** : bloc témoignage (en attente de vrais témoignages), fil d'Ariane, toast de confirmation, skeleton de chargement.
 
 ---
 
@@ -241,17 +247,17 @@ Obligatoire, souvent oublié, et facilement contrôlé :
 
 ## 10. Lotissement
 
-| Lot | Contenu | Estimation |
-|---|---|---|
-| **0 — Cadrage** | Logo C&M Agency, domaine, inventaire des modèles déployés, collecte des assets | 3–4 j |
-| **1 — Design system** | Tokens, typographie, composants, maquettes Accueil + 1 service + 1 fiche modèle (desktop + mobile) | 5–7 j |
-| **2 — Socle technique** | Projet, layout, header/footer, animations, **i18n et routage bilingue**, SEO technique, CI | 5–6 j |
-| **3 — Pages** | Accueil, Services + 6 services, Agence, Méthode | 6–8 j |
-| **4 — Offre modèles** | `/modeles`, fiches produit, démos en ligne, mesure Lighthouse automatisée, prix | 5–6 j |
-| **5 — Conversion** | Tarifs, FAQ, configurateur, mails bilingues, anti-spam | 4–5 j |
-| **6 — Traduction EN** | Intégration des contenus anglais, hreflang, slugs, recette bilingue | 3–4 j |
-| **7 — Légal & recette** | Pages légales, accessibilité, performance, tests, 404, mise en ligne | 3–4 j |
-| **Total V1** | | **≈ 34 à 44 jours** |
+| Lot | Contenu | Estimation | État |
+|---|---|---|---|
+| **0 — Cadrage** | Logo C&M Agency, domaine, inventaire des modèles déployés, collecte des assets | 3–4 j | ⏳ décisions prises, assets et domaine manquants |
+| **1 — Design system** | Tokens, typographie, composants, maquettes Accueil + 1 service + 1 fiche modèle (desktop + mobile) | 5–7 j | ✅ fait, sauf le motif `&` (§5) |
+| **2 — Socle technique** | Projet, layout, header/footer, animations, **i18n et routage bilingue**, SEO technique, CI | 5–6 j | ✅ fait, sauf la CI |
+| **3 — Pages** | Accueil, Services + 6 services, Agence, Méthode | 6–8 j | ✅ structure faite, contenu à réécrire (§12) |
+| **4 — Offre modèles** | `/modeles`, fiches produit, démos en ligne, mesure Lighthouse automatisée, prix | 5–6 j | ⏳ pages faites ; démos, prix réels et mesure auto manquants |
+| **5 — Conversion** | Tarifs, FAQ, configurateur, mails bilingues, anti-spam | 4–5 j | ⏳ configurateur fait ; envoi, mails et anti-spam à brancher |
+| **6 — Traduction EN** | Intégration des contenus anglais, hreflang, slugs, recette bilingue | 3–4 j | ⏳ intégré ; relecture anglophone à faire |
+| **7 — Légal & recette** | Pages légales, accessibilité, performance, tests, 404, mise en ligne | 3–4 j | ⏳ gabarits faits ; SIREN, audit axe et Lighthouse à faire |
+| **Total V1** | | **≈ 34 à 44 jours** | ~60 % |
 
 Hors production de contenu (rédaction FR + EN, photos, captures des modèles) qui est le vrai chemin critique : **c'est le lot 0 qui fait glisser un projet comme celui-ci**, pas le développement. Avec le bilingue, la rédaction représente désormais plus de charge que le développement de plusieurs lots réunis — commencez-la en parallèle du lot 1, pas après.
 
@@ -272,6 +278,7 @@ Le site est livrable quand, sur **chaque** gabarit :
 - [ ] Titre + méta + OG rédigés spécifiquement
 - [ ] Le formulaire arrive bien chez Manon, avec accusé de réception au prospect, dans la langue du visiteur
 - [ ] Aucune donnée inventée n'est affichée
+- [ ] Aucune phrase ne pourrait être copiée telle quelle chez un concurrent (§12.4)
 - [ ] `hreflang` réciproques valides, sélecteur de langue qui mène à la page équivalente
 - [ ] Version anglaise relue par un anglophone
 - [ ] Chaque démo en direct répond, dans sa dernière version, sur un sous-domaine surveillé
@@ -279,3 +286,66 @@ Le site est livrable quand, sur **chaque** gabarit :
 ---
 
 **Suite** : la liste détaillée des assets à produire est dans [ASSETS.md](ASSETS.md).
+
+---
+
+## 12. Authenticité du contenu — le chantier bloquant
+
+Le contenu actuel est **écrit par une IA et ça se voit**. Il est cohérent, grammaticalement irréprochable, et parfaitement interchangeable avec celui de n'importe quelle autre agence. C'est le problème le plus sérieux du site : toute la stratégie repose sur « vous parlez à de vraies personnes », et les textes disent exactement le contraire de ce qu'ils affirment.
+
+### 12.1 Les tells, précisément
+
+| Symptôme | Exemple dans le site | Pourquoi ça sonne faux |
+|---|---|---|
+| **L'antithèse en boucle** | « Ce n'est pas X, c'est Y », « Nous avons construit l'inverse », « le problème n'est plus l'organisation, c'est l'outil » | La figure revient dans presque chaque section. Un humain ne parle pas en chiasmes toutes les trois phrases. |
+| **Le rythme ternaire systématique** | « Sites web, e-commerce, applications mobiles », « proximité, transparence, qualité » | Trois éléments, toujours trois, toujours équilibrés. |
+| **La chute élégante** | Chaque paragraphe se termine sur une formule qui claque | Personne n'écrit 40 paragraphes qui finissent tous bien. |
+| **Zéro spécificité** | Aucune ville, aucune date, aucun nom, aucun prix vécu, aucun secteur qu'on connaît mieux qu'un autre | Le texte pourrait être copié-collé chez un concurrent sans changer un mot. |
+| **Des chiffres inventés** | « 48 h de délai de réponse », « 100 % code qui vous appartient » | Placeholders que j'ai posés. Ils ne viennent pas de vous. |
+| **Des exemples fabriqués** | « Refonte — Dupont Immobilier », Horizon Travel, FitZone, SoundWave, GreenEnergy | Les quatre modèles et leurs secteurs sont **mon invention**, repris de la maquette Nexora. Rien ne dit qu'ils correspondent à ce que vous savez ou voulez vendre. |
+| **Une voix neutre** | Aucune familiarité, aucun humour, aucune irritation, aucun parti pris tranché | Vous avez forcément des avis sur ce métier. Ils n'apparaissent nulle part. |
+
+### 12.2 Ce qui rendrait le texte authentique
+
+Trois leviers, par ordre d'impact :
+
+1. **L'ancrage.** Une ville, une région, un tissu économique. « Basé en France, disponible partout » ne veut rien dire. « On travaille surtout avec des artisans et des commerçants de l'arrière-pays niçois » en dit dix fois plus et attire exactement les bons clients.
+2. **Le vécu.** Une vraie histoire de départ, un vrai devis concurrent qui vous a choqués, un vrai client qui a appelé un dimanche, une vraie erreur que vous avez faite. Une anecdote précise vaut mieux que trois paragraphes de valeurs.
+3. **La voix.** Ce qui vous agace dans ce métier. C'est là que naît un ton reconnaissable — et « Le digital sans intermédiaire » vient forcément d'une frustration concrète qu'il faut raconter.
+
+### 12.3 Matière première à fournir
+
+Réponses courtes suffisantes — je m'occupe de la mise en forme. Ce ne sont pas des questions de style, ce sont des faits que je ne peux pas inventer :
+
+**L'agence**
+- Où êtes-vous basés (ville) ? Travaillez-vous surtout en local ou à distance ?
+- Depuis quand C&M Agency existe ? Est-ce votre activité principale ou en parallèle d'autre chose ?
+- Statut juridique et SIREN.
+
+**Vous deux**
+- Comment vous êtes-vous rencontrés, et pourquoi monter ça ensemble ?
+- Christopher : combien d'années de dev, sur quoi, chez qui ? Ce que vous faisiez avant.
+- Manon : quel parcours commercial, dans quel secteur ?
+- Un truc vrai et non professionnel sur chacun (ça humanise une page équipe plus que n'importe quel paragraphe sur les valeurs).
+
+**Le déclic**
+- Quelle situation précise vous a fait dire « on fait mieux que ça » ? Un devis délirant vu chez un client, une agence qui a disparu en cours de projet, un site livré catastrophique ?
+- Qu'est-ce qui vous agace le plus dans les agences web aujourd'hui ?
+
+**Les modèles**
+- Les quatre secteurs actuels (voyage, fitness, audio, énergie) sont mon invention. Quels secteurs connaissez-vous réellement, ou lesquels visez-vous ?
+- Vos projets déployés : qu'est-ce que c'est exactement, et pourquoi les avoir construits ?
+- Les vrais prix, et ce qu'ils couvrent.
+
+**Les engagements**
+- Sous combien de temps répondez-vous vraiment ?
+- Délais réels sur un site vitrine déjà livré ?
+- Y a-t-il des projets que vous refusez ? Lesquels ?
+
+**Le ton**
+- Vouvoiement ou tutoiement ?
+- Plutôt sobre et rassurant, ou direct et cash ?
+
+### 12.4 Règle à tenir pour la réécriture
+
+Aucune phrase du site ne doit pouvoir être copiée telle quelle sur le site d'un concurrent sans devenir fausse. Si elle le peut, elle ne sert à rien — on la supprime ou on la remplace par un fait.
