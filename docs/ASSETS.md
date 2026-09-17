@@ -66,6 +66,8 @@ Sources acceptables pour les mockups d'appareils : Rotato, Shots.so, Angle, Mock
 
 C'est votre catalogue et votre preuve à la fois. **Minimum 4 modèles au lancement, 6 à 8 visés**, sur des secteurs distincts (restauration, immobilier, artisanat, santé, coaching, e-commerce…) : le visiteur doit pouvoir se reconnaître dans au moins un.
 
+> **État actuel** : `public/models/<id>/` contient des **maquettes d'interface générées** (`npm run mockups`), une par secteur, avec palette et mise en page distinctes. Elles tiennent la mise en page et la direction artistique, mais ce ne sont pas des captures. Le tableau ci-dessous décrit ce qui doit les remplacer.
+
 **Par modèle** :
 
 | Asset | Specs |

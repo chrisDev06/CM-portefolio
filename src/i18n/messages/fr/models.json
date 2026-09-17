@@ -1,0 +1,198 @@
+{
+  "hero": {
+    "eyebrow": "Sites prêts à lancer",
+    "title": "Des sites déjà en ligne. Testez-les avant de décider.",
+    "lead": "Chaque modèle est un site réel, déployé, que vous pouvez ouvrir et parcourir maintenant. Nous le personnalisons ensuite à votre activité : vos textes, vos photos, vos couleurs, votre nom de domaine.",
+    "note": "Projets de démonstration : ils montrent notre savoir-faire et servent de base à votre site. Ce ne sont pas des réalisations clients."
+  },
+  "howItWorks": {
+    "eyebrow": "Comment ça se passe",
+    "title": "Du modèle à votre site, en quatre étapes.",
+    "steps": [
+      {
+        "title": "Vous choisissez",
+        "text": "Vous ouvrez les démos, vous testez sur votre téléphone, vous retenez celle qui colle à votre activité."
+      },
+      {
+        "title": "On adapte",
+        "text": "Vos textes, vos photos, vos couleurs, votre logo. Le modèle devient votre site, pas une copie visible."
+      },
+      {
+        "title": "On met en ligne",
+        "text": "Nom de domaine, hébergement, boîte mail professionnelle, référencement de base. Tout est configuré à votre nom."
+      },
+      {
+        "title": "Vous gardez la main",
+        "text": "Formation à la prise en main, et le choix de faire évoluer le site vous-même ou de nous le confier."
+      }
+    ]
+  },
+  "labels": {
+    "sector": "Secteur",
+    "type": "Type",
+    "price": "À partir de",
+    "delay": "Mise en ligne",
+    "intent": "L'intention",
+    "for": "Pour qui",
+    "features": "Ce que contient le modèle",
+    "customizable": "Ce que nous personnalisons",
+    "tech": "Sous le capot",
+    "performance": "Performances mesurées",
+    "included": "Inclus dans le prix",
+    "demoSoon": "Démo bientôt disponible",
+    "similar": "Autres modèles",
+    "priceNote": "Prix indicatif, à confirmer selon vos besoins réels.",
+    "perf": "Performance",
+    "a11y": "Accessibilité",
+    "seo": "SEO"
+  },
+  "filters": {
+    "all": "Tous",
+    "showcase": "Sites vitrines",
+    "ecommerce": "E-commerce",
+    "mobile": "Mobile",
+    "custom": "Sur mesure"
+  },
+  "items": {
+    "horizon-travel": {
+      "name": "Horizon Travel",
+      "sector": "Agence de voyage",
+      "type": "Site vitrine",
+      "filter": "showcase",
+      "tagline": "Un site vitrine haut de gamme pour vendre du rêve sans le brader.",
+      "intent": "Les agences de voyage montrent toutes les mêmes photos de plage. Nous avons pris le contre-pied : grandes images plein écran, typographie éditoriale, et une mise en avant des destinations comme dans un magazine. Le luxe se joue sur l'espace, pas sur la surcharge.",
+      "for": "Agences de voyage, organisateurs de séjours, hôtellerie de charme et tout professionnel dont le produit se vend d'abord par l'image.",
+      "features": [
+        "Page d'accueil avec destinations en vedette",
+        "Fiches destination détaillées",
+        "Formulaire de demande de devis personnalisé",
+        "Galerie photo optimisée",
+        "Blog de conseils de voyage",
+        "Avis clients",
+        "Carte interactive des destinations"
+      ],
+      "customizable": [
+        "Vos destinations et vos offres",
+        "Vos photos et votre identité visuelle",
+        "Vos formulaires et champs de demande",
+        "Les pages supplémentaires dont vous avez besoin"
+      ],
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      "price": "2 400 €",
+      "delay": "En ligne en 10 jours",
+      "included": [
+        "Personnalisation complète du contenu",
+        "Nom de domaine et hébergement la première année",
+        "Formation à la prise en main",
+        "Un mois de corrections"
+      ],
+      "performance": { "perf": 99, "a11y": 100, "seo": 100 },
+      "demo": ""
+    },
+    "fitzone": {
+      "name": "FitZone",
+      "sector": "Sport et bien-être",
+      "type": "Application mobile",
+      "filter": "mobile",
+      "tagline": "Une application de suivi sportif qui donne envie de revenir demain.",
+      "intent": "La plupart des applications de sport noient l'utilisateur sous les chiffres. Ici, un seul écran répond à la seule question qui compte : qu'est-ce que je fais aujourd'hui ? Le reste est accessible, mais à un geste de distance.",
+      "for": "Salles de sport, coachs sportifs, studios de yoga et toute structure qui veut prolonger l'accompagnement entre deux séances.",
+      "features": [
+        "Programmes d'entraînement personnalisés",
+        "Suivi des séances et des progrès",
+        "Notifications de rappel",
+        "Espace coach avec suivi des adhérents",
+        "Réservation de créneaux",
+        "Suivi nutritionnel simple",
+        "Statistiques hebdomadaires"
+      ],
+      "customizable": [
+        "Votre marque et vos couleurs dans l'application",
+        "Vos programmes et votre vocabulaire métier",
+        "Les fonctionnalités que vous gardez ou retirez",
+        "La publication sur les stores à votre nom"
+      ],
+      "tech": ["React Native", "Expo", "TypeScript", "Node.js"],
+      "price": "7 900 €",
+      "delay": "En ligne en 6 semaines",
+      "included": [
+        "Applications iOS et Android",
+        "Back-office de gestion",
+        "Comptes développeur configurés à votre nom",
+        "Accompagnement à la publication"
+      ],
+      "performance": { "perf": 96, "a11y": 98, "seo": 100 },
+      "demo": ""
+    },
+    "soundwave": {
+      "name": "SoundWave",
+      "sector": "Matériel audio",
+      "type": "E-commerce",
+      "filter": "ecommerce",
+      "tagline": "Une boutique en ligne pensée pour les produits que l'on compare avant d'acheter.",
+      "intent": "Le matériel audio se vend sur la fiche produit : caractéristiques, comparaison, avis. Nous avons construit la boutique autour de cette page-là, et raccourci le tunnel de commande à trois écrans.",
+      "for": "Commerces spécialisés, marques avec un catalogue technique, revendeurs qui veulent sortir des places de marché.",
+      "features": [
+        "Catalogue avec filtres et comparateur",
+        "Fiches produit détaillées et variantes",
+        "Panier et paiement sécurisé",
+        "Comptes clients et suivi de commande",
+        "Codes promo et ventes privées",
+        "Back-office de gestion des stocks",
+        "Emails automatiques de commande"
+      ],
+      "customizable": [
+        "Votre catalogue et vos catégories",
+        "Vos règles de prix, de stock et de livraison",
+        "Vos transporteurs et modes de paiement",
+        "Votre identité visuelle complète"
+      ],
+      "tech": ["Next.js", "Stripe", "PostgreSQL", "TypeScript"],
+      "price": "4 900 €",
+      "delay": "En ligne en 3 semaines",
+      "included": [
+        "Import de votre catalogue initial",
+        "Configuration du paiement et de la livraison",
+        "Formation à la gestion des commandes",
+        "Pages légales de vente en ligne"
+      ],
+      "performance": { "perf": 97, "a11y": 100, "seo": 100 },
+      "demo": ""
+    },
+    "greenenergy": {
+      "name": "GreenEnergy",
+      "sector": "Énergies renouvelables",
+      "type": "Plateforme sur mesure",
+      "filter": "custom",
+      "tagline": "Un espace client pour suivre ses installations, ses consommations et ses interventions.",
+      "intent": "Un outil métier n'a pas besoin d'être austère. Les mêmes tableaux de bord, traités avec de la hiérarchie et de la couleur utile, deviennent lisibles d'un coup d'œil, y compris sur un téléphone en intervention.",
+      "for": "Installateurs, sociétés de maintenance technique, exploitants et toute activité avec un parc à suivre et des clients à informer.",
+      "features": [
+        "Tableau de bord des installations",
+        "Espace client avec documents et contrats",
+        "Suivi des interventions et planning",
+        "Rapports de consommation",
+        "Gestion des rôles et des droits",
+        "Notifications et alertes",
+        "Exports et rapports personnalisés"
+      ],
+      "customizable": [
+        "Vos indicateurs et votre vocabulaire métier",
+        "Vos processus d'intervention",
+        "Vos connexions avec vos outils existants",
+        "Vos niveaux d'accès par utilisateur"
+      ],
+      "tech": ["Next.js", "Node.js", "PostgreSQL", "TypeScript"],
+      "price": "9 500 €",
+      "delay": "En ligne en 8 semaines",
+      "included": [
+        "Adaptation aux processus de votre métier",
+        "Reprise de vos données existantes",
+        "Formation des utilisateurs",
+        "Documentation d'utilisation"
+      ],
+      "performance": { "perf": 98, "a11y": 100, "seo": 95 },
+      "demo": ""
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "siteName": "C&M Agency",
+    "tagline": "Le digital sans intermédiaire",
+    "description": "Sites web, e-commerce et applications mobiles sur mesure. Vous parlez directement à la personne qui comprend votre activité et à celle qui construit votre solution."
+  },
+  "nav": {
+    "services": "Services",
+    "models": "Sites prêts à lancer",
+    "agency": "Agence",
+    "method": "Méthode",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "CGV",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "skipToContent": "Aller au contenu principal"
+  },
+  "language": {
+    "label": "Changer de langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "seeModel": "Voir le modèle",
+    "liveDemo": "Voir la démo en direct",
+    "estimate": "Demander une estimation",
+    "startProject": "Lancer mon projet",
+    "talkAboutIt": "Parlons-en",
+    "allServices": "Tous nos services",
+    "allModels": "Tous nos modèles",
+    "backToModels": "Retour aux modèles",
+    "demoNotice": "Projet de démonstration — pas une réalisation client.",
+    "placeholderNotice": "Contenu provisoire, à valider.",
+    "readingTime": "Lecture 3 min",
+    "viewDesktop": "vue bureau",
+    "viewMobile": "vue mobile",
+    "gallery": "Aperçus de l'interface"
+  },
+  "cta": {
+    "eyebrow": "Prêt à démarrer ?",
+    "title": "Votre projet digital commence ici.",
+    "lead": "Parlons de vos idées, de vos objectifs, et construisons ensemble la solution qui vous correspond.",
+    "button": "Discutons de votre projet",
+    "secondary": "Voir les sites prêts à lancer"
+  },
+  "tech": {
+    "eyebrow": "Technologies modernes. Résultats concrets.",
+    "items": [
+      "React",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "Tailwind",
+      "PostgreSQL"
+    ]
+  },
+  "footer": {
+    "tagline": "Plus qu'une agence, un partenaire de votre réussite.",
+    "based": "Basé en France, disponible partout.",
+    "rights": "Tous droits réservés.",
+    "columns": {
+      "services": "Services",
+      "explore": "Explorer",
+      "legal": "Informations"
+    }
+  }
+}

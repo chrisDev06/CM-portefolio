@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "siteName": "C&M Agency",
+    "tagline": "Digital, with no middleman",
+    "description": "Custom websites, online stores and mobile apps. You talk directly to the person who understands your business, and to the one who builds your solution."
+  },
+  "nav": {
+    "services": "Services",
+    "models": "Ready-to-launch sites",
+    "agency": "Agency",
+    "method": "How we work",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to main content"
+  },
+  "language": {
+    "label": "Change language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "seeModel": "View template",
+    "liveDemo": "See the live demo",
+    "estimate": "Request an estimate",
+    "startProject": "Start my project",
+    "talkAboutIt": "Let's talk",
+    "allServices": "All our services",
+    "allModels": "All our templates",
+    "backToModels": "Back to templates",
+    "demoNotice": "Demonstration project — not a client engagement.",
+    "placeholderNotice": "Draft content, to be confirmed.",
+    "readingTime": "3 min read",
+    "viewDesktop": "desktop view",
+    "viewMobile": "mobile view",
+    "gallery": "Interface previews"
+  },
+  "cta": {
+    "eyebrow": "Ready to start?",
+    "title": "Your digital project starts here.",
+    "lead": "Tell us about your ideas and your goals, and we will build the solution that fits.",
+    "button": "Let's talk about your project",
+    "secondary": "See ready-to-launch sites"
+  },
+  "tech": {
+    "eyebrow": "Modern technology. Concrete results.",
+    "items": [
+      "React",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "Node.js",
+      "Laravel",
+      "Tailwind",
+      "PostgreSQL"
+    ]
+  },
+  "footer": {
+    "tagline": "More than an agency, a partner in your success.",
+    "based": "Based in France, working everywhere.",
+    "rights": "All rights reserved.",
+    "columns": {
+      "services": "Services",
+      "explore": "Explore",
+      "legal": "Information"
+    }
+  }
+}

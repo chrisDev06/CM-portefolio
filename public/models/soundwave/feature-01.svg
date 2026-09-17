@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img">
+<defs>
+  <linearGradient id="grad-m" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1C1C22"/>
+    <stop offset="100%" stop-color="#F5A524" stop-opacity="0.55"/>
+  </linearGradient>
+  <linearGradient id="grad-cta" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A524"/>
+    <stop offset="100%" stop-color="#D946EF"/>
+  </linearGradient>
+</defs>
+    <rect x="0" y="0" width="1600" height="1000" rx="0" fill="#0C0C0E"/>
+    
+    <rect x="0" y="0" width="1600" height="72" rx="0" fill="#16161A"/>
+    <rect x="0" y="71" width="1600" height="1" rx="0" fill="#26262E"/>
+    <text x="48" y="46" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#F4F4F5" text-anchor="start">SoundWave</text>
+    <rect x="360" y="33" width="72" height="8" rx="4" fill="#F4F4F5" opacity="0.35"/><rect x="470" y="33" width="72" height="8" rx="4" fill="#F4F4F5" opacity="0.35"/><rect x="580" y="33" width="72" height="8" rx="4" fill="#F4F4F5" opacity="0.35"/><rect x="690" y="33" width="72" height="8" rx="4" fill="#F4F4F5" opacity="0.35"/>
+    <rect x="1400" y="22" width="152" height="30" rx="15" fill="url(#grad-cta)"/>
+  
+    <rect x="96" y="132" width="260" height="10" rx="5" fill="#F4F4F5" opacity="0.25"/>
+    
+  <rect x="96" y="168" width="900" height="520" rx="20" fill="url(#grad-m)"/>
+  <circle cx="744" cy="324" r="145.60000000000002" fill="#F5A524" opacity="0.28"/>
+  <path d="M96 542.4 L348 407.20000000000005 L564 511.2 L798 365.6 L996 469.59999999999997 L996 688 L96 688 Z" fill="#D946EF" opacity="0.22"/>
+  <path d="M96 604.8 L402 480 L654 573.6 L996 511.2 L996 688 L96 688 Z" fill="#0C0C0E" opacity="0.5"/>
+
+    <rect x="96" y="712" width="104" height="76" rx="10" fill="#16161A"/><rect x="216" y="712" width="104" height="76" rx="10" fill="#16161A"/><rect x="336" y="712" width="104" height="76" rx="10" fill="#16161A"/><rect x="456" y="712" width="104" height="76" rx="10" fill="#16161A"/>
+    <rect x="96" y="712" width="104" height="76" rx="10" fill="#F5A524" opacity="0.25"/>
+
+    <rect x="1060" y="168" width="444" height="520" rx="20" fill="#16161A"/>
+    <rect x="1092" y="216" width="260" height="20" rx="10" fill="#F4F4F5" opacity="0.85"/>
+    <rect x="1092" y="250" width="180" height="20" rx="10" fill="#F4F4F5" opacity="0.85"/>
+    <text x="1092" y="318" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="#F5A524" text-anchor="start">249 €</text>
+    
+        <rect x="1092" y="356" width="380" height="1" rx="0" fill="#26262E"/>
+        <rect x="1092" y="372" width="140" height="8" rx="4" fill="#F4F4F5" opacity="0.3"/>
+        <rect x="1330" y="372" width="84" height="8" rx="4" fill="#F4F4F5" opacity="0.5"/>
+        <rect x="1092" y="400" width="380" height="1" rx="0" fill="#26262E"/>
+        <rect x="1092" y="416" width="140" height="8" rx="4" fill="#F4F4F5" opacity="0.3"/>
+        <rect x="1330" y="416" width="84" height="8" rx="4" fill="#F4F4F5" opacity="0.5"/>
+        <rect x="1092" y="444" width="380" height="1" rx="0" fill="#26262E"/>
+        <rect x="1092" y="460" width="140" height="8" rx="4" fill="#F4F4F5" opacity="0.3"/>
+        <rect x="1330" y="460" width="84" height="8" rx="4" fill="#F4F4F5" opacity="0.5"/>
+        <rect x="1092" y="488" width="380" height="1" rx="0" fill="#26262E"/>
+        <rect x="1092" y="504" width="140" height="8" rx="4" fill="#F4F4F5" opacity="0.3"/>
+        <rect x="1330" y="504" width="84" height="8" rx="4" fill="#F4F4F5" opacity="0.5"/>
+        <rect x="1092" y="532" width="380" height="1" rx="0" fill="#26262E"/>
+        <rect x="1092" y="548" width="140" height="8" rx="4" fill="#F4F4F5" opacity="0.3"/>
+        <rect x="1330" y="548" width="84" height="8" rx="4" fill="#F4F4F5" opacity="0.5"/>
+    <rect x="1092" y="596" width="380" height="52" rx="26" fill="url(#grad-cta)"/>
+    
+    <rect x="0" y="860" width="1600" height="140" rx="0" fill="#16161A"/>
+    <rect x="0" y="860" width="1600" height="1" rx="0" fill="#26262E"/>
+    <text x="48" y="914" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#8B8B96" text-anchor="start">SoundWave</text>
+    <rect x="520" y="902" width="120" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/><rect x="700" y="902" width="120" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/><rect x="880" y="902" width="120" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/>
+  
+  </svg>

@@ -1,0 +1,96 @@
+{
+  "eyebrow": "Ideas. Code. Results.",
+  "titleStart": "Your digital project,",
+  "titleHighlight": "with no middleman.",
+  "subtitle": "Websites, online stores, mobile apps. One person to understand your business, one to build your solution.",
+  "ctaPrimary": "Start my project",
+  "ctaSecondary": "See our ready-to-launch sites",
+  "heroTags": ["Web", "Mobile", "E-commerce", "Custom", "Performance"],
+  "heroCards": [
+    { "title": "Business websites", "text": "An online presence that looks like you." },
+    { "title": "E-commerce", "text": "Sell more, without the friction." },
+    { "title": "Mobile apps", "text": "Useful apps that actually perform." },
+    { "title": "Custom software", "text": "Because no two businesses are alike." }
+  ],
+  "facts": [
+    { "value": "48 h", "label": "Response time" },
+    { "value": "2", "label": "People, not ten" },
+    { "value": "100 %", "label": "Code you own" }
+  ],
+  "services": {
+    "eyebrow": "Our services",
+    "title": "Complete digital solutions for every project.",
+    "lead": "From first sketch to launch day, we walk you through every step and turn your ideas into digital products that perform."
+  },
+  "models": {
+    "eyebrow": "Ready-to-launch sites",
+    "title": "Sites already online, that you can test right now.",
+    "lead": "Our competitors show screenshots. We give you the link: open the demo, click everywhere, try it on your phone. Every template can be tailored to your business."
+  },
+  "difference": {
+    "eyebrow": "What sets us apart",
+    "title": "Digital, with no middleman.",
+    "lead": "In a large agency your project travels through a salesperson, a project manager, a studio and then a technical team. Something is lost at every handover. Here, there is nobody between you and the solution.",
+    "points": [
+      {
+        "title": "One business contact",
+        "text": "Manon has known your project since the first call. You never have to explain your needs twice."
+      },
+      {
+        "title": "Direct access to the developer",
+        "text": "A technical question? You talk to the person writing the code, not to someone who will pass it on."
+      },
+      {
+        "title": "No subcontracting",
+        "text": "Your project is never resold to a third party. What you see is who does the work."
+      },
+      {
+        "title": "You own the code",
+        "text": "Source code, accounts, hosting: everything is in your name. You are never locked in."
+      }
+    ]
+  },
+  "duo": {
+    "eyebrow": "Your duo",
+    "title": "Two skill sets. One goal: making your project succeed.",
+    "lead": "No fake agency of thirty people. Two people, whom you know by name, from the first call to launch day.",
+    "people": [
+      {
+        "name": "Manon",
+        "role": "Sales & client relations",
+        "text": "First contact, understanding your needs, quotes, planning and follow-up. She turns your business into a brief and stays your point of reference throughout the project."
+      },
+      {
+        "name": "Christopher",
+        "role": "Development & engineering",
+        "text": "Architecture, technical UX, web and mobile development, integrations, performance, deployment and maintenance. He builds what you signed off."
+      }
+    ],
+    "flow": ["Manon", "You", "Christopher"],
+    "cta": "Meet the agency"
+  },
+  "method": {
+    "eyebrow": "How we work",
+    "title": "You always know where your project stands.",
+    "lead": "Eight steps, regular progress updates, and never a moment where you wonder what is happening.",
+    "steps": [
+      {
+        "title": "We listen",
+        "text": "A conversation to understand your business, your customers and what you actually expect."
+      },
+      {
+        "title": "We scope",
+        "text": "Goals, features, budget and timeline agreed in writing before a single line is written."
+      },
+      {
+        "title": "We build",
+        "text": "Step-by-step development, with regular demos and your feedback folded in as we go."
+      },
+      {
+        "title": "We support",
+        "text": "Launch, hands-on training, then maintenance and new features."
+      }
+    ],
+    "cta": "See the full method"
+  }
+}

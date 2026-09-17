@@ -1,1 +1,105 @@
 @import "tailwindcss";
+
+/* Tokens de design — source unique de vérité (voir docs/PLAN.md §5) */
+@theme {
+  /* Couleurs */
+  --color-base: #08080c;
+  --color-surface: #0f0f16;
+  --color-surface-2: #15151f;
+  --color-line: #ffffff14;
+  --color-line-strong: #ffffff29;
+  --color-ink: #f5f5f7;
+  --color-ink-muted: #a8a8b8;
+  --color-violet: #7c3aed;
+  --color-magenta: #d946ef;
+  --color-amber: #f59e0b;
+
+  /* Typographie — les variables de police sont posées par src/lib/fonts.ts */
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-body), sans-serif;
+
+  /* Échelle fluide */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 0.5vw + 1.1rem, 1.375rem);
+  --text-2xl: clamp(1.5rem, 1vw + 1.25rem, 1.75rem);
+  --text-3xl: clamp(1.875rem, 1.5vw + 1.5rem, 2.25rem);
+  --text-4xl: clamp(2.25rem, 2.5vw + 1.75rem, 3rem);
+  --text-5xl: clamp(2.5rem, 3vw + 1.4rem, 3.5rem);
+  --text-6xl: clamp(2.75rem, 4.5vw + 1rem, 5rem);
+
+  /* Rayons */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+
+  /* Mouvement — une seule courbe pour tout le site */
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-magenta);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-violet);
+    color: var(--color-ink);
+  }
+}
+
+/* Critère de recette : toute animation est neutralisable. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-violet),
+    var(--color-magenta) 60%,
+    var(--color-amber)
+  );
+  background-clip: text;
+  color: transparent;
+}

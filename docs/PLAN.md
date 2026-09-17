@@ -64,7 +64,7 @@ Dans les maquettes, l'écran du MacBook affiche… une page fictive. Le premier 
 |---|---|---|
 | 1 | **Marque : C&M Agency**, logo à créer | Le `&` devient le motif central de l'identité : il *est* le binôme. Baseline « Le digital sans intermédiaire ». Domaine à réserver (voir §2.1). |
 | 2 | **Aucun client réel à montrer**, mais des projets déjà déployés et vendables | Change l'architecture : l'offre « **Sites prêts à lancer** » remplace la page Réalisations au lancement (voir §2.2). |
-| 3 | **Next.js 15 + TypeScript + Tailwind + Framer Motion**, MDX, Vercel | Le site devient lui-même une démonstration de la stack annoncée. |
+| 3 | **Next.js + TypeScript + Tailwind + Framer Motion**, MDX, Vercel | Le site devient lui-même une démonstration de la stack annoncée. Installé en **Next.js 16** (version courante au moment du démarrage, et non 15 comme indiqué à la question) : App Router, Turbopack, React 19. |
 | 4 | **Contenu en MDX**, édité par Christopher | Pas de CMS en V1. Le contenu est structuré dès maintenant pour qu'un passage à Sanity/Payload en phase 2 soit indolore. |
 | 5 | **Photos réalisées par vos soins** | Protocole de prise de vue fourni dans ASSETS.md §5. Je prends en charge le détourage et l'harmonisation colorimétrique. |
 | 6 | **Bilingue FR + EN dès la V1** | +3 à 4 j de développement, +25 % de rédaction, et un choix de portée à arbitrer (voir §2.3). |
@@ -108,7 +108,7 @@ Services · Sites prêts à lancer · Agence · Méthode · Tarifs · Contact   
 
 « Sites prêts à lancer » en deuxième position : c'est votre différenciateur, il ne doit pas être enterré dans un sous-menu.
 
-Arborescence complète (le préfixe `/en` duplique tout l'arbre) :
+Arborescence complète. **Les deux langues sont préfixées** — `/fr/...` et `/en/...` — et `/` redirige selon l'en-tête `Accept-Language`, par défaut vers le français. C'est le schéma que Next 16 gère nativement, et il évite l'ambiguïté de canonique d'un français non préfixé.
 
 ```
 /                                   Accueil
@@ -208,9 +208,12 @@ Composants à construire (~24) : header + nav mobile plein écran, bouton (3 var
 ## 8. Stack proposée
 
 ```
-Next.js 15 (App Router) · TypeScript · Tailwind CSS · Framer Motion
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind v4 · Framer Motion
 Contenu       : MDX par langue — content/{fr,en}/… (services, modèles, FAQ)
-i18n          : segment [locale], next-intl, slugs traduits, hreflang
+i18n          : natif Next 16 — segment [lang], next/root-params, dictionnaires
+                JSON, slugs traduits, hreflang. Pas de next-intl : inutile ici,
+                et zéro JS client pour les traductions.
+Redirection   : src/proxy.ts (le middleware a été renommé « proxy » en Next 16)
 Formulaires   : route API + Zod + Resend (mail) + Turnstile
 Stockage lead : table Postgres (Supabase) ou simple envoi mail en V1
 Hébergement   : Vercel (UE) + domaine chez un registrar FR

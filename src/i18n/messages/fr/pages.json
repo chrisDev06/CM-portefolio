@@ -1,0 +1,613 @@
+{
+  "agency": {
+    "hero": {
+      "eyebrow": "L'agence",
+      "title": "Deux expertises. Un seul objectif : faire réussir votre projet.",
+      "lead": "C&M Agency, c'est Manon et Christopher. Pas un open space de trente personnes sur une photo d'archive : deux personnes que vous connaissez par leur prénom et qui répondent quand vous appelez."
+    },
+    "story": {
+      "title": "Pourquoi nous avons créé C&M Agency",
+      "paragraphs": [
+        "Nous avons tous les deux vu comment fonctionnent les grandes structures. Un client explique son besoin à un commercial, qui le transmet à un chef de projet, qui le reformule pour un studio, qui le repasse à une équipe technique. Quatre intermédiaires plus tard, le site livré ne ressemble plus à ce qui avait été demandé, et personne n'est fautif.",
+        "Nous avons construit l'inverse. Manon comprend votre activité et porte votre dossier de bout en bout. Christopher construit la solution et vous parle directement quand le sujet est technique. Entre les deux, aucune couche, aucune sous-traitance, aucun téléphone arabe.",
+        "C'est un choix assumé : nous prenons moins de projets, mais nous les suivons vraiment. Si votre projet ne rentre pas dans ce format, nous vous le dirons avant de signer plutôt qu'après."
+      ]
+    },
+    "values": {
+      "eyebrow": "Nos valeurs",
+      "title": "Quatre principes, tenus même quand ça nous coûte.",
+      "items": [
+        {
+          "title": "Proximité",
+          "text": "Vous avez nos lignes directes. Pas de ticket, pas de file d'attente, pas de robot qui vous demande de reformuler votre demande."
+        },
+        {
+          "title": "Transparence",
+          "text": "Un devis détaillé, pas un forfait opaque. Si une fonctionnalité coûte cher, nous vous disons pourquoi et ce qu'elle vous rapportera."
+        },
+        {
+          "title": "Honnêteté technique",
+          "text": "Si un outil existant fait le travail pour dix fois moins cher, nous vous le disons, même si ça nous fait perdre la vente."
+        },
+        {
+          "title": "Indépendance",
+          "text": "Code, comptes, nom de domaine, hébergement : tout est à votre nom. Vous pouvez partir avec votre projet demain matin."
+        }
+      ]
+    },
+    "duo": {
+      "eyebrow": "Votre binôme",
+      "title": "Qui fait quoi, très concrètement.",
+      "lead": "Vous n'aurez jamais à deviner à qui poser votre question.",
+      "people": [
+        {
+          "name": "Manon",
+          "role": "Commercial & relation client",
+          "text": "Manon est votre premier contact et votre point de repère. Elle comprend votre activité, traduit votre besoin en périmètre chiffrable, prépare le devis, organise le planning et vous tient informé de l'avancement. C'est elle qui vous préviendra si quelque chose glisse, avant que vous ayez à le demander.",
+          "skills": [
+            "Compréhension du besoin",
+            "Devis et cadrage",
+            "Organisation et planning",
+            "Suivi de projet",
+            "Communication client"
+          ]
+        },
+        {
+          "name": "Christopher",
+          "role": "Développement & technique",
+          "text": "Christopher construit ce que vous avez validé. Architecture, développement web et mobile, intégrations, performances, sécurité, mise en ligne et maintenance. Quand une question technique arrive, vous lui parlez directement : pas de reformulation par un intermédiaire qui traduirait mal.",
+          "skills": [
+            "Architecture technique",
+            "Développement web et mobile",
+            "Intégrations et API",
+            "Performances et sécurité",
+            "Déploiement et maintenance"
+          ]
+        }
+      ],
+      "flow": {
+        "title": "Comment circule l'information",
+        "text": "Manon et Christopher travaillent sur le même dossier, en continu. Vous n'avez jamais à répéter votre besoin à deux personnes différentes, et vous n'avez jamais à jouer les messagers entre nous.",
+        "nodes": ["Manon", "Vous", "Christopher"]
+      }
+    },
+    "promise": {
+      "eyebrow": "Nos engagements",
+      "title": "Ce que nous nous engageons à tenir.",
+      "items": [
+        "Une réponse à votre demande sous 48 heures ouvrées",
+        "Un devis détaillé, ligne par ligne, avant tout engagement",
+        "Aucun changement de périmètre facturé sans votre accord écrit",
+        "Le code source et tous les accès livrés à votre nom",
+        "Un point d'avancement régulier, à fréquence convenue à l'avance"
+      ]
+    }
+  },
+  "method": {
+    "hero": {
+      "eyebrow": "Notre méthode",
+      "title": "Ce qui se passe après que vous ayez cliqué sur « Contact ».",
+      "lead": "La plus grande peur quand on confie un projet à une petite structure, c'est le silence. Voici, étape par étape, comment se déroule un projet chez nous — et à quel moment vous entendrez parler de nous."
+    },
+    "steps": [
+      {
+        "title": "Premier échange",
+        "text": "Manon vous rappelle et vous écoute. Pas de présentation commerciale de trente minutes : des questions sur votre activité, vos clients et ce qui vous a poussé à nous contacter."
+      },
+      {
+        "title": "Cadrage",
+        "text": "Objectifs, utilisateurs, fonctionnalités, contraintes, budget et délais. C'est l'étape qui évite les mauvaises surprises : tout ce qui n'est pas écrit ici deviendra un litige plus tard."
+      },
+      {
+        "title": "Proposition",
+        "text": "Un document qui décrit le périmètre, la solution retenue, le prix détaillé et le planning. Vous avez le temps de le lire et de poser vos questions. Aucune pression à signer."
+      },
+      {
+        "title": "Conception",
+        "text": "Arborescence, parcours utilisateur, maquettes des écrans clés. Vous validez l'apparence et le fonctionnement avant qu'une seule ligne de code ne soit écrite."
+      },
+      {
+        "title": "Développement",
+        "text": "Christopher construit, par lots. À la fin de chaque lot, vous recevez une version consultable. Vous voyez le projet grandir, vous ne découvrez rien à la fin."
+      },
+      {
+        "title": "Tests & validation",
+        "text": "Responsive sur mobile, tablette et ordinateur, navigateurs, parcours complets, formulaires, performances. Vous testez aussi de votre côté et vous remontez ce qui cloche."
+      },
+      {
+        "title": "Mise en ligne",
+        "text": "Déploiement, nom de domaine, boîtes mail, vérifications finales, référencement de base. Nous restons disponibles les jours suivants, le moment où les vraies questions arrivent."
+      },
+      {
+        "title": "Suivi",
+        "text": "Formation à la prise en main, puis maintenance et évolutions selon ce que vous avez choisi. Le projet ne s'arrête pas le jour de la livraison."
+      }
+    ],
+    "tracking": {
+      "eyebrow": "Pendant le développement",
+      "title": "Vous ne disparaissez pas dans la nature.",
+      "lead": "Vous savez toujours qui contacter, où en est votre projet, ce qui est terminé, ce qui arrive ensuite et quand votre validation est attendue.",
+      "example": {
+        "label": "Exemple d'un suivi de projet",
+        "project": "Refonte — Dupont Immobilier",
+        "progressLabel": "Avancement",
+        "progress": 82,
+        "items": [
+          { "label": "Maquettes", "status": "done" },
+          { "label": "Développement", "status": "done" },
+          { "label": "Paiement en ligne", "status": "done" },
+          { "label": "Responsive", "status": "doing" },
+          { "label": "Tests navigateurs", "status": "todo" },
+          { "label": "Mise en ligne", "status": "todo" }
+        ],
+        "statusLabels": { "done": "Terminé", "doing": "En cours", "todo": "À venir" },
+        "nextLabel": "Prochain point",
+        "next": "Jeudi 24, 14 h — démonstration de la version mobile"
+      }
+    },
+    "communication": {
+      "eyebrow": "Communication & accompagnement",
+      "title": "Comment on se parle, concrètement.",
+      "items": [
+        {
+          "title": "Un point d'avancement régulier",
+          "text": "À fréquence convenue au cadrage — généralement toutes les deux semaines. Court, avec une démonstration de ce qui a avancé."
+        },
+        {
+          "title": "Un canal unique",
+          "text": "Mail ou téléphone, comme vous préférez. Pas d'outil supplémentaire à apprendre pour suivre votre propre projet."
+        },
+        {
+          "title": "Un accès direct au développeur",
+          "text": "Quand la question est technique, vous parlez à Christopher. Manon reste informée, vous n'avez rien à répéter."
+        },
+        {
+          "title": "Des validations écrites",
+          "text": "Maquettes, fonctionnalités, mise en ligne : chaque validation est tracée. C'est une protection pour vous autant que pour nous."
+        },
+        {
+          "title": "Les retours centralisés",
+          "text": "Vous remontez vos corrections dans un seul document, nous les traitons par lots. Plus efficace que dix mails séparés."
+        },
+        {
+          "title": "L'accompagnement après livraison",
+          "text": "Formation à la prise en main, documentation, et une période de corrections incluse après la mise en ligne."
+        }
+      ]
+    },
+    "scope": {
+      "title": "Et si le besoin change en cours de route ?",
+      "text": "C'est fréquent et ce n'est pas un problème. Une demande hors du périmètre prévu est chiffrée séparément et vous décidez : on l'intègre maintenant, on la garde pour plus tard, ou on l'abandonne. Ce qui n'arrive jamais, c'est de la découvrir sur la facture finale."
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Tarifs",
+      "title": "Comment nous chiffrons un projet.",
+      "lead": "Nos projets sont sur mesure : afficher un prix unique serait malhonnête. En revanche, nous pouvons vous expliquer exactement comment le prix se construit et vous donner des fourchettes réelles."
+    },
+    "how": {
+      "eyebrow": "La méthode",
+      "title": "Un prix, c'est du temps multiplié par de la complexité.",
+      "items": [
+        {
+          "title": "Nous découpons",
+          "text": "Chaque fonctionnalité est estimée séparément, en jours. Vous voyez ce que coûte chaque brique et vous pouvez en retirer."
+        },
+        {
+          "title": "Nous chiffrons large sur l'incertain",
+          "text": "Une intégration avec un logiciel que nous ne connaissons pas est estimée prudemment. Si ça va plus vite, vous payez moins."
+        },
+        {
+          "title": "Nous séparons l'obligatoire de l'optionnel",
+          "text": "Le devis distingue ce qui est indispensable au lancement de ce qui peut attendre une deuxième version."
+        },
+        {
+          "title": "Nous ne facturons pas les surprises",
+          "text": "Un imprévu de notre côté est à notre charge. Un changement demandé de votre côté est chiffré avant d'être engagé."
+        }
+      ]
+    },
+    "ranges": {
+      "eyebrow": "Fourchettes indicatives",
+      "title": "Ce que coûte un projet, en pratique.",
+      "lead": "Ces montants correspondent à des projets réellement réalisables dans ces budgets. Ils ne remplacent pas un devis, mais ils vous évitent de perdre du temps si l'écart est trop grand.",
+      "items": [
+        {
+          "name": "Site vitrine",
+          "range": "2 400 € – 6 000 €",
+          "text": "De la personnalisation d'un modèle prêt à lancer au site entièrement sur mesure avec design original.",
+          "includes": [
+            "5 à 15 pages",
+            "Design responsive",
+            "Formulaire de contact",
+            "Référencement technique",
+            "Formation à la prise en main"
+          ]
+        },
+        {
+          "name": "E-commerce",
+          "range": "4 900 € – 15 000 €",
+          "text": "Selon la taille du catalogue, les règles de prix et de livraison, et les connexions à vos outils de gestion.",
+          "includes": [
+            "Catalogue et fiches produit",
+            "Paiement sécurisé",
+            "Back-office de gestion",
+            "Comptes clients",
+            "Emails automatiques"
+          ]
+        },
+        {
+          "name": "Application mobile",
+          "range": "7 900 € – 25 000 €",
+          "text": "Une première version resserrée coûte nettement moins cher qu'une application complète. Nous recommandons de commencer petit.",
+          "includes": [
+            "iOS et Android",
+            "Comptes utilisateurs",
+            "API et back-office",
+            "Publication sur les stores",
+            "Tests sur appareils réels"
+          ]
+        },
+        {
+          "name": "Solution sur mesure",
+          "range": "9 500 € – 40 000 €",
+          "text": "Le prix dépend du nombre de processus métier à couvrir et des connexions avec vos logiciels existants.",
+          "includes": [
+            "Analyse de vos processus",
+            "Application web complète",
+            "Rôles et permissions",
+            "Reprise de données",
+            "Formation des équipes"
+          ]
+        }
+      ]
+    },
+    "factors": {
+      "eyebrow": "Ce qui fait varier le prix",
+      "title": "Les six facteurs qui comptent vraiment.",
+      "items": [
+        "Le nombre de parcours utilisateurs différents à construire",
+        "La présence de comptes, de rôles et de droits",
+        "Les connexions avec des logiciels ou des services externes",
+        "Le niveau d'originalité du design",
+        "Le volume de contenu à intégrer et à reprendre",
+        "Les contraintes réglementaires de votre secteur"
+      ]
+    },
+    "payment": {
+      "eyebrow": "Modalités",
+      "title": "Comment se passent les paiements.",
+      "items": [
+        {
+          "title": "Trois échéances",
+          "text": "30 % à la signature, 40 % à la validation des maquettes, 30 % à la mise en ligne. Pour les projets longs, nous découpons davantage."
+        },
+        {
+          "title": "Pas de frais cachés",
+          "text": "Le devis inclut tout ce qui est nécessaire à la mise en ligne. Les coûts récurrents sont annoncés séparément et clairement."
+        },
+        {
+          "title": "Coûts récurrents",
+          "text": "Nom de domaine et hébergement représentent généralement 100 à 400 € par an selon le projet. La maintenance est optionnelle."
+        }
+      ]
+    },
+    "note": "Prix indicatifs, à confirmer après cadrage. Ils sont donnés hors taxes."
+  },
+  "faq": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Les questions que l'on nous pose avant de signer.",
+      "lead": "Si votre question n'y figure pas, posez-la : elle finira probablement sur cette page."
+    },
+    "categories": [
+      {
+        "name": "Le projet",
+        "items": [
+          {
+            "q": "Combien de temps faut-il pour un projet ?",
+            "a": "Un site vitrine prend 3 à 5 semaines, un e-commerce 6 à 10, une application mobile 8 à 16, un outil métier 10 à 20. Le facteur qui fait le plus glisser un projet n'est presque jamais le développement : c'est l'attente des contenus, textes et photos."
+          },
+          {
+            "q": "Puis-je modifier le projet en cours de route ?",
+            "a": "Oui. Une demande hors périmètre est chiffrée à part et vous décidez si on l'intègre maintenant, plus tard, ou pas du tout. Rien n'apparaît sur la facture finale sans votre accord écrit."
+          },
+          {
+            "q": "Travaillez-vous avec un cahier des charges ?",
+            "a": "Si vous en avez un, nous partons de là. Si vous n'en avez pas, c'est normal et ce n'est pas bloquant : l'étape de cadrage sert précisément à le construire ensemble."
+          },
+          {
+            "q": "Acceptez-vous tous les projets ?",
+            "a": "Non. Si votre besoin est mieux servi par un outil existant, ou si le budget ne permet pas de faire les choses correctement, nous vous le disons avant de signer."
+          }
+        ]
+      },
+      {
+        "name": "Le prix",
+        "items": [
+          {
+            "q": "Comment le tarif est-il calculé ?",
+            "a": "Chaque fonctionnalité est estimée en jours, puis additionnée. Le devis est détaillé ligne par ligne : vous voyez ce que coûte chaque brique et vous pouvez en retirer pour ajuster le budget."
+          },
+          {
+            "q": "Comment fonctionnent les paiements ?",
+            "a": "En trois échéances : 30 % à la signature, 40 % à la validation des maquettes, 30 % à la mise en ligne. Les projets longs sont découpés davantage."
+          },
+          {
+            "q": "Y a-t-il des coûts récurrents ?",
+            "a": "Le nom de domaine et l'hébergement, généralement 100 à 400 € par an. La maintenance est optionnelle et vous pouvez l'arrêter quand vous voulez."
+          },
+          {
+            "q": "Proposez-vous un paiement échelonné ?",
+            "a": "Sur les projets importants, oui. Parlons-en au moment du devis plutôt qu'après."
+          }
+        ]
+      },
+      {
+        "name": "La technique",
+        "items": [
+          {
+            "q": "Serai-je propriétaire de mon site ?",
+            "a": "Entièrement. Le code source, le nom de domaine, l'hébergement et tous les comptes sont à votre nom dès le premier jour."
+          },
+          {
+            "q": "Où est hébergé mon site ?",
+            "a": "Sur une infrastructure située dans l'Union européenne, au nom de votre entreprise. Vous pouvez le déplacer quand vous voulez."
+          },
+          {
+            "q": "Le site sera-t-il responsive ?",
+            "a": "Systématiquement, et testé sur de vrais appareils. Plus de la moitié de vos visiteurs arriveront depuis un téléphone."
+          },
+          {
+            "q": "Pouvez-vous reprendre un projet existant ?",
+            "a": "Oui, après un audit. Il arrive que repartir de zéro coûte moins cher que réparer, et nous vous le dirons franchement."
+          }
+        ]
+      },
+      {
+        "name": "Après la livraison",
+        "items": [
+          {
+            "q": "Assurez-vous la maintenance ?",
+            "a": "Oui, en option, sans durée d'engagement. Elle couvre les mises à jour de sécurité, les sauvegardes, la surveillance et un volume d'heures d'évolutions."
+          },
+          {
+            "q": "Que se passe-t-il en cas de bug ?",
+            "a": "Pendant le mois qui suit la mise en ligne, les corrections sont incluses. Ensuite, elles relèvent de la maintenance ou sont facturées à l'heure, selon ce que vous avez choisi."
+          },
+          {
+            "q": "Puis-je demander de nouvelles fonctionnalités ?",
+            "a": "Bien sûr. Elles sont chiffrées comme un petit projet, avec le même fonctionnement : devis, validation, développement, mise en ligne."
+          },
+          {
+            "q": "Et si nous arrêtons de travailler ensemble ?",
+            "a": "Vous partez avec tout : code, données, accès, documentation. Nous ne gardons aucune clé qui vous rendrait dépendants de nous."
+          }
+        ]
+      },
+      {
+        "name": "La communication",
+        "items": [
+          {
+            "q": "Qui sera mon interlocuteur ?",
+            "a": "Manon, du premier échange à la mise en ligne. Elle connaît votre dossier et vous n'aurez jamais à réexpliquer votre besoin."
+          },
+          {
+            "q": "Puis-je parler directement au développeur ?",
+            "a": "Oui, dès que le sujet est technique. C'est même le principe de notre fonctionnement : pas d'intermédiaire qui traduirait mal."
+          },
+          {
+            "q": "Comment suivre l'avancement ?",
+            "a": "Par des points réguliers, à fréquence convenue au cadrage, avec une démonstration de ce qui a avancé. Et vous pouvez nous écrire entre deux points."
+          },
+          {
+            "q": "Sous quel délai répondez-vous ?",
+            "a": "Sous 48 heures ouvrées pour une première demande. En cours de projet, c'est généralement le jour même."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Parlez-nous de votre projet.",
+      "lead": "Quelques questions pour comprendre votre besoin. Plus votre réponse est précise, plus notre première estimation le sera. Comptez trois minutes."
+    },
+    "form": {
+      "stepLabel": "Étape",
+      "of": "sur",
+      "next": "Continuer",
+      "back": "Retour",
+      "submit": "Recevoir une première estimation",
+      "required": "Champ obligatoire",
+      "steps": [
+        {
+          "title": "Que souhaitez-vous créer ?",
+          "lead": "Si vous hésitez, choisissez le plus proche. Nous affinerons ensemble.",
+          "field": "projectType",
+          "options": [
+            "Site vitrine",
+            "E-commerce",
+            "Application mobile",
+            "Solution sur mesure",
+            "Refonte d'un site existant",
+            "Personnaliser un modèle prêt à lancer",
+            "Je ne sais pas encore"
+          ]
+        },
+        {
+          "title": "De quelles fonctionnalités avez-vous besoin ?",
+          "lead": "Plusieurs réponses possibles. Rien n'est définitif à ce stade.",
+          "field": "features",
+          "options": [
+            "Formulaire de contact",
+            "Prise de rendez-vous",
+            "Paiement en ligne",
+            "Comptes clients",
+            "Espace d'administration",
+            "Blog ou actualités",
+            "Multilingue",
+            "Notifications",
+            "Connexion à un logiciel existant"
+          ]
+        },
+        {
+          "title": "Parlez-nous de votre activité",
+          "lead": "Ce que vous faites, à qui vous vous adressez, et si un site existe déjà.",
+          "field": "context",
+          "options": []
+        },
+        {
+          "title": "Budget et échéance",
+          "lead": "Une fourchette suffit. Elle nous évite de vous proposer quelque chose de hors sujet.",
+          "field": "budget",
+          "options": [
+            "Moins de 3 000 €",
+            "3 000 € – 6 000 €",
+            "6 000 € – 12 000 €",
+            "12 000 € – 25 000 €",
+            "Plus de 25 000 €",
+            "Je ne sais pas encore"
+          ]
+        },
+        {
+          "title": "Comment vous joindre ?",
+          "lead": "Manon vous répond sous 48 heures ouvrées.",
+          "field": "contact",
+          "options": []
+        }
+      ],
+      "fields": {
+        "company": "Votre entreprise",
+        "activity": "Votre activité",
+        "existing": "Avez-vous déjà un site ?",
+        "existingOptions": ["Non", "Oui, à refondre", "Oui, à faire évoluer"],
+        "deadline": "Échéance souhaitée",
+        "deadlineOptions": [
+          "Dès que possible",
+          "Dans 1 à 3 mois",
+          "Dans 3 à 6 mois",
+          "Pas de date fixée"
+        ],
+        "name": "Nom et prénom",
+        "email": "Adresse email",
+        "phone": "Téléphone",
+        "message": "Un mot sur votre projet"
+      },
+      "summary": {
+        "title": "Votre demande est prête.",
+        "lead": "Voici ce qui serait envoyé à Manon. L'envoi n'est pas encore branché sur cette version du site.",
+        "restart": "Recommencer"
+      },
+      "consent": "Ces informations servent uniquement à vous recontacter au sujet de votre projet. Elles ne sont ni revendues ni utilisées à d'autres fins."
+    },
+    "people": {
+      "title": "Ou écrivez-nous directement",
+      "items": [
+        {
+          "name": "Manon",
+          "role": "Commercial & relation client",
+          "text": "Une question sur votre projet, votre budget ou notre accompagnement ? Je suis votre premier contact."
+        },
+        {
+          "name": "Christopher",
+          "role": "Développement & technique",
+          "text": "Une question technique ? Architecture, fonctionnalités, faisabilité ou reprise d'un projet existant."
+        }
+      ]
+    },
+    "info": {
+      "title": "Informations",
+      "items": [
+        { "label": "Email", "value": "À compléter" },
+        { "label": "Téléphone", "value": "À compléter" },
+        { "label": "Zone d'intervention", "value": "France entière, à distance" },
+        { "label": "Délai de réponse", "value": "48 heures ouvrées" }
+      ]
+    }
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "lead": "Informations à compléter avant la mise en ligne : raison sociale, statut juridique, SIREN, adresse et hébergeur.",
+    "sections": [
+      {
+        "title": "Éditeur du site",
+        "body": "C&M Agency — statut juridique, numéro SIREN, adresse du siège et capital social à compléter. Directeur de la publication : à compléter."
+      },
+      {
+        "title": "Hébergeur",
+        "body": "Nom, raison sociale et adresse de l'hébergeur à compléter avant la mise en ligne."
+      },
+      {
+        "title": "Propriété intellectuelle",
+        "body": "L'ensemble des contenus de ce site — textes, images, code, identité visuelle — est protégé. Toute reproduction sans autorisation écrite est interdite."
+      },
+      {
+        "title": "Responsabilité",
+        "body": "Les informations publiées sont fournies à titre indicatif et peuvent évoluer. Elles ne constituent pas un engagement contractuel."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lead": "Nous collectons le minimum nécessaire pour répondre à votre demande, et rien d'autre.",
+    "sections": [
+      {
+        "title": "Données collectées",
+        "body": "Uniquement ce que vous saisissez dans le formulaire de contact : nom, email, téléphone, entreprise et description de votre projet. Aucune donnée n'est collectée à votre insu."
+      },
+      {
+        "title": "Finalité",
+        "body": "Ces données servent exclusivement à vous recontacter au sujet de votre demande et à préparer une proposition. Elles ne sont ni revendues, ni cédées, ni utilisées à des fins publicitaires."
+      },
+      {
+        "title": "Durée de conservation",
+        "body": "Trois ans à compter du dernier contact, puis suppression. Vous pouvez demander la suppression à tout moment."
+      },
+      {
+        "title": "Cookies",
+        "body": "Ce site ne dépose aucun cookie publicitaire ni traceur tiers. La mesure d'audience, si elle est activée, est anonyme et sans cookie — c'est pourquoi aucun bandeau ne vous est imposé."
+      },
+      {
+        "title": "Vos droits",
+        "body": "Accès, rectification, suppression, opposition et portabilité. Une demande par email suffit, sans justification à fournir."
+      },
+      {
+        "title": "Hébergement des données",
+        "body": "Les données sont hébergées dans l'Union européenne."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Conditions générales de prestation",
+    "lead": "Document à faire valider avant la mise en ligne, notamment sur la partie propriété du code et maintenance.",
+    "sections": [
+      {
+        "title": "Objet",
+        "body": "Ces conditions encadrent les prestations de conception, de développement et de maintenance réalisées par C&M Agency."
+      },
+      {
+        "title": "Devis et commande",
+        "body": "Toute prestation fait l'objet d'un devis détaillé. La commande est ferme à réception du devis signé et de l'acompte."
+      },
+      {
+        "title": "Modalités de paiement",
+        "body": "30 % à la signature, 40 % à la validation des maquettes, 30 % à la mise en ligne, sauf découpage différent prévu au devis."
+      },
+      {
+        "title": "Périmètre et évolutions",
+        "body": "Toute demande hors périmètre fait l'objet d'un devis complémentaire, accepté par écrit avant réalisation."
+      },
+      {
+        "title": "Propriété du livrable",
+        "body": "Après paiement intégral, le client est propriétaire du code source, des contenus et de l'ensemble des accès."
+      },
+      {
+        "title": "Garantie",
+        "body": "Les corrections d'anomalies sont prises en charge pendant un mois après la mise en ligne. Au-delà, elles relèvent du contrat de maintenance."
+      }
+    ]
+  }
+}

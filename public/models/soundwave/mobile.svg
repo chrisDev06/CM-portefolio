@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" role="img">
+<defs>
+  <linearGradient id="grad-m" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1C1C22"/>
+    <stop offset="100%" stop-color="#F5A524" stop-opacity="0.55"/>
+  </linearGradient>
+  <linearGradient id="grad-cta" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A524"/>
+    <stop offset="100%" stop-color="#D946EF"/>
+  </linearGradient>
+</defs>
+    <rect x="0" y="0" width="390" height="844" rx="0" fill="#0C0C0E"/>
+    <text x="24" y="40" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#F4F4F5" text-anchor="start">9:41</text>
+    <rect x="322" y="28" width="44" height="12" rx="4" fill="#F4F4F5" opacity="0.5"/>
+    <rect x="0" y="60" width="390" height="56" rx="0" fill="#16161A"/>
+    <rect x="0" y="115" width="390" height="1" rx="0" fill="#26262E"/>
+    <text x="24" y="96" font-family="Inter, system-ui, sans-serif" font-size="17" font-weight="700" fill="#F4F4F5" text-anchor="start">SoundWave</text>
+    <rect x="330" y="80" width="24" height="3" rx="2" fill="#F4F4F5" opacity="0.6"/>
+    <rect x="330" y="88" width="24" height="3" rx="2" fill="#F4F4F5" opacity="0.6"/>
+    
+  <rect x="0" y="116" width="390" height="260" rx="0" fill="url(#grad-m)"/>
+  <circle cx="280.8" cy="194" r="72.80000000000001" fill="#F5A524" opacity="0.28"/>
+  <path d="M0 303.2 L109.20000000000002 235.60000000000002 L202.8 287.6 L304.2 214.8 L390 266.79999999999995 L390 376 L0 376 Z" fill="#D946EF" opacity="0.22"/>
+  <path d="M0 334.4 L132.60000000000002 272 L241.8 318.8 L390 287.6 L390 376 L0 376 Z" fill="#0C0C0E" opacity="0.5"/>
+
+    <rect x="0" y="116" width="390" height="260" rx="0" fill="#0C0C0E" opacity="0.3"/>
+    <rect x="24" y="200" width="250" height="22" rx="11" fill="#F4F4F5" opacity="0.9"/>
+    <rect x="24" y="232" width="180" height="22" rx="11" fill="#F4F4F5" opacity="0.9"/>
+    <rect x="24" y="290" width="160" height="44" rx="22" fill="url(#grad-cta)"/>
+    
+        <rect x="24" y="410" width="342" height="124" rx="16" fill="#16161A"/>
+        
+  <rect x="25" y="411" width="130" height="122" rx="16" fill="url(#grad-m)"/>
+  <circle cx="118.6" cy="447.6" r="34.160000000000004" fill="#F5A524" opacity="0.28"/>
+  <path d="M25 498.84000000000003 L61.400000000000006 467.12 L92.60000000000001 491.52 L126.4 457.36 L155 481.76 L155 533 L25 533 Z" fill="#D946EF" opacity="0.22"/>
+  <path d="M25 513.48 L69.2 484.2 L105.6 506.15999999999997 L155 491.52 L155 533 L25 533 Z" fill="#0C0C0E" opacity="0.5"/>
+
+        <rect x="172" y="442" width="150" height="11" rx="5.5" fill="#F4F4F5" opacity="0.7"/>
+        <rect x="172" y="466" width="110" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/>
+        <text x="172" y="508" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#F5A524" text-anchor="start">249 €</text>
+        <rect x="24" y="550" width="342" height="124" rx="16" fill="#16161A"/>
+        
+  <rect x="25" y="551" width="130" height="122" rx="16" fill="url(#grad-m)"/>
+  <circle cx="118.6" cy="587.6" r="34.160000000000004" fill="#F5A524" opacity="0.28"/>
+  <path d="M25 638.84 L61.400000000000006 607.12 L92.60000000000001 631.52 L126.4 597.36 L155 621.76 L155 673 L25 673 Z" fill="#D946EF" opacity="0.22"/>
+  <path d="M25 653.48 L69.2 624.2 L105.6 646.16 L155 631.52 L155 673 L25 673 Z" fill="#0C0C0E" opacity="0.5"/>
+
+        <rect x="172" y="582" width="150" height="11" rx="5.5" fill="#F4F4F5" opacity="0.7"/>
+        <rect x="172" y="606" width="110" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/>
+        <text x="172" y="648" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#F5A524" text-anchor="start">389 €</text>
+        <rect x="24" y="690" width="342" height="124" rx="16" fill="#16161A"/>
+        
+  <rect x="25" y="691" width="130" height="122" rx="16" fill="url(#grad-m)"/>
+  <circle cx="118.6" cy="727.6" r="34.160000000000004" fill="#F5A524" opacity="0.28"/>
+  <path d="M25 778.84 L61.400000000000006 747.12 L92.60000000000001 771.52 L126.4 737.36 L155 761.76 L155 813 L25 813 Z" fill="#D946EF" opacity="0.22"/>
+  <path d="M25 793.48 L69.2 764.2 L105.6 786.16 L155 771.52 L155 813 L25 813 Z" fill="#0C0C0E" opacity="0.5"/>
+
+        <rect x="172" y="722" width="150" height="11" rx="5.5" fill="#F4F4F5" opacity="0.7"/>
+        <rect x="172" y="746" width="110" height="8" rx="4" fill="#F4F4F5" opacity="0.25"/>
+        <text x="172" y="788" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#F5A524" text-anchor="start">1 290 €</text>
+    <rect x="0" y="774" width="390" height="70" rx="0" fill="#16161A"/>
+  </svg>

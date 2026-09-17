@@ -1,0 +1,102 @@
+{
+  "eyebrow": "Des idées. Du code. Des résultats.",
+  "titleStart": "Votre projet digital,",
+  "titleHighlight": "sans intermédiaire.",
+  "subtitle": "Sites web, e-commerce, applications mobiles. Un seul interlocuteur pour comprendre votre activité, un seul pour construire votre solution.",
+  "ctaPrimary": "Lancer mon projet",
+  "ctaSecondary": "Voir nos sites prêts à lancer",
+  "heroTags": ["Web", "Mobile", "E-commerce", "Sur-mesure", "Performance"],
+  "heroCards": [
+    {
+      "title": "Sites vitrines",
+      "text": "Une présence en ligne qui vous ressemble."
+    },
+    { "title": "E-commerce", "text": "Vendez plus, simplement." },
+    { "title": "Applications mobiles", "text": "Des apps utiles, performantes." },
+    {
+      "title": "Solutions sur-mesure",
+      "text": "Parce que chaque projet est unique."
+    }
+  ],
+  "facts": [
+    { "value": "48 h", "label": "Délai de réponse" },
+    { "value": "2", "label": "Interlocuteurs, pas dix" },
+    { "value": "100 %", "label": "Code qui vous appartient" }
+  ],
+  "services": {
+    "eyebrow": "Nos services",
+    "title": "Des solutions digitales complètes pour tous vos projets.",
+    "lead": "De la conception à la mise en ligne, nous vous accompagnons à chaque étape pour transformer vos idées en expériences digitales performantes."
+  },
+  "models": {
+    "eyebrow": "Sites prêts à lancer",
+    "title": "Des sites déjà en ligne, que vous pouvez tester maintenant.",
+    "lead": "Nos concurrents montrent des captures d'écran. Nous vous donnons le lien : ouvrez la démo, cliquez partout, testez sur votre téléphone. Chaque modèle est personnalisable à votre activité."
+  },
+  "difference": {
+    "eyebrow": "Notre différence",
+    "title": "Le digital sans intermédiaire.",
+    "lead": "Dans une grande agence, votre projet passe par un commercial, un chef de projet, un studio, puis une équipe technique. À chaque passage, une partie de votre besoin se perd. Ici, il n'y a personne entre vous et la solution.",
+    "points": [
+      {
+        "title": "Un seul contact commercial",
+        "text": "Manon connaît votre dossier depuis le premier échange. Vous ne répétez jamais votre besoin."
+      },
+      {
+        "title": "Un accès direct au développeur",
+        "text": "Une question technique ? Vous parlez à celui qui écrit le code, pas à un intermédiaire qui transmettra."
+      },
+      {
+        "title": "Aucun sous-traitant",
+        "text": "Votre projet n'est jamais revendu à un tiers. Ce que vous voyez, c'est qui travaille."
+      },
+      {
+        "title": "Le code vous appartient",
+        "text": "Sources, comptes, hébergement : tout est à votre nom. Vous n'êtes prisonnier de personne."
+      }
+    ]
+  },
+  "duo": {
+    "eyebrow": "Votre binôme",
+    "title": "Deux expertises. Un seul objectif : faire réussir votre projet.",
+    "lead": "Pas de fausse agence de trente personnes. Deux personnes, que vous connaissez par leur prénom, du premier appel à la mise en ligne.",
+    "people": [
+      {
+        "name": "Manon",
+        "role": "Commercial & relation client",
+        "text": "Premier contact, compréhension du besoin, devis, organisation et suivi. Elle traduit votre activité en cahier des charges et reste votre point de repère tout au long du projet."
+      },
+      {
+        "name": "Christopher",
+        "role": "Développement & technique",
+        "text": "Architecture, UX technique, développement web et mobile, intégrations, performances, déploiement et maintenance. Il construit ce que vous avez validé."
+      }
+    ],
+    "flow": ["Manon", "Vous", "Christopher"],
+    "cta": "Découvrir l'agence"
+  },
+  "method": {
+    "eyebrow": "Notre méthode",
+    "title": "Vous savez toujours où en est votre projet.",
+    "lead": "Huit étapes, des points d'avancement réguliers, et aucun moment où vous vous demandez ce qui se passe.",
+    "steps": [
+      {
+        "title": "On écoute",
+        "text": "Un échange pour comprendre votre activité, vos clients et ce que vous attendez vraiment."
+      },
+      {
+        "title": "On cadre",
+        "text": "Objectifs, fonctionnalités, budget et délais posés noir sur blanc avant d'écrire la moindre ligne."
+      },
+      {
+        "title": "On construit",
+        "text": "Développement par étapes, avec des démonstrations régulières et vos retours intégrés au fil de l'eau."
+      },
+      {
+        "title": "On accompagne",
+        "text": "Mise en ligne, formation à la prise en main, puis maintenance et évolutions."
+      }
+    ],
+    "cta": "Voir la méthode en détail"
+  }
+}

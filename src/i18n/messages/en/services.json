@@ -1,0 +1,382 @@
+{
+  "hero": {
+    "eyebrow": "Our services",
+    "title": "Find the solution that matches your problem.",
+    "lead": "Six ways to work together, from a simple business website to a custom internal tool. If you are unsure, start by describing your business: that question usually settles it."
+  },
+  "labels": {
+    "for": "Who it is for",
+    "problem": "The problem it solves",
+    "deliver": "What we build",
+    "features": "Possible features",
+    "steps": "How the project runs",
+    "tech": "Technology used",
+    "included": "What is included",
+    "delay": "Indicative timeline",
+    "after": "After launch",
+    "faq": "Frequently asked questions",
+    "otherServices": "Other services"
+  },
+  "items": {
+    "site-web": {
+      "name": "Business website",
+      "short": "Present your business, generate enquiries, build credibility.",
+      "title": "A website that represents you, and brings you customers.",
+      "lead": "Your website is often the first contact between you and a customer. In a few seconds it decides whether you look serious. We build that first impression.",
+      "for": [
+        "Tradespeople, retailers and independent professionals",
+        "Small businesses with no website, or a dated one",
+        "Founders launching a new business",
+        "Teams fielding enquiries by phone who want to channel them"
+      ],
+      "problem": "You exist, but nobody finds you. Or they find you, and what they see does not reflect the quality of your work. A well-built website fixes both: it makes you visible in your area and it reassures before the first call.",
+      "deliver": [
+        "A 5 to 15 page site, designed around your business",
+        "A custom design, not a purchased theme with new colours",
+        "A structure built for local search",
+        "A contact form that sends you qualified enquiries"
+      ],
+      "features": [
+        "Services and pricing pages",
+        "Portfolio or photo gallery",
+        "Contact and quote forms",
+        "Online booking",
+        "Blog and news",
+        "Multiple languages",
+        "Reviews and testimonials",
+        "Map, opening hours and practical details"
+      ],
+      "steps": [
+        "A conversation to understand your business and your customers",
+        "Site structure and content: what each page has to say",
+        "Design signed off before any development",
+        "Development, with your copy and photos in place",
+        "Review together, fixes, then launch"
+      ],
+      "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "included": [
+        "Responsive site, tested on phone, tablet and desktop",
+        "Performance and technical SEO work",
+        "Domain name and hosting set up",
+        "Hands-on training",
+        "One month of fixes after launch"
+      ],
+      "delay": "3 to 5 weeks",
+      "after": "Your site is alive: new photos, new services, a new page. You can send us those changes one by one or take a monthly maintenance plan. Either way, you own everything.",
+      "faq": [
+        {
+          "q": "Can I edit the site myself?",
+          "a": "Yes, if you want to. We can add an admin interface that lets you change text and photos without touching code. If you would rather we handle updates, that works too."
+        },
+        {
+          "q": "Will my site rank well on Google?",
+          "a": "We ship a technically sound site: fast, structured, properly marked up, readable by Google. That is half the work. The other half is content and time. We show you how to keep it up, without promising you the top spot in three weeks."
+        },
+        {
+          "q": "I already have a domain name, is that a problem?",
+          "a": "Quite the opposite. We take it over and switch without any downtime."
+        }
+      ]
+    },
+    "e-commerce": {
+      "name": "E-commerce",
+      "short": "Catalogue, payments, orders, customer accounts, admin.",
+      "title": "An online store you actually run yourself.",
+      "lead": "Selling online is not just displaying products. It is a checkout that loses nobody, a back office you master, and payments that land.",
+      "for": [
+        "Retailers who want to sell beyond their physical shop",
+        "Makers and artisans with a catalogue to move",
+        "Brands looking to escape marketplace commissions",
+        "Sellers whose current site loses customers at checkout"
+      ],
+      "problem": "Most online stores lose customers between the basket and the payment: too many steps, too many fields, not enough reassurance. We build the journey the other way round, starting from what makes people abandon.",
+      "deliver": [
+        "A complete store with catalogue, basket and secure payment",
+        "A back office for products, stock and orders",
+        "Customer accounts with order history and tracking",
+        "Automated emails: confirmation, shipping, basket reminders"
+      ],
+      "features": [
+        "Product variants (size, colour, options)",
+        "Discount codes and private sales",
+        "Instalment payments",
+        "Shipping, pickup points and delivery costs",
+        "Stock management and alerts",
+        "Automated invoicing",
+        "Loyalty programme",
+        "Accounting exports"
+      ],
+      "steps": [
+        "Scoping the catalogue, pricing and shipping rules",
+        "Designing the checkout, from basket to payment",
+        "Designs for the key pages: listing, product, basket",
+        "Development, payment and carrier integration",
+        "Real test orders before opening"
+      ],
+      "tech": ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
+      "included": [
+        "Secure, compliant payments",
+        "Complete, documented back office",
+        "Training on order management",
+        "Legal pages suited to online selling",
+        "One month of fixes after opening"
+      ],
+      "delay": "6 to 10 weeks",
+      "after": "A store needs follow-up: payment providers, carriers and legal obligations all change. We handle technical updates and new features as you grow.",
+      "faq": [
+        {
+          "q": "Wouldn't Shopify be simpler?",
+          "a": "For a standard catalogue on a tight budget, sometimes yes, and we will say so. Custom takes over as soon as you have unusual business rules, margins to protect, or volume that makes commissions painful."
+        },
+        {
+          "q": "Who manages stock and orders?",
+          "a": "You do, from the back office. We train you on it, and it is designed to be used daily, not only on launch day."
+        },
+        {
+          "q": "Isn't taking payments risky?",
+          "a": "We use established providers such as Stripe. Card details never pass through your site, and compliance sits with the payment provider."
+        }
+      ]
+    },
+    "mobile": {
+      "name": "Mobile app",
+      "short": "iOS and Android, authentication, notifications, API, business features.",
+      "title": "An app your users keep on their home screen.",
+      "lead": "An app is not judged by its number of features, but by how often it gets opened. We build for real use, not for the demo.",
+      "for": [
+        "Businesses that want a direct line to their customers",
+        "Services used on the move, in the field",
+        "Founders with an idea to validate quickly",
+        "Teams that need an internal tool in their pocket"
+      ],
+      "problem": "Many apps are downloaded then forgotten. Usually because they reproduce a website in a smaller frame instead of using what makes mobile unique: notifications, the camera, location, offline use.",
+      "deliver": [
+        "An iOS and Android app from a single codebase",
+        "User accounts and authentication",
+        "An API and a server-side admin",
+        "Publication on the App Store and Play Store"
+      ],
+      "features": [
+        "Targeted push notifications",
+        "Offline mode and syncing",
+        "Location and maps",
+        "Camera and document upload",
+        "In-app payments",
+        "Chat and messaging",
+        "Admin dashboard",
+        "Usage analytics"
+      ],
+      "steps": [
+        "Scoping user journeys and the first release",
+        "Designs for the main screens, signed off before development",
+        "Development in batches, with a testable build at each step",
+        "Testing on real devices, iOS and Android",
+        "Store publication and launch support"
+      ],
+      "tech": ["React Native", "TypeScript", "Node.js", "PostgreSQL", "Expo"],
+      "included": [
+        "iOS and Android apps",
+        "Developer accounts set up in your name",
+        "API and back office",
+        "Testing on real devices",
+        "Support through store submission"
+      ],
+      "delay": "8 to 16 weeks",
+      "after": "An app lives at the pace of iOS and Android releases. We keep it compatible, fix issues and ship new versions to the stores.",
+      "faq": [
+        {
+          "q": "Does it have to be built twice, for iOS and Android?",
+          "a": "No. We use React Native: one codebase produces both apps. That halves the cost and keeps both versions identical over time."
+        },
+        {
+          "q": "How long does store approval take?",
+          "a": "Apple usually takes a few days, Google is faster. We prepare the listings, screenshots and required notices to avoid rejections."
+        },
+        {
+          "q": "Can we start small?",
+          "a": "We recommend it. A tight first version in the hands of real users will teach you more than six months of specifications."
+        }
+      ]
+    },
+    "sur-mesure": {
+      "name": "Custom software",
+      "short": "Dashboards, client portals, automation, internal tools, APIs.",
+      "title": "A tool that fits your business, not the other way round.",
+      "lead": "When your company runs on a shared spreadsheet, copy-paste and three systems that do not talk to each other, the problem is no longer your organisation. It is the tool.",
+      "for": [
+        "Companies whose work fits no off-the-shelf software",
+        "Teams losing hours to manual data entry",
+        "Staff juggling several disconnected tools",
+        "Businesses that need a dedicated client portal"
+      ],
+      "problem": "Generic software forces you to bend your business to its constraints. Custom works the other way: the tool takes on your rules, your vocabulary and your steps. What took two hours a day takes ten minutes.",
+      "deliver": [
+        "A web application reachable from any browser",
+        "A dashboard with the numbers that actually matter",
+        "Roles and permissions per user",
+        "Connections to the tools you already use"
+      ],
+      "features": [
+        "Client portal with documents and tracking",
+        "Automation of repetitive tasks",
+        "Quote and invoice generation",
+        "Scheduling and resource planning",
+        "Data import and export",
+        "API connections to your current software",
+        "Full action history and traceability",
+        "Custom reports and exports"
+      ],
+      "steps": [
+        "Immersion: understanding how you actually work today",
+        "Mapping processes and spotting where time is lost",
+        "Scoping a first release around what pays off fastest",
+        "Development in batches with progressive rollout",
+        "Team training and change support"
+      ],
+      "tech": ["Next.js", "TypeScript", "Node.js", "Laravel", "PostgreSQL"],
+      "included": [
+        "Analysis of your business processes",
+        "A complete, secure web application",
+        "Account and permission management",
+        "User training",
+        "User documentation"
+      ],
+      "delay": "10 to 20 weeks",
+      "after": "A business tool evolves with the company. We stay available for adjustments, new needs and onboarding new users.",
+      "faq": [
+        {
+          "q": "What if my needs change mid-project?",
+          "a": "That is the norm, not the exception: you understand your needs better once you see the tool take shape. We work in batches to absorb that, and any change of scope is quoted before it is committed."
+        },
+        {
+          "q": "Can you connect our existing software?",
+          "a": "In most cases yes, provided it offers an API or exports. We check this during scoping, before any commitment."
+        },
+        {
+          "q": "What happens if we stop working together?",
+          "a": "You leave with everything: source code, database, server access and documentation. We keep no key that would make you dependent."
+        }
+      ]
+    },
+    "refonte": {
+      "name": "Redesign & optimisation",
+      "short": "Modernisation, responsive, UX, performance, technical SEO.",
+      "title": "Your site already exists. Let's make it work.",
+      "lead": "Rebuilding everything is not always the right answer. Sometimes a slow site, broken on mobile or unreadable to Google, can be rescued without starting over.",
+      "for": [
+        "Sites over five years old that show their age",
+        "Slow sites, poorly rated or broken on mobile",
+        "Businesses whose brand has moved on but whose site has not",
+        "Owners who have lost control of their current site"
+      ],
+      "problem": "A dated site does not just look old: it is slower, ranks worse and inspires less trust. A redesign fixes all three together, while keeping what already works.",
+      "deliver": [
+        "An audit of what exists: performance, mobile, SEO, security",
+        "A recommendation on what to rebuild and what to keep",
+        "A redesign of the look and the experience",
+        "Migration without losing search rankings"
+      ],
+      "features": [
+        "Technical and performance audit",
+        "Full responsive rebuild",
+        "Design and navigation overhaul",
+        "Loading speed optimisation",
+        "Technical SEO fixes",
+        "Migration of existing content",
+        "Redirects so nothing is lost",
+        "GDPR compliance"
+      ],
+      "steps": [
+        "Full audit and debrief: what works, what does not, what it costs",
+        "Deciding between optimisation and a full rebuild",
+        "Designing the new pages",
+        "Development and content migration",
+        "Switchover with redirects and search monitoring"
+      ],
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Lighthouse"],
+      "included": [
+        "Documented initial audit",
+        "Redirect plan to preserve rankings",
+        "A fast, responsive site",
+        "Before and after performance comparison",
+        "One month of monitoring after the switch"
+      ],
+      "delay": "4 to 8 weeks",
+      "after": "We watch rankings and performance in the weeks after the switch, when problems surface. Then maintenance takes over.",
+      "faq": [
+        {
+          "q": "Will I lose my search rankings?",
+          "a": "That is the main risk of a redesign, and it is manageable: a redirect plan, keeping the URLs that work, preserving structure, monitoring afterwards. Done properly, a redesign improves rankings."
+        },
+        {
+          "q": "Can you take over a site built by someone else?",
+          "a": "Yes, it happens often. We start with an audit to see what is salvageable. Sometimes starting fresh costs less than repairing, and we will tell you straight."
+        },
+        {
+          "q": "What if I have lost access to my site?",
+          "a": "We help you recover it from the host or registrar. It is usually possible, even without the original supplier."
+        }
+      ]
+    },
+    "maintenance": {
+      "name": "Maintenance & support",
+      "short": "Fixes, security, updates and new features.",
+      "title": "A site that has shipped is not a site that is finished.",
+      "lead": "Browsers change, dependencies age, vulnerabilities appear. Without upkeep, a perfectly working site becomes a liability within eighteen months.",
+      "for": [
+        "Clients whose site or app we built",
+        "Businesses whose supplier has vanished or stopped replying",
+        "Teams with nobody in-house on the technical side",
+        "Sites the business depends on, that cannot go down"
+      ],
+      "problem": "Without maintenance, the question is not whether something will break, but when. And it always breaks at the worst moment: a Friday evening, mid-season.",
+      "deliver": [
+        "Technical and security updates",
+        "Uptime and performance monitoring",
+        "Regular, tested backups",
+        "Someone reachable when things break"
+      ],
+      "features": [
+        "Bug fixes",
+        "Security updates",
+        "Uptime monitoring",
+        "Automated backups",
+        "Monthly activity report",
+        "Small changes included",
+        "Support by email and phone",
+        "Restore after an incident"
+      ],
+      "steps": [
+        "Technical review of the site or app",
+        "Setting up monitoring and backups",
+        "Agreeing service levels and response times",
+        "Monthly follow-up with a readable report",
+        "Changes planned together"
+      ],
+      "tech": ["Sentry", "Vercel", "GitHub Actions", "Lighthouse CI"],
+      "included": [
+        "Security updates",
+        "Daily backups",
+        "Uptime monitoring",
+        "Monthly report",
+        "An allowance of hours for changes, depending on the plan"
+      ],
+      "delay": "Set up within a week",
+      "after": "Maintenance is a monthly commitment with no minimum term. You can stop whenever you like and you leave with every access you need.",
+      "faq": [
+        {
+          "q": "Is maintenance mandatory?",
+          "a": "Never. It is optional, and we will tell you honestly whether your site really needs it or can go without for a while."
+        },
+        {
+          "q": "What happens when there is a bug?",
+          "a": "You write to us, we diagnose, we fix. Response times are written into the contract, not left to the mood of the day."
+        },
+        {
+          "q": "Can you maintain a site you did not build?",
+          "a": "Yes, after an audit. We first need to check the code is in a state where we can work safely."
+        }
+      ]
+    }
+  }
+}

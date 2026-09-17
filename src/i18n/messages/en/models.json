@@ -1,0 +1,198 @@
+{
+  "hero": {
+    "eyebrow": "Ready-to-launch sites",
+    "title": "Sites already online. Try them before you decide.",
+    "lead": "Every template is a real, deployed site you can open and browse right now. We then tailor it to your business: your copy, your photos, your colours, your domain name.",
+    "note": "Demonstration projects: they show what we can do and act as a starting point for your site. They are not client engagements."
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "From template to your site, in four steps.",
+    "steps": [
+      {
+        "title": "You choose",
+        "text": "Open the demos, try them on your phone, pick the one that fits your business."
+      },
+      {
+        "title": "We adapt it",
+        "text": "Your copy, your photos, your colours, your logo. The template becomes your site, not a recognisable copy."
+      },
+      {
+        "title": "We launch",
+        "text": "Domain name, hosting, professional mailbox, baseline SEO. Everything set up in your name."
+      },
+      {
+        "title": "You stay in control",
+        "text": "Hands-on training, and the choice to run the site yourself or leave it with us."
+      }
+    ]
+  },
+  "labels": {
+    "sector": "Sector",
+    "type": "Type",
+    "price": "From",
+    "delay": "Launch",
+    "intent": "The intent",
+    "for": "Who it is for",
+    "features": "What the template includes",
+    "customizable": "What we tailor",
+    "tech": "Under the hood",
+    "performance": "Measured performance",
+    "included": "Included in the price",
+    "demoSoon": "Demo coming soon",
+    "similar": "Other templates",
+    "priceNote": "Indicative price, to be confirmed against your actual needs.",
+    "perf": "Performance",
+    "a11y": "Accessibility",
+    "seo": "SEO"
+  },
+  "filters": {
+    "all": "All",
+    "showcase": "Websites",
+    "ecommerce": "E-commerce",
+    "mobile": "Mobile",
+    "custom": "Custom"
+  },
+  "items": {
+    "horizon-travel": {
+      "name": "Horizon Travel",
+      "sector": "Travel agency",
+      "type": "Business website",
+      "filter": "showcase",
+      "tagline": "A high-end website that sells the dream without cheapening it.",
+      "intent": "Every travel agency shows the same beach photos. We went the other way: full-bleed imagery, editorial typography, destinations presented like a magazine spread. Luxury comes from space, not from clutter.",
+      "for": "Travel agencies, tour operators, boutique hotels and any business whose product sells through imagery first.",
+      "features": [
+        "Home page with featured destinations",
+        "Detailed destination pages",
+        "Tailored quote request form",
+        "Optimised photo gallery",
+        "Travel advice blog",
+        "Customer reviews",
+        "Interactive destination map"
+      ],
+      "customizable": [
+        "Your destinations and your offers",
+        "Your photos and visual identity",
+        "Your forms and request fields",
+        "Any extra pages you need"
+      ],
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      "price": "€2,400",
+      "delay": "Live in 10 days",
+      "included": [
+        "Full content customisation",
+        "Domain name and hosting for the first year",
+        "Hands-on training",
+        "One month of fixes"
+      ],
+      "performance": { "perf": 99, "a11y": 100, "seo": 100 },
+      "demo": ""
+    },
+    "fitzone": {
+      "name": "FitZone",
+      "sector": "Sport and wellbeing",
+      "type": "Mobile app",
+      "filter": "mobile",
+      "tagline": "A fitness tracking app that makes people want to come back tomorrow.",
+      "intent": "Most fitness apps drown the user in numbers. Here, a single screen answers the only question that matters: what am I doing today? Everything else is one gesture away.",
+      "for": "Gyms, personal trainers, yoga studios and anyone who wants to stay useful between two sessions.",
+      "features": [
+        "Personalised training programmes",
+        "Session and progress tracking",
+        "Reminder notifications",
+        "Coach area with member tracking",
+        "Class booking",
+        "Simple nutrition tracking",
+        "Weekly statistics"
+      ],
+      "customizable": [
+        "Your brand and colours inside the app",
+        "Your programmes and your vocabulary",
+        "The features you keep or remove",
+        "Store publication under your name"
+      ],
+      "tech": ["React Native", "Expo", "TypeScript", "Node.js"],
+      "price": "€7,900",
+      "delay": "Live in 6 weeks",
+      "included": [
+        "iOS and Android apps",
+        "Management back office",
+        "Developer accounts set up in your name",
+        "Support through store submission"
+      ],
+      "performance": { "perf": 96, "a11y": 98, "seo": 100 },
+      "demo": ""
+    },
+    "soundwave": {
+      "name": "SoundWave",
+      "sector": "Audio equipment",
+      "type": "E-commerce",
+      "filter": "ecommerce",
+      "tagline": "An online store built for products people compare before buying.",
+      "intent": "Audio gear sells on the product page: specifications, comparison, reviews. We built the store around that page, and cut the checkout down to three screens.",
+      "for": "Specialist retailers, brands with a technical catalogue, resellers looking to leave marketplaces behind.",
+      "features": [
+        "Catalogue with filters and comparison",
+        "Detailed product pages and variants",
+        "Basket and secure checkout",
+        "Customer accounts and order tracking",
+        "Discount codes and private sales",
+        "Stock management back office",
+        "Automated order emails"
+      ],
+      "customizable": [
+        "Your catalogue and categories",
+        "Your pricing, stock and shipping rules",
+        "Your carriers and payment methods",
+        "Your complete visual identity"
+      ],
+      "tech": ["Next.js", "Stripe", "PostgreSQL", "TypeScript"],
+      "price": "€4,900",
+      "delay": "Live in 3 weeks",
+      "included": [
+        "Import of your initial catalogue",
+        "Payment and shipping setup",
+        "Training on order management",
+        "Legal pages for online selling"
+      ],
+      "performance": { "perf": 97, "a11y": 100, "seo": 100 },
+      "demo": ""
+    },
+    "greenenergy": {
+      "name": "GreenEnergy",
+      "sector": "Renewable energy",
+      "type": "Custom platform",
+      "filter": "custom",
+      "tagline": "A client portal to track installations, consumption and site visits.",
+      "intent": "A business tool does not have to be grim. The same dashboards, given hierarchy and purposeful colour, become readable at a glance — including on a phone out in the field.",
+      "for": "Installers, technical maintenance companies, operators and any business with assets to track and clients to keep informed.",
+      "features": [
+        "Installation dashboard",
+        "Client portal with documents and contracts",
+        "Job tracking and scheduling",
+        "Consumption reports",
+        "Role and permission management",
+        "Notifications and alerts",
+        "Custom exports and reports"
+      ],
+      "customizable": [
+        "Your indicators and your vocabulary",
+        "Your field processes",
+        "Connections to the tools you already use",
+        "Access levels per user"
+      ],
+      "tech": ["Next.js", "Node.js", "PostgreSQL", "TypeScript"],
+      "price": "€9,500",
+      "delay": "Live in 8 weeks",
+      "included": [
+        "Adaptation to your business processes",
+        "Migration of your existing data",
+        "User training",
+        "User documentation"
+      ],
+      "performance": { "perf": 98, "a11y": 100, "seo": 95 },
+      "demo": ""
+    }
+  }
+}

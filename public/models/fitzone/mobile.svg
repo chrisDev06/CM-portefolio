@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" role="img">
+<defs>
+  <linearGradient id="grad-m" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1A1A28"/>
+    <stop offset="100%" stop-color="#C4F042" stop-opacity="0.55"/>
+  </linearGradient>
+  <linearGradient id="grad-cta" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#C4F042"/>
+    <stop offset="100%" stop-color="#7C3AED"/>
+  </linearGradient>
+</defs><rect x="0" y="0" width="390" height="844" rx="0" fill="#0A0A0F"/>
+    <text x="24" y="40" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#F2F2F7" text-anchor="start">9:41</text>
+    <rect x="322" y="28" width="44" height="12" rx="4" fill="#F2F2F7" opacity="0.5"/>
+    <circle cx="46" cy="92" r="22" fill="#232334"/>
+    <rect x="80" y="78" width="120" height="10" rx="5" fill="#F2F2F7" opacity="0.6"/>
+    <rect x="80" y="98" width="80" height="8" rx="4" fill="#F2F2F7" opacity="0.25"/>
+    
+      <rect x="24" y="196" width="100" height="92" rx="16" fill="#14141D"/>
+      <text x="40" y="244" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#C4F042" text-anchor="start">68 %</text>
+      <rect x="40" y="258" width="54" height="7" rx="3.5" fill="#F2F2F7" opacity="0.25"/>
+      <rect x="140" y="196" width="100" height="92" rx="16" fill="#14141D"/>
+      <text x="156" y="244" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#F2F2F7" text-anchor="start">1 240</text>
+      <rect x="156" y="258" width="54" height="7" rx="3.5" fill="#F2F2F7" opacity="0.25"/>
+      <rect x="256" y="196" width="100" height="92" rx="16" fill="#14141D"/>
+      <text x="272" y="244" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#F2F2F7" text-anchor="start">42 min</text>
+      <rect x="272" y="258" width="54" height="7" rx="3.5" fill="#F2F2F7" opacity="0.25"/>
+    <circle cx="195" cy="290" r="76" fill="none" stroke="#232334" stroke-width="14"/>
+    <circle cx="195" cy="290" r="76" fill="none" stroke="#C4F042" stroke-width="14"
+      stroke-linecap="round" stroke-dasharray="478" stroke-dashoffset="153"
+      transform="rotate(-90 195 290)"/>
+    <text x="195" y="300" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="700" fill="#F2F2F7" text-anchor="middle">68 %</text>
+    
+      <rect x="24" y="430" width="342" height="64" rx="16" fill="#14141D"/>
+      <rect x="40" y="444" width="36" height="36" rx="10" fill="#C4F042" opacity="0.9"/>
+      <rect x="92" y="452" width="130" height="9" rx="4.5" fill="#F2F2F7" opacity="0.55"/>
+      <rect x="92" y="470" width="84" height="7" rx="3.5" fill="#F2F2F7" opacity="0.22"/>
+      <text x="348" y="470" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8A8AA0" text-anchor="end">1 240</text>
+      <rect x="24" y="508" width="342" height="64" rx="16" fill="#14141D"/>
+      <rect x="40" y="522" width="36" height="36" rx="10" fill="#C4F042" opacity="0.2"/>
+      <rect x="92" y="530" width="130" height="9" rx="4.5" fill="#F2F2F7" opacity="0.55"/>
+      <rect x="92" y="548" width="84" height="7" rx="3.5" fill="#F2F2F7" opacity="0.22"/>
+      <text x="348" y="548" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8A8AA0" text-anchor="end">42 min</text>
+      <rect x="24" y="586" width="342" height="64" rx="16" fill="#14141D"/>
+      <rect x="40" y="600" width="36" height="36" rx="10" fill="#C4F042" opacity="0.2"/>
+      <rect x="92" y="608" width="130" height="9" rx="4.5" fill="#F2F2F7" opacity="0.55"/>
+      <rect x="92" y="626" width="84" height="7" rx="3.5" fill="#F2F2F7" opacity="0.22"/>
+      <text x="348" y="626" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8A8AA0" text-anchor="end">1 240</text>
+      <rect x="24" y="664" width="342" height="64" rx="16" fill="#14141D"/>
+      <rect x="40" y="678" width="36" height="36" rx="10" fill="#C4F042" opacity="0.2"/>
+      <rect x="92" y="686" width="130" height="9" rx="4.5" fill="#F2F2F7" opacity="0.55"/>
+      <rect x="92" y="704" width="84" height="7" rx="3.5" fill="#F2F2F7" opacity="0.22"/>
+      <text x="348" y="704" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8A8AA0" text-anchor="end">42 min</text>
+    <rect x="0" y="760" width="390" height="84" rx="0" fill="#14141D"/>
+    <rect x="0" y="760" width="390" height="1" rx="0" fill="#232334"/>
+    
+        <rect x="44" y="786" width="26" height="26" rx="8" fill="#C4F042"/>
+        <rect x="128" y="786" width="26" height="26" rx="8" fill="#8A8AA0" opacity="0.4"/>
+        <rect x="212" y="786" width="26" height="26" rx="8" fill="#8A8AA0" opacity="0.4"/>
+        <rect x="296" y="786" width="26" height="26" rx="8" fill="#8A8AA0" opacity="0.4"/>
+  </svg>

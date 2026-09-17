@@ -1,0 +1,400 @@
+{
+  "hero": {
+    "eyebrow": "Nos services",
+    "title": "Trouvez la solution qui correspond à votre problème.",
+    "lead": "Six manières de vous accompagner, du simple site vitrine à l'outil métier sur mesure. Si vous hésitez, commencez par nous décrire votre activité : c'est souvent la question qui tranche."
+  },
+  "labels": {
+    "for": "À qui ça s'adresse",
+    "problem": "Le problème que ça résout",
+    "deliver": "Ce que nous créons",
+    "features": "Fonctionnalités possibles",
+    "steps": "Comment se déroule le projet",
+    "tech": "Technologies utilisées",
+    "included": "Ce qui est inclus",
+    "delay": "Délai indicatif",
+    "after": "Après la mise en ligne",
+    "faq": "Questions fréquentes",
+    "otherServices": "Autres services"
+  },
+  "items": {
+    "site-web": {
+      "name": "Site vitrine",
+      "short": "Présenter votre activité, obtenir des contacts, gagner en crédibilité.",
+      "title": "Un site qui vous représente, et qui vous amène des clients.",
+      "lead": "Votre site est souvent le premier contact entre vous et un client. En quelques secondes, il décide si vous êtes sérieux. Nous construisons cette première impression.",
+      "for": [
+        "Artisans, commerçants et professions libérales",
+        "TPE et PME qui n'ont pas encore de site, ou un site daté",
+        "Porteurs de projet qui lancent leur activité",
+        "Structures qui reçoivent des demandes par téléphone et veulent les canaliser"
+      ],
+      "problem": "Vous existez, mais on ne vous trouve pas. Ou on vous trouve, et ce que l'on voit ne reflète pas la qualité de votre travail. Un site vitrine bien construit règle les deux : il vous rend visible sur votre zone et il rassure avant même le premier appel.",
+      "deliver": [
+        "Un site de 5 à 15 pages, pensé pour votre activité",
+        "Un design sur mesure, pas un thème acheté et recolorié",
+        "Une structure pensée pour le référencement local",
+        "Un formulaire de contact qui vous envoie des demandes qualifiées"
+      ],
+      "features": [
+        "Présentation des services et des tarifs",
+        "Galerie de réalisations ou de photos",
+        "Formulaire de contact et de devis",
+        "Prise de rendez-vous en ligne",
+        "Blog et actualités",
+        "Multilingue",
+        "Avis clients et témoignages",
+        "Carte, horaires et informations pratiques"
+      ],
+      "steps": [
+        "Échange pour comprendre votre activité et vos clients",
+        "Arborescence et contenu : ce que chaque page doit dire",
+        "Maquette validée avant tout développement",
+        "Développement, intégration de vos textes et photos",
+        "Recette avec vous, corrections, puis mise en ligne"
+      ],
+      "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "included": [
+        "Site responsive, testé sur mobile, tablette et ordinateur",
+        "Optimisation des performances et du référencement technique",
+        "Configuration du nom de domaine et de l'hébergement",
+        "Formation à la prise en main",
+        "Un mois de corrections après la mise en ligne"
+      ],
+      "delay": "3 à 5 semaines",
+      "after": "Votre site vit : nouvelles photos, nouveaux services, nouvelle page. Vous pouvez nous confier ces évolutions au coup par coup ou souscrire une maintenance mensuelle. Dans les deux cas, vous restez propriétaire de tout.",
+      "faq": [
+        {
+          "q": "Puis-je modifier mon site moi-même ?",
+          "a": "Oui, si vous le souhaitez. Nous pouvons brancher une interface d'administration qui vous permet de modifier textes et photos sans toucher au code. Si vous préférez nous confier les mises à jour, c'est possible aussi."
+        },
+        {
+          "q": "Mon site sera-t-il bien référencé sur Google ?",
+          "a": "Nous livrons un site techniquement irréprochable : rapide, structuré, balisé, lisible par Google. C'est la moitié du travail. L'autre moitié, c'est le contenu et le temps. Nous vous expliquons comment l'entretenir, sans vous promettre une première place en trois semaines."
+        },
+        {
+          "q": "J'ai déjà un nom de domaine, est-ce un problème ?",
+          "a": "Au contraire. Nous le récupérons et nous faisons la bascule sans coupure de service."
+        }
+      ]
+    },
+    "e-commerce": {
+      "name": "E-commerce",
+      "short": "Catalogue, paiement, commandes, comptes clients, administration.",
+      "title": "Une boutique en ligne que vous pilotez vous-même.",
+      "lead": "Vendre en ligne, ce n'est pas seulement afficher des produits. C'est un tunnel de commande qui ne perd personne, un back-office que vous maîtrisez et des paiements qui arrivent.",
+      "for": [
+        "Commerçants qui veulent vendre au-delà de leur boutique physique",
+        "Créateurs et artisans avec un catalogue à faire tourner",
+        "Marques qui veulent sortir d'une place de marché et de ses commissions",
+        "Structures qui vendent déjà mais dont le site perd des clients au paiement"
+      ],
+      "problem": "La plupart des boutiques en ligne perdent leurs clients entre le panier et le paiement : trop d'étapes, trop de champs, pas assez de réassurance. Nous construisons le parcours dans l'autre sens, en partant de ce qui fait abandonner.",
+      "deliver": [
+        "Une boutique complète avec catalogue, panier et paiement sécurisé",
+        "Un back-office pour gérer produits, stocks et commandes",
+        "Des comptes clients avec historique et suivi de commande",
+        "Les emails automatiques : confirmation, expédition, relance de panier"
+      ],
+      "features": [
+        "Variantes de produits (taille, couleur, déclinaisons)",
+        "Codes promo et ventes privées",
+        "Paiement en plusieurs fois",
+        "Livraison, points relais et calcul des frais de port",
+        "Gestion des stocks et alertes",
+        "Facturation automatique",
+        "Programme de fidélité",
+        "Export comptable"
+      ],
+      "steps": [
+        "Cadrage du catalogue, des règles de prix et de livraison",
+        "Conception du tunnel de commande, du panier au paiement",
+        "Maquettes des pages clés : liste, fiche produit, panier",
+        "Développement, intégration du paiement et des transporteurs",
+        "Tests de commandes réelles avant ouverture"
+      ],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "included": [
+        "Paiement sécurisé et conforme",
+        "Back-office complet et documenté",
+        "Formation à la gestion des commandes",
+        "Pages légales adaptées à la vente en ligne",
+        "Un mois de corrections après l'ouverture"
+      ],
+      "delay": "6 à 10 semaines",
+      "after": "Une boutique demande un suivi : paiement, transporteurs et obligations légales évoluent. Nous assurons les mises à jour techniques et les nouvelles fonctionnalités au fil de votre croissance.",
+      "faq": [
+        {
+          "q": "Shopify ne serait-il pas plus simple ?",
+          "a": "Pour un catalogue standard et un budget serré, parfois oui, et nous vous le dirons. Le sur-mesure prend le dessus dès que vous avez des règles métier particulières, des marges à protéger ou un volume qui rend les commissions douloureuses."
+        },
+        {
+          "q": "Qui gère les stocks et les commandes ?",
+          "a": "Vous, depuis le back-office. Nous vous formons dessus et il est conçu pour être utilisé tous les jours, pas seulement à la livraison."
+        },
+        {
+          "q": "Et les paiements, c'est risqué ?",
+          "a": "Nous passons par des acteurs reconnus comme Stripe. Les données bancaires ne transitent jamais par votre site, et la conformité est assurée par le prestataire de paiement."
+        }
+      ]
+    },
+    "mobile": {
+      "name": "Application mobile",
+      "short": "iOS et Android, authentification, notifications, API, fonctionnalités métier.",
+      "title": "Une application que vos utilisateurs gardent sur leur écran d'accueil.",
+      "lead": "Une application ne se juge pas au nombre de fonctionnalités, mais à la fréquence à laquelle on l'ouvre. Nous construisons pour l'usage réel, pas pour la démo.",
+      "for": [
+        "Entreprises qui veulent un lien direct avec leurs clients",
+        "Services qui ont besoin d'être utilisés en mobilité, sur le terrain",
+        "Porteurs de projet avec une idée à valider rapidement",
+        "Structures qui veulent équiper leurs équipes d'un outil interne"
+      ],
+      "problem": "Beaucoup d'applications sont téléchargées puis oubliées. Généralement parce qu'elles reproduisent un site web dans un cadre plus petit, au lieu d'exploiter ce que le mobile a d'unique : la notification, la caméra, la géolocalisation, l'usage hors ligne.",
+      "deliver": [
+        "Une application iOS et Android à partir d'une base de code unique",
+        "Les comptes utilisateurs et l'authentification",
+        "Une API et une administration côté serveur",
+        "La publication sur l'App Store et le Play Store"
+      ],
+      "features": [
+        "Notifications push ciblées",
+        "Mode hors ligne et synchronisation",
+        "Géolocalisation et cartes",
+        "Appareil photo et envoi de documents",
+        "Paiement intégré",
+        "Chat et messagerie",
+        "Tableau de bord d'administration",
+        "Statistiques d'usage"
+      ],
+      "steps": [
+        "Cadrage des parcours utilisateurs et du périmètre de la première version",
+        "Maquettes des écrans principaux, validées avant développement",
+        "Développement par lots, avec une version testable à chaque étape",
+        "Tests sur appareils réels, iOS et Android",
+        "Publication sur les stores et accompagnement à la mise en ligne"
+      ],
+      "tech": [
+        "React Native",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Expo"
+      ],
+      "included": [
+        "Applications iOS et Android",
+        "Comptes développeur configurés à votre nom",
+        "API et back-office",
+        "Tests sur appareils réels",
+        "Accompagnement à la publication sur les stores"
+      ],
+      "delay": "8 à 16 semaines",
+      "after": "Une application vit au rythme des mises à jour d'iOS et d'Android. Nous assurons la compatibilité, les corrections et les nouvelles versions publiées sur les stores.",
+      "faq": [
+        {
+          "q": "Faut-il développer deux fois, pour iOS et Android ?",
+          "a": "Non. Nous utilisons React Native : une base de code unique produit les deux applications. Cela divise le coût et garantit que les deux versions restent identiques dans le temps."
+        },
+        {
+          "q": "Combien de temps pour être publié sur les stores ?",
+          "a": "La validation d'Apple prend généralement quelques jours, celle de Google est plus rapide. Nous préparons les fiches, les captures et les mentions requises pour éviter les refus."
+        },
+        {
+          "q": "Peut-on commencer petit ?",
+          "a": "C'est même ce que nous recommandons. Une première version resserrée sur l'essentiel, mise entre les mains d'utilisateurs réels, vous apprendra plus que six mois de spécifications."
+        }
+      ]
+    },
+    "sur-mesure": {
+      "name": "Solution sur mesure",
+      "short": "Dashboard, espace client, automatisations, outils internes, API.",
+      "title": "L'outil qui correspond à votre métier, pas l'inverse.",
+      "lead": "Quand votre activité tourne sur un tableur partagé, des copier-coller et trois logiciels qui ne se parlent pas, le problème n'est plus l'organisation. C'est l'outil.",
+      "for": [
+        "Entreprises dont le métier ne rentre dans aucun logiciel du marché",
+        "Structures qui perdent des heures en saisies manuelles",
+        "Équipes qui jonglent entre plusieurs outils sans lien entre eux",
+        "Activités qui ont besoin d'un espace client dédié"
+      ],
+      "problem": "Un logiciel générique vous oblige à adapter votre métier à ses contraintes. Sur mesure, c'est l'inverse : l'outil reprend vos règles, votre vocabulaire et vos étapes. Ce qui prenait deux heures par jour en prend dix minutes.",
+      "deliver": [
+        "Une application web accessible depuis un navigateur",
+        "Un tableau de bord avec vos indicateurs réels",
+        "Des rôles et des droits par utilisateur",
+        "Des connexions avec vos outils existants"
+      ],
+      "features": [
+        "Espace client avec documents et suivi",
+        "Automatisation des tâches répétitives",
+        "Génération de devis et de factures",
+        "Planning et gestion des ressources",
+        "Import et export de données",
+        "Connexion à vos logiciels actuels par API",
+        "Historique et traçabilité des actions",
+        "Rapports et exports personnalisés"
+      ],
+      "steps": [
+        "Immersion : comprendre comment vous travaillez réellement aujourd'hui",
+        "Cartographie des processus et repérage de ce qui fait perdre du temps",
+        "Périmètre de la première version, resserré sur ce qui rapporte le plus",
+        "Développement par lots avec mise en service progressive",
+        "Formation des équipes et accompagnement au changement"
+      ],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Laravel",
+        "PostgreSQL"
+      ],
+      "included": [
+        "Analyse de vos processus métier",
+        "Application web complète et sécurisée",
+        "Gestion des comptes et des droits",
+        "Formation des utilisateurs",
+        "Documentation d'utilisation"
+      ],
+      "delay": "10 à 20 semaines",
+      "after": "Un outil métier évolue avec l'entreprise. Nous restons disponibles pour les ajustements, les nouveaux besoins et l'accompagnement des nouveaux utilisateurs.",
+      "faq": [
+        {
+          "q": "Et si mon besoin évolue en cours de projet ?",
+          "a": "C'est la norme, pas l'exception : on comprend mieux son besoin en voyant l'outil prendre forme. Nous travaillons par lots pour absorber ces évolutions, et tout changement de périmètre vous est chiffré avant d'être engagé."
+        },
+        {
+          "q": "Peut-on connecter nos logiciels actuels ?",
+          "a": "Dans la plupart des cas, oui, si ces logiciels exposent une API ou permettent des exports. Nous vérifions ce point pendant le cadrage, avant tout engagement."
+        },
+        {
+          "q": "Que se passe-t-il si nous arrêtons de travailler ensemble ?",
+          "a": "Vous partez avec tout : code source, base de données, accès aux serveurs et documentation. Nous ne gardons aucune clé qui vous rendrait dépendants."
+        }
+      ]
+    },
+    "refonte": {
+      "name": "Refonte & optimisation",
+      "short": "Modernisation, responsive, UX, performances, SEO technique.",
+      "title": "Votre site existe déjà. Rendons-le efficace.",
+      "lead": "Tout refaire n'est pas toujours la bonne réponse. Parfois, un site lent, mal affiché sur mobile ou illisible pour Google se rattrape sans repartir de zéro.",
+      "for": [
+        "Sites qui ont plus de cinq ans et qui accusent leur âge",
+        "Sites lents, mal notés ou mal affichés sur mobile",
+        "Entreprises dont l'image a évolué mais pas le site",
+        "Structures qui ont perdu la main sur leur site actuel"
+      ],
+      "problem": "Un site daté ne fait pas que mal vieillir : il est plus lent, moins bien référencé, et il inspire moins confiance. La refonte règle ces trois sujets ensemble, en gardant ce qui fonctionne déjà.",
+      "deliver": [
+        "Un audit de l'existant : performances, mobile, référencement, sécurité",
+        "Une proposition de ce qui doit être refait, et de ce qui peut être gardé",
+        "Une refonte du design et de l'expérience",
+        "La migration sans perte de référencement"
+      ],
+      "features": [
+        "Audit technique et de performances",
+        "Mise en responsive complète",
+        "Refonte du design et de la navigation",
+        "Optimisation de la vitesse de chargement",
+        "Correction du référencement technique",
+        "Migration du contenu existant",
+        "Redirections pour ne rien perdre",
+        "Mise en conformité RGPD"
+      ],
+      "steps": [
+        "Audit complet et restitution : ce qui va, ce qui ne va pas, ce que ça coûte",
+        "Arbitrage entre optimisation et refonte complète",
+        "Conception des nouvelles maquettes",
+        "Développement et reprise du contenu",
+        "Bascule avec redirections et surveillance du référencement"
+      ],
+      "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Lighthouse"],
+      "included": [
+        "Audit initial documenté",
+        "Plan de redirections pour préserver l'acquis",
+        "Site responsive et rapide",
+        "Comparatif des performances avant / après",
+        "Un mois de surveillance après la bascule"
+      ],
+      "delay": "4 à 8 semaines",
+      "after": "Nous surveillons le référencement et les performances les semaines qui suivent la bascule, le moment où les problèmes se voient. Puis la maintenance prend le relais.",
+      "faq": [
+        {
+          "q": "Vais-je perdre mon référencement ?",
+          "a": "C'est le risque principal d'une refonte, et il se gère : plan de redirections, conservation des URL qui fonctionnent, structure préservée, surveillance après la bascule. Fait correctement, une refonte améliore le référencement."
+        },
+        {
+          "q": "Pouvez-vous reprendre un site fait par quelqu'un d'autre ?",
+          "a": "Oui, c'est fréquent. Nous commençons par un audit pour savoir ce qui est récupérable. Il arrive que repartir de zéro coûte moins cher que réparer, et nous vous le dirons franchement."
+        },
+        {
+          "q": "Et si je n'ai plus les accès à mon site ?",
+          "a": "Nous vous aidons à les récupérer auprès de l'hébergeur ou du registrar. C'est souvent possible, même sans le prestataire d'origine."
+        }
+      ]
+    },
+    "maintenance": {
+      "name": "Maintenance & évolution",
+      "short": "Corrections, sécurité, mises à jour et nouvelles fonctionnalités.",
+      "title": "Un site livré n'est pas un site terminé.",
+      "lead": "Les navigateurs changent, les dépendances vieillissent, les failles apparaissent. Sans suivi, un site parfaitement fonctionnel devient un risque en dix-huit mois.",
+      "for": [
+        "Clients dont nous avons construit le site ou l'application",
+        "Entreprises dont le prestataire a disparu ou ne répond plus",
+        "Structures qui n'ont personne en interne pour la partie technique",
+        "Sites qui font vivre l'activité et ne peuvent pas tomber"
+      ],
+      "problem": "Sans maintenance, la question n'est pas de savoir si un problème arrivera, mais quand. Et il arrive toujours au pire moment : un vendredi soir, en pleine période de commandes.",
+      "deliver": [
+        "Les mises à jour techniques et de sécurité",
+        "La surveillance de la disponibilité et des performances",
+        "Les sauvegardes régulières et testées",
+        "Un interlocuteur joignable quand ça casse"
+      ],
+      "features": [
+        "Correction des bugs",
+        "Mises à jour de sécurité",
+        "Surveillance de la disponibilité",
+        "Sauvegardes automatiques",
+        "Rapport mensuel d'activité",
+        "Petites évolutions incluses",
+        "Assistance par mail et téléphone",
+        "Restauration en cas d'incident"
+      ],
+      "steps": [
+        "État des lieux technique du site ou de l'application",
+        "Mise en place de la surveillance et des sauvegardes",
+        "Définition du niveau de service et des délais d'intervention",
+        "Suivi mensuel avec un rapport lisible",
+        "Évolutions planifiées ensemble"
+      ],
+      "tech": ["Sentry", "Vercel", "GitHub Actions", "Lighthouse CI"],
+      "included": [
+        "Mises à jour de sécurité",
+        "Sauvegardes quotidiennes",
+        "Surveillance de la disponibilité",
+        "Rapport mensuel",
+        "Un volume d'heures d'évolutions selon la formule"
+      ],
+      "delay": "Mise en place sous une semaine",
+      "after": "La maintenance est un engagement mensuel, sans durée imposée. Vous pouvez l'arrêter quand vous voulez et vous repartez avec l'intégralité de vos accès.",
+      "faq": [
+        {
+          "q": "La maintenance est-elle obligatoire ?",
+          "a": "Non, jamais. C'est une option, et nous vous dirons honnêtement si votre site en a réellement besoin ou s'il peut vivre sans pendant un moment."
+        },
+        {
+          "q": "Que se passe-t-il en cas de bug ?",
+          "a": "Vous nous écrivez, nous diagnostiquons, nous corrigeons. Les délais d'intervention sont écrits dans le contrat, pas laissés à l'appréciation du moment."
+        },
+        {
+          "q": "Pouvez-vous maintenir un site que vous n'avez pas fait ?",
+          "a": "Oui, après un audit. Nous devons d'abord vérifier que le code est dans un état qui permet d'intervenir sereinement."
+        }
+      ]
+    }
+  }
+}

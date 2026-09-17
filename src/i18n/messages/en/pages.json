@@ -1,0 +1,613 @@
+{
+  "agency": {
+    "hero": {
+      "eyebrow": "The agency",
+      "title": "Two skill sets. One goal: making your project succeed.",
+      "lead": "C&M Agency is Manon and Christopher. Not an open-plan office of thirty people in a stock photo: two people you know by name, who answer when you call."
+    },
+    "story": {
+      "title": "Why we started C&M Agency",
+      "paragraphs": [
+        "We have both seen how large agencies work. A client explains their need to a salesperson, who passes it to a project manager, who rephrases it for a studio, who hands it to a technical team. Four intermediaries later, the delivered site no longer resembles what was asked for, and nobody is at fault.",
+        "We built the opposite. Manon understands your business and carries your project from end to end. Christopher builds the solution and talks to you directly whenever the subject is technical. Between the two, no extra layer, no subcontracting, no broken telephone.",
+        "It is a deliberate choice: we take on fewer projects, but we genuinely follow them through. If your project does not fit that format, we will tell you before signing rather than after."
+      ]
+    },
+    "values": {
+      "eyebrow": "Our values",
+      "title": "Four principles, held even when they cost us.",
+      "items": [
+        {
+          "title": "Closeness",
+          "text": "You have our direct lines. No ticket, no queue, no bot asking you to rephrase your request."
+        },
+        {
+          "title": "Transparency",
+          "text": "A line-by-line quote, not an opaque package. If a feature is expensive, we tell you why and what it will bring you."
+        },
+        {
+          "title": "Technical honesty",
+          "text": "If an existing tool does the job for a tenth of the price, we say so, even when it costs us the sale."
+        },
+        {
+          "title": "Independence",
+          "text": "Code, accounts, domain name, hosting: all in your name. You could walk away with your project tomorrow morning."
+        }
+      ]
+    },
+    "duo": {
+      "eyebrow": "Your duo",
+      "title": "Who does what, in practical terms.",
+      "lead": "You will never have to guess who to ask.",
+      "people": [
+        {
+          "name": "Manon",
+          "role": "Sales & client relations",
+          "text": "Manon is your first contact and your point of reference. She understands your business, turns your needs into a scope that can be priced, prepares the quote, plans the schedule and keeps you informed. She is the one who tells you when something slips, before you have to ask.",
+          "skills": [
+            "Understanding your needs",
+            "Quotes and scoping",
+            "Planning and scheduling",
+            "Project follow-up",
+            "Client communication"
+          ]
+        },
+        {
+          "name": "Christopher",
+          "role": "Development & engineering",
+          "text": "Christopher builds what you signed off. Architecture, web and mobile development, integrations, performance, security, launch and maintenance. When a technical question comes up, you talk to him directly: no middleman to mistranslate it.",
+          "skills": [
+            "Technical architecture",
+            "Web and mobile development",
+            "Integrations and APIs",
+            "Performance and security",
+            "Deployment and maintenance"
+          ]
+        }
+      ],
+      "flow": {
+        "title": "How information flows",
+        "text": "Manon and Christopher work on the same project, continuously. You never have to explain your needs to two different people, and you never have to carry messages between us.",
+        "nodes": ["Manon", "You", "Christopher"]
+      }
+    },
+    "promise": {
+      "eyebrow": "Our commitments",
+      "title": "What we commit to.",
+      "items": [
+        "A reply to your enquiry within two working days",
+        "A detailed, line-by-line quote before any commitment",
+        "No change of scope billed without your written approval",
+        "Source code and every access delivered in your name",
+        "Regular progress updates, at a frequency agreed up front"
+      ]
+    }
+  },
+  "method": {
+    "hero": {
+      "eyebrow": "How we work",
+      "title": "What happens after you click Contact.",
+      "lead": "The biggest fear when trusting a small team with your project is silence. Here is, step by step, how a project runs with us — and when you will hear from us."
+    },
+    "steps": [
+      {
+        "title": "First conversation",
+        "text": "Manon calls you back and listens. No thirty-minute sales pitch: questions about your business, your customers and what made you get in touch."
+      },
+      {
+        "title": "Scoping",
+        "text": "Goals, users, features, constraints, budget and timeline. This is the step that prevents nasty surprises: anything not written here becomes a dispute later."
+      },
+      {
+        "title": "Proposal",
+        "text": "A document describing the scope, the chosen solution, the detailed price and the schedule. You have time to read it and ask questions. No pressure to sign."
+      },
+      {
+        "title": "Design",
+        "text": "Site structure, user journeys, designs for the key screens. You sign off how it looks and works before a single line of code is written."
+      },
+      {
+        "title": "Development",
+        "text": "Christopher builds, in batches. At the end of each batch you get a version you can look at. You watch the project grow; you discover nothing at the end."
+      },
+      {
+        "title": "Testing & sign-off",
+        "text": "Responsive on phone, tablet and desktop, browsers, full journeys, forms, performance. You test on your side too and report anything that feels wrong."
+      },
+      {
+        "title": "Launch",
+        "text": "Deployment, domain name, mailboxes, final checks, baseline SEO. We stay available in the following days, when the real questions arrive."
+      },
+      {
+        "title": "Follow-up",
+        "text": "Hands-on training, then maintenance and new features depending on what you chose. The project does not stop on delivery day."
+      }
+    ],
+    "tracking": {
+      "eyebrow": "During development",
+      "title": "We do not vanish.",
+      "lead": "You always know who to contact, where your project stands, what is done, what comes next and when your sign-off is expected.",
+      "example": {
+        "label": "Example of a project follow-up",
+        "project": "Redesign — Dupont Real Estate",
+        "progressLabel": "Progress",
+        "progress": 82,
+        "items": [
+          { "label": "Designs", "status": "done" },
+          { "label": "Development", "status": "done" },
+          { "label": "Online payment", "status": "done" },
+          { "label": "Responsive", "status": "doing" },
+          { "label": "Browser testing", "status": "todo" },
+          { "label": "Launch", "status": "todo" }
+        ],
+        "statusLabels": { "done": "Done", "doing": "In progress", "todo": "Upcoming" },
+        "nextLabel": "Next update",
+        "next": "Thursday 24th, 2 pm — mobile version demo"
+      }
+    },
+    "communication": {
+      "eyebrow": "Communication & support",
+      "title": "How we actually talk to each other.",
+      "items": [
+        {
+          "title": "Regular progress updates",
+          "text": "At a frequency agreed during scoping — usually every two weeks. Short, with a demo of what has moved."
+        },
+        {
+          "title": "One channel",
+          "text": "Email or phone, whichever you prefer. No extra tool to learn just to follow your own project."
+        },
+        {
+          "title": "Direct access to the developer",
+          "text": "When the question is technical, you talk to Christopher. Manon stays informed; you repeat nothing."
+        },
+        {
+          "title": "Written sign-offs",
+          "text": "Designs, features, launch: every approval is recorded. That protects you as much as it protects us."
+        },
+        {
+          "title": "Feedback in one place",
+          "text": "You collect your corrections in a single document and we handle them in batches. Far more effective than ten separate emails."
+        },
+        {
+          "title": "Support after delivery",
+          "text": "Hands-on training, documentation, and a period of fixes included after launch."
+        }
+      ]
+    },
+    "scope": {
+      "title": "What if the need changes along the way?",
+      "text": "It happens often and it is not a problem. A request outside the agreed scope is quoted separately and you decide: include it now, keep it for later, or drop it. What never happens is discovering it on the final invoice."
+    }
+  },
+  "pricing": {
+    "hero": {
+      "eyebrow": "Pricing",
+      "title": "How we price a project.",
+      "lead": "Our projects are bespoke: showing a single price would be dishonest. What we can do is explain exactly how the price is built and give you real ranges."
+    },
+    "how": {
+      "eyebrow": "The method",
+      "title": "A price is time multiplied by complexity.",
+      "items": [
+        {
+          "title": "We break it down",
+          "text": "Every feature is estimated separately, in days. You see what each block costs and you can remove some."
+        },
+        {
+          "title": "We price the unknown generously",
+          "text": "An integration with software we do not know is estimated cautiously. If it goes faster, you pay less."
+        },
+        {
+          "title": "We separate essential from optional",
+          "text": "The quote distinguishes what is needed at launch from what can wait for a second version."
+        },
+        {
+          "title": "We do not bill surprises",
+          "text": "An unforeseen issue on our side is on us. A change requested on yours is quoted before it is started."
+        }
+      ]
+    },
+    "ranges": {
+      "eyebrow": "Indicative ranges",
+      "title": "What a project actually costs.",
+      "lead": "These amounts match projects that are genuinely deliverable within them. They do not replace a quote, but they save you time if the gap is too wide.",
+      "items": [
+        {
+          "name": "Business website",
+          "range": "€2,400 – €6,000",
+          "text": "From tailoring a ready-to-launch template to a fully bespoke site with an original design.",
+          "includes": [
+            "5 to 15 pages",
+            "Responsive design",
+            "Contact form",
+            "Technical SEO",
+            "Hands-on training"
+          ]
+        },
+        {
+          "name": "E-commerce",
+          "range": "€4,900 – €15,000",
+          "text": "Depending on catalogue size, pricing and shipping rules, and connections to your management tools.",
+          "includes": [
+            "Catalogue and product pages",
+            "Secure payments",
+            "Management back office",
+            "Customer accounts",
+            "Automated emails"
+          ]
+        },
+        {
+          "name": "Mobile app",
+          "range": "€7,900 – €25,000",
+          "text": "A tight first version costs far less than a complete app. We recommend starting small.",
+          "includes": [
+            "iOS and Android",
+            "User accounts",
+            "API and back office",
+            "Store publication",
+            "Testing on real devices"
+          ]
+        },
+        {
+          "name": "Custom software",
+          "range": "€9,500 – €40,000",
+          "text": "The price depends on how many business processes are covered and how many existing systems are connected.",
+          "includes": [
+            "Process analysis",
+            "Complete web application",
+            "Roles and permissions",
+            "Data migration",
+            "Team training"
+          ]
+        }
+      ]
+    },
+    "factors": {
+      "eyebrow": "What moves the price",
+      "title": "The six factors that really matter.",
+      "items": [
+        "How many distinct user journeys have to be built",
+        "Whether there are accounts, roles and permissions",
+        "Connections to external software or services",
+        "How original the design has to be",
+        "The volume of content to produce and migrate",
+        "Regulatory constraints in your industry"
+      ]
+    },
+    "payment": {
+      "eyebrow": "Terms",
+      "title": "How payments work.",
+      "items": [
+        {
+          "title": "Three instalments",
+          "text": "30% on signature, 40% on design sign-off, 30% at launch. Longer projects are split further."
+        },
+        {
+          "title": "No hidden fees",
+          "text": "The quote covers everything needed to go live. Recurring costs are stated separately and clearly."
+        },
+        {
+          "title": "Recurring costs",
+          "text": "Domain name and hosting usually come to €100–400 a year depending on the project. Maintenance is optional."
+        }
+      ]
+    },
+    "note": "Indicative prices, to be confirmed after scoping. All amounts exclude VAT."
+  },
+  "faq": {
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "The questions we get asked before signing.",
+      "lead": "If yours is not here, ask it: it will probably end up on this page."
+    },
+    "categories": [
+      {
+        "name": "The project",
+        "items": [
+          {
+            "q": "How long does a project take?",
+            "a": "A business website takes 3 to 5 weeks, an online store 6 to 10, a mobile app 8 to 16, a custom tool 10 to 20. The factor that delays projects is almost never development: it is waiting for content, copy and photos."
+          },
+          {
+            "q": "Can I change the project along the way?",
+            "a": "Yes. A request outside the agreed scope is quoted separately and you decide whether to include it now, later, or not at all. Nothing appears on the final invoice without your written approval."
+          },
+          {
+            "q": "Do you work from a written brief?",
+            "a": "If you have one, we start there. If you do not, that is normal and not a blocker: the scoping stage exists precisely to build it together."
+          },
+          {
+            "q": "Do you take on every project?",
+            "a": "No. If an existing tool serves your need better, or if the budget does not allow the work to be done properly, we say so before signing."
+          }
+        ]
+      },
+      {
+        "name": "Price",
+        "items": [
+          {
+            "q": "How is the price calculated?",
+            "a": "Each feature is estimated in days, then added up. The quote is line by line: you see what each block costs and can remove some to fit your budget."
+          },
+          {
+            "q": "How do payments work?",
+            "a": "In three instalments: 30% on signature, 40% on design sign-off, 30% at launch. Longer projects are split further."
+          },
+          {
+            "q": "Are there recurring costs?",
+            "a": "The domain name and hosting, usually €100–400 a year. Maintenance is optional and you can stop it whenever you like."
+          },
+          {
+            "q": "Do you offer staged payments?",
+            "a": "On larger projects, yes. Let's discuss it when we quote rather than afterwards."
+          }
+        ]
+      },
+      {
+        "name": "Technical",
+        "items": [
+          {
+            "q": "Will I own my site?",
+            "a": "Entirely. Source code, domain name, hosting and every account are in your name from day one."
+          },
+          {
+            "q": "Where is my site hosted?",
+            "a": "On infrastructure located in the European Union, under your company's name. You can move it whenever you want."
+          },
+          {
+            "q": "Will the site be responsive?",
+            "a": "Always, and tested on real devices. More than half your visitors will arrive from a phone."
+          },
+          {
+            "q": "Can you take over an existing project?",
+            "a": "Yes, after an audit. Sometimes starting fresh costs less than repairing, and we will tell you straight."
+          }
+        ]
+      },
+      {
+        "name": "After delivery",
+        "items": [
+          {
+            "q": "Do you provide maintenance?",
+            "a": "Yes, optionally, with no minimum term. It covers security updates, backups, monitoring and an allowance of hours for changes."
+          },
+          {
+            "q": "What happens if there is a bug?",
+            "a": "For the month following launch, fixes are included. After that they fall under maintenance or are billed hourly, depending on what you chose."
+          },
+          {
+            "q": "Can I ask for new features?",
+            "a": "Of course. They are priced like a small project, with the same process: quote, approval, development, launch."
+          },
+          {
+            "q": "What if we stop working together?",
+            "a": "You leave with everything: code, data, access, documentation. We keep no key that would make you dependent on us."
+          }
+        ]
+      },
+      {
+        "name": "Communication",
+        "items": [
+          {
+            "q": "Who will my contact be?",
+            "a": "Manon, from the first conversation to launch. She knows your project and you will never have to explain your needs again."
+          },
+          {
+            "q": "Can I talk to the developer directly?",
+            "a": "Yes, as soon as the subject is technical. That is the whole point of how we work: no middleman to mistranslate it."
+          },
+          {
+            "q": "How do I follow progress?",
+            "a": "Through regular updates, at a frequency agreed during scoping, with a demo of what has moved. And you can write to us in between."
+          },
+          {
+            "q": "How quickly do you reply?",
+            "a": "Within two working days for a first enquiry. During a project, usually the same day."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Tell us about your project.",
+      "lead": "A few questions to understand your needs. The more precise your answers, the more precise our first estimate. It takes about three minutes."
+    },
+    "form": {
+      "stepLabel": "Step",
+      "of": "of",
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Get a first estimate",
+      "required": "Required field",
+      "steps": [
+        {
+          "title": "What do you want to build?",
+          "lead": "If you are unsure, pick the closest. We will refine it together.",
+          "field": "projectType",
+          "options": [
+            "Business website",
+            "E-commerce",
+            "Mobile app",
+            "Custom software",
+            "Redesign of an existing site",
+            "Tailor a ready-to-launch template",
+            "I am not sure yet"
+          ]
+        },
+        {
+          "title": "Which features do you need?",
+          "lead": "Pick as many as you like. Nothing is final at this stage.",
+          "field": "features",
+          "options": [
+            "Contact form",
+            "Online booking",
+            "Online payments",
+            "Customer accounts",
+            "Admin area",
+            "Blog or news",
+            "Multiple languages",
+            "Notifications",
+            "Connection to existing software"
+          ]
+        },
+        {
+          "title": "Tell us about your business",
+          "lead": "What you do, who you serve, and whether a site already exists.",
+          "field": "context",
+          "options": []
+        },
+        {
+          "title": "Budget and timing",
+          "lead": "A range is enough. It stops us proposing something irrelevant.",
+          "field": "budget",
+          "options": [
+            "Under €3,000",
+            "€3,000 – €6,000",
+            "€6,000 – €12,000",
+            "€12,000 – €25,000",
+            "Over €25,000",
+            "I am not sure yet"
+          ]
+        },
+        {
+          "title": "How can we reach you?",
+          "lead": "Manon replies within two working days.",
+          "field": "contact",
+          "options": []
+        }
+      ],
+      "fields": {
+        "company": "Your company",
+        "activity": "Your line of business",
+        "existing": "Do you already have a site?",
+        "existingOptions": ["No", "Yes, to rebuild", "Yes, to improve"],
+        "deadline": "Target timing",
+        "deadlineOptions": [
+          "As soon as possible",
+          "In 1 to 3 months",
+          "In 3 to 6 months",
+          "No fixed date"
+        ],
+        "name": "Full name",
+        "email": "Email address",
+        "phone": "Phone",
+        "message": "A word about your project"
+      },
+      "summary": {
+        "title": "Your enquiry is ready.",
+        "lead": "Here is what would be sent to Manon. Sending is not wired up in this version of the site yet.",
+        "restart": "Start over"
+      },
+      "consent": "This information is used solely to get back to you about your project. It is never resold or used for anything else."
+    },
+    "people": {
+      "title": "Or write to us directly",
+      "items": [
+        {
+          "name": "Manon",
+          "role": "Sales & client relations",
+          "text": "A question about your project, your budget or how we work? I am your first point of contact."
+        },
+        {
+          "name": "Christopher",
+          "role": "Development & engineering",
+          "text": "A technical question? Architecture, features, feasibility or taking over an existing project."
+        }
+      ]
+    },
+    "info": {
+      "title": "Details",
+      "items": [
+        { "label": "Email", "value": "To be added" },
+        { "label": "Phone", "value": "To be added" },
+        { "label": "Coverage", "value": "All of France, remotely" },
+        { "label": "Response time", "value": "Two working days" }
+      ]
+    }
+  },
+  "legal": {
+    "title": "Legal notice",
+    "lead": "Details to be completed before launch: company name, legal status, registration number, address and host.",
+    "sections": [
+      {
+        "title": "Site publisher",
+        "body": "C&M Agency — legal status, registration number, registered address and share capital to be completed. Publication director: to be completed."
+      },
+      {
+        "title": "Hosting provider",
+        "body": "Name, company details and address of the hosting provider to be completed before launch."
+      },
+      {
+        "title": "Intellectual property",
+        "body": "All content on this site — text, images, code, visual identity — is protected. Reproduction without written permission is prohibited."
+      },
+      {
+        "title": "Liability",
+        "body": "The information published is indicative and may change. It does not constitute a contractual commitment."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "lead": "We collect the minimum needed to answer your enquiry, and nothing else.",
+    "sections": [
+      {
+        "title": "Data collected",
+        "body": "Only what you type into the contact form: name, email, phone, company and a description of your project. Nothing is collected without your knowledge."
+      },
+      {
+        "title": "Purpose",
+        "body": "This data is used solely to get back to you about your enquiry and prepare a proposal. It is never resold, shared or used for advertising."
+      },
+      {
+        "title": "Retention",
+        "body": "Three years from the last contact, then deleted. You can request deletion at any time."
+      },
+      {
+        "title": "Cookies",
+        "body": "This site sets no advertising cookies and no third-party trackers. Analytics, where enabled, are anonymous and cookie-free — which is why no banner is forced on you."
+      },
+      {
+        "title": "Your rights",
+        "body": "Access, correction, deletion, objection and portability. An email is enough, with no justification required."
+      },
+      {
+        "title": "Data hosting",
+        "body": "Data is hosted within the European Union."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of service",
+    "lead": "Document to be reviewed before launch, particularly the sections on code ownership and maintenance.",
+    "sections": [
+      {
+        "title": "Purpose",
+        "body": "These terms govern the design, development and maintenance services provided by C&M Agency."
+      },
+      {
+        "title": "Quotes and orders",
+        "body": "Every engagement is covered by a detailed quote. The order is firm once the signed quote and deposit are received."
+      },
+      {
+        "title": "Payment terms",
+        "body": "30% on signature, 40% on design sign-off, 30% at launch, unless the quote sets out a different split."
+      },
+      {
+        "title": "Scope and changes",
+        "body": "Any request outside the agreed scope is covered by an additional quote, accepted in writing before work begins."
+      },
+      {
+        "title": "Ownership",
+        "body": "Once paid in full, the client owns the source code, the content and every access."
+      },
+      {
+        "title": "Warranty",
+        "body": "Defect fixes are covered for one month after launch. Beyond that they fall under the maintenance contract."
+      }
+    ]
+  }
+}
