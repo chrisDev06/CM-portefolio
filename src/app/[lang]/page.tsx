@@ -14,13 +14,13 @@ import {
 } from "@/components/ui";
 import {
   DuoFlow,
-  HeroVisual,
   ModelCard,
   NumberedStep,
   PersonCard,
   ServiceCard,
   TechRow,
 } from "@/components/blocks";
+import { HeroBackground } from "@/components/hero-background";
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -29,65 +29,68 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <Glow className="-top-32 left-1/4 size-[600px]" />
-        <Glow
-          className="-top-10 right-0 size-[460px]"
-          from="var(--color-magenta)"
-        />
-        <Container className="py-16 sm:py-24">
-          <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
-            <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-ink-muted">
-                {home.eyebrow}
-              </p>
-              <h1 className="mt-6 text-5xl sm:text-6xl">
-                {home.titleStart}
-                <br />
-                <span className="text-gradient">{home.titleHighlight}</span>
-              </h1>
-              <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted">
-                {home.subtitle}
-              </p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <Button href={path("contact", locale)}>
-                  {home.ctaPrimary}
-                </Button>
-                <Button
-                  href={path("models", locale)}
-                  variant="ghost"
-                  icon={false}
-                >
-                  {home.ctaSecondary}
-                </Button>
-              </div>
-              <div className="mt-10 flex flex-wrap gap-2">
-                {home.heroTags.map((tag) => (
-                  <Tag key={tag}>{tag}</Tag>
-                ))}
-              </div>
+      {/* Hero plein écran : l'image passe sous le header translucide. */}
+      <section className="relative -mt-16 flex min-h-dvh flex-col justify-end overflow-hidden pt-16">
+        <HeroBackground />
+
+        <Container className="flex flex-1 flex-col justify-center py-20 sm:py-24">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.22em] text-ink-muted">
+              {home.eyebrow}
+            </p>
+            <h1 className="mt-6 text-5xl sm:text-6xl">
+              {home.titleStart}
+              <br />
+              <span className="text-gradient">{home.titleHighlight}</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted">
+              {home.subtitle}
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Button href={path("contact", locale)}>{home.ctaPrimary}</Button>
+              <Button
+                href={path("models", locale)}
+                variant="ghost"
+                icon={false}
+              >
+                {home.ctaSecondary}
+              </Button>
             </div>
-
-            <HeroVisual dict={dict} />
+            <div className="mt-10 flex flex-wrap gap-2">
+              {home.heroTags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </div>
           </div>
+        </Container>
 
-          <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Container className="pb-12">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {home.heroCards.map((card) => (
-              <Card key={card.title} interactive>
-                <h2 className="text-lg">{card.title}</h2>
-                <p className="mt-2 text-sm text-ink-muted">{card.text}</p>
+              <Card
+                key={card.title}
+                interactive
+                className="bg-surface/70 p-4 backdrop-blur-md sm:p-6"
+              >
+                <h2 className="text-base sm:text-lg">{card.title}</h2>
+                <p className="mt-2 text-xs text-ink-muted sm:text-sm">
+                  {card.text}
+                </p>
               </Card>
             ))}
           </div>
+        </Container>
+      </section>
 
-          <div className="mt-16 flex flex-wrap gap-x-16 gap-y-8">
+      <Section className="py-12 sm:py-14">
+        <Container>
+          <div className="flex flex-wrap gap-x-16 gap-y-8">
             {home.facts.map((fact) => (
               <Stat key={fact.label} value={fact.value} label={fact.label} />
             ))}
           </div>
         </Container>
-      </section>
+      </Section>
 
       {/* Services */}
       <Section>
@@ -107,7 +110,10 @@ export default async function HomePage() {
 
       {/* Modèles */}
       <Section>
-        <Glow className="right-0 top-20 size-[420px]" from="var(--color-magenta)" />
+        <Glow
+          className="right-0 top-20 size-[420px]"
+          from="var(--color-magenta)"
+        />
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
@@ -236,4 +242,3 @@ export default async function HomePage() {
     </>
   );
 }
-

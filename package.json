@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "mockups": "node scripts/generate-model-mockups.mjs"
+    "mockups": "node scripts/generate-model-mockups.mjs",
+    "hero": "node scripts/prepare-hero.mjs"
   },
   "dependencies": {
     "next": "16.3.5",

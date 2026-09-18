@@ -52,6 +52,10 @@ Les deux maquettes sont dans le même registre (fond sombre, néon violet/magent
 
 Dans les maquettes, l'écran du MacBook affiche… une page fictive. Le premier visuel du site doit montrer **un de vos modèles réellement en ligne**, avec un lien « voir la démo en direct » à côté. Vous avez des sites déployés : c'est un avantage sur la quasi-totalité de vos concurrents, qui n'ont que des captures d'écran. Ne le gâchez pas avec une image de synthèse.
 
+> **Modifié le 18/09/2026.** Le hero est désormais l'image d'ambiance néon fournie, en fond plein écran. L'objection initiale ne s'applique plus : l'écran du portable y affiche un paysage, pas un faux site web. Les modèles réels restent la preuve, montrés juste en dessous dans « Sites prêts à lancer ».
+>
+> **Limite de résolution à connaître.** La source fait 1672 × 941 px. Elle est servie nette jusqu'à ~1670 px de large ; au-delà, le navigateur l'agrandit (1,15× en 1920, 1,53× en 2560, 2,3× en 4K). Sur un grand écran ou un écran Retina, le flou se verra. Pour y remédier : régénérer l'image en 2560 px minimum, idéalement 3840, puis relancer `npm run hero`.
+
 ### 1.6 Ajouts
 
 - **Pages légales** : mentions légales, politique de confidentialité, CGV/conditions de prestation, page cookies (voir §9).

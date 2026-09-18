@@ -29,10 +29,6 @@ export function modelAssets(id: ModelId): ModelAssets {
   };
 }
 
-/** Le hero de l'accueil montre un modèle réel plutôt qu'une image d'illustration. */
-export const HOME_DESKTOP_MODEL: ModelId = "horizon-travel";
-export const HOME_MOBILE_MODEL: ModelId = "fitzone";
-
 /** Chaque modèle s'allume dans la teinte de sa propre maquette. */
 export const MODEL_ACCENTS: Record<ModelId, string> = {
   "horizon-travel": "#F2994A",

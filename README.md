@@ -9,7 +9,20 @@ npm run dev      # http://localhost:3000 (redirige vers /fr ou /en)
 npm run build    # build de production
 npm run lint
 npm run mockups  # régénère les maquettes d'interface des modèles
+npm run hero -- "<chemin/source.png>"   # reconvertit l'image de fond du hero
 ```
+
+## Image de fond du hero
+
+`npm run hero -- "<source>"` produit `public/images/hero/hero-neon-<largeur>.{avif,webp}`
+en 960 / 1280 / 1600 px et à la largeur native, plus le LQIP inline dans
+`src/lib/hero-image.ts`. Le script **n'agrandit jamais** au-delà de la source :
+inventer des pixels alourdit la page sans ajouter de détail.
+
+La source actuelle fait **1672 × 941** : nette jusqu'à ~1670 px de large, agrandie
+par le navigateur au-delà (1,15× en 1920, 2,3× en 4K). Pour un rendu net sur grand
+écran, régénérer l'image en 2560 px minimum et relancer la commande — rien d'autre
+à changer, le composant lit les largeurs depuis `hero-image.ts`.
 
 ## Images des modèles
 

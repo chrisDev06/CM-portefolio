@@ -48,9 +48,9 @@ Livrables :
 
 | Asset | Specs | Qté | Par qui |
 |---|---|---|---|
-| Visuel hero desktop | 2560×1440, AVIF **< 250 Ko** + WebP de repli | 1 | Ext |
-| Visuel hero mobile | Recadrage **vertical dédié** 1080×1350 — pas un `object-fit` sur le desktop | 1 | Ext |
-| LQIP du hero | Base64 ~20×12 px, intégré au HTML | 1 | C |
+| Visuel hero desktop | 2560×1440, AVIF **< 250 Ko** + WebP de repli | 1 | ✅ **fourni** — mais en 1672 × 941 seulement (181 Ko en AVIF). Net jusqu'à 1670 px de large, agrandi au-delà. À régénérer en 2560 px minimum. |
+| Visuel hero mobile | Recadrage **vertical dédié** 1080×1350 | 1 | ⏳ contourné par `object-position: 38%` sur la partie sombre de l'image. Un vrai recadrage n'apporterait rien tant que la source ne fait que 941 px de haut : c'est la hauteur qui limite, pas le cadrage. |
+| LQIP du hero | Base64 ~24 px, intégré au HTML | 1 | ✅ généré automatiquement par `npm run hero` |
 | Visuels de section | 1920×1080, pour Services, Méthode, Équipe, Tarifs, FAQ | 5 | Ext |
 | Texture de grain | PNG tuilable 256×256, < 10 Ko, appliqué en `background-repeat` | 1 | Ext |
 | Halo / dégradé de fond | SVG ou WebP 1600×1600, un seul réutilisé partout | 2 | Ext |

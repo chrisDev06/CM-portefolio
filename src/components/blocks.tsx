@@ -8,14 +8,8 @@ import {
   type ServiceId,
 } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import {
-  HOME_DESKTOP_MODEL,
-  HOME_MOBILE_MODEL,
-  MODEL_ACCENTS,
-  modelAssets,
-} from "@/lib/model-assets";
-import { DeviceDuo } from "./device";
-import { Card, Glow, Icon, IconBadge, Tag, type IconName } from "./ui";
+import { MODEL_ACCENTS, modelAssets } from "@/lib/model-assets";
+import { Card, Icon, IconBadge, Tag, type IconName } from "./ui";
 
 export const SERVICE_ICONS: Record<ServiceId, IconName> = {
   "site-web": "monitor",
@@ -25,29 +19,6 @@ export const SERVICE_ICONS: Record<ServiceId, IconName> = {
   refonte: "pen",
   maintenance: "shield",
 };
-
-/** Le hero montre deux modèles réels, pas une illustration. */
-export function HeroVisual({ dict }: { dict: Dictionary }) {
-  const desktop = modelAssets(HOME_DESKTOP_MODEL);
-  const mobile = modelAssets(HOME_MOBILE_MODEL);
-
-  return (
-    <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-      <Glow className="-top-10 right-0 size-80" from="var(--color-magenta)" />
-      <Glow className="bottom-0 left-0 size-72" />
-      <DeviceDuo
-        desktop={desktop.desktop}
-        mobile={mobile.mobile}
-        host={desktop.demoHost}
-        priority
-        alt={{
-          desktop: `${dict.models.items[HOME_DESKTOP_MODEL].name} — ${dict.common.viewDesktop}`,
-          mobile: `${dict.models.items[HOME_MOBILE_MODEL].name} — ${dict.common.viewMobile}`,
-        }}
-      />
-    </div>
-  );
-}
 
 /* --- Cartes --------------------------------------------------------------- */
 
@@ -246,7 +217,13 @@ export function Faq({ items }: { items: { q: string; a: string }[] }) {
   );
 }
 
-export function TechRow({ eyebrow, items }: { eyebrow: string; items: string[] }) {
+export function TechRow({
+  eyebrow,
+  items,
+}: {
+  eyebrow: string;
+  items: string[];
+}) {
   return (
     <div>
       <p className="text-xs uppercase tracking-[0.18em] text-ink-muted">
