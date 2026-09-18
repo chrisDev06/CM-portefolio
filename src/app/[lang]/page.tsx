@@ -33,9 +33,9 @@ export default async function HomePage() {
       <section className="relative -mt-16 flex min-h-dvh flex-col justify-end overflow-hidden pt-16">
         <HeroBackground />
 
-        <Container className="flex flex-1 flex-col justify-center py-20 sm:py-24">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.22em] text-ink-muted">
+        <Container className="flex flex-1 flex-col justify-center py-8 sm:py-16">
+          <div className="max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.22em] text-ink/70">
               {home.eyebrow}
             </p>
             <h1 className="mt-6 text-5xl sm:text-6xl">
@@ -43,7 +43,7 @@ export default async function HomePage() {
               <br />
               <span className="text-gradient">{home.titleHighlight}</span>
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted">
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/85">
               {home.subtitle}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
@@ -56,7 +56,7 @@ export default async function HomePage() {
                 {home.ctaSecondary}
               </Button>
             </div>
-            <div className="mt-10 flex flex-wrap gap-2">
+            <div className="mt-10 hidden flex-wrap gap-2 sm:flex">
               {home.heroTags.map((tag) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
@@ -64,13 +64,13 @@ export default async function HomePage() {
           </div>
         </Container>
 
-        <Container className="pb-12">
+        <Container className="pb-10 sm:pb-14">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {home.heroCards.map((card) => (
               <Card
                 key={card.title}
                 interactive
-                className="bg-surface/70 p-4 backdrop-blur-md sm:p-6"
+                className="bg-surface/70 p-3.5 backdrop-blur-md sm:p-6"
               >
                 <h2 className="text-base sm:text-lg">{card.title}</h2>
                 <p className="mt-2 text-xs text-ink-muted sm:text-sm">

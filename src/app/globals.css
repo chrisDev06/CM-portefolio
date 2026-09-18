@@ -3,7 +3,7 @@
 /* Tokens de design — source unique de vérité (voir docs/PLAN.md §5) */
 @theme {
   /* Couleurs */
-  --color-base: #08080c;
+  --color-canvas: #08080c;
   --color-surface: #0f0f16;
   --color-surface-2: #15151f;
   --color-line: #ffffff14;
@@ -46,7 +46,7 @@
   }
 
   body {
-    background-color: var(--color-base);
+    background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -239,4 +239,19 @@ body::after {
 .nav-glow:hover {
   color: var(--color-ink);
   text-shadow: 0 0 20px color-mix(in oklab, var(--color-violet) 65%, transparent);
+}
+
+/* Dérive lente du fond du hero : la scène respire sans distraire. */
+@keyframes hero-drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.05) translate3d(-1%, -0.6%, 0);
+  }
+}
+
+.hero-drift {
+  animation: hero-drift 32s var(--ease-brand) infinite alternate;
+  will-change: transform;
 }

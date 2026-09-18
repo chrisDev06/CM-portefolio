@@ -44,7 +44,7 @@ export function MobileNav({
       </button>
 
       {open ? (
-        <div className="fixed inset-0 z-100 flex flex-col bg-base lg:hidden">
+        <div className="fixed inset-0 z-100 flex flex-col bg-canvas lg:hidden">
           <div className="flex h-16 items-center justify-end px-4 sm:px-8">
             <button
               type="button"

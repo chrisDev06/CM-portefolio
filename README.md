@@ -108,6 +108,11 @@ les rewrites générés dans `next.config.ts` à partir de `routes`.
 
 Les tokens sont dans `src/app/globals.css` (`@theme`) : couleurs, échelle typographique fluide, rayons, courbe d'animation unique. Ne pas écrire de valeur en dur dans un composant.
 
+⚠️ **Ne jamais nommer un token de couleur comme un utilitaire Tailwind existant.** Le fond
+s'appelle `canvas`, pas `base` : un token `--color-base` génère un utilitaire `text-base`
+qui écrase celui de taille de police, et le texte se retrouve écrit en noir sur noir sans
+que rien ne le signale. Même précaution pour `sm`, `lg`, `xl`.
+
 ## À remplacer avant la mise en ligne
 
 | Élément | État |

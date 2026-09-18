@@ -25,7 +25,7 @@ export function BrowserFrame({
             <span className="size-2 rounded-full bg-line-strong" />
             <span className="size-2 rounded-full bg-line-strong" />
           </div>
-          <span className="truncate rounded-full border border-line bg-base px-3 py-1 text-[11px] text-ink-muted">
+          <span className="truncate rounded-full border border-line bg-canvas px-3 py-1 text-[11px] text-ink-muted">
             {host}
           </span>
         </div>
@@ -58,7 +58,7 @@ export function PhoneFrame({
     <div
       className={`overflow-hidden rounded-[2rem] border border-line-strong bg-surface p-2 shadow-[0_24px_70px_-30px_var(--color-magenta)] ${className}`}
     >
-      <div className="relative overflow-hidden rounded-[1.5rem] bg-base">
+      <div className="relative overflow-hidden rounded-[1.5rem] bg-canvas">
         <span className="absolute left-1/2 top-2 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-line-strong" />
         <Image
           src={src}

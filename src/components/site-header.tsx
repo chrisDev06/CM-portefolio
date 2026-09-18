@@ -41,7 +41,7 @@ export function SiteHeader({
   }));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-base/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between gap-6 px-4 sm:px-8">
         <Logo locale={locale} />
 
