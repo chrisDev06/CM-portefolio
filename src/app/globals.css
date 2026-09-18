@@ -241,17 +241,20 @@ body::after {
   text-shadow: 0 0 20px color-mix(in oklab, var(--color-violet) 65%, transparent);
 }
 
-/* Dérive lente du fond du hero : la scène respire sans distraire. */
+/* Dérive lente du fond du hero : la scène respire sans distraire.
+ * Ancrée en haut (transform-origin) : le zoom mange le bas de l'image,
+ * jamais le haut — c'est là que se trouve l'arche néon. */
 @keyframes hero-drift {
   from {
     transform: scale(1) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.05) translate3d(-1%, -0.6%, 0);
+    transform: scale(1.035) translate3d(-0.6%, 0, 0);
   }
 }
 
 .hero-drift {
+  transform-origin: 50% 0%;
   animation: hero-drift 32s var(--ease-brand) infinite alternate;
   will-change: transform;
 }

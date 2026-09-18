@@ -67,7 +67,7 @@ export function HeroBackground() {
           decoding="async"
           fetchPriority="high"
           style={{ filter: "saturate(1.18) contrast(1.07)" }}
-          className="hero-drift size-full object-cover object-[45%_50%] sm:object-center"
+          className="hero-drift size-full object-cover object-[45%_50%] sm:object-top"
         />
       </picture>
 
