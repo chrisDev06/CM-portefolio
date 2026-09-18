@@ -4,10 +4,16 @@
  * Ce sont des maquettes, pas des captures : chaque fichier est destiné à être
  * remplacé par la capture réelle de la démo déployée (docs/ASSETS.md §4).
  * Lancer avec : node scripts/generate-model-mockups.mjs
+ *
+ * Sortie en PNG (rendu du SVG au double de la résolution) : un SVG complexe
+ * se rastérise à la volée au défilement, ce qui coûtait jusqu'à 117 ms par
+ * image mesurée ; une image matricielle est décodée hors du fil principal,
+ * puis next/image la sert en WebP à la bonne taille.
  */
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const W = 1600;
@@ -495,21 +501,30 @@ async function main() {
     const dir = join(ROOT, "public", "models", id);
     await mkdir(dir, { recursive: true });
 
+    for (const old of await readdir(dir)) {
+      if (/\.(svg|png)$/.test(old)) await rm(join(dir, old));
+    }
+
     const files = [
-      ["cover.svg", spec.desktop, W, H],
-      ["desktop.svg", spec.desktop, W, H],
-      ["mobile.svg", spec.mobile, MW, MH],
+      ["cover.png", spec.desktop, W, H],
+      ["desktop.png", spec.desktop, W, H],
+      ["mobile.png", spec.mobile, MW, MH],
       [
-        "feature-01.svg",
+        "feature-01.png",
         spec.features[0],
         spec.features[0] === "appScreen" ? MW : W,
         spec.features[0] === "appScreen" ? MH : H,
       ],
-      ["feature-02.svg", spec.features[1], W, H],
+      ["feature-02.png", spec.features[1], W, H],
     ];
 
     for (const [file, layout, width, height] of files) {
-      await writeFile(join(dir, file), svg(spec, layout, width, height), "utf8");
+      const png = await sharp(Buffer.from(svg(spec, layout, width, height)), {
+        density: 144,
+      })
+        .png({ compressionLevel: 9 })
+        .toBuffer();
+      await writeFile(join(dir, file), png);
     }
     console.log(`✓ ${id} — ${files.length} fichiers`);
   }

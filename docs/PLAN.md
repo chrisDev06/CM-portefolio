@@ -185,6 +185,7 @@ Tokens à figer avant la première ligne de CSS :
 - **Rayons** — 8 / 12 / 20 / 999. Un seul rayon par famille de composant.
 - **Élévation** — pas d'ombre portée classique : bordure 1 px + halo coloré très diffus, deux niveaux maximum.
 - **Mouvement** — 160 ms (hover), 240 ms (apparition), 400 ms (transition de page). Courbe unique `cubic-bezier(.16,1,.3,1)`. Tout désactivable par `prefers-reduced-motion`.
+- **Hero** — image entière jamais recadrée, bords fondus dans un plan lointain flou ; caméra à deux plans (travelling lent, parallaxe curseur et défilement, mise au point à l'ouverture). Détails et mesures de fluidité : README, section « Hero ».
 - **Effets néon** — quatre effets, pas un de plus : halo de bordure et lueur interne qui suivent le curseur sur les cartes (`.glow-card`, teinte réglable par carte) ; balayage de lumière sur les boutons pleins (`.sheen`) ; filet dégradé en séparateur de section (`.hairline`) ; grain fixe à 3 % sur toute la page. La règle reste la même : le halo se voit quand on interagit, pas en permanence.
 
 Composants — **construits** : header + nav mobile plein écran, bouton (3 variantes), carte service, carte modèle, filtre, accordéon FAQ, étape numérotée, stat, logo technologie, champ de formulaire (5 types), stepper du configurateur, bloc binôme, bandeau CTA, footer, cadres d'appareil (navigateur + téléphone), séparateur lumineux.

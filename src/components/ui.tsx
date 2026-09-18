@@ -15,16 +15,20 @@ const PATHS = {
   layout: "M3 4h18v16H3zM3 9h18M9 9v11",
   shield: "M12 3l8 3v6c0 4.8-3.4 8-8 9-4.6-1-8-4.2-8-9V6z",
   bolt: "M13 2 4 14h7l-1 8 9-12h-7z",
-  users: "M16 20v-1.5a4 4 0 00-4-4H6a4 4 0 00-4 4V20M9 10.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7M22 20v-1.5a4 4 0 00-3-3.9M16 3.6a4 4 0 010 7.7",
+  users:
+    "M16 20v-1.5a4 4 0 00-4-4H6a4 4 0 00-4 4V20M9 10.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7M22 20v-1.5a4 4 0 00-3-3.9M16 3.6a4 4 0 010 7.7",
   chart: "M4 20V11M10 20V4M16 20v-6M2 20h20",
   clock: "M12 3a9 9 0 100 18 9 9 0 000-18zM12 7.5V12l3 2",
-  globe: "M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18",
+  globe:
+    "M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18",
   mail: "M3 5h18v14H3zM3 6l9 7 9-7",
-  phone: "M5 3h4l2 5-2.5 1.5a12 12 0 006 6L16 13l5 2v4a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1",
+  phone:
+    "M5 3h4l2 5-2.5 1.5a12 12 0 006 6L16 13l5 2v4a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1",
   sparkle: "M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z",
   plus: "M12 5v14M5 12h14",
   code: "M9 6l-6 6 6 6M15 6l6 6-6 6",
-  rocket: "M12 2c3 2 5 5.5 5 10l-5 4-5-4c0-4.5 2-8 5-10zM12 11h.01M7 16l-2 5 5-2M17 16l2 5-5-2",
+  rocket:
+    "M12 2c3 2 5 5.5 5 10l-5 4-5-4c0-4.5 2-8 5-10zM12 11h.01M7 16l-2 5 5-2M17 16l2 5-5-2",
 } as const;
 
 export type IconName = keyof typeof PATHS;
@@ -137,14 +141,19 @@ export function SectionHeading({
 
 /* --- Actions -------------------------------------------------------------- */
 
+/** Couche GPU permanente, et seulement les propriétés utiles en transition :
+    `transition-all` animait tout, y compris ce qui force un redessin. */
 const BUTTON_BASE =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200 ease-brand";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium will-change-transform transition-[color,background-color,border-color,box-shadow] duration-200 ease-brand";
 
 const BUTTON_VARIANTS = {
   primary:
     "sheen bg-linear-to-r from-violet to-magenta text-ink shadow-[0_0_28px_-8px_var(--color-magenta)] hover:shadow-[0_0_44px_-6px_var(--color-magenta)]",
   ghost:
     "border border-line-strong text-ink-muted hover:border-violet hover:text-ink hover:shadow-[0_0_28px_-10px_var(--color-violet)]",
+  /** Bouton secondaire posé sur une image : verre dépoli, texte clair. */
+  glass:
+    "border border-line-strong bg-canvas/65 text-ink/90 backdrop-blur-md hover:border-violet hover:text-ink hover:shadow-[0_0_28px_-10px_var(--color-violet)]",
   quiet: "text-ink-muted hover:text-ink",
 } as const;
 
@@ -193,7 +202,11 @@ export function Card({
   return (
     <Spotlight
       className={`glow-card ${base}`}
-      style={accent ? ({ "--card-accent": accent } as React.CSSProperties) : undefined}
+      style={
+        accent
+          ? ({ "--card-accent": accent } as React.CSSProperties)
+          : undefined
+      }
     >
       {children}
     </Spotlight>
@@ -297,7 +310,10 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
       <Glow className="-top-40 left-1/4 size-[560px]" />
-      <Glow className="-top-20 right-0 size-[420px]" from="var(--color-magenta)" />
+      <Glow
+        className="-top-20 right-0 size-[420px]"
+        from="var(--color-magenta)"
+      />
       <Container>
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-6 max-w-4xl text-4xl sm:text-5xl">{title}</h1>

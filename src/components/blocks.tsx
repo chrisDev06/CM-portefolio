@@ -82,9 +82,8 @@ export function ModelCard({
             alt={`${model.name} — ${dict.common.viewDesktop}`}
             width={1600}
             height={1000}
-            unoptimized
             sizes="(max-width: 640px) 100vw, 45vw"
-            className="block h-auto w-full transition-[transform,filter] duration-700 ease-brand group-hover:scale-[1.04] group-hover:brightness-110"
+            className="block h-auto w-full will-change-transform transition-[transform,filter] duration-700 ease-brand group-hover:scale-[1.04] group-hover:brightness-110"
           />
         </div>
         <div className="flex flex-wrap items-center gap-2 px-2 pt-5">

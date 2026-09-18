@@ -1,9 +1,9 @@
 import type { ModelId } from "@/i18n/config";
 
 /**
- * Maquettes d'interface générées par scripts/generate-model-mockups.mjs.
- * Remplacer un fichier par la capture réelle de la démo suffit : si le format
- * devient raster, retirer `unoptimized` sur les <Image> de device.tsx.
+ * Maquettes d'interface générées par scripts/generate-model-mockups.mjs, en
+ * PNG : remplacer un fichier par la capture réelle de la démo suffit, next/image
+ * la sert ensuite en WebP à la bonne taille.
  */
 export type ModelAssets = {
   cover: string;
@@ -21,10 +21,10 @@ const APPS: ModelId[] = ["fitzone"];
 
 export function modelAssets(id: ModelId): ModelAssets {
   return {
-    cover: `${base(id)}/cover.svg`,
-    desktop: `${base(id)}/desktop.svg`,
-    mobile: `${base(id)}/mobile.svg`,
-    features: [`${base(id)}/feature-01.svg`, `${base(id)}/feature-02.svg`],
+    cover: `${base(id)}/cover.png`,
+    desktop: `${base(id)}/desktop.png`,
+    mobile: `${base(id)}/mobile.png`,
+    features: [`${base(id)}/feature-01.png`, `${base(id)}/feature-02.png`],
     demoHost: APPS.includes(id) ? undefined : `${id}.cm-agency.fr`,
   };
 }

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
 import { modelIds, path, serviceIds } from "@/i18n/config";
 import {
@@ -22,6 +23,9 @@ import {
 } from "@/components/blocks";
 import { HeroBackground } from "@/components/hero-background";
 
+/** Délai d'entrée d'un élément du hero, en secondes. */
+const rise = (delay: number) => ({ "--d": `${delay}s` }) as CSSProperties;
+
 export default async function HomePage() {
   const locale = await getLocale();
   const dict = await getDictionary(locale);
@@ -33,30 +37,49 @@ export default async function HomePage() {
       <section className="relative -mt-16 flex min-h-dvh flex-col justify-end overflow-hidden pt-16">
         <HeroBackground />
 
-        <Container className="flex flex-1 flex-col justify-center py-8 sm:py-16">
-          <div className="max-w-4xl">
-            <p className="text-xs uppercase tracking-[0.22em] text-ink/70">
+        {/* Portrait : texte en haut, la scène occupe le bas de l'écran. */}
+        <Container className="flex flex-1 flex-col justify-center py-8 portrait:justify-start portrait:pt-10 sm:py-16 [@media(max-height:899px)]:sm:py-6">
+          <div className="hero-copy max-w-4xl">
+            <p
+              className="hero-rise text-xs uppercase tracking-[0.22em] text-ink/70"
+              style={rise(0.35)}
+            >
               {home.eyebrow}
             </p>
-            <h1 className="mt-6 text-5xl sm:text-6xl">
+            <h1
+              className="hero-rise mt-6 text-5xl max-[389px]:text-[2rem] sm:text-6xl [@media(max-height:760px)]:sm:text-5xl"
+              style={rise(0.5)}
+            >
               {home.titleStart}
               <br />
-              <span className="text-gradient">{home.titleHighlight}</span>
+              <span className="text-gradient-bright">
+                {home.titleHighlight}
+              </span>
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/85">
+            <p
+              className="hero-rise mt-7 max-w-xl text-lg leading-relaxed text-ink/85"
+              style={rise(0.68)}
+            >
               {home.subtitle}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div
+              className="hero-rise mt-9 flex flex-wrap gap-3"
+              style={rise(0.84)}
+            >
               <Button href={path("contact", locale)}>{home.ctaPrimary}</Button>
+              {/* Verre dépoli : le bouton passe sur l'image en portrait. */}
               <Button
                 href={path("models", locale)}
-                variant="ghost"
+                variant="glass"
                 icon={false}
               >
                 {home.ctaSecondary}
               </Button>
             </div>
-            <div className="mt-10 hidden flex-wrap gap-2 sm:flex">
+            <div
+              className="hero-rise mt-10 hidden flex-wrap gap-2 sm:flex portrait:hidden [@media(max-height:899px)]:hidden"
+              style={rise(0.98)}
+            >
               {home.heroTags.map((tag) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
@@ -64,19 +87,26 @@ export default async function HomePage() {
           </div>
         </Container>
 
-        <Container className="pb-10 sm:pb-14">
+        {/* En portrait, ces cartes doublonnent la section Services juste
+            en dessous : la place revient à la scène. */}
+        <Container className="pb-10 portrait:hidden sm:pb-14 [@media(max-height:899px)]:sm:pb-8">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {home.heroCards.map((card) => (
-              <Card
+            {home.heroCards.map((card, index) => (
+              <div
                 key={card.title}
-                interactive
-                className="bg-surface/70 p-3.5 backdrop-blur-md sm:p-6"
+                className="hero-rise"
+                style={rise(1.08 + index * 0.08)}
               >
-                <h2 className="text-base sm:text-lg">{card.title}</h2>
-                <p className="mt-2 text-xs text-ink-muted sm:text-sm">
-                  {card.text}
-                </p>
-              </Card>
+                <Card
+                  interactive
+                  className="h-full bg-surface/70 p-3.5 backdrop-blur-md sm:p-6"
+                >
+                  <h2 className="text-base sm:text-lg">{card.title}</h2>
+                  <p className="mt-2 text-xs text-ink-muted sm:text-sm">
+                    {card.text}
+                  </p>
+                </Card>
+              </div>
             ))}
           </div>
         </Container>

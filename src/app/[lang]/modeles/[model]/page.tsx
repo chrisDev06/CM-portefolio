@@ -183,7 +183,6 @@ export default async function ModelPage({
               alt={`${model.name} — ${dict.common.viewMobile}`}
               width={390}
               height={844}
-              unoptimized
               sizes="120px"
               className="w-24 shrink-0 rounded-lg border border-line sm:w-32"
             />

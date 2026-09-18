@@ -36,7 +36,6 @@ export function BrowserFrame({
         width={1600}
         height={1000}
         priority={priority}
-        unoptimized
         sizes="(max-width: 1024px) 100vw, 720px"
         className="block h-auto w-full"
       />
@@ -65,7 +64,6 @@ export function PhoneFrame({
           alt={alt}
           width={390}
           height={844}
-          unoptimized
           sizes="(max-width: 640px) 45vw, 220px"
           className="block h-auto w-full"
         />

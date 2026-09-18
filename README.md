@@ -12,38 +12,76 @@ npm run mockups  # régénère les maquettes d'interface des modèles
 npm run hero -- "<chemin/source.png>"   # reconvertit l'image de fond du hero
 ```
 
-## Image de fond du hero
+## Hero : image et caméra
 
-`npm run hero -- "<source>"` produit `public/images/hero/hero-neon-<largeur>.{avif,webp}`
-en 960 / 1280 / 1600 px et à la largeur native, plus le LQIP inline dans
-`src/lib/hero-image.ts`. Le script **n'agrandit jamais** au-delà de la source :
-inventer des pixels alourdit la page sans ajouter de détail.
+### Préparer l'image
 
-La source actuelle fait **1672 × 941** : nette jusqu'à ~1670 px de large, agrandie
-par le navigateur au-delà (1,15× en 1920, 2,3× en 4K). Pour un rendu net sur grand
-écran, régénérer l'image en 2560 px minimum et relancer la commande — rien d'autre
-à changer, le composant lit les largeurs depuis `hero-image.ts`.
+`npm run hero -- "<source>"` produit dans `public/images/hero/` :
+
+- `hero-neon-<largeur>.{avif,webp}` en 960 / 1280 / largeur native, **étalonnage
+  cuit** (saturation, contraste) et accentuation légère ;
+- au-delà de la largeur native, des variantes **agrandies au build** (Lanczos3 +
+  accentuation, ×1,75 max) pour les grands écrans et le Retina : plus net que
+  l'agrandissement du navigateur, sans inventer de détail ;
+- le **plan lointain** : la scène floutée sur le fond du site, inline dans
+  `src/lib/hero-image.ts` (1 Ko).
+
+La source actuelle fait 1672 × 941. Pour gagner en définition sur écran 4K,
+régénérer l'image en 3840 px et relancer la commande : rien d'autre à changer.
+
+### Composition
+
+L'image n'est **jamais recadrée** : elle est affichée entière, en retrait, ses bords
+fondus dans le plan lointain (profondeur de champ). En paysage, elle occupe
+`min(84 % de la largeur, 88 % de la hauteur)`, décalée à droite ; en portrait,
+un bandeau ancré en bas, sujet centré. Réglages : `.hero-stage` dans `globals.css`.
+
+### Animation
+
+| Mouvement | Où | Réglage |
+|---|---|---|
+| Mise au point à l'ouverture (fondu + avancée) | `.hero-near` | 1,6 s / 3,4 s |
+| Travelling lent vers le sujet, en montant | `.hero-drift` | 46 s aller, sinusoïde |
+| Parallaxe au curseur, avec inertie | `hero-camera.tsx` | ±16 px, τ = 1,1 s |
+| Parallaxe au défilement | `hero-camera.tsx` | 14 % / 28 % |
+| Respiration du néon | `.hero-glow` | 7 s |
+
+Deux plans à des vitesses différentes : c'est ce qui crée la profondeur.
+Toutes les échelles animées restent ≤ 1, et chaque image a sa propre couche :
+le navigateur l'affiche comme texture GPU, jamais agrandie ni redessinée pendant
+le mouvement. Tout s'arrête avec `prefers-reduced-motion`.
+
+### Mesures (build de production, Chrome, GPU)
+
+| | 1868×961 | iPhone 390×844 @3 |
+|---|---|---|
+| Travelling seul | 60 i/s, pire image 17 ms | 60 i/s |
+| Curseur réel + survols | 60 i/s ¹ | — |
+| Défilement de toute la page | 59,7 i/s, pire image 33 ms | 60 i/s |
+| Netteté | affichée ≤ résolution décodée à toutes les tailles testées ||
+
+¹ Au tout premier survol d'un navigateur neuf, Chrome compile les shaders de
+l'effet des cartes (≈ 130 ms, une fois) ; il les garde ensuite en cache.
+
+**À ne pas réintroduire** : animer `box-shadow` ou utiliser `transition-all` sur un
+élément survolé, afficher un SVG complexe en grand. Chacun a été mesuré à 100–200 ms
+par image sur ce site.
 
 ## Images des modèles
 
 Chaque modèle possède ses fichiers dans `public/models/<id>/` :
 
 ```
-cover.svg  desktop.svg  mobile.svg  feature-01.svg  feature-02.svg
+cover.png  desktop.png  mobile.png  feature-01.png  feature-02.png
 ```
 
-Ce sont des **maquettes d'interface générées** (`scripts/generate-model-mockups.mjs`),
-pas des captures. Chacune a sa propre palette et sa propre mise en page selon le
-secteur : site éditorial pour Horizon Travel, écrans d'application pour FitZone,
-grille produits pour SoundWave, tableau de bord pour GreenEnergy.
+Ce sont des **maquettes d'interface générées** (`scripts/generate-model-mockups.mjs`,
+rendues en PNG au double de la résolution), pas des captures. Chacune a sa propre
+palette et sa propre mise en page selon le secteur. `next/image` les sert en WebP
+à la bonne taille.
 
-**Pour passer aux vraies captures** : déposer le fichier au même chemin, puis
-
-1. mettre l'extension à jour dans `src/lib/model-assets.ts` ;
-2. retirer `unoptimized` des `<Image>` de `src/components/device.tsx` et
-   `blocks.tsx` pour que Next optimise le raster ;
-3. renseigner `demo` dans `messages/*/models.json` pour activer le bouton
-   « Voir la démo en direct ».
+**Pour passer aux vraies captures** : déposer le PNG au même chemin et renseigner
+`demo` dans `messages/*/models.json` pour activer le bouton « Voir la démo en direct ».
 
 Les cadres d'appareil (`src/components/device.tsx`) s'adaptent : un modèle listé
 dans `APPS` (model-assets.ts) s'affiche sans barre d'adresse.
@@ -122,7 +160,7 @@ que rien ne le signale. Même précaution pour `sm`, `lg`, `xl`.
 | Prix des modèles | **Inventés pour la démonstration.** À fixer avant publication : un prix affiché engage. |
 | Démos en direct | `demo: ""` dans `models.json` → le bouton affiche « Démo bientôt disponible ». Renseigner l'URL de chaque démo déployée. |
 | Scores Lighthouse | Saisis à la main dans `models.json`. À mesurer automatiquement (docs/PLAN.md §8). |
-| Visuels des modèles | Maquettes d'interface générées, pas des captures des démos réelles. Procédure de remplacement ci-dessus. |
+| Visuels des modèles | Maquettes d'interface générées (PNG), pas des captures des démos réelles. Procédure de remplacement ci-dessus. |
 | Portraits | Bloc binôme en initiales, en attendant les photos (docs/ASSETS.md §5). |
 | Logo, favicon, OG | Non fournis. |
 | Envoi du formulaire | Le configurateur affiche un récapitulatif ; l'envoi (Resend + Turnstile) n'est pas branché. |

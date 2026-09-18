@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { fontVariables } from "@/lib/fonts";
@@ -6,6 +7,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { HERO_REVEAL_SCRIPT } from "@/lib/hero-reveal";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -50,6 +52,9 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={fontVariables}>
       <body className="min-h-dvh antialiased">
+        <Script id="hero-reveal" strategy="beforeInteractive">
+          {HERO_REVEAL_SCRIPT}
+        </Script>
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface-2 focus:px-4 focus:py-2"
