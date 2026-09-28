@@ -1,26 +1,22 @@
-import type { CSSProperties } from "react";
-import {
-  HERO_BACKDROP,
-  HERO_BACKDROP_PAD as PAD,
-  HERO_INTRINSIC,
-  HERO_NATIVE_WIDTH,
-  HERO_WIDTHS,
-} from "@/lib/hero-image";
-import { HeroCamera } from "./hero-camera";
-
-const NAME = "/images/hero/hero-neon";
+import { heroNeon } from "@/lib/scenes/hero-neon";
+import { HeroScene, type SceneSource } from "./hero-scene";
 
 /** Point de mise au point de la caméra : entre l'arche et le portable. */
 const FOCUS = { x: 0.56, y: 0.4 };
 
-const srcSet = (ext: "avif" | "webp", maxWidth = Infinity) =>
-  HERO_WIDTHS.filter((w) => w <= maxWidth)
-    .map((w) => `${NAME}-${w}.${ext} ${w}w`)
-    .join(", ");
-
 /** Doit suivre la largeur de .hero-stage (globals.css). */
 const SIZES_LANDSCAPE = "min(84vw, 157vh)";
 const SIZES_PORTRAIT = "160vw";
+
+const SOURCES: SceneSource[] = [
+  {
+    media: "(orientation: portrait) and (max-width: 639px)",
+    sizes: SIZES_PORTRAIT,
+    maxWidth: heroNeon.nativeWidth,
+  },
+  { media: "(orientation: portrait)", sizes: SIZES_PORTRAIT },
+  { sizes: SIZES_LANDSCAPE },
+];
 
 const veil = (pct: number) =>
   `color-mix(in oklab, var(--color-canvas) ${pct}%, transparent)`;
@@ -46,24 +42,9 @@ const VIGNETTE = `radial-gradient(ellipse 120% 100% at 60% 45%,
   ${veil(30)} 74%,
   ${veil(72)} 100%)`;
 
-const pct = (n: number) => `${(n * 100).toFixed(3)}%`;
-
-/** Le plan lointain déborde du plan net selon les marges générées. */
-const FAR_BOX: CSSProperties = {
-  left: pct(-PAD.left),
-  top: pct(-PAD.top),
-  width: pct(1 + PAD.left + PAD.right),
-  height: pct(1 + PAD.top + PAD.bottom),
-  transformOrigin: `${pct((PAD.left + FOCUS.x) / (1 + PAD.left + PAD.right))} ${pct(
-    (PAD.top + FOCUS.y) / (1 + PAD.top + PAD.bottom),
-  )}`,
-};
-
 /**
- * Fond du hero, en deux plans :
- * - lointain : la scène floutée, dont la lumière déborde en halo ;
- * - net : l'image entière, jamais recadrée, bords fondus dans le halo.
- * La caméra dérive lentement (CSS) et suit le curseur / le défilement (JS).
+ * Fond du hero de l'accueil : la scène néon (voir HeroScene), décalée à
+ * droite, et les voiles qui gardent le texte lisible.
  */
 export function HeroBackground() {
   return (
@@ -74,79 +55,14 @@ export function HeroBackground() {
       aria-hidden="true"
       className="hero-bg absolute inset-0 -z-10 overflow-hidden bg-canvas"
     >
-      <HeroCamera className="absolute inset-0">
-        <div
-          className="hero-stage"
-          style={
-            {
-              "--fx": pct(FOCUS.x),
-              "--fy": pct(FOCUS.y),
-            } as CSSProperties
-          }
-        >
-          <div className="hero-drift">
-            <div data-plane="far" className="hero-plane">
-              <div className="hero-far" style={FAR_BOX}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={HERO_BACKDROP} alt="" className="size-full" />
-              </div>
-            </div>
-
-            <div data-plane="near" className="hero-plane">
-              <div className="hero-near">
-                <picture>
-                  <source
-                    media="(orientation: portrait) and (max-width: 639px)"
-                    type="image/avif"
-                    srcSet={srcSet("avif", HERO_NATIVE_WIDTH)}
-                    sizes={SIZES_PORTRAIT}
-                  />
-                  <source
-                    media="(orientation: portrait) and (max-width: 639px)"
-                    type="image/webp"
-                    srcSet={srcSet("webp", HERO_NATIVE_WIDTH)}
-                    sizes={SIZES_PORTRAIT}
-                  />
-                  <source
-                    media="(orientation: portrait)"
-                    type="image/avif"
-                    srcSet={srcSet("avif")}
-                    sizes={SIZES_PORTRAIT}
-                  />
-                  <source
-                    media="(orientation: portrait)"
-                    type="image/webp"
-                    srcSet={srcSet("webp")}
-                    sizes={SIZES_PORTRAIT}
-                  />
-                  <source
-                    type="image/avif"
-                    srcSet={srcSet("avif")}
-                    sizes={SIZES_LANDSCAPE}
-                  />
-                  <source
-                    type="image/webp"
-                    srcSet={srcSet("webp")}
-                    sizes={SIZES_LANDSCAPE}
-                  />
-                  <img
-                    data-hero-img
-                    src={`${NAME}-${HERO_NATIVE_WIDTH}.webp`}
-                    alt=""
-                    width={HERO_INTRINSIC.width}
-                    height={HERO_INTRINSIC.height}
-                    decoding="async"
-                    fetchPriority="high"
-                    className="size-full"
-                  />
-                </picture>
-                <div className="hero-glow" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </HeroCamera>
-
+      <HeroScene
+        image={heroNeon}
+        focus={FOCUS}
+        sources={SOURCES}
+        className="hero-stage"
+      >
+        <div className="hero-glow" />
+      </HeroScene>
 
       {/* Voiles de lisibilité : le texte doit rester au-dessus de 4.5:1. */}
       <div

@@ -11,6 +11,15 @@
   --color-ink: #f5f5f7;
   --color-ink-muted: #a8a8b8;
   --color-violet: #7c3aed;
+  /* Violet de texte sur fond sombre (4.9:1) : le violet de marque seul reste
+     sous AA. Une pointe de magenta le garde pourpre. */
+  --color-violet-light: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--color-violet) 80%, var(--color-magenta)) 70%,
+    var(--color-violet-bright)
+  );
+  --color-violet-bright: #b69cfb;
+  --color-indigo: #6366f1;
   --color-magenta: #d946ef;
   --color-amber: #f59e0b;
 
@@ -108,6 +117,30 @@
    le violet de marque (#7c3aed) est trop sombre pour rester lisible. */
 @utility text-gradient-bright {
   background-image: linear-gradient(100deg, #b69cfb, #ec8ef9 58%, #fcc94a);
+  background-clip: text;
+  color: transparent;
+}
+
+/* Variante néon, plus saturée : violet, magenta, rose, puis une pointe de
+   pêche sur la fin du titre. Mêmes tokens, dosés en oklab. */
+@utility text-gradient-neon {
+  background-image: linear-gradient(
+    100deg,
+    color-mix(
+        in oklab,
+        color-mix(in oklab, var(--color-magenta) 50%, var(--color-violet-bright)) 80%,
+        var(--color-violet)
+      )
+      2%,
+    color-mix(in oklab, var(--color-magenta) 88%, var(--color-ink)) 46%,
+    color-mix(in oklab, var(--color-magenta) 72%, var(--color-amber)) 76%,
+    color-mix(
+        in oklab,
+        color-mix(in oklab, var(--color-amber) 90%, var(--color-magenta)) 80%,
+        var(--color-ink)
+      )
+      98%
+  );
   background-clip: text;
   color: transparent;
 }
@@ -249,6 +282,138 @@ body::after {
 .nav-glow:hover {
   color: var(--color-ink);
   text-shadow: 0 0 20px color-mix(in oklab, var(--color-violet) 65%, transparent);
+}
+
+/* --- Verre néon ------------------------------------------------------------
+ * Surfaces posées sur l'image du hero : verre bleu nuit, liseré lumineux,
+ * icônes néon. Seule exception à « le halo ne se voit qu'au survol ».
+ * Teinte de la carte : --card-accent.
+ */
+
+/* À poser sur l'élément animé lui-même : sous un parent en fondu, le flou
+   ne voit pas l'image et n'apparaît qu'à la fin de l'animation. */
+.glass {
+  background:
+    radial-gradient(
+      80% 60% at 30% 0%,
+      color-mix(in oklab, var(--color-violet) 14%, transparent),
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet) 16%, var(--color-canvas)) 72%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-indigo) 10%, var(--color-canvas)) 80%, transparent)
+    );
+  /* Lueur serrée autour du liseré (le tube néon), puis halo large teinté. */
+  box-shadow:
+    0 0 12px -4px color-mix(in oklab, var(--color-violet-bright) 35%, transparent),
+    0 0 32px -12px color-mix(in oklab, var(--card-accent, var(--color-violet)) 60%, transparent),
+    -10px -10px 32px -20px var(--color-indigo);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
+}
+
+/* Liseré : lumineux sur tout le tour, points chauds en haut à gauche et en
+   bas. Élément à part, car .glow-card occupe déjà ::before et ::after. */
+.glass-edge {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      140px 100px at 0 0,
+      color-mix(in oklab, var(--color-ink) 45%, var(--color-violet-bright)),
+      transparent 80%
+    ),
+    radial-gradient(
+      170px 40px at 32% 100%,
+      color-mix(in oklab, var(--color-magenta) 80%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      120px 80px at 100% 100%,
+      var(--color-magenta),
+      transparent 75%
+    ),
+    linear-gradient(
+      160deg,
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink)) 62%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink)) 32%, transparent) 50%,
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink)) 38%, transparent)
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Tuile d'icône : verre saturé, liseré, halo qui colore la carte autour. */
+.glass-tile {
+  color: color-mix(in oklab, var(--card-accent, var(--color-violet)) 30%, var(--color-ink));
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--card-accent, var(--color-violet)) 62%, transparent),
+    color-mix(in oklab, var(--card-accent, var(--color-violet)) 26%, transparent)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--card-accent, var(--color-violet)) 60%, var(--color-ink) 15%),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 30%, transparent),
+    0 0 44px 8px color-mix(in oklab, var(--card-accent, var(--color-violet)) 30%, transparent);
+}
+
+/* Néon : cœur presque blanc, halo saturé en trois couches. Trait plus épais
+   que la famille (1.5), sinon la lueur n'a pas de matière. */
+.glass-tile svg {
+  stroke-width: 1.9;
+  filter: drop-shadow(0 0 1px var(--card-accent, var(--color-violet)))
+    drop-shadow(0 0 4px var(--card-accent, var(--color-violet)))
+    drop-shadow(0 0 10px var(--card-accent, var(--color-violet)));
+}
+
+/* Pastille flèche : bulle violette, anneau dégradé, halo en opacité seule. */
+.glass-orb {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(
+        150deg,
+        color-mix(in oklab, var(--color-violet) 46%, var(--color-surface-2)),
+        color-mix(in oklab, var(--color-violet) 24%, var(--color-surface))
+      )
+      padding-box,
+    linear-gradient(
+        145deg,
+        color-mix(in oklab, var(--color-ink) 45%, var(--color-violet-bright)),
+        var(--color-violet) 50%,
+        var(--color-magenta)
+      )
+      border-box;
+  box-shadow: inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 22%, transparent);
+}
+
+.glass-orb svg {
+  stroke-width: 2;
+}
+
+.glass-orb::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: 0 0 16px 1px color-mix(in oklab, var(--color-magenta) 60%, transparent);
+  opacity: 0.75;
+  pointer-events: none;
+  transition: opacity 320ms var(--ease-brand);
+}
+
+.group:hover .glass-orb::after,
+.group:focus-visible .glass-orb::after {
+  opacity: 1;
 }
 
 /* --- Hero : caméra cinématique ----------------------------------------------
@@ -424,4 +589,388 @@ body::after {
     opacity: 0;
     transform: translate3d(0, 16px, 0);
   }
+}
+
+/* --- Accueil : section Services ----------------------------------------------
+ * Même caméra que le hero (HeroScene), autre cadrage : la scène en haut à
+ * droite, les appareils face au bloc de texte, les cartes posées sur le sol.
+ * Repères dans l'image : appareils de 58,6 % à 95,7 % de la largeur, de
+ * 21,8 % à 66,4 % de la hauteur (centre vertical à 44,1 %). Les positions
+ * verticales supposent le texte à 100 px du haut de la section.
+ */
+
+/* Repères partagés par la scène et le voile : bord du conteneur (1320 px,
+   marges 2rem) et colonne de texte, marge comprise. Les unités cq ne sont
+   résolues que chez les enfants, dans le conteneur .hero-bg. */
+.services-bg {
+  --edge: max(2rem, (100cqw - 1320px) / 2 + 2rem);
+  --copy: 39rem;
+}
+
+@media (width < 80rem) {
+  .services-bg {
+    --copy: 32rem;
+  }
+}
+
+/* Paysage : le téléphone se cale sur le bord droit du conteneur, sauf si les
+   panneaux flottants (47,5 % de l'image) mordaient alors sur la colonne de
+   texte : l'image glisse à droite, sans que le téléphone sorte du cadre. Le
+   centre des appareils, à hauteur du titre. */
+.services-stage {
+  --w: min(87cqw, 1450px);
+  position: absolute;
+  left: min(
+    max(
+      100cqw - var(--edge) + 1rem - var(--w) * 0.957,
+      var(--edge) + var(--copy) - var(--w) * 0.475
+    ),
+    100cqw - 1.5rem - var(--w) * 0.957
+  );
+  top: calc(15.5rem - var(--w) / 1.7768 * 0.441);
+  width: var(--w);
+  aspect-ratio: 1672 / 941;
+}
+
+/* Ombre sous la rangée d'atouts (xl, seul cadrage où elle passe sur le socle
+   lumineux du portable). Bande uniforme aux bords fondus : un halo radial
+   s'éteindrait justement au bout de la rangée. Plus haute, en grille, elle
+   déborderait sur le texte au-dessus. */
+@media (width >= 80rem) {
+  .services-features {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .services-features::before {
+    content: "";
+    position: absolute;
+    inset: -50% -3% -50% -4%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-canvas) 74%, transparent) 7%,
+      color-mix(in oklab, var(--color-canvas) 74%, transparent) 93%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 28%, #000 72%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 28%, #000 72%, transparent);
+  }
+}
+
+/* Voile de lisibilité (lg) : il suit la colonne de texte, pas l'écran. */
+.services-scrim {
+  background: linear-gradient(
+    90deg,
+    var(--color-canvas) 0,
+    color-mix(in oklab, var(--color-canvas) 85%, transparent)
+      calc(var(--edge) + var(--copy) * 0.25),
+    color-mix(in oklab, var(--color-canvas) 50%, transparent)
+      calc(var(--edge) + var(--copy) * 0.64),
+    color-mix(in oklab, var(--color-canvas) 12%, transparent)
+      calc(var(--edge) + var(--copy)),
+    transparent calc(var(--edge) + var(--copy) * 1.28)
+  );
+}
+
+/* Sous lg : bandeau au-dessus du texte, appareils centrés sous le header.
+   Le retrait du texte (services-showcase.tsx) suit cette hauteur. */
+@media (width < 64rem) {
+  .services-stage {
+    --w: min(180cqw, 1100px);
+    left: calc(50cqw - var(--w) * 0.7715);
+    top: calc(4.5rem - var(--w) / 1.7768 * 0.218);
+  }
+}
+
+/* Bords fondus : large à gauche (côté texte), courts en haut et à droite (les
+   appareils frôlent le cadre), long en bas (les cartes passent dessus). */
+.services-stage .hero-near {
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent, #000 26%, #000 97%, transparent),
+    linear-gradient(180deg, transparent, #000 7%, #000 66%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent, #000 26%, #000 97%, transparent),
+    linear-gradient(180deg, transparent, #000 7%, #000 66%, transparent);
+  mask-composite: intersect;
+}
+
+/* Étiquette néon : anneau allumé à gauche qui s'éteint vers la droite. Le
+   fond est opaque, sinon le dégradé de l'anneau transparaît dedans. */
+.eyebrow-neon {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(
+        color-mix(in oklab, var(--color-indigo) 6%, var(--color-canvas)),
+        color-mix(in oklab, var(--color-indigo) 6%, var(--color-canvas))
+      )
+      padding-box,
+    linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-violet) 75%, var(--color-magenta)),
+        color-mix(in oklab, var(--color-violet-bright) 24%, transparent) 42%,
+        color-mix(in oklab, var(--color-ink) 16%, transparent)
+      )
+      border-box;
+}
+
+.eyebrow-dot {
+  background: color-mix(in oklab, var(--color-ink) 72%, var(--color-violet-bright));
+  box-shadow:
+    0 0 6px 1px var(--color-violet),
+    0 0 14px 3px color-mix(in oklab, var(--color-magenta) 55%, transparent);
+}
+
+/* Tuile d'icône sombre : verre violet, liseré clair en haut, icône néon. */
+.neon-tile {
+  color: color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-violet));
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--color-violet) 30%, var(--color-canvas)),
+    color-mix(in oklab, var(--color-violet) 9%, var(--color-canvas)) 75%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 22%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 16%, transparent);
+}
+
+.neon-tile svg {
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 2px color-mix(in oklab, var(--color-violet) 90%, transparent))
+    drop-shadow(0 0 7px color-mix(in oklab, var(--color-magenta) 50%, transparent));
+}
+
+/* Tuile de carte : icône plus claire, halo plus large, comme la maquette. */
+.service-card .neon-tile {
+  color: color-mix(in oklab, var(--color-violet-bright) 85%, var(--color-magenta));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 30%, transparent),
+    inset 1px 1px 0 0 color-mix(in oklab, var(--color-ink) 22%, transparent),
+    0 0 24px -8px color-mix(in oklab, var(--color-violet) 80%, transparent);
+}
+
+/* Carte service : verre nuit, lueur violette côté illustration. */
+.service-card {
+  background:
+    radial-gradient(
+      60% 85% at 100% 35%,
+      color-mix(in oklab, var(--color-violet) 16%, transparent),
+      transparent 72%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, color-mix(in oklab, var(--color-indigo) 7%, var(--color-canvas)) 84%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet) 9%, var(--color-canvas)) 90%, transparent)
+    );
+}
+
+/* Le flou ne sert qu'où les cartes passent sur l'image (lg et plus) ; sous
+   la scène, il coûterait à chaque image du défilement sans rien montrer. */
+@media (width >= 64rem) {
+  .service-card {
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    backdrop-filter: blur(16px) saturate(1.4);
+  }
+}
+
+/* Liseré : calque au-dessus de l'illustration, qui le mangerait sinon sur
+   le bord droit. */
+.service-card-edge {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  border: 1px solid color-mix(in oklab, var(--color-violet-bright) 17%, transparent);
+  pointer-events: none;
+}
+
+/* Carte mise en avant : liseré néon rose-violet et halo permanent. */
+.service-card-featured {
+  background:
+    radial-gradient(
+      70% 90% at 100% 45%,
+      color-mix(in oklab, var(--color-magenta) 20%, transparent),
+      transparent 72%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet) 12%, var(--color-canvas)) 86%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--color-violet) 16%, var(--color-canvas)) 90%, transparent)
+    );
+  box-shadow:
+    0 0 22px -4px color-mix(in oklab, var(--color-magenta) 60%, transparent),
+    0 0 64px -20px var(--color-violet);
+}
+
+.service-card-featured .service-card-edge {
+  border: 0;
+  padding: 1.5px;
+  background: linear-gradient(
+    120deg,
+    color-mix(in oklab, var(--color-ink) 45%, var(--color-violet-bright)),
+    color-mix(in oklab, var(--color-magenta) 85%, var(--color-ink)) 45%,
+    color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-magenta))
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.service-card-featured .neon-tile {
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--color-violet) 52%, var(--color-canvas)),
+    color-mix(in oklab, var(--color-magenta) 16%, var(--color-canvas)) 80%
+  );
+}
+
+/* Pastille flèche : bulle violette sombre ; le halo s'allume au survol, en
+   opacité seule. */
+.neon-orb {
+  color: var(--color-ink);
+  background: radial-gradient(
+    circle at 35% 25%,
+    color-mix(in oklab, var(--color-violet) 38%, var(--color-surface-2)),
+    color-mix(in oklab, var(--color-violet) 14%, var(--color-canvas)) 80%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 30%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 18%, transparent);
+}
+
+.neon-orb svg {
+  stroke-width: 2;
+}
+
+.neon-orb::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: 0 0 18px 1px color-mix(in oklab, var(--color-magenta) 55%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 320ms var(--ease-brand);
+}
+
+.group:hover .neon-orb::after,
+.group:focus-visible .neon-orb::after {
+  opacity: 1;
+}
+
+/* Pastille « Populaire » : violet plein, liseré clair, étoile néon. */
+.neon-badge {
+  color: var(--color-ink);
+  background: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--color-violet) 82%, var(--color-magenta)),
+    color-mix(in oklab, var(--color-violet) 58%, var(--color-canvas))
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 45%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 25%, transparent),
+    0 0 18px -4px color-mix(in oklab, var(--color-magenta) 70%, transparent);
+}
+
+.neon-badge svg {
+  filter: drop-shadow(0 0 4px var(--color-magenta));
+}
+
+/* --- Illustrations des cartes services ---------------------------------------
+ * Pur décor : panneaux de verre en perspective, calés sur le bord droit de la
+ * carte et fondus vers le texte. Aucun flou d'arrière-plan ici : la carte en
+ * porte déjà un, un par panneau coûterait cher à chaque survol.
+ */
+.illus {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  /* Taille de la carte en 3 colonnes à 1440 px, jamais étirée au-delà. */
+  width: min(64%, 17rem);
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 36%);
+  mask-image: linear-gradient(90deg, transparent, #000 36%);
+}
+
+/* Matières seulement : position et rayon restent aux classes du composant
+   (une règle hors couche l'emporterait sur les utilitaires Tailwind). */
+
+/* Panneau de verre : violet translucide (les plans se voient les uns à
+   travers les autres), arête claire en haut à gauche, ombre colorée. */
+.illus-glass {
+  background: linear-gradient(
+    155deg,
+    color-mix(in oklab, var(--color-violet) 44%, transparent),
+    color-mix(in oklab, var(--color-violet) 16%, transparent) 55%,
+    color-mix(in oklab, var(--color-indigo) 12%, transparent)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 40%, transparent),
+    inset 1px 1px 0 0 color-mix(in oklab, var(--color-ink) 30%, transparent),
+    0 24px 40px -22px var(--color-violet);
+}
+
+/* Écran : dalle presque noire, cadre clair, reflet néon sur la tranche. */
+.illus-screen {
+  background: linear-gradient(
+    170deg,
+    color-mix(in oklab, var(--color-violet) 12%, var(--color-canvas)),
+    var(--color-canvas)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 34%, transparent),
+    inset -2px 0 0 0 color-mix(in oklab, var(--color-magenta) 75%, var(--color-ink)),
+    8px 0 22px -8px var(--color-magenta),
+    0 24px 44px -22px var(--color-violet);
+}
+
+/* Téléphone : tranche néon rose-blanc sur tout le tour. */
+.illus-phone {
+  background: linear-gradient(
+    170deg,
+    color-mix(in oklab, var(--color-violet) 16%, var(--color-canvas)),
+    var(--color-canvas) 70%
+  );
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--color-ink) 55%, var(--color-magenta)),
+    inset 0 0 0 4px color-mix(in oklab, var(--color-canvas) 80%, transparent),
+    0 0 18px -2px color-mix(in oklab, var(--color-magenta) 70%, transparent),
+    0 24px 44px -22px var(--color-violet);
+}
+
+/* Pictogramme néon : cœur clair, halo saturé. */
+.illus-neon {
+  color: color-mix(in oklab, var(--color-violet-bright) 60%, var(--color-magenta));
+  filter: drop-shadow(0 0 2px var(--color-magenta))
+    drop-shadow(0 0 10px color-mix(in oklab, var(--color-violet) 80%, transparent));
+}
+
+/* Traînée de lumière : le néon qui file hors du cadre. */
+.illus-streak {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-magenta) 80%, transparent) 40%,
+    var(--color-ink) 72%,
+    transparent
+  );
+  box-shadow: 0 0 10px 2px color-mix(in oklab, var(--color-magenta) 50%, transparent);
+}
+
+/* Lumière qui déborde d'un appareil : un dégradé, jamais un flou. */
+.illus-flare {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-magenta) 55%, transparent),
+    transparent
+  );
 }

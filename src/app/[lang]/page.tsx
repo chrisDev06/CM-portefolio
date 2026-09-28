@@ -1,27 +1,35 @@
 import type { CSSProperties } from "react";
 import { getDictionary, getLocale } from "@/i18n/dictionaries";
-import { modelIds, path, serviceIds } from "@/i18n/config";
+import { path, type ServiceId } from "@/i18n/config";
 import {
   Button,
-  Card,
   Container,
   CtaBand,
-  Glow,
   Icon,
+  type IconName,
   Section,
   SectionHeading,
-  Stat,
-  Tag,
 } from "@/components/ui";
-import {
-  DuoFlow,
-  ModelCard,
-  NumberedStep,
-  PersonCard,
-  ServiceCard,
-  TechRow,
-} from "@/components/blocks";
+import { HeroServiceCard, NumberedStep, TechRow } from "@/components/blocks";
 import { HeroBackground } from "@/components/hero-background";
+import { ServicesShowcase } from "@/components/services-showcase";
+import { ModelShowcase } from "@/components/model-showcase";
+import { DifferenceSection } from "@/components/difference";
+import { DuoSection } from "@/components/duo";
+
+/** Icônes des atouts du hero, dans l'ordre de `home.heroFeatures`. */
+const HERO_FEATURE_ICONS: IconName[] = ["bolt", "diamond", "user", "shieldCheck"];
+
+/** Service lié et teinte des cartes du hero, dans l'ordre de `home.heroCards`. */
+const HERO_CARDS: { id: ServiceId; accent: string }[] = [
+  {
+    id: "site-web",
+    accent: "color-mix(in oklab, var(--color-violet) 60%, var(--color-magenta))",
+  },
+  { id: "e-commerce", accent: "var(--color-magenta)" },
+  { id: "mobile", accent: "var(--color-indigo)" },
+  { id: "sur-mesure", accent: "var(--color-violet)" },
+];
 
 /** Délai d'entrée d'un élément du hero, en secondes. */
 const rise = (delay: number) => ({ "--d": `${delay}s` }) as CSSProperties;
@@ -77,12 +85,29 @@ export default async function HomePage() {
               </Button>
             </div>
             <div
-              className="hero-rise mt-10 hidden flex-wrap gap-2 sm:flex portrait:hidden [@media(max-height:899px)]:hidden"
+              className="glass hero-rise relative mt-10 w-fit rounded-md px-6 py-4 portrait:hidden [@media(max-height:760px)]:hidden"
               style={rise(0.98)}
             >
-              {home.heroTags.map((tag) => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
+              <span aria-hidden="true" className="glass-edge" />
+              <ul className="grid grid-cols-2 gap-x-8 gap-y-4 lg:flex lg:gap-0 lg:divide-x lg:divide-line-strong">
+                {home.heroFeatures.map((feature, index) => (
+                  <li
+                    key={feature.title}
+                    className="flex items-center gap-3 lg:px-6 lg:first:pl-0 lg:last:pr-0"
+                  >
+                    <Icon
+                      name={HERO_FEATURE_ICONS[index] ?? "check"}
+                      className="size-6 shrink-0 text-violet-bright drop-shadow-[0_0_10px_var(--color-violet)]"
+                    />
+                    <div>
+                      <p className="text-sm font-medium text-ink">
+                        {feature.title}
+                      </p>
+                      <p className="text-xs text-ink/70">{feature.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
@@ -92,135 +117,31 @@ export default async function HomePage() {
         <Container className="pb-10 portrait:hidden sm:pb-14 [@media(max-height:899px)]:sm:pb-8">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {home.heroCards.map((card, index) => (
-              <div
+              <HeroServiceCard
                 key={card.title}
+                {...HERO_CARDS[index]}
+                title={card.title}
+                text={card.text}
+                locale={locale}
                 className="hero-rise"
                 style={rise(1.08 + index * 0.08)}
-              >
-                <Card
-                  interactive
-                  className="h-full bg-surface/70 p-3.5 backdrop-blur-md sm:p-6"
-                >
-                  <h2 className="text-base sm:text-lg">{card.title}</h2>
-                  <p className="mt-2 text-xs text-ink-muted sm:text-sm">
-                    {card.text}
-                  </p>
-                </Card>
-              </div>
+              />
             ))}
           </div>
         </Container>
       </section>
 
-      <Section className="py-12 sm:py-14">
-        <Container>
-          <div className="flex flex-wrap gap-x-16 gap-y-8">
-            {home.facts.map((fact) => (
-              <Stat key={fact.label} value={fact.value} label={fact.label} />
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* Services */}
-      <Section>
-        <Container>
-          <SectionHeading
-            eyebrow={home.services.eyebrow}
-            title={home.services.title}
-            lead={home.services.lead}
-          />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceIds.map((id) => (
-              <ServiceCard key={id} id={id} locale={locale} dict={dict} />
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <ServicesShowcase locale={locale} dict={dict} />
 
       {/* Modèles */}
-      <Section>
-        <Glow
-          className="right-0 top-20 size-[420px]"
-          from="var(--color-magenta)"
-        />
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow={home.models.eyebrow}
-              title={home.models.title}
-              lead={home.models.lead}
-            />
-            <Button
-              href={path("models", locale)}
-              variant="ghost"
-              className="shrink-0"
-            >
-              {dict.common.allModels}
-            </Button>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
-            {modelIds.map((id) => (
-              <ModelCard key={id} id={id} locale={locale} dict={dict} />
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <ModelShowcase locale={locale} dict={dict} />
 
       {/* Différence */}
-      <Section>
-        <Container>
-          <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr]">
-            <SectionHeading
-              eyebrow={home.difference.eyebrow}
-              title={home.difference.title}
-              lead={home.difference.lead}
-            />
-            <div className="grid gap-6 sm:grid-cols-2">
-              {home.difference.points.map((point) => (
-                <Card key={point.title}>
-                  <Icon name="check" className="size-5 text-violet" />
-                  <h3 className="mt-4 text-lg">{point.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                    {point.text}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <DifferenceSection content={home.difference} />
 
       {/* Binôme */}
-      <Section>
-        <Glow className="left-1/2 top-0 size-[520px] -translate-x-1/2" />
-        <Container>
-          <SectionHeading
-            eyebrow={home.duo.eyebrow}
-            title={home.duo.title}
-            lead={home.duo.lead}
-            align="center"
-          />
-          <div className="mt-12">
-            <DuoFlow nodes={home.duo.flow} />
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {home.duo.people.map((person) => (
-              <PersonCard
-                key={person.name}
-                name={person.name}
-                role={person.role}
-                text={person.text}
-              />
-            ))}
-          </div>
-          <div className="mt-10 flex justify-center">
-            <Button href={path("agency", locale)} variant="ghost">
-              {home.duo.cta}
-            </Button>
-          </div>
-        </Container>
-      </Section>
+      <DuoSection content={home.duo} locale={locale} />
 
       {/* Méthode */}
       <Section>

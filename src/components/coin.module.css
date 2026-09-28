@@ -1,0 +1,249 @@
+/* --- Médaillon-pièce ----------------------------------------------------------
+ * Au clic, le médaillon tourne sur lui-même comme une pièce : deux faces, une
+ * tranche striée de 48 facettes, un reflet qui balaie chaque face et une ombre
+ * quand elle se détourne de la lumière. Survolé, il s'incline sous le curseur
+ * et montre son épaisseur. Le mouvement (coin-portrait.tsx) ne touche que
+ * transform et opacity : il tourne sur le compositeur.
+ * Taille : --portrait ; teinte : --tone et --tone-light (voir duo.module.css).
+ * Aucun élément de la chaîne 3D ne porte overflow, filter ni opacity : ils
+ * aplatiraient la scène.
+ */
+
+.root {
+  /* Épaisseur : celle d'une pièce de 2 €, rapportée au diamètre. */
+  --thick: calc(var(--portrait) * 0.065);
+  /* Hauteur d'une facette : 2 r tan(180° / 48), plus un recouvrement. */
+  --facet: calc(var(--portrait) * 0.0655 + 1.5px);
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  perspective: calc(var(--portrait) * 3.2);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Lueur ambiante, fixe : la pièce tourne devant elle. */
+.halo {
+  position: absolute;
+  inset: -14%;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--tone) 40%, transparent),
+    color-mix(in oklab, var(--tone) 12%, transparent) 62%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Lumière sur la carte, sous la pièce : n'apparaît que quand elle s'élève. */
+.floor {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -8%;
+  height: 12%;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--tone-light) 55%, transparent),
+    color-mix(in oklab, var(--tone) 20%, transparent) 55%,
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lift,
+.tilt,
+.coin,
+.edge {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.tilt {
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 600ms var(--ease-brand);
+}
+
+/* Mouvement réduit : la pièce se retourne d'un coup. */
+.coin[data-side="back"] {
+  transform: rotateY(180deg);
+}
+
+/* --- Faces ------------------------------------------------------------------ */
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow:
+    0 0 0.75rem 0 color-mix(in oklab, var(--tone) 60%, transparent),
+    0 0 3.5rem -0.5rem color-mix(in oklab, var(--tone) 55%, transparent);
+}
+
+.front {
+  transform: translateZ(calc(var(--thick) / 2));
+  background: radial-gradient(
+    circle at 50% 30%,
+    color-mix(in oklab, var(--tone) 32%, var(--color-canvas)),
+    color-mix(in oklab, var(--tone) 7%, var(--color-canvas)) 72%
+  );
+}
+
+/* Revers : champ guilloché, comme une vraie pièce. */
+.back {
+  transform: rotateY(180deg) translateZ(calc(var(--thick) / 2));
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      transparent 0 0.3rem,
+      color-mix(in oklab, var(--tone-light) 8%, transparent) 0.3rem 0.36rem
+    ),
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in oklab, var(--tone) 28%, var(--color-canvas)),
+      color-mix(in oklab, var(--tone) 6%, var(--color-canvas)) 72%
+    );
+}
+
+/* Point de lumière : il suit le curseur au survol. */
+.face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    circle at var(--light-x, 32%) var(--light-y, 22%),
+    color-mix(in oklab, var(--color-ink) 16%, transparent),
+    transparent 26%
+  );
+  pointer-events: none;
+}
+
+/* Rebord relevé : liseré néon, gorge sombre, filet clair, lueur intérieure. */
+.face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--tone) 60%, var(--color-ink)),
+    inset 0 0 0 calc(var(--portrait) * 0.022)
+      color-mix(in oklab, var(--tone) 24%, var(--color-canvas)),
+    inset 0 0 0 calc(var(--portrait) * 0.022 + 1px)
+      color-mix(in oklab, var(--tone-light) 45%, transparent),
+    inset 0 0 2.25rem -0.5rem color-mix(in oklab, var(--tone) 65%, transparent);
+  pointer-events: none;
+}
+
+/* Reflet : bande claire qui balaie la face (position animée). */
+.gloss {
+  position: absolute;
+  inset: -20%;
+  z-index: 2;
+  background: linear-gradient(
+    105deg,
+    transparent 34%,
+    color-mix(in oklab, var(--color-ink) 50%, transparent) 47%,
+    color-mix(in oklab, var(--color-ink) 12%, transparent) 54%,
+    transparent 66%
+  );
+  pointer-events: none;
+}
+
+/* Ombre : la face s'éteint en se détournant (opacité animée). */
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: var(--color-canvas);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Recto sans photo : l'initiale ; revers : le « & » de la marque. */
+.initial,
+.mark {
+  position: relative;
+  translate: 0 0.04em;
+  background-image: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--color-ink) 75%, var(--tone)),
+    color-mix(in oklab, var(--tone) 70%, var(--color-violet-bright)) 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: calc(var(--portrait) * 0.42);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  filter: drop-shadow(0 0 1.25rem color-mix(in oklab, var(--tone) 70%, transparent));
+}
+
+.mark {
+  translate: 0 0.02em;
+  font-size: calc(var(--portrait) * 0.36);
+}
+
+/* Légende gravée sur le pourtour du revers. */
+.legend {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: color-mix(in oklab, var(--tone-light) 80%, var(--color-ink));
+  font-family: var(--font-body);
+  font-size: 4.6px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* --- Tranche ------------------------------------------------------------------
+ * 48 facettes disposées en cylindre : chacune pivote autour de l'axe de la
+ * pièce, s'écarte du rayon, puis se tourne vers l'extérieur. Stries parallèles
+ * à l'axe, éclairage figé par facette (lumière en haut à gauche).
+ */
+
+.facet {
+  --rim: color-mix(in oklab, var(--tone-light) var(--l), var(--color-canvas));
+  position: absolute;
+  left: calc(50% - var(--thick) / 2);
+  top: calc(50% - var(--facet) / 2);
+  width: var(--thick);
+  height: var(--facet);
+  transform: rotateZ(var(--a)) translateX(calc(var(--portrait) / 2 - 0.5px))
+    rotateY(90deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* Stries, puis métal : bords arrondis plus sombres, filet spéculaire au
+     milieu de l'épaisseur. */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      color-mix(in oklab, var(--color-canvas) 40%, transparent) 2px 3px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--rim) 40%, var(--color-canvas)),
+      var(--rim) 38%,
+      color-mix(in oklab, var(--rim) 55%, var(--color-ink)) 50%,
+      var(--rim) 62%,
+      color-mix(in oklab, var(--rim) 40%, var(--color-canvas))
+    );
+}

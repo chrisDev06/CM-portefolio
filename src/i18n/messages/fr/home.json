@@ -5,7 +5,12 @@
   "subtitle": "Sites web, e-commerce, applications mobiles. Un seul interlocuteur pour comprendre votre activité, un seul pour construire votre solution.",
   "ctaPrimary": "Lancer mon projet",
   "ctaSecondary": "Voir nos sites prêts à lancer",
-  "heroTags": ["Web", "Mobile", "E-commerce", "Sur-mesure", "Performance"],
+  "heroFeatures": [
+    { "title": "Réponse rapide", "text": "Moins de 24h" },
+    { "title": "Sur-mesure", "text": "100% adapté" },
+    { "title": "Freelance direct", "text": "Sans intermédiaire" },
+    { "title": "Accompagnement", "text": "De A à Z" }
+  ],
   "heroCards": [
     {
       "title": "Sites vitrines",
@@ -25,18 +30,38 @@
   ],
   "services": {
     "eyebrow": "Nos services",
-    "title": "Des solutions digitales complètes pour tous vos projets.",
-    "lead": "De la conception à la mise en ligne, nous vous accompagnons à chaque étape pour transformer vos idées en expériences digitales performantes."
+    "titleStart": "Des solutions digitales",
+    "titleHighlight": "pensées pour vendre, convaincre et grandir.",
+    "lead": "De la conception à la mise en ligne, nous vous accompagnons à chaque étape\npour transformer vos idées en expériences digitales performantes\nqui génèrent de vrais résultats.",
+    "screen": "Des idées\nqui performent.",
+    "features": [
+      { "title": "Freelance direct", "text": "Un seul interlocuteur" },
+      { "title": "Stratégie + design + code", "text": "Une approche complète" },
+      { "title": "Suivi humain", "text": "Disponible et réactif" },
+      { "title": "Performances", "text": "Orienté résultats" }
+    ]
   },
   "models": {
     "eyebrow": "Sites prêts à lancer",
-    "title": "Des sites déjà en ligne, que vous pouvez tester maintenant.",
-    "lead": "Nos concurrents montrent des captures d'écran. Nous vous donnons le lien : ouvrez la démo, cliquez partout, testez sur votre téléphone. Chaque modèle est personnalisable à votre activité."
+    "titleStart": "Des sites déjà en ligne,",
+    "titleEnd": "prêts à convaincre",
+    "titleHighlight": "vos futurs clients.",
+    "lead": "Nos concurrents montrent des captures d'écran. Nous vous donnons le lien : ouvrez la démo, cliquez partout, testez sur votre téléphone. Chaque modèle est personnalisable à votre activité.",
+    "features": [
+      { "title": "Démos en ligne", "text": "à tester maintenant" },
+      { "title": "100 %", "text": "personnalisables" },
+      { "title": "Adaptés mobile", "text": "et ordinateur" }
+    ]
   },
   "difference": {
     "eyebrow": "Notre différence",
-    "title": "Le digital sans intermédiaire.",
+    "titleStart": "Le digital sans",
+    "titleHighlight": "intermédiaire.",
     "lead": "Dans une grande agence, votre projet passe par un commercial, un chef de projet, un studio, puis une équipe technique. À chaque passage, une partie de votre besoin se perd. Ici, il n'y a personne entre vous et la solution.",
+    "features": [
+      { "title": "Relation directe", "text": "Du premier échange à la mise en ligne" },
+      { "title": "Plus de clarté", "text": "Des projets plus rapides et plus alignés" }
+    ],
     "points": [
       {
         "title": "Un seul contact commercial",
@@ -58,22 +83,43 @@
   },
   "duo": {
     "eyebrow": "Votre binôme",
-    "title": "Deux expertises. Un seul objectif : faire réussir votre projet.",
+    "titleStart": "Deux expertises.",
+    "titleEnd": "Un seul objectif :",
+    "titleHighlight": "faire réussir votre projet.",
     "lead": "Pas de fausse agence de trente personnes. Deux personnes, que vous connaissez par leur prénom, du premier appel à la mise en ligne.",
     "people": [
       {
         "name": "Manon",
         "role": "Commercial & relation client",
-        "text": "Premier contact, compréhension du besoin, devis, organisation et suivi. Elle traduit votre activité en cahier des charges et reste votre point de repère tout au long du projet."
+        "text": "Premier contact, compréhension du besoin, devis, organisation et suivi. Elle traduit votre activité en cahier des charges et reste votre point de repère tout au long du projet.",
+        "skills": [
+          "Compréhension du besoin",
+          "Suivi clair et régulier",
+          "Organisation du projet",
+          "Relation client de A à Z"
+        ]
       },
       {
         "name": "Christopher",
         "role": "Développement & technique",
-        "text": "Architecture, UX technique, développement web et mobile, intégrations, performances, déploiement et maintenance. Il construit ce que vous avez validé."
+        "text": "Architecture, UX technique, développement web et mobile, intégrations, performances, déploiement et maintenance. Il construit ce que vous avez validé.",
+        "skills": [
+          "Développement sur mesure",
+          "UX & architecture",
+          "Performance et optimisation",
+          "Maintenance et évolutivité"
+        ]
       }
     ],
-    "flow": ["Manon", "Vous", "Christopher"],
-    "cta": "Découvrir l'agence"
+    "hub": { "title": "Vous", "text": "Votre projet au centre" },
+    "spin": "Faire tourner le médaillon de {name}",
+    "stats": [
+      { "title": "Réponse rapide", "text": "Sous 24 h" },
+      { "title": "Suivi humain", "text": "Toujours avec nous" },
+      { "title": "Zéro sous-traitance", "text": "Tout est fait en interne" }
+    ],
+    "cta": "Découvrir l'agence",
+    "tagline": "Un binôme complémentaire, engagé à vos côtés"
   },
   "method": {
     "eyebrow": "Notre méthode",

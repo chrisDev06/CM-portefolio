@@ -1,0 +1,649 @@
+/* --- Aperçus de modèles -------------------------------------------------------
+ * Des miniatures de démo en HTML : le texte reste net à toute taille et suit
+ * la langue de la page. Toutes les mesures sont en cqw (1 % de la largeur de
+ * l'aperçu) : la maquette se réduit d'un bloc, comme une image.
+ * Les couleurs propres aux démos arrivent en variables depuis
+ * MODEL_PALETTES (src/lib/model-assets.ts) : ce ne sont pas celles de la marque.
+ */
+
+/* === Navigateur : Horizon Travel =========================================== */
+
+.browser {
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-canvas);
+  /* Liseré néon : fin et clair, puis une lueur violette tout autour. */
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-violet-bright) 55%, transparent),
+    0 0 14px -2px color-mix(in oklab, var(--color-violet) 80%, transparent),
+    0 18px 48px -22px var(--color-violet);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1.15cqw;
+  height: 4.8cqw;
+  padding-inline: 3.9cqw 1.4cqw;
+  background: color-mix(in oklab, var(--color-violet) 9%, var(--color-surface));
+  border-bottom: 1px solid color-mix(in oklab, var(--color-violet-bright) 16%, transparent);
+}
+
+.dot {
+  width: 1.45cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--dot);
+}
+
+.url {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.9cqw;
+  height: 3.1cqw;
+  margin-left: 11.5cqw;
+  padding-inline: 1.7cqw;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--color-violet) 7%, var(--color-canvas));
+  font-size: 1.4cqw;
+  color: color-mix(in oklab, var(--color-ink) 80%, transparent);
+  white-space: nowrap;
+}
+
+.url svg {
+  width: 1.5cqw;
+  height: 1.5cqw;
+  color: var(--color-violet-bright);
+}
+
+/* Le site : la photo en fond, le texte à gauche sur un voile sombre. */
+.site {
+  position: relative;
+  aspect-ratio: 100 / 55;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--color-canvas) 80%, transparent) 0%,
+      color-mix(in oklab, var(--color-canvas) 58%, transparent) 30%,
+      color-mix(in oklab, var(--color-canvas) 14%, transparent) 54%,
+      transparent 66%
+    ),
+    linear-gradient(180deg, color-mix(in oklab, var(--color-canvas) 55%, transparent), transparent 22%),
+    linear-gradient(0deg, color-mix(in oklab, var(--color-canvas) 60%, transparent), transparent 32%);
+}
+
+.nav {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 8.4cqw;
+  padding-inline: 6.5cqw 5.7cqw;
+}
+
+.logo {
+  font-size: 1.75cqw;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.links {
+  display: flex;
+  gap: 3.4cqw;
+  margin-left: auto;
+  font-size: 1.12cqw;
+  color: color-mix(in oklab, var(--color-ink) 82%, transparent);
+}
+
+.book {
+  margin-left: 4.8cqw;
+  padding: 1.25cqw 3.3cqw;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--hz-accent), var(--hz-accent-2));
+  color: var(--hz-on-accent);
+  font-size: 1.12cqw;
+  font-weight: 500;
+}
+
+.hero {
+  position: absolute;
+  left: 8.3cqw;
+  top: 12.2cqw;
+  width: 44cqw;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9cqw;
+  font-size: 1.08cqw;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hz-accent);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.6cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--hz-accent);
+  box-shadow: 0 0 0.8cqw var(--hz-accent);
+}
+
+.title {
+  margin-top: 1.6cqw;
+  font-size: 4.3cqw;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.titleAccent {
+  background: linear-gradient(90deg, var(--hz-accent-2), var(--hz-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  max-width: 36cqw;
+  margin-top: 1.9cqw;
+  font-size: 1.26cqw;
+  line-height: 1.65;
+  color: color-mix(in oklab, var(--color-ink) 82%, transparent);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1cqw;
+  height: 4.1cqw;
+  margin-top: 2.6cqw;
+  padding-inline: 2.9cqw;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--hz-accent), var(--hz-accent-2));
+  box-shadow: 0 0.8cqw 2.4cqw -0.8cqw var(--hz-accent-2);
+  color: var(--hz-on-accent);
+  font-size: 1.12cqw;
+  font-weight: 500;
+}
+
+.cta svg {
+  width: 1.3cqw;
+  height: 1.3cqw;
+}
+
+.highlights {
+  position: absolute;
+  left: 6.8cqw;
+  top: 41.4cqw;
+  display: grid;
+  grid-template-columns: repeat(3, 14.6cqw);
+  gap: 0.5cqw;
+}
+
+.highlight {
+  height: 9.5cqw;
+  padding: 1.4cqw 1.5cqw;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 9%, transparent);
+  border-radius: 0.9cqw;
+  background: color-mix(in oklab, var(--color-canvas) 50%, transparent);
+}
+
+.highlightIndex {
+  font-size: 1.12cqw;
+  color: color-mix(in oklab, var(--color-ink) 62%, transparent);
+}
+
+.highlightText {
+  max-width: 10.5cqw;
+  margin-top: 0.9cqw;
+  font-size: 1.04cqw;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Carte destination : posée sur la photo, en bas à droite. */
+.spot {
+  position: absolute;
+  left: 79.3cqw;
+  top: 30.4cqw;
+  width: 16.7cqw;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 32%, transparent);
+  border-radius: 1.1cqw;
+  background: color-mix(in oklab, var(--color-canvas) 62%, transparent);
+  box-shadow: 0 1.5cqw 3cqw -1cqw color-mix(in oklab, var(--color-canvas) 90%, transparent);
+}
+
+.spotPhoto {
+  position: relative;
+  height: 10.4cqw;
+  overflow: hidden;
+}
+
+.spotBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1cqw 1.2cqw 1.3cqw;
+}
+
+.spotName {
+  font-size: 1.15cqw;
+  font-weight: 600;
+}
+
+.spotPlace {
+  margin-top: 0.3cqw;
+  font-size: 0.92cqw;
+  color: color-mix(in oklab, var(--color-ink) 62%, transparent);
+}
+
+.spotGo {
+  display: grid;
+  place-items: center;
+  width: 2.6cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-canvas);
+}
+
+.spotGo svg {
+  width: 1.3cqw;
+  height: 1.3cqw;
+}
+
+/* === Téléphones : FitZone ================================================== */
+
+/* Le socle de la scène est à 86 % de la hauteur : les téléphones y posent. */
+.stage {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 100 / 74;
+  overflow: hidden;
+}
+
+.pool {
+  position: absolute;
+  left: 12cqw;
+  right: 8cqw;
+  top: 60cqw;
+  height: 13cqw;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-violet-bright) 55%, transparent),
+    color-mix(in oklab, var(--color-violet) 30%, transparent) 45%,
+    transparent
+  );
+}
+
+.phone {
+  position: absolute;
+  padding: 0.85cqw;
+  border-radius: 5.6cqw;
+  /* Tranche en métal sombre : reflets clairs sur les angles. */
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--color-ink) 42%, var(--color-canvas)),
+    color-mix(in oklab, var(--color-ink) 8%, var(--color-canvas)) 26%,
+    var(--color-canvas) 58%,
+    color-mix(in oklab, var(--color-ink) 30%, var(--color-canvas))
+  );
+  box-shadow:
+    inset 0 0 0 0.22cqw color-mix(in oklab, var(--color-ink) 12%, var(--color-canvas)),
+    0 3cqw 5cqw -2cqw var(--color-canvas),
+    0 0 5cqw -1.5cqw color-mix(in oklab, var(--color-violet) 70%, transparent);
+}
+
+/* Le téléphone de droite est derrière, tourné vers la gauche. */
+.phoneBack {
+  left: 52.5cqw;
+  top: 3.6cqw;
+  width: 33.4cqw;
+  height: 61cqw;
+  transform: perspective(110cqw) rotateY(-18deg) rotate(5deg);
+}
+
+.phoneFront {
+  left: 19cqw;
+  top: 2.4cqw;
+  width: 35cqw;
+  height: 65.4cqw;
+  transform: perspective(110cqw) rotateY(8deg) rotate(-1.5deg);
+}
+
+.screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4.8cqw;
+  background: var(--fz-screen);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.island {
+  position: absolute;
+  top: 1.3cqw;
+  left: 50%;
+  width: 10.5cqw;
+  height: 3cqw;
+  border-radius: 9999px;
+  background: var(--fz-island);
+  translate: -50% 0;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75cqw 3.3cqw 0 3.8cqw;
+  font-size: 1.12cqw;
+  font-weight: 600;
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.5cqw;
+}
+
+.statusIcons svg {
+  height: 1.05cqw;
+  width: auto;
+}
+
+/* Accueil de l'application */
+.home {
+  padding: 3.1cqw 2.2cqw 0;
+}
+
+.hello {
+  font-size: 2.4cqw;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.prompt {
+  margin-top: 0.5cqw;
+  font-size: 1.28cqw;
+  color: color-mix(in oklab, var(--color-ink) 78%, transparent);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4cqw;
+  margin-top: 1.9cqw;
+  padding: 0.45cqw;
+  border-radius: 1.3cqw;
+  background: var(--fz-panel);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55cqw;
+  height: 4cqw;
+  border-radius: 1cqw;
+  font-size: 1.04cqw;
+  color: color-mix(in oklab, var(--color-ink) 70%, transparent);
+}
+
+.tab svg {
+  width: 1.4cqw;
+  height: 1.4cqw;
+}
+
+.active {
+  background: color-mix(in oklab, var(--fz-accent) 20%, var(--fz-panel));
+  color: var(--fz-accent);
+  font-weight: 600;
+}
+
+.label {
+  margin-top: 2.5cqw;
+  font-size: 1.45cqw;
+  font-weight: 600;
+}
+
+.ring {
+  position: relative;
+  width: 14.6cqw;
+  aspect-ratio: 1;
+  margin: 1cqw auto 0;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  rotate: -90deg;
+}
+
+.ringValue {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.ringScore {
+  font-size: 2.6cqw;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ringScore small {
+  margin-left: 0.2cqw;
+  font-size: 1.1cqw;
+  font-weight: 600;
+}
+
+.ringGoal {
+  margin-top: 0.5cqw;
+  font-size: 0.85cqw;
+  color: color-mix(in oklab, var(--color-ink) 66%, transparent);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8cqw;
+  margin-top: 2.1cqw;
+}
+
+.stat {
+  padding: 1.1cqw 0.5cqw;
+  border-radius: 1.1cqw;
+  background: var(--fz-panel);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 1.9cqw;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.statLabel {
+  margin-top: 0.4cqw;
+  font-size: 0.84cqw;
+  line-height: 1.35;
+  color: color-mix(in oklab, var(--color-ink) 62%, transparent);
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8cqw;
+  height: 5.3cqw;
+  margin-top: 1.8cqw;
+  border-radius: 9999px;
+  background: var(--fz-accent);
+  box-shadow: 0 0 2.6cqw -0.3cqw color-mix(in oklab, var(--fz-accent) 70%, transparent);
+  color: var(--fz-on-accent);
+  font-size: 1.14cqw;
+  font-weight: 600;
+}
+
+.start svg {
+  width: 1.3cqw;
+  height: 1.3cqw;
+}
+
+.tabbar {
+  position: absolute;
+  inset-inline: 1.2cqw;
+  bottom: 1.2cqw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.1cqw 0 0.9cqw;
+  border-radius: 2.6cqw;
+  background: var(--fz-panel);
+}
+
+.tabbarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45cqw;
+  font-size: 0.84cqw;
+  color: color-mix(in oklab, var(--color-ink) 55%, transparent);
+}
+
+.tabbarItem svg {
+  width: 1.8cqw;
+  height: 1.8cqw;
+}
+
+.tabbarActive {
+  color: var(--fz-accent);
+}
+
+/* Liste des séances */
+.sessions {
+  padding: 3.2cqw 2.2cqw 0;
+}
+
+.sessionsHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sessionsTitle {
+  font-size: 2.3cqw;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.search {
+  display: grid;
+  place-items: center;
+  width: 3.8cqw;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent);
+  border-radius: 50%;
+  background: var(--fz-panel);
+}
+
+.search svg {
+  width: 1.5cqw;
+  height: 1.5cqw;
+}
+
+.chips {
+  display: flex;
+  gap: 0.7cqw;
+  margin-top: 1.8cqw;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  height: 3.3cqw;
+  padding-inline: 1.7cqw;
+  border-radius: 9999px;
+  background: var(--fz-panel);
+  font-size: 1.04cqw;
+  color: color-mix(in oklab, var(--color-ink) 75%, transparent);
+}
+
+.list {
+  display: grid;
+  gap: 1cqw;
+  margin-top: 1.8cqw;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1.4cqw;
+  padding: 0.9cqw;
+  border-radius: 1.5cqw;
+  background: var(--fz-panel);
+}
+
+.thumb {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 7.6cqw;
+  aspect-ratio: 1;
+  border-radius: 1.1cqw;
+  background: linear-gradient(160deg, var(--from), var(--to));
+  color: var(--fz-silhouette);
+}
+
+.thumb svg {
+  width: 5.2cqw;
+  height: 5.2cqw;
+}
+
+.itemName {
+  font-size: 1.3cqw;
+  font-weight: 600;
+}
+
+.itemMeta {
+  margin-top: 0.5cqw;
+  font-size: 0.84cqw;
+  color: color-mix(in oklab, var(--color-ink) 55%, transparent);
+}
+
+.play {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 3.3cqw;
+  aspect-ratio: 1;
+  margin-left: auto;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--fz-accent) 42%, var(--fz-panel));
+}
+
+.play svg {
+  width: 1.2cqw;
+  height: 1.2cqw;
+  margin-left: 0.2cqw;
+}

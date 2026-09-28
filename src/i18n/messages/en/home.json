@@ -5,7 +5,12 @@
   "subtitle": "Websites, online stores, mobile apps. One person to understand your business, one to build your solution.",
   "ctaPrimary": "Start my project",
   "ctaSecondary": "See our ready-to-launch sites",
-  "heroTags": ["Web", "Mobile", "E-commerce", "Custom", "Performance"],
+  "heroFeatures": [
+    { "title": "Fast response", "text": "Within 24h" },
+    { "title": "Tailor-made", "text": "100% adapted" },
+    { "title": "Direct freelance", "text": "No middleman" },
+    { "title": "Full support", "text": "From A to Z" }
+  ],
   "heroCards": [
     { "title": "Business websites", "text": "An online presence that looks like you." },
     { "title": "E-commerce", "text": "Sell more, without the friction." },
@@ -19,18 +24,38 @@
   ],
   "services": {
     "eyebrow": "Our services",
-    "title": "Complete digital solutions for every project.",
-    "lead": "From first sketch to launch day, we walk you through every step and turn your ideas into digital products that perform."
+    "titleStart": "Digital solutions",
+    "titleHighlight": "built to sell, convince and grow.",
+    "lead": "From first sketch to launch day, we support you at every step\nand turn your ideas into high-performing digital experiences\nthat deliver real results.",
+    "screen": "Ideas\nthat perform.",
+    "features": [
+      { "title": "Direct freelance", "text": "A single point of contact" },
+      { "title": "Strategy + design + code", "text": "A complete approach" },
+      { "title": "Human follow-up", "text": "Available and responsive" },
+      { "title": "Performance", "text": "Results-driven" }
+    ]
   },
   "models": {
     "eyebrow": "Ready-to-launch sites",
-    "title": "Sites already online, that you can test right now.",
-    "lead": "Our competitors show screenshots. We give you the link: open the demo, click everywhere, try it on your phone. Every template can be tailored to your business."
+    "titleStart": "Sites already online,",
+    "titleEnd": "ready to win over",
+    "titleHighlight": "your future customers.",
+    "lead": "Our competitors show screenshots. We give you the link: open the demo, click everywhere, try it on your phone. Every template can be tailored to your business.",
+    "features": [
+      { "title": "Live demos", "text": "to try right now" },
+      { "title": "100%", "text": "customisable" },
+      { "title": "Mobile-ready", "text": "and desktop too" }
+    ]
   },
   "difference": {
     "eyebrow": "What sets us apart",
-    "title": "Digital, with no middleman.",
+    "titleStart": "Digital, with",
+    "titleHighlight": "no middleman.",
     "lead": "In a large agency your project travels through a salesperson, a project manager, a studio and then a technical team. Something is lost at every handover. Here, there is nobody between you and the solution.",
+    "features": [
+      { "title": "A direct relationship", "text": "From the first call to launch day" },
+      { "title": "More clarity", "text": "Faster, better-aligned projects" }
+    ],
     "points": [
       {
         "title": "One business contact",
@@ -52,22 +77,43 @@
   },
   "duo": {
     "eyebrow": "Your duo",
-    "title": "Two skill sets. One goal: making your project succeed.",
+    "titleStart": "Two skill sets.",
+    "titleEnd": "One goal:",
+    "titleHighlight": "making your project succeed.",
     "lead": "No fake agency of thirty people. Two people, whom you know by name, from the first call to launch day.",
     "people": [
       {
         "name": "Manon",
         "role": "Sales & client relations",
-        "text": "First contact, understanding your needs, quotes, planning and follow-up. She turns your business into a brief and stays your point of reference throughout the project."
+        "text": "First contact, understanding your needs, quotes, planning and follow-up. She turns your business into a brief and stays your point of reference throughout the project.",
+        "skills": [
+          "Understanding your needs",
+          "Clear, regular updates",
+          "Project organisation",
+          "Client relations from A to Z"
+        ]
       },
       {
         "name": "Christopher",
         "role": "Development & engineering",
-        "text": "Architecture, technical UX, web and mobile development, integrations, performance, deployment and maintenance. He builds what you signed off."
+        "text": "Architecture, technical UX, web and mobile development, integrations, performance, deployment and maintenance. He builds what you signed off.",
+        "skills": [
+          "Custom development",
+          "UX & architecture",
+          "Performance & optimisation",
+          "Maintenance and scalability"
+        ]
       }
     ],
-    "flow": ["Manon", "You", "Christopher"],
-    "cta": "Meet the agency"
+    "hub": { "title": "You", "text": "Your project at the centre" },
+    "spin": "Spin {name}'s medallion",
+    "stats": [
+      { "title": "Fast response", "text": "Within 24h" },
+      { "title": "Human follow-up", "text": "Always the two of us" },
+      { "title": "Zero subcontracting", "text": "Everything done in-house" }
+    ],
+    "cta": "Meet the agency",
+    "tagline": "Two complementary people, fully on your side"
   },
   "method": {
     "eyebrow": "How we work",

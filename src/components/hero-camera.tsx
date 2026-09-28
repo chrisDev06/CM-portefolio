@@ -52,6 +52,9 @@ export function HeroCamera({
     let cam = { x: 0, y: 0 };
     let scroll = 0;
     let heroHeight = host.offsetHeight;
+    // Position de la scène dans la page : 0 pour le hero, plus bas pour une
+    // section. La parallaxe se mesure à partir d'elle.
+    let hostTop = host.getBoundingClientRect().top + scrollY;
     let visible = true;
     let frame = 0;
     let last = 0;
@@ -102,12 +105,18 @@ export function HeroCamera({
       target = { x: 0, y: 0 };
       wake();
     };
+    // Nul quand le haut de la scène touche le haut de l'écran ; négatif tant
+    // qu'elle monte depuis le bas (jamais pour le hero, déjà en haut).
     const onScroll = () => {
-      scroll = Math.min(Math.max(scrollY, 0), heroHeight);
+      scroll = Math.min(
+        Math.max(scrollY - hostTop, -Math.min(hostTop, innerHeight)),
+        heroHeight,
+      );
       if (!frame) requestAnimationFrame(render);
     };
     const onResize = () => {
       heroHeight = host.offsetHeight;
+      hostTop = host.getBoundingClientRect().top + scrollY;
       onScroll();
     };
 

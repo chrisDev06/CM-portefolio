@@ -1,0 +1,1381 @@
+/* --- Accueil : « Votre binôme » -----------------------------------------------
+ * Manon à gauche (magenta), Christopher à droite (indigo), vous au centre :
+ * deux cartes de verre sous un médaillon, reliées par des câbles néon à
+ * l'anneau « Vous », sur un sol brillant où les néons se reflètent.
+ * Mobile : une colonne, un fil vertical relie les cartes à l'anneau.
+ * md : cartes côte à côte, l'anneau dessous, relié par une accolade.
+ * xl : trois colonnes et les câbles. 2xl : engagements et bouton passent au
+ * centre, et la scène remonte à hauteur de l'introduction.
+ */
+
+.section {
+  --portrait: 12rem;
+  --hub: 9.5rem;
+  /* Le médaillon mord sur le haut de la carte. */
+  --overlap: 1rem;
+  /* Centre du médaillon, compté depuis le bord extérieur de la carte. */
+  --px: 50%;
+  --row-gap: 1.5rem;
+  --magenta-light: color-mix(in oklab, var(--color-magenta) 70%, var(--color-ink));
+  --indigo-light: color-mix(in oklab, var(--color-indigo) 55%, var(--color-violet-bright));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 5rem 4rem;
+  background:
+    radial-gradient(
+      60% 42% at 50% 40%,
+      color-mix(in oklab, var(--color-violet) 10%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      34% 60% at 0% 50%,
+      color-mix(in oklab, var(--color-magenta) 18%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      34% 60% at 100% 50%,
+      color-mix(in oklab, var(--color-indigo) 25%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      26% 40% at 8% 0%,
+      color-mix(in oklab, var(--color-magenta) 9%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      26% 40% at 92% 0%,
+      color-mix(in oklab, var(--color-indigo) 13%, transparent),
+      transparent 75%
+    ),
+    var(--color-canvas);
+}
+
+/* Le filet de séparation (.hairline) reste au-dessus du décor. */
+.section::before {
+  z-index: 3;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  /* La maquette occupe presque toute la largeur : 1520 px de contenu. */
+  max-width: 99rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .inner {
+    padding-inline: 2rem;
+  }
+}
+
+/* --- En-tête -------------------------------------------------------------- */
+
+.heading {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* En 90rem, la scène remonte sous l'en-tête : sa boîte vide ne doit pas
+     intercepter le survol ni le clic du haut des médaillons. */
+  pointer-events: none;
+}
+
+.heading > * {
+  pointer-events: auto;
+}
+
+/* Étiquette centrée : anneau allumé aux deux bouts, un point de chaque côté. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background:
+    linear-gradient(
+        color-mix(in oklab, var(--color-violet) 7%, var(--color-canvas)),
+        color-mix(in oklab, var(--color-violet) 7%, var(--color-canvas))
+      )
+      padding-box,
+    linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-violet) 70%, var(--color-magenta)),
+        color-mix(in oklab, var(--color-violet-bright) 24%, transparent) 50%,
+        color-mix(in oklab, var(--color-violet) 70%, var(--color-indigo))
+      )
+      border-box;
+  box-shadow: 0 0 1.5rem -0.5rem color-mix(in oklab, var(--color-violet) 70%, transparent);
+  color: color-mix(in oklab, var(--color-ink) 85%, transparent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* L'interlettrage suit aussi la dernière lettre : on le reprend à droite. */
+.eyebrowText {
+  margin-right: -0.3em;
+}
+
+/* Fin du titre : du rose vers le lavande. */
+.highlight {
+  background-image: linear-gradient(
+    95deg,
+    var(--magenta-light),
+    color-mix(in oklab, var(--color-magenta) 35%, var(--color-violet-bright)) 45%,
+    var(--color-violet-bright)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Scène ---------------------------------------------------------------- */
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 34rem);
+  grid-template-areas:
+    "left"
+    "flow"
+    "right"
+    "stats"
+    "action";
+  justify-content: center;
+  row-gap: var(--row-gap);
+  margin-top: 3.5rem;
+}
+
+.flow {
+  grid-area: flow;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.action {
+  grid-area: action;
+}
+
+/* --- Profils -------------------------------------------------------------- */
+
+.left {
+  --tone: var(--color-magenta);
+  --tone-light: var(--magenta-light);
+  grid-area: left;
+}
+
+.right {
+  --tone: var(--color-indigo);
+  --tone-light: var(--indigo-light);
+  grid-area: right;
+}
+
+/* Le médaillon dépasse au-dessus de la carte : la place est réservée ici. */
+.person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--portrait) - var(--overlap));
+}
+
+/* Halo teinté derrière le médaillon et le haut de la carte. */
+.person::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: calc(var(--portrait) * 0.85);
+  left: var(--px);
+  width: calc(var(--portrait) * 2.6);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--tone) 20%, transparent),
+    color-mix(in oklab, var(--tone) 7%, transparent) 55%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.right::before {
+  left: calc(100% - var(--px));
+}
+
+/* Médaillon : la pièce tournante (coin-portrait.tsx), à cheval sur le haut
+   de la carte. Son rendu vit dans coin.module.css. */
+.portrait {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: calc(var(--px) - var(--portrait) / 2);
+  width: var(--portrait);
+  aspect-ratio: 1;
+}
+
+.right .portrait {
+  left: auto;
+  right: calc(var(--px) - var(--portrait) / 2);
+}
+
+/* Carte : verre nuit teinté, plus lumineux côté extérieur. */
+.card {
+  --glint-x: 0%;
+  --edge-angle: 90deg;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 2rem 1.25rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(
+      90% 60% at var(--glint-x) 0%,
+      color-mix(in oklab, var(--tone) 24%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      80% 50% at var(--glint-x) 100%,
+      color-mix(in oklab, var(--tone) 14%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, color-mix(in oklab, var(--tone) 14%, var(--color-canvas)) 76%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--tone) 9%, var(--color-canvas)) 84%, transparent)
+    );
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 12%, transparent),
+    0 0 3rem -0.75rem color-mix(in oklab, var(--tone) 60%, transparent),
+    0 1.5rem 4rem -2rem var(--tone);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+}
+
+.right .card {
+  --glint-x: 100%;
+  --edge-angle: 270deg;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    padding: 1.875rem 1.75rem 1.5rem;
+  }
+}
+
+/* Liseré : points chauds aux deux angles extérieurs, fondu vers l'intérieur. */
+.edge {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      14rem 9rem at var(--glint-x) 0%,
+      color-mix(in oklab, var(--color-ink) 55%, var(--tone)),
+      transparent 75%
+    ),
+    radial-gradient(
+      12rem 14rem at var(--glint-x) 100%,
+      color-mix(in oklab, var(--tone) 75%, var(--color-ink)),
+      transparent 75%
+    ),
+    linear-gradient(
+      var(--edge-angle),
+      color-mix(in oklab, var(--tone-light) 85%, transparent),
+      color-mix(in oklab, var(--tone-light) 32%, transparent) 60%,
+      color-mix(in oklab, var(--tone-light) 42%, transparent)
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.role {
+  color: var(--tone-light);
+}
+
+/* Savoir-faire : pastille de verre, pictogramme néon. */
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.5rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--tone) 11%, transparent),
+    color-mix(in oklab, var(--tone) 4%, transparent)
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--tone-light) 32%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 9%, transparent);
+  color: color-mix(in oklab, var(--color-ink) 88%, transparent);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+@media (min-width: 40rem) {
+  .skill {
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: var(--text-sm);
+  }
+}
+
+.skill svg {
+  color: var(--tone-light);
+  stroke-width: 1.7;
+  filter: drop-shadow(0 0 0.375rem color-mix(in oklab, var(--tone) 80%, transparent));
+}
+
+/* Plaque de verre derrière la carte : elle porte le bas du médaillon. */
+.plate {
+  position: absolute;
+  z-index: 0;
+  top: calc(var(--portrait) * 0.4);
+  bottom: 0.75rem;
+  left: -0.75rem;
+  right: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklab, var(--tone) 18%, transparent),
+    color-mix(in oklab, var(--tone) 5%, transparent) 60%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--tone-light) 30%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--tone-light) 45%, transparent),
+    0 0 2rem -0.75rem color-mix(in oklab, var(--tone) 45%, transparent);
+  pointer-events: none;
+}
+
+.right .plate {
+  left: 0.75rem;
+  right: -0.75rem;
+}
+
+/* Décor du médaillon : bulle de verre et grand arc néon, côté extérieur.
+   Absents sur mobile (voir md). */
+.bubble,
+.arc {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bubble {
+  top: calc(var(--portrait) / 2 + 2.5rem);
+  left: calc(var(--px) - 2.5rem);
+  width: calc(var(--portrait) * 1.8);
+  background: radial-gradient(
+    closest-side,
+    transparent 68%,
+    color-mix(in oklab, var(--tone) 15%, transparent) 97%,
+    transparent
+  );
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--tone-light) 42%, transparent),
+    0 0 1.25rem -0.25rem color-mix(in oklab, var(--tone) 45%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 62%);
+  mask-image: linear-gradient(180deg, #000 20%, transparent 62%);
+}
+
+.right .bubble {
+  left: calc(100% - var(--px) + 2.5rem);
+}
+
+.arc {
+  top: calc(var(--portrait) / 2 + 9rem);
+  left: calc(var(--px) + 1rem);
+  width: calc(var(--portrait) * 2.7);
+  border: 1.5px solid color-mix(in oklab, var(--tone-light) 80%, var(--color-ink));
+  box-shadow:
+    0 0 0.75rem 0 var(--tone),
+    0 0 2.5rem 0 color-mix(in oklab, var(--tone) 60%, transparent),
+    inset 0 0 2rem -0.25rem color-mix(in oklab, var(--tone) 55%, transparent);
+  /* Seul le côté extérieur s'allume, du sol jusqu'au-dessus du médaillon ;
+     l'arc s'éteint avant d'atteindre le titre. */
+  -webkit-mask-image: conic-gradient(
+    from 200deg,
+    transparent 0deg,
+    #000 50deg,
+    #000 130deg,
+    transparent 155deg
+  );
+  mask-image: conic-gradient(
+    from 200deg,
+    transparent 0deg,
+    #000 50deg,
+    #000 130deg,
+    transparent 155deg
+  );
+}
+
+.right .arc {
+  left: calc(100% - var(--px) - 1rem);
+  -webkit-mask-image: conic-gradient(
+    from 5deg,
+    transparent 0deg,
+    #000 25deg,
+    #000 105deg,
+    transparent 155deg
+  );
+  mask-image: conic-gradient(
+    from 5deg,
+    transparent 0deg,
+    #000 25deg,
+    #000 105deg,
+    transparent 155deg
+  );
+}
+
+/* Anneau fin autour du médaillon, éteint avant la carte. */
+.ring {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--portrait) / 2);
+  left: var(--px);
+  width: calc(var(--portrait) + 1.75rem);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1px solid color-mix(in oklab, var(--tone-light) 28%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 72%);
+  mask-image: linear-gradient(180deg, #000 30%, transparent 72%);
+}
+
+.right .ring {
+  left: calc(100% - var(--px));
+}
+
+/* Fil du médaillon vers le câble : seulement en trois colonnes (xl). */
+.beam {
+  display: none;
+  pointer-events: none;
+}
+
+/* --- Anneau « Vous » ------------------------------------------------------- */
+
+.flow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-block: 5.25rem;
+}
+
+.hub {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--hub);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  text-align: center;
+  background: radial-gradient(
+    circle at 50% 30%,
+    color-mix(in oklab, var(--color-violet) 24%, var(--color-canvas)),
+    color-mix(in oklab, var(--color-violet) 7%, var(--color-canvas)) 70%
+  );
+  box-shadow:
+    -0.5rem 0 1.75rem -0.5rem color-mix(in oklab, var(--color-magenta) 65%, transparent),
+    0.5rem 0 1.75rem -0.5rem color-mix(in oklab, var(--color-indigo) 80%, transparent),
+    0 0 3.5rem -0.75rem color-mix(in oklab, var(--color-violet) 70%, transparent),
+    inset 0 0 2rem -0.5rem color-mix(in oklab, var(--color-violet-bright) 40%, transparent);
+}
+
+/* Anneau néon : magenta côté Manon, indigo côté Christopher. */
+.hub::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    color-mix(in oklab, var(--color-violet-bright) 80%, var(--color-ink)),
+    color-mix(in oklab, var(--color-indigo) 55%, var(--color-violet-bright)) 25%,
+    color-mix(in oklab, var(--color-violet) 70%, var(--color-violet-bright)) 50%,
+    var(--magenta-light) 75%,
+    color-mix(in oklab, var(--color-violet-bright) 80%, var(--color-ink))
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Points chauds sur l'anneau : un nœud en haut et en bas, et l'arrivée des
+   câbles à gauche (magenta) et à droite (indigo). */
+.hub::after {
+  content: "";
+  position: absolute;
+  inset: -0.3rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 0.3rem,
+      color-mix(in oklab, var(--color-ink) 90%, var(--color-violet-bright)) 0 2px,
+      color-mix(in oklab, var(--color-violet-bright) 50%, transparent) 3px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 50% calc(100% - 0.3rem),
+      color-mix(in oklab, var(--color-ink) 90%, var(--color-violet-bright)) 0 2px,
+      color-mix(in oklab, var(--color-violet-bright) 50%, transparent) 3px,
+      transparent 7px
+    ),
+    radial-gradient(
+      0.6rem 1.9rem at 0.3rem 50%,
+      color-mix(in oklab, var(--color-ink) 45%, var(--magenta-light)),
+      color-mix(in oklab, var(--color-magenta) 45%, transparent) 45%,
+      transparent
+    ),
+    radial-gradient(
+      0.6rem 1.9rem at calc(100% - 0.3rem) 50%,
+      color-mix(in oklab, var(--color-ink) 45%, var(--indigo-light)),
+      color-mix(in oklab, var(--color-indigo) 50%, transparent) 45%,
+      transparent
+    );
+  pointer-events: none;
+}
+
+/* Cercles concentriques : un trait fin, puis un pointillé. */
+.hubRings {
+  position: absolute;
+  inset: -1.25rem;
+  border: 1px solid color-mix(in oklab, var(--color-violet-bright) 14%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hubRings::before {
+  content: "";
+  position: absolute;
+  inset: -1.25rem;
+  border: 1px dashed color-mix(in oklab, var(--color-violet-bright) 20%, transparent);
+  border-radius: 50%;
+}
+
+.hubIcon {
+  width: 2rem;
+  height: 2rem;
+  color: color-mix(in oklab, var(--color-magenta) 45%, var(--color-violet-bright));
+  stroke-width: 1.6;
+  filter: drop-shadow(0 0 0.4rem color-mix(in oklab, var(--color-magenta) 70%, transparent));
+}
+
+/* Contenu de l'anneau : sa dernière ligne doit tenir dans la corde du cercle,
+   d'où des tailles réduites tant que l'anneau est petit. */
+.hubTitle {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hubText {
+  max-width: 8rem;
+  margin-top: 0.5rem;
+  color: color-mix(in oklab, var(--color-ink) 72%, transparent);
+  font-size: 0.625rem;
+  line-height: 1.6;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* « Votre projet / au centre » plutôt que « … au / centre ». */
+  text-wrap: balance;
+}
+
+/* --- Câbles ----------------------------------------------------------------
+ * Mobile : un fil vertical, de la carte de Manon à l'anneau, puis de l'anneau
+ * au médaillon de Christopher. Flèche au milieu de chaque fil.
+ */
+
+.cable {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  pointer-events: none;
+}
+
+.cableLeft {
+  --tone: var(--color-magenta);
+  --cable-from: var(--magenta-light);
+  --cable-to: var(--color-violet-bright);
+  --line-angle: 180deg;
+  --arrow-turn: 90deg;
+  top: calc(var(--row-gap) * -1);
+  bottom: calc(100% - 5.25rem);
+}
+
+.cableRight {
+  --tone: var(--color-indigo);
+  --cable-from: var(--indigo-light);
+  --cable-to: var(--color-violet-bright);
+  --line-angle: 0deg;
+  --arrow-turn: -90deg;
+  top: calc(100% - 5.25rem);
+  bottom: calc(var(--row-gap) * -1);
+}
+
+.cableUp,
+.cableDown {
+  display: none;
+}
+
+.cableLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.5px;
+  width: 1px;
+  background: linear-gradient(var(--line-angle), var(--cable-from), var(--cable-to));
+  box-shadow: 0 0 0.4rem 0 color-mix(in oklab, var(--tone) 70%, transparent);
+}
+
+/* Flèche : bulle sombre, anneau teinté. */
+.arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  rotate: var(--arrow-turn);
+  border-radius: 50%;
+  color: color-mix(in oklab, var(--color-ink) 90%, transparent);
+  background: radial-gradient(
+    circle at 50% 35%,
+    color-mix(in oklab, var(--tone) 26%, var(--color-canvas)),
+    color-mix(in oklab, var(--tone) 8%, var(--color-canvas)) 75%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--cable-from) 70%, transparent),
+    0 0 1rem -0.25rem color-mix(in oklab, var(--tone) 80%, transparent);
+}
+
+.arrow svg {
+  stroke-width: 1.8;
+}
+
+/* Tracés : trait fin et net, d'épaisseur fixe quel que soit l'étirement. */
+.cable path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.strand {
+  stroke-width: 2;
+}
+
+.strandSoft {
+  stroke-width: 1.25;
+  opacity: 0.65;
+}
+
+.strandFaint {
+  stroke-width: 1;
+  opacity: 0.35;
+}
+
+/* Étincelle : un segment nul à bout rond, donc un point parfait. */
+.spark {
+  stroke: color-mix(in oklab, var(--color-ink) 70%, var(--cable-from));
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* --- Engagements ------------------------------------------------------------
+ * En liste (pictogramme à gauche) quand la place manque : mobile, et sous
+ * l'anneau en xl. Sur trois colonnes dès que le conteneur le permet.
+ */
+
+.stats {
+  container-type: inline-size;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.statsList {
+  display: grid;
+}
+
+.stat {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.875rem;
+}
+
+.stat + .stat {
+  border-top: 1px solid var(--color-line);
+}
+
+.stat:nth-child(1) {
+  --stat: color-mix(in oklab, var(--color-magenta) 60%, var(--color-violet));
+  --stat-light: color-mix(in oklab, var(--magenta-light) 70%, var(--color-violet-bright));
+}
+
+.stat:nth-child(2) {
+  --stat: var(--color-violet);
+  --stat-light: color-mix(in oklab, var(--color-violet-bright) 80%, var(--magenta-light));
+}
+
+.stat:nth-child(3) {
+  --stat: color-mix(in oklab, var(--color-indigo) 70%, var(--color-violet));
+  --stat-light: color-mix(in oklab, var(--indigo-light) 60%, var(--color-violet-bright));
+}
+
+.statIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--stat-light);
+  background: radial-gradient(
+    circle at 50% 35%,
+    color-mix(in oklab, var(--stat) 22%, var(--color-canvas)),
+    color-mix(in oklab, var(--stat) 6%, var(--color-canvas)) 75%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--stat-light) 45%, transparent),
+    0 0 1.25rem -0.4rem color-mix(in oklab, var(--stat) 80%, transparent);
+}
+
+.statIcon svg {
+  stroke-width: 1.7;
+  filter: drop-shadow(0 0 0.3rem var(--stat));
+}
+
+@media (min-width: 40rem) {
+  .stats {
+    max-width: 42rem;
+    margin-inline: auto;
+  }
+}
+
+@container (min-width: 28rem) {
+  .statsList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stat {
+    flex-direction: column;
+    gap: 0.875rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .stat + .stat {
+    border-top: 0;
+  }
+
+  .stat + .stat::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.25rem;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      var(--color-line-strong) 25%,
+      var(--color-line-strong) 75%,
+      transparent
+    );
+  }
+}
+
+/* --- Bouton ----------------------------------------------------------------- */
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Filets de part et d'autre du bouton. */
+.action::before,
+.action::after {
+  content: "";
+  flex: 0 1 4.5rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-violet-bright) 75%, transparent)
+  );
+}
+
+.action::after {
+  background: linear-gradient(
+    270deg,
+    transparent,
+    color-mix(in oklab, var(--color-violet-bright) 75%, transparent)
+  );
+}
+
+/* Bouton néon : violet profond, plus rose à gauche, liseré lavande allumé
+   de l'intérieur, halo. */
+.cta {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1rem;
+  height: 3.5rem;
+  padding-inline: 2rem 1.75rem;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  background:
+    linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--color-ink) 10%, transparent),
+        transparent 50%
+      )
+      padding-box,
+    linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-violet) 75%, var(--color-magenta)),
+        color-mix(in oklab, var(--color-violet) 85%, var(--color-canvas)) 45%,
+        color-mix(in oklab, var(--color-violet) 50%, var(--color-canvas))
+      )
+      padding-box,
+    linear-gradient(
+        100deg,
+        color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink)),
+        color-mix(in oklab, var(--color-violet-bright) 75%, var(--color-violet)) 50%,
+        color-mix(in oklab, var(--color-violet-bright) 85%, var(--color-ink))
+      )
+      border-box;
+  box-shadow:
+    0 0 1.75rem -0.25rem color-mix(in oklab, var(--color-violet) 85%, transparent),
+    0 0 4rem -1rem color-mix(in oklab, var(--color-magenta) 45%, transparent),
+    inset 0 0 0.6rem 0 color-mix(in oklab, var(--color-violet-bright) 55%, transparent),
+    inset 0 0 1.5rem -0.25rem color-mix(in oklab, var(--color-violet-bright) 45%, transparent);
+  color: var(--color-ink);
+  font-size: var(--text-base);
+  font-weight: 500;
+  white-space: nowrap;
+  /* Couche GPU propre, comme <Button> : le halo animé ne redessine que le
+     bouton, pas la grande couche de la section (voir README, Mesures). */
+  will-change: transform;
+  transition: box-shadow 200ms var(--ease-brand);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  box-shadow:
+    0 0 2.25rem 0 color-mix(in oklab, var(--color-violet) 90%, transparent),
+    0 0 5rem -0.5rem color-mix(in oklab, var(--color-magenta) 55%, transparent),
+    inset 0 0 0.75rem 0 color-mix(in oklab, var(--color-violet-bright) 75%, transparent),
+    inset 0 0 1.75rem 0 color-mix(in oklab, var(--color-violet-bright) 55%, transparent);
+}
+
+@media (min-width: 40rem) {
+  .cta {
+    height: 3.875rem;
+    padding-inline: 2.75rem 2.5rem;
+    font-size: var(--text-lg);
+  }
+}
+
+.tagline {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+  color: color-mix(in oklab, var(--color-ink-muted) 70%, var(--color-violet-bright));
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* --- Décor de fond : sol brillant --------------------------------------------- */
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Étoiles : quelques points fixes, rien d'animé. */
+.backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  --star: color-mix(in oklab, var(--color-ink) 55%, var(--color-violet-bright));
+  background:
+    radial-gradient(circle at 13% 9%, var(--star) 0 0.6px, transparent 1.2px),
+    radial-gradient(circle at 29% 4%, var(--star) 0 0.5px, transparent 1px),
+    radial-gradient(circle at 44% 17%, var(--star) 0 0.5px, transparent 1px),
+    radial-gradient(circle at 61% 6%, var(--star) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle at 78% 12%, var(--star) 0 0.5px, transparent 1px),
+    radial-gradient(circle at 91% 5%, var(--star) 0 0.6px, transparent 1.2px),
+    radial-gradient(circle at 52% 48%, var(--star) 0 0.4px, transparent 0.9px);
+  opacity: 0.7;
+}
+
+/* Reflets au sol : rose à gauche, indigo à droite, fondus en bas. */
+.floorGlow {
+  position: absolute;
+  inset: auto 0 0;
+  height: 16rem;
+  background:
+    radial-gradient(
+      48% 75% at 0% 100%,
+      color-mix(in oklab, var(--color-magenta) 30%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      48% 75% at 100% 100%,
+      color-mix(in oklab, var(--color-indigo) 40%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 55% at 50% 100%,
+      color-mix(in oklab, var(--color-violet) 12%, transparent),
+      transparent 70%
+    );
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent);
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
+}
+
+.floor {
+  --floor-left: var(--magenta-light);
+  --floor-right: var(--indigo-light);
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 13.75rem;
+  overflow: visible;
+  filter: drop-shadow(0 0 3px color-mix(in oklab, var(--color-violet) 60%, transparent));
+  /* Éteint au centre, derrière le bouton et la signature, et en bas. */
+  -webkit-mask-image:
+    linear-gradient(90deg, #000 18%, transparent 40% 60%, #000 82%),
+    linear-gradient(180deg, #000 70%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, #000 18%, transparent 40% 60%, #000 82%),
+    linear-gradient(180deg, #000 70%, transparent);
+  mask-composite: intersect;
+}
+
+.floor path {
+  fill: none;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.85;
+}
+
+.floor .floorBright {
+  stroke-width: 2;
+  opacity: 1;
+}
+
+/* --- md : cartes côte à côte, l'anneau dessous -------------------------------- */
+
+@media (min-width: 48rem) {
+  .section {
+    --portrait: 13rem;
+    --px: 36.5%;
+  }
+
+  .stage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "left right"
+      "flow flow"
+      "stats stats"
+      "action action";
+    justify-content: stretch;
+    column-gap: 1.5rem;
+    width: 100%;
+    max-width: 62rem;
+    margin-inline: auto;
+  }
+
+  .plate {
+    left: -1.5rem;
+    right: 1.75rem;
+  }
+
+  .right .plate {
+    left: 1.75rem;
+    right: -1.5rem;
+  }
+
+  .bubble,
+  .arc,
+  .floor {
+    display: block;
+  }
+
+  /* Point chaud sur chaque bord, là où les néons touchent l'horizon. Sur
+     mobile, ils feraient deux taches à côté du bouton. */
+  .floorGlow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        5% 9% at 0% 28%,
+        color-mix(in oklab, var(--magenta-light) 70%, transparent),
+        transparent
+      ),
+      radial-gradient(
+        5% 9% at 100% 32%,
+        color-mix(in oklab, var(--indigo-light) 75%, transparent),
+        transparent
+      );
+  }
+
+  .flow {
+    padding-block: 2.5rem 0;
+  }
+
+  /* Accolade : de chaque carte, le fil descend puis rejoint l'anneau. */
+  .cable {
+    --arrow-turn: 0deg;
+    top: calc(var(--row-gap) * -1);
+    bottom: auto;
+    width: auto;
+    height: calc(var(--row-gap) + 2.5rem + var(--hub) / 2);
+  }
+
+  .cableLeft {
+    left: 25%;
+    right: calc(50% + var(--hub) / 2);
+  }
+
+  .cableRight {
+    left: calc(50% + var(--hub) / 2);
+    right: 25%;
+    scale: -1 1;
+  }
+
+  /* La lueur suit le trait (drop-shadow) : une ombre de boîte dessinerait
+     le rectangle entier. */
+  .cableLine {
+    left: 0;
+    right: 0;
+    width: auto;
+    border: solid var(--cable-from);
+    border-width: 0 0 1px 1px;
+    border-bottom-left-radius: var(--radius-lg);
+    background: none;
+    box-shadow: none;
+    filter: drop-shadow(0 0 0.25rem var(--tone));
+  }
+
+  .arrow {
+    left: 50%;
+    top: 100%;
+  }
+
+}
+
+/* --- xl : trois colonnes et les câbles ----------------------------------------
+ * Les engagements, en liste, occupent la colonne centrale sous l'anneau ; le
+ * bouton passe sous la scène.
+ */
+
+@media (min-width: 80rem) {
+  .section {
+    --portrait: 16.5rem;
+    --hub: 10rem;
+    --overlap: 1.25rem;
+    /* Haut de l'anneau : son centre à 3rem sous le haut des cartes. */
+    --hub-top: calc(var(--portrait) - var(--overlap) + 3rem - var(--hub) / 2);
+    padding-block: 4.5rem 3.5rem;
+  }
+
+  .stage {
+    grid-template-columns: minmax(0, 30rem) minmax(22rem, 1fr) minmax(0, 30rem);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "left flow right"
+      "left stats right"
+      "action action action";
+    column-gap: 0;
+    row-gap: 0;
+    max-width: none;
+  }
+
+  .flow {
+    align-self: start;
+    display: block;
+    padding: var(--hub-top) 0 0;
+  }
+
+  .stats {
+    align-self: center;
+    max-width: 16rem;
+    margin-top: 2rem;
+  }
+
+  .action {
+    margin-top: 3rem;
+  }
+
+  .hub {
+    margin-inline: auto;
+  }
+
+
+  /* Axe pointillé : de l'introduction à l'anneau, et un peu au-delà. */
+  .flow::before,
+  .flow::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0.5rem;
+    translate: -50% 0;
+    background: radial-gradient(
+        circle,
+        color-mix(in oklab, var(--color-violet-bright) 65%, transparent) 0 0.8px,
+        transparent 1.2px
+      )
+      50% 0 / 0.5rem 0.5rem repeat-y;
+  }
+
+  .flow::before {
+    top: var(--axis-top, 0rem);
+    height: calc(var(--hub-top) - var(--axis-top, 0rem));
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
+    mask-image: linear-gradient(180deg, transparent, #000 40%);
+  }
+
+  .flow::after {
+    top: calc(var(--hub-top) + var(--hub));
+    height: 2.5rem;
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+    mask-image: linear-gradient(180deg, #000, transparent);
+  }
+
+  .cable {
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  .cableLeft {
+    left: 0;
+    right: calc(50% + var(--hub) / 2 - 1px);
+  }
+
+  .cableRight {
+    left: calc(50% + var(--hub) / 2 - 1px);
+    right: 0;
+  }
+
+  .cableUp,
+  .cableDown {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 0 0.25rem var(--tone))
+      drop-shadow(0 0 0.8rem color-mix(in oklab, var(--tone) 75%, transparent));
+  }
+
+  /* Du médaillon (centre) au centre de l'anneau. */
+  .cableUp {
+    top: calc(var(--portrait) / 2);
+    height: calc(var(--hub-top) + var(--hub) / 2 - var(--portrait) / 2);
+  }
+
+  /* Du flanc de la carte au centre de l'anneau. */
+  .cableDown {
+    top: calc(var(--hub-top) + var(--hub) / 2);
+    height: 7rem;
+  }
+
+  .cableLine {
+    top: calc(var(--hub-top) + var(--hub) / 2);
+    bottom: auto;
+    height: 1px;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--cable-from) 25%, transparent),
+      color-mix(in oklab, var(--cable-to) 60%, transparent)
+    );
+    box-shadow: none;
+  }
+
+  .arrow {
+    top: calc(var(--hub-top) + var(--hub) / 2);
+  }
+
+  /* Entonnoir de lumière là où les brins rejoignent l'anneau. */
+  .cable::before {
+    content: "";
+    position: absolute;
+    right: -2rem;
+    top: calc(var(--hub-top) + var(--hub) / 2);
+    width: 8rem;
+    height: 9rem;
+    translate: 0 -50%;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--tone) 32%, transparent),
+      color-mix(in oklab, var(--tone) 10%, transparent) 60%,
+      transparent
+    );
+  }
+
+  .statIcon {
+    width: 3rem;
+  }
+
+  /* Le câble du haut prolonge ce fil, du médaillon au bord de la colonne. */
+  .beam {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: calc(var(--portrait) / 2);
+    left: calc(var(--px) + var(--portrait) / 2);
+    right: 0;
+    height: 1.5px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--tone-light) 30%, transparent),
+      var(--tone-light)
+    );
+    box-shadow: 0 0 0.5rem 0 color-mix(in oklab, var(--tone) 80%, transparent);
+  }
+
+  .right .beam {
+    left: 0;
+    right: calc(var(--px) + var(--portrait) / 2);
+    background: linear-gradient(
+      270deg,
+      color-mix(in oklab, var(--tone-light) 30%, transparent),
+      var(--tone-light)
+    );
+  }
+
+  .skill {
+    min-height: 3.625rem;
+  }
+
+  .tagline {
+    font-size: var(--text-xs);
+  }
+}
+
+/* --- 90rem : la composition de la maquette -------------------------------------
+ * Engagements sur trois colonnes et bouton au centre, sous l'anneau ; la scène
+ * remonte à côté de l'introduction, que les médaillons encadrent.
+ */
+
+@media (min-width: 90rem) {
+  .section {
+    --hub: 11.75rem;
+    padding-block: 3.25rem 2.75rem;
+  }
+
+  .stage {
+    grid-template-columns: minmax(0, 30rem) minmax(32rem, 1fr) minmax(0, 30rem);
+    grid-template-areas:
+      "left flow right"
+      "left stats right"
+      "left action right";
+    margin-top: -4.5rem;
+  }
+
+  .flow {
+    --axis-top: 5.5rem;
+  }
+
+  .stats {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .stat {
+    padding-inline: 0.5rem;
+  }
+
+  .cta {
+    padding-inline: 3.25rem 3rem;
+  }
+
+  .action {
+    align-self: end;
+    margin-top: 0;
+  }
+
+  /* L'anneau grandit : le contenu retrouve les tailles de la maquette. */
+  .hubIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .hubTitle {
+    margin-top: 0.625rem;
+    font-size: 1.625rem;
+  }
+
+  .hubText {
+    max-width: 9rem;
+    margin-top: 0.75rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+/* Plus large : les médaillons s'éloignent du titre, la scène remonte encore. */
+@media (min-width: 96rem) {
+  .stage {
+    margin-top: -5.5rem;
+  }
+
+  .flow {
+    --axis-top: 6.5rem;
+  }
+}

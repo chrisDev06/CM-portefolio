@@ -51,7 +51,7 @@ Livrables :
 | Visuel hero desktop | 2560×1440, AVIF **< 250 Ko** + WebP de repli | 1 | ✅ **fourni** — mais en 1672 × 941 seulement (181 Ko en AVIF). Net jusqu'à 1670 px de large, agrandi au-delà. À régénérer en 2560 px minimum. |
 | Visuel hero mobile | Recadrage **vertical dédié** 1080×1350 | 1 | ⏳ contourné par `object-position: 38%` sur la partie sombre de l'image. Un vrai recadrage n'apporterait rien tant que la source ne fait que 941 px de haut : c'est la hauteur qui limite, pas le cadrage. |
 | LQIP du hero | Base64 ~24 px, intégré au HTML | 1 | ✅ généré automatiquement par `npm run hero` |
-| Visuels de section | 1920×1080, pour Services, Méthode, Équipe, Tarifs, FAQ | 5 | Ext |
+| Visuels de section | 1920×1080, pour Services, Méthode, Équipe, Tarifs, FAQ | 5 | Services ✅ **fourni** (section Services de l'accueil : scène néon portable + téléphone, 1672 × 941, 172 Ko en AVIF à taille native ; source `assets/hero/services-neon.png`, `npm run hero -- <source> services-neon --section`). Les 4 autres : Ext |
 | Texture de grain | PNG tuilable 256×256, < 10 Ko, appliqué en `background-repeat` | 1 | Ext |
 | Halo / dégradé de fond | SVG ou WebP 1600×1600, un seul réutilisé partout | 2 | Ext |
 | Grille / blueprint décoratif | SVG, opacité ≤ 6 % | 1 | Ext |
@@ -67,6 +67,8 @@ Sources acceptables pour les mockups d'appareils : Rotato, Shots.so, Angle, Mock
 C'est votre catalogue et votre preuve à la fois. **Minimum 4 modèles au lancement, 6 à 8 visés**, sur des secteurs distincts (restauration, immobilier, artisanat, santé, coaching, e-commerce…) : le visiteur doit pouvoir se reconnaître dans au moins un.
 
 > **État actuel** : `public/models/<id>/` contient des **maquettes d'interface générées** (`npm run mockups`), une par secteur, avec palette et mise en page distinctes. Elles tiennent la mise en page et la direction artistique, mais ce ne sont pas des captures. Le tableau ci-dessous décrit ce qui doit les remplacer.
+>
+> **Accueil, « Sites prêts à lancer »** : les deux modèles en vedette (Horizon Travel, FitZone) sont des aperçus reconstruits en HTML (`components/model-previews.tsx`, textes FR/EN dans `models.json` → `preview`). Leurs décors — `scene.webp`, le village des Cyclades et le socle rocheux — sont des **illustrations générées** (`npm run scenes`), sans visage. À remplacer par la vraie photo du hero de la démo (licence documentée) ou, une fois la démo en ligne, par sa capture réelle.
 
 **Par modèle** :
 

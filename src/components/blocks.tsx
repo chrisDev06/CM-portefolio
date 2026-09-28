@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import {
   modelPath,
   servicePath,
@@ -9,7 +10,9 @@ import {
 } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { MODEL_ACCENTS, modelAssets } from "@/lib/model-assets";
-import { Card, Icon, IconBadge, Tag, type IconName } from "./ui";
+import { ServiceIllustration } from "./service-illustrations";
+import { Spotlight } from "./spotlight";
+import { Card, Icon, Tag, type IconName } from "./ui";
 
 export const SERVICE_ICONS: Record<ServiceId, IconName> = {
   "site-web": "monitor",
@@ -22,32 +25,115 @@ export const SERVICE_ICONS: Record<ServiceId, IconName> = {
 
 /* --- Cartes --------------------------------------------------------------- */
 
-export function ServiceCard({
+/** Carte service posée sur l'image du hero : verre néon, teinte par carte.
+    `className` et `style` vont sur la surface en verre (voir .glass). */
+export function HeroServiceCard({
+  id,
+  title,
+  text,
+  accent,
+  locale,
+  className = "",
+  style,
+}: {
+  id: ServiceId;
+  title: string;
+  text: string;
+  accent: string;
+  locale: Locale;
+  className?: string;
+  style?: CSSProperties;
+}) {
+  return (
+    <Link href={servicePath(id, locale)} className="group block rounded-md">
+      {/* overflow-hidden : le halo de la tuile colore la carte sans déborder. */}
+      <Spotlight
+        className={`glow-card glass h-full overflow-hidden rounded-md px-5 pt-4 pb-4.5 ${className}`}
+        style={{ "--card-accent": accent, ...style } as CSSProperties}
+      >
+        <span aria-hidden="true" className="glass-edge" />
+        {/* Écran bas : la tuile passe à côté du titre, au même seuil que les
+            marges du hero. Sinon les cartes sortent de l'écran. */}
+        <div className="[@media(max-height:899px)]:flex [@media(max-height:899px)]:items-center [@media(max-height:899px)]:gap-3">
+          <span className="glass-tile inline-flex h-11 w-13 shrink-0 items-center justify-center rounded-sm [@media(max-height:899px)]:h-10 [@media(max-height:899px)]:w-12">
+            <Icon name={SERVICE_ICONS[id]} className="size-6.5" />
+          </span>
+          <h2 className="mt-2.5 text-base leading-tight font-semibold [@media(max-height:899px)]:mt-0">
+            {title}
+          </h2>
+        </div>
+        {/* Deux lignes minimum : la pastille ne remonte jamais sur le titre. */}
+        <p className="mt-1.5 min-h-[2lh] pr-12 text-sm leading-tight text-ink/75">
+          {text}
+        </p>
+        <span className="glass-orb absolute right-5 bottom-5 flex size-9 items-center justify-center rounded-full">
+          <Icon
+            name="arrow"
+            className="size-4 transition-transform duration-200 ease-brand group-hover:translate-x-0.5"
+          />
+        </span>
+      </Spotlight>
+    </Link>
+  );
+}
+
+/** Carte de la section Services de l'accueil : verre nuit, scène illustrée à
+    droite. `className` et `style` vont sur la surface en verre (.service-card) :
+    une animation d'entrée posée plus haut empêcherait le flou de voir l'image. */
+export function ServiceShowcaseCard({
   id,
   locale,
   dict,
+  featured = false,
+  className = "",
+  style,
 }: {
   id: ServiceId;
   locale: Locale;
   dict: Dictionary;
+  /** Liseré néon et pastille « Populaire ». */
+  featured?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }) {
   const service = dict.services.items[id];
   return (
-    <Link href={servicePath(id, locale)} className="group block">
-      <Card interactive className="h-full">
-        <IconBadge name={SERVICE_ICONS[id]} />
-        <h3 className="mt-5 text-xl">{service.name}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-          {service.short}
-        </p>
-        <span className="mt-5 inline-flex items-center gap-2 text-sm text-violet">
-          {dict.common.learnMore}
-          <Icon
-            name="arrow"
-            className="size-4 transition-transform duration-200 ease-brand group-hover:translate-x-1"
-          />
+    <Link href={servicePath(id, locale)} className="group block h-full rounded-md">
+      <Spotlight
+        className={`glow-card service-card h-full overflow-hidden rounded-md ${featured ? "service-card-featured" : ""} ${className}`}
+        style={style}
+      >
+        <ServiceIllustration id={id} />
+        <span aria-hidden="true" className="service-card-edge" />
+
+        <div className="relative z-10 flex h-full flex-col px-6 pt-4 pb-4">
+          <span className="neon-tile inline-flex size-12 shrink-0 items-center justify-center rounded-md">
+            <Icon name={SERVICE_ICONS[id]} className="size-6" />
+          </span>
+          <h3 className="mt-3 text-[1.25rem] font-semibold">{service.name}</h3>
+          {/* Colonne étroite : l'illustration occupe la droite de la carte. */}
+          <p className="mt-1.5 max-w-[16.75rem] text-[0.8125rem] leading-[1.4] text-ink/75">
+            {service.short}
+          </p>
+          <span className="mt-auto inline-flex items-center gap-2 pt-3 text-sm font-medium text-violet-light">
+            {dict.common.learnMore}
+            <Icon
+              name="arrow"
+              className="size-4 transition-transform duration-200 ease-brand group-hover:translate-x-1"
+            />
+          </span>
+        </div>
+
+        <span className="neon-orb absolute right-5 bottom-4 z-10 flex size-9 items-center justify-center rounded-full">
+          <Icon name="arrow" className="size-4" />
         </span>
-      </Card>
+        {featured ? (
+          <span className="neon-badge absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full py-1 pr-3 pl-2.5 text-xs font-medium">
+            <Icon name="star" className="size-3.5 fill-current" />
+            {dict.services.labels.popular}
+          </span>
+        ) : null}
+      </Spotlight>
     </Link>
   );
 }

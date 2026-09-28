@@ -9,32 +9,53 @@ npm run dev      # http://localhost:3000 (redirige vers /fr ou /en)
 npm run build    # build de production
 npm run lint
 npm run mockups  # régénère les maquettes d'interface des modèles
-npm run hero -- "<chemin/source.png>"   # reconvertit l'image de fond du hero
+npm run hero -- "<chemin/source.png>" [nom] [--section]   # reconvertit une image de fond de hero
+node scripts/generate-difference-landscape.mjs  # régénère le paysage de « Notre différence »
 ```
 
 ## Hero : image et caméra
 
 ### Préparer l'image
 
-`npm run hero -- "<source>"` produit dans `public/images/hero/` :
+`npm run hero -- "<source>" [nom] [--section]` (nom en kebab-case, `hero-neon`
+par défaut) produit dans `public/images/hero/` ce qui suit. `--section` : scène
+plus bas dans la page, sous le budget image de 180 Ko au lieu des 250 de l'image
+LCP (`docs/ASSETS.md` §9), avec une qualité un cran en dessous.
 
-- `hero-neon-<largeur>.{avif,webp}` en 960 / 1280 / largeur native, **étalonnage
+- `<nom>-<largeur>.{avif,webp}` en 960 / 1280 / largeur native, **étalonnage
   cuit** (saturation, contraste) et accentuation légère ;
 - au-delà de la largeur native, des variantes **agrandies au build** (Lanczos3 +
   accentuation, ×1,75 max) pour les grands écrans et le Retina : plus net que
   l'agrandissement du navigateur, sans inventer de détail ;
 - le **plan lointain** : la scène floutée sur le fond du site, inline dans
-  `src/lib/hero-image.ts` (1 Ko).
+  `src/lib/scenes/<nom>.ts` (1 Ko), avec les dimensions et largeurs disponibles.
 
-La source actuelle fait 1672 × 941. Pour gagner en définition sur écran 4K,
-régénérer l'image en 3840 px et relancer la commande : rien d'autre à changer.
+Deux scènes aujourd'hui, toutes deux en 1672 × 941 :
+
+| Scène | Où | Source | Commande |
+|---|---|---|---|
+| `hero-neon` | Accueil, hero | hors dépôt | `npm run hero -- <source>` |
+| `services-neon` | Accueil, section Services | `assets/hero/services-neon.png` (hors `public/` : jamais servie) | `npm run hero -- <source> services-neon --section` |
+
+Pour gagner en définition sur écran 4K, régénérer l'image en 3840 px et relancer
+la commande avec le même nom : rien d'autre à changer.
 
 ### Composition
 
 L'image n'est **jamais recadrée** : elle est affichée entière, en retrait, ses bords
-fondus dans le plan lointain (profondeur de champ). En paysage, elle occupe
-`min(84 % de la largeur, 88 % de la hauteur)`, décalée à droite ; en portrait,
-un bandeau ancré en bas, sujet centré. Réglages : `.hero-stage` dans `globals.css`.
+fondus dans le plan lointain (profondeur de champ). Les deux scènes partagent le
+même composant (`hero-scene.tsx`) ; seul le cadrage change :
+
+- **Hero** (`.hero-stage`) : en paysage, `min(84 % de la largeur, 88 % de la
+  hauteur)`, décalée à droite ; en portrait, un bandeau ancré en bas, sujet centré.
+- **Section Services** (`.services-stage`, `services-showcase.tsx`) : les appareils
+  se calent sur le bord droit du conteneur, face au titre, sans jamais mordre sur
+  la colonne de texte ni sortir du cadre (l'image glisse dans la marge droite des
+  grands écrans) ; les cartes passent sur le sol. Sous `lg`, bandeau au-dessus du
+  texte, appareils centrés. L'écran du portable affiche le logo et la signature
+  de l'agence : un calque SVG dans le plan net, incliné comme l'écran
+  (`LaptopScreen`). Hors du premier écran, l'image est chargée en différé et la
+  parallaxe au défilement se mesure depuis le haut de la section.
 
 ### Animation
 
@@ -96,7 +117,7 @@ Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4.
 
 | Route FR | Route EN | Contenu |
 |---|---|---|
-| `/fr` | `/en` | Accueil : hero, services, modèles, différence, binôme, méthode, technos |
+| `/fr` | `/en` | Accueil : hero, services (scène néon, 6 cartes illustrées), modèles, différence, binôme, méthode, technos |
 | `/fr/services` | `/en/services` | Vue d'ensemble des 6 services |
 | `/fr/services/[slug]` | `/en/services/[slug]` | 6 pages service complètes (à qui, problème, fonctionnalités, déroulé, inclus, délais, FAQ) |
 | `/fr/modeles` | `/en/ready-to-launch` | Catalogue des sites prêts à lancer, filtrable |

@@ -58,6 +58,7 @@
       "name": "Horizon Travel",
       "sector": "Agence de voyage",
       "type": "Site vitrine",
+      "highlight": "Haut de gamme",
       "filter": "showcase",
       "tagline": "Un site vitrine haut de gamme pour vendre du rêve sans le brader.",
       "intent": "Les agences de voyage montrent toutes les mêmes photos de plage. Nous avons pris le contre-pied : grandes images plein écran, typographie éditoriale, et une mise en avant des destinations comme dans un magazine. Le luxe se joue sur l'espace, pas sur la surcharge.",
@@ -87,12 +88,25 @@
         "Un mois de corrections"
       ],
       "performance": { "perf": 99, "a11y": 100, "seo": 100 },
-      "demo": ""
+      "demo": "",
+      "preview": {
+        "nav": ["Accueil", "Destinations", "À propos", "Contact"],
+        "book": "Réserver",
+        "eyebrow": "Voyages d'exception",
+        "titleStart": "Explorez",
+        "titleEnd": "demain,",
+        "titleHighlight": "autrement.",
+        "lead": "Des destinations uniques, des expériences inoubliables et un accompagnement sur mesure.",
+        "cta": "Découvrir nos voyages",
+        "highlights": ["Destinations uniques", "Expériences sur mesure", "Service haut de gamme"],
+        "spot": { "name": "Santorin", "place": "Grèce" }
+      }
     },
     "fitzone": {
       "name": "FitZone",
       "sector": "Sport et bien-être",
       "type": "Application mobile",
+      "highlight": "Suivi personnalisé",
       "filter": "mobile",
       "tagline": "Une application de suivi sportif qui donne envie de revenir demain.",
       "intent": "La plupart des applications de sport noient l'utilisateur sous les chiffres. Ici, un seul écran répond à la seule question qui compte : qu'est-ce que je fais aujourd'hui ? Le reste est accessible, mais à un geste de distance.",
@@ -122,12 +136,36 @@
         "Accompagnement à la publication"
       ],
       "performance": { "perf": 96, "a11y": 98, "seo": 100 },
-      "demo": ""
+      "demo": "",
+      "preview": {
+        "greeting": "Bonjour",
+        "prompt": "Prêt(e) à bouger aujourd'hui ?",
+        "tabs": ["Sport", "Nutrition", "Bien-être"],
+        "progress": "Votre progression",
+        "score": "68",
+        "goal": "de votre objectif",
+        "stats": [
+          { "value": "4", "label": "séances cette semaine" },
+          { "value": "320", "label": "calories brûlées" },
+          { "value": "7h", "label": "de sommeil en moyenne" }
+        ],
+        "start": "Commencer une séance",
+        "nav": ["Accueil", "Activités", "Suivi", "Profil"],
+        "sessionsTitle": "Séances",
+        "filters": ["Tous", "Force", "Cardio", "Yoga"],
+        "sessions": [
+          { "name": "HIIT Express", "meta": "20 min · Intensité élevée" },
+          { "name": "Renforcement", "meta": "30 min · Tous niveaux" },
+          { "name": "Yoga Flow", "meta": "25 min · Bien-être" },
+          { "name": "Cardio Boxe", "meta": "20 min · Intensité modérée" }
+        ]
+      }
     },
     "soundwave": {
       "name": "SoundWave",
       "sector": "Matériel audio",
       "type": "E-commerce",
+      "highlight": "Comparateur intégré",
       "filter": "ecommerce",
       "tagline": "Une boutique en ligne pensée pour les produits que l'on compare avant d'acheter.",
       "intent": "Le matériel audio se vend sur la fiche produit : caractéristiques, comparaison, avis. Nous avons construit la boutique autour de cette page-là, et raccourci le tunnel de commande à trois écrans.",
@@ -163,6 +201,7 @@
       "name": "GreenEnergy",
       "sector": "Énergies renouvelables",
       "type": "Plateforme sur mesure",
+      "highlight": "Tableaux de bord",
       "filter": "custom",
       "tagline": "Un espace client pour suivre ses installations, ses consommations et ses interventions.",
       "intent": "Un outil métier n'a pas besoin d'être austère. Les mêmes tableaux de bord, traités avec de la hiérarchie et de la couleur utile, deviennent lisibles d'un coup d'œil, y compris sur un téléphone en intervention.",

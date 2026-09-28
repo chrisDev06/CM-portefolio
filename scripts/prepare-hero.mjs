@@ -1,8 +1,15 @@
 /**
- * Prépare l'image du hero : étalonnage cuit, accentuation, AVIF + WebP
+ * Prépare une image de hero : étalonnage cuit, accentuation, AVIF + WebP
  * multi-résolutions, et un arrière-plan étendu et flouté pour la profondeur.
  *
- * node scripts/prepare-hero.mjs "<chemin/vers/source.png>"
+ * node scripts/prepare-hero.mjs "<chemin/vers/source.png>" [nom] [--section]
+ *
+ * `nom` (kebab-case, « hero-neon » par défaut) préfixe les fichiers produits
+ * dans public/images/hero/ et nomme le module src/lib/scenes/<nom>.ts.
+ *
+ * `--section` : scène plus bas dans la page, pas l'image LCP. Budget de
+ * 180 Ko au lieu de 250 (docs/ASSETS.md §9) : qualité un cran en dessous,
+ * sans différence visible sur ces scènes sombres.
  *
  * Au-delà de la largeur native, les variantes sont agrandies ici (Lanczos3 +
  * accentuation) plutôt que par le navigateur : c'est plus net, sans inventer
@@ -15,14 +22,17 @@ import sharp from "sharp";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "public", "images", "hero");
-const NAME = "hero-neon";
+const MODULES = join(ROOT, "src", "lib", "scenes");
 
 const DOWN_TARGETS = [960, 1280];
 const UP_TARGETS = [2240, 2880];
 const MAX_UPSCALE = 1.75;
 
-const AVIF = { quality: 80, effort: 6, chromaSubsampling: "4:4:4" };
-const WEBP = { quality: 86, effort: 6, smartSubsample: true };
+const args = process.argv.slice(2);
+const section = args.includes("--section");
+
+const AVIF = { quality: section ? 74 : 80, effort: 6, chromaSubsampling: "4:4:4" };
+const WEBP = { quality: section ? 80 : 86, effort: 6, smartSubsample: true };
 
 // Étalonnage autrefois appliqué en filtre CSS à chaque image : cuit une fois.
 const SATURATION = 1.14;
@@ -38,11 +48,18 @@ const BACKDROP_PAD = { left: 0.6, right: 0.6, top: 1.3, bottom: 0.9 };
 const BACKDROP_BLUR = 9;
 const CANVAS = { r: 8, g: 8, b: 12, alpha: 1 };
 
-const source = process.argv[2];
+const [source, name = "hero-neon"] = args.filter((arg) => !arg.startsWith("--"));
 if (!source) {
-  console.error("Usage : node scripts/prepare-hero.mjs <source>");
+  console.error("Usage : node scripts/prepare-hero.mjs <source> [nom] [--section]");
   process.exit(1);
 }
+if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name)) {
+  console.error(`Nom invalide : « ${name} ». Attendu : kebab-case, sans accent.`);
+  process.exit(1);
+}
+
+/** hero-neon → heroNeon : nom de l'export du module généré. */
+const exportName = name.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 
 const graded = () =>
   sharp(source, { limitInputPixels: false })
@@ -51,8 +68,9 @@ const graded = () =>
 
 async function main() {
   await mkdir(OUT, { recursive: true });
+  await mkdir(MODULES, { recursive: true });
   for (const file of await readdir(OUT)) {
-    if (file.startsWith(`${NAME}-`)) await rm(join(OUT, file));
+    if (file.startsWith(`${name}-`)) await rm(join(OUT, file));
   }
 
   const meta = await sharp(source).metadata();
@@ -75,8 +93,8 @@ async function main() {
 
     const avif = await pipeline().avif(AVIF).toBuffer();
     const webp = await pipeline().webp(WEBP).toBuffer();
-    await writeFile(join(OUT, `${NAME}-${width}.avif`), avif);
-    await writeFile(join(OUT, `${NAME}-${width}.webp`), webp);
+    await writeFile(join(OUT, `${name}-${width}.avif`), avif);
+    await writeFile(join(OUT, `${name}-${width}.webp`), webp);
     report.push({ width, upscaled, avif: avif.length, webp: webp.length });
   }
 
@@ -104,24 +122,24 @@ async function main() {
 
   const frac = (n, d) => Number((n / d).toFixed(4));
   await writeFile(
-    join(ROOT, "src", "lib", "hero-image.ts"),
+    join(MODULES, `${name}.ts`),
     `// Généré par scripts/prepare-hero.mjs — ne pas modifier à la main.
-export const HERO_INTRINSIC = { width: ${native}, height: ${meta.height} } as const;
-
-/** Largeurs disponibles ; au-delà de ${native}, agrandies au build. */
-export const HERO_WIDTHS = [${widths.join(", ")}] as const;
-export const HERO_NATIVE_WIDTH = ${native};
-
-/** La scène floutée sur le fond du site : plan lointain, halo lumineux. */
-export const HERO_BACKDROP =
-  "data:image/webp;base64,${backdrop.toString("base64")}";
-
-/** Marges du plan lointain, en fraction de la taille de l'image. */
-export const HERO_BACKDROP_PAD = {
-  left: ${frac(pad.left, bw)},
-  right: ${frac(pad.right, bw)},
-  top: ${frac(pad.top, bh)},
-  bottom: ${frac(pad.bottom, bh)},
+export const ${exportName} = {
+  src: "/images/hero/${name}",
+  intrinsic: { width: ${native}, height: ${meta.height} },
+  /** Largeurs disponibles ; au-delà de ${native}, agrandies au build. */
+  widths: [${widths.join(", ")}],
+  nativeWidth: ${native},
+  /** La scène floutée sur le fond du site : plan lointain, halo lumineux. */
+  backdrop:
+    "data:image/webp;base64,${backdrop.toString("base64")}",
+  /** Marges du plan lointain, en fraction de la taille de l'image. */
+  backdropPad: {
+    left: ${frac(pad.left, bw)},
+    right: ${frac(pad.right, bw)},
+    top: ${frac(pad.top, bh)},
+    bottom: ${frac(pad.bottom, bh)},
+  },
 } as const;
 `,
     "utf8",
@@ -137,6 +155,7 @@ export const HERO_BACKDROP_PAD = {
     })),
   );
   console.log(`Arrière-plan flou : ${kb(backdrop.length)} inline`);
+  console.log(`Module : src/lib/scenes/${name}.ts (export ${exportName})`);
 }
 
 main();

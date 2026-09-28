@@ -1,0 +1,300 @@
+/* --- Accueil : Sites prêts à lancer -------------------------------------------
+ * Ciel de nuit (halos, arc de planète, étoiles), bouton néon et cartes en
+ * verre (voir .glass et .glow-card dans globals.css).
+ */
+
+/* Halos : violet sous les cartes et à droite, indigo à gauche. Des
+   dégradés, jamais un flou : rien à recalculer au défilement. */
+.sky {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      55% 38% at 50% 100%,
+      color-mix(in oklab, var(--color-violet) 16%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      32% 42% at 100% 24%,
+      color-mix(in oklab, var(--color-violet) 14%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      26% 36% at 0% 60%,
+      color-mix(in oklab, var(--color-indigo) 10%, transparent),
+      transparent 72%
+    ),
+    /* Nuit bleutée, fondue aux deux bords : pas de bande avec les voisines. */
+    linear-gradient(
+      180deg,
+      transparent,
+      color-mix(in oklab, var(--color-indigo) 8%, var(--color-canvas)) 16%,
+      color-mix(in oklab, var(--color-indigo) 8%, var(--color-canvas)) 84%,
+      transparent
+    );
+}
+
+/* Contre-jour : une lueur violette derrière le haut des cartes, centrée
+   sur l'espace entre elles (colonnes 1,14fr / 1fr). */
+.backlight {
+  position: absolute;
+  left: 53.3%;
+  top: 0;
+  z-index: -1;
+  width: min(62%, 680px);
+  height: 240px;
+  translate: -50% -52%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-violet) 36%, transparent),
+    color-mix(in oklab, var(--color-violet) 12%, transparent) 55%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Arc de planète : le bord d'un disque immense centré hors champ, à droite.
+   Visible en haut de la section, éteint avant les cartes. */
+.planet {
+  position: absolute;
+  left: 56%;
+  top: 0;
+  width: 118%;
+  aspect-ratio: 1;
+  translate: 0 -9.5%;
+  border: 1.5px solid color-mix(in oklab, var(--color-violet-bright) 72%, var(--color-ink));
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-violet) 7%, transparent) 86%,
+    color-mix(in oklab, var(--color-violet) 20%, transparent) 99.5%,
+    transparent
+  );
+  box-shadow:
+    0 0 6px 0 color-mix(in oklab, var(--color-violet-bright) 60%, transparent),
+    0 0 34px -2px color-mix(in oklab, var(--color-violet) 75%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000 8%, transparent 36%);
+  mask-image: linear-gradient(180deg, #000 8%, transparent 36%);
+}
+
+/* Étoile à quatre branches : un cœur lumineux et deux traits fins. */
+.star {
+  position: absolute;
+  width: var(--size);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-ink) 90%, var(--color-violet-bright)),
+    color-mix(in oklab, var(--color-violet-bright) 45%, transparent) 22%,
+    transparent 60%
+  );
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.star::before {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-ink) 80%, var(--color-violet-bright)),
+    transparent
+  );
+}
+
+.star::after {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in oklab, var(--color-ink) 80%, var(--color-violet-bright)),
+    transparent
+  );
+}
+
+/* Point de lumière, sans branches. */
+.speck {
+  position: absolute;
+  width: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink));
+  box-shadow: 0 0 6px 1px color-mix(in oklab, var(--color-violet) 70%, transparent);
+}
+
+/* Fin du titre : lavande vers violet, lisible sur fond nuit. */
+.highlight {
+  background-image: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--color-violet-bright) 72%, var(--color-ink)),
+    var(--color-violet-bright) 45%,
+    color-mix(in oklab, var(--color-violet-bright) 72%, var(--color-violet))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Atout : pastille ronde, liseré violet, pictogramme clair. */
+.featureIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in oklab, var(--color-violet-bright) 28%, transparent);
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--color-violet) 10%, var(--color-canvas));
+  box-shadow: inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 10%, transparent);
+  color: color-mix(in oklab, var(--color-violet-bright) 80%, var(--color-ink));
+}
+
+/* Bouton néon : fond violet qui s'allume vers la droite, anneau clair, halo.
+   Au survol, seul un calque de halo change d'opacité. */
+.cta {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.75rem;
+  height: 2.75rem;
+  padding-inline: 1.4rem 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: 9999px;
+  background:
+    linear-gradient(
+        100deg,
+        color-mix(in oklab, var(--color-violet) 14%, var(--color-canvas)),
+        color-mix(in oklab, var(--color-violet) 34%, var(--color-canvas)) 60%,
+        color-mix(in oklab, var(--color-violet) 62%, var(--color-canvas))
+      )
+      padding-box,
+    linear-gradient(
+        100deg,
+        color-mix(in oklab, var(--color-violet-bright) 80%, var(--color-ink)),
+        var(--color-violet) 45%,
+        color-mix(in oklab, var(--color-violet-bright) 85%, var(--color-ink))
+      )
+      border-box;
+  box-shadow:
+    0 0 16px -3px color-mix(in oklab, var(--color-violet) 85%, transparent),
+    inset 0 0 14px -6px color-mix(in oklab, var(--color-violet-bright) 70%, transparent);
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  box-shadow: 0 0 30px 2px color-mix(in oklab, var(--color-violet) 60%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 320ms var(--ease-brand);
+}
+
+:global(.group):hover .cta::after,
+.cta:hover::after,
+.cta:focus-visible::after {
+  opacity: 1;
+}
+
+.ctaLarge {
+  gap: 1rem;
+  height: 3rem;
+  padding-inline: 1.75rem 1.5rem;
+  font-size: var(--text-base);
+}
+
+/* Carte : le verre du hero, un liseré plus vif sur un coin, en haut. */
+.card {
+  --pad: 1.25rem;
+  padding: var(--pad);
+}
+
+@media (min-width: 40rem) {
+  .card {
+    --pad: 1.5rem;
+  }
+}
+
+/* Coin allumé, en haut à droite : le liseré s'y éclaircit et un reflet
+   déborde à peine de la carte. */
+.flare {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: radial-gradient(
+    130px 90px at 100% 0,
+    color-mix(in oklab, var(--color-ink) 75%, var(--color-violet-bright)),
+    color-mix(in oklab, var(--color-violet-bright) 40%, transparent) 45%,
+    transparent 75%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.flareGlow {
+  position: absolute;
+  top: -14px;
+  right: -24px;
+  width: 68px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-ink)),
+    transparent
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Scène pleine largeur : elle touche les bords de la carte, passe sous les
+   étiquettes (marge négative) et se fond dans le verre en bas.
+   z-index -1 : la carte est un contexte d'empilement (.glow-card), la scène
+   se peint donc sur son fond mais sous les étiquettes. */
+.bleed {
+  position: relative;
+  z-index: -1;
+  margin: calc(var(--pad) * -1) calc(var(--pad) * -1) -2.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  -webkit-mask-image: linear-gradient(180deg, #000 84%, transparent);
+  mask-image: linear-gradient(180deg, #000 84%, transparent);
+}
+
+/* Lien étiré : toute la carte mène à la fiche du modèle. */
+.stretched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: var(--radius-lg);
+}

@@ -58,6 +58,7 @@
       "name": "Horizon Travel",
       "sector": "Travel agency",
       "type": "Business website",
+      "highlight": "Premium",
       "filter": "showcase",
       "tagline": "A high-end website that sells the dream without cheapening it.",
       "intent": "Every travel agency shows the same beach photos. We went the other way: full-bleed imagery, editorial typography, destinations presented like a magazine spread. Luxury comes from space, not from clutter.",
@@ -87,12 +88,25 @@
         "One month of fixes"
       ],
       "performance": { "perf": 99, "a11y": 100, "seo": 100 },
-      "demo": ""
+      "demo": "",
+      "preview": {
+        "nav": ["Home", "Destinations", "About", "Contact"],
+        "book": "Book now",
+        "eyebrow": "Exceptional journeys",
+        "titleStart": "Explore",
+        "titleEnd": "tomorrow,",
+        "titleHighlight": "differently.",
+        "lead": "Unique destinations, unforgettable experiences and tailor-made support.",
+        "cta": "Discover our trips",
+        "highlights": ["Unique destinations", "Tailor-made experiences", "Premium service"],
+        "spot": { "name": "Santorini", "place": "Greece" }
+      }
     },
     "fitzone": {
       "name": "FitZone",
       "sector": "Sport and wellbeing",
       "type": "Mobile app",
+      "highlight": "Personalised tracking",
       "filter": "mobile",
       "tagline": "A fitness tracking app that makes people want to come back tomorrow.",
       "intent": "Most fitness apps drown the user in numbers. Here, a single screen answers the only question that matters: what am I doing today? Everything else is one gesture away.",
@@ -122,12 +136,36 @@
         "Support through store submission"
       ],
       "performance": { "perf": 96, "a11y": 98, "seo": 100 },
-      "demo": ""
+      "demo": "",
+      "preview": {
+        "greeting": "Hello",
+        "prompt": "Ready to move today?",
+        "tabs": ["Sport", "Nutrition", "Wellbeing"],
+        "progress": "Your progress",
+        "score": "68",
+        "goal": "of your goal",
+        "stats": [
+          { "value": "4", "label": "sessions this week" },
+          { "value": "320", "label": "calories burned" },
+          { "value": "7h", "label": "of sleep on average" }
+        ],
+        "start": "Start a session",
+        "nav": ["Home", "Activities", "Progress", "Profile"],
+        "sessionsTitle": "Sessions",
+        "filters": ["All", "Strength", "Cardio", "Yoga"],
+        "sessions": [
+          { "name": "HIIT Express", "meta": "20 min · High intensity" },
+          { "name": "Strength", "meta": "30 min · All levels" },
+          { "name": "Yoga Flow", "meta": "25 min · Wellbeing" },
+          { "name": "Cardio Boxing", "meta": "20 min · Moderate intensity" }
+        ]
+      }
     },
     "soundwave": {
       "name": "SoundWave",
       "sector": "Audio equipment",
       "type": "E-commerce",
+      "highlight": "Built-in comparison",
       "filter": "ecommerce",
       "tagline": "An online store built for products people compare before buying.",
       "intent": "Audio gear sells on the product page: specifications, comparison, reviews. We built the store around that page, and cut the checkout down to three screens.",
@@ -163,6 +201,7 @@
       "name": "GreenEnergy",
       "sector": "Renewable energy",
       "type": "Custom platform",
+      "highlight": "Live dashboards",
       "filter": "custom",
       "tagline": "A client portal to track installations, consumption and site visits.",
       "intent": "A business tool does not have to be grim. The same dashboards, given hierarchy and purposeful colour, become readable at a glance — including on a phone out in the field.",

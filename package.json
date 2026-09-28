@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "mockups": "node scripts/generate-model-mockups.mjs",
+    "scenes": "node scripts/generate-model-scenes.mjs",
     "hero": "node scripts/prepare-hero.mjs"
   },
   "dependencies": {
