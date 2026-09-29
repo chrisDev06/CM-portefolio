@@ -73,13 +73,24 @@ Resend, le mail est affiché dans le terminal au lieu d'être envoyé.
 
 ## 5. Back-office (BO-C-M-Agency)
 
-- [ ] *Paramètres → Messagerie → IMAP* : `imap.gmail.com`, port 993, SSL,
-      identifiant `helloocm.agency@gmail.com`, mot de passe d'application
-      (étape 4).
-- [ ] Laisser le BO tourner : il relève la boîte chaque minute. Une demande
-      du site crée le prospect (origine « Site web ») et une notification
-      avec le mail joint. S'il est éteint, les demandes attendent dans Gmail
-      et sont traitées au redémarrage.
+- [ ] Récupérer la dernière version (commit « Demandes du site vitrine ») et
+      **redémarrer** le BO : la migration `019_notifications` s'applique au
+      démarrage.
+- [ ] *Réglages → Réception des réponses* : activer la relève,
+      `imap.gmail.com`, port 993, SSL, identifiant
+      `helloocm.agency@gmail.com`, mot de passe d'application (étape 4),
+      puis *Tester*.
+- [ ] Envoyer une demande de test depuis le site : sous une minute, elle
+      apparaît dans le menu **Demandes** (badge), avec la fiche du prospect
+      (statut « Réponse »), une tâche P1 « Répondre » dans *Aujourd'hui*
+      et l'e-mail d'origine (.eml) dans *Notes & fichiers*.
+- [ ] Sur la page *Demandes*, cliquer *Activer les alertes du navigateur*
+      (une fois par poste).
+
+Si le BO est éteint, les demandes attendent dans Gmail et sont traitées au
+redémarrage. Seule exception : à la toute première relève d'une boîte, seuls
+les 30 derniers jours sont examinés. Le BO lit « Tous les messages » de Gmail,
+qui exclut le spam : d'où le filtre de l'étape 4.
 
 ## 6. Juridique
 

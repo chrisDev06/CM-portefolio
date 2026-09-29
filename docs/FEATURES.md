@@ -15,3 +15,9 @@ qui la bloque.
 - [ ] **Limitation de débit** côté serveur (quelques envois par IP et par
   heure). Demande un stockage partagé entre les fonctions Vercel
   (Upstash Redis, offre gratuite).
+- [ ] **Signer les demandes envoyées au back-office.** Aujourd'hui, un e-mail
+  forgé avec l'en-tête `X-CM-Lead` et un `lead.json` valide, envoyé à la
+  boîte de l'agence, crée une fiche dans le BO (au pire une fausse fiche,
+  rien n'est envoyé). Correctif : une clé partagée (`LEAD_SIGNING_KEY`)
+  pour signer `lead.json` en HMAC côté site et vérifier la signature côté BO
+  (`src/messaging/website-lead.ts`).
