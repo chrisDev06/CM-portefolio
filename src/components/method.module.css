@@ -1,0 +1,907 @@
+/* --- Accueil : « Notre méthode » ----------------------------------------------
+ * Le titre et le bouton vers la page détaillée, quatre atouts, puis la frise
+ * des quatre étapes : un filet néon court le long du bord haut des cartes, du
+ * rose (01) au bleu (04), sur un sol brillant.
+ * Cotes relevées sur la maquette (1401 × 789), rapportées à un écran de
+ * 1440 px (× 1,028). Dès xl : la frise en ligne et les traînées, resserrées
+ * jusqu'à 1440 px où elles prennent les cotes exactes. Dessous : cartes en
+ * 2 × 2, puis empilées, et les traînées se retirent.
+ */
+
+.section {
+  /* 1 px de la maquette, à 1440 px de large : l'unité des traînées. */
+  --u: 0.06424rem;
+  /* Palette des traînées et des étapes, tirée des tokens. */
+  --m-white: color-mix(in oklab, var(--color-ink) 92%, var(--color-violet-bright));
+  --m-pink: var(--color-pink);
+  --m-pink-light: color-mix(in oklab, var(--color-pink) 55%, var(--color-ink));
+  --m-magenta: var(--color-magenta);
+  --m-magenta-light: color-mix(in oklab, var(--color-magenta) 60%, var(--color-ink));
+  --m-violet: var(--color-violet);
+  --m-violet-light: color-mix(in oklab, var(--color-violet-bright) 80%, var(--color-ink));
+  --m-lavender: color-mix(in oklab, var(--color-violet-bright) 65%, var(--color-indigo));
+  --m-blue: var(--color-blue);
+  --m-blue-light: color-mix(in oklab, var(--color-blue) 50%, var(--color-ink));
+  --tone-1: var(--color-pink);
+  --tone-2: color-mix(in oklab, var(--color-violet) 80%, var(--color-magenta));
+  --tone-3: color-mix(in oklab, var(--color-violet) 50%, var(--color-blue));
+  --tone-4: var(--color-blue);
+  /* Gouttières de la frise : les nœuds se centrent dedans. */
+  --gap-x: 2.375rem;
+  --gap-y: 6rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 4.05rem 3.15rem;
+  background-color: color-mix(in oklab, var(--color-canvas) 95%, var(--color-blue));
+}
+
+/* Le filet de séparation (.hairline) reste au-dessus du décor. */
+.section::before {
+  z-index: 3;
+}
+
+/* --- Décor de fond : voiles, sol brillant ------------------------------------ */
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      42% 38% at 4% 6%,
+      color-mix(in oklab, var(--color-violet) 7%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      32% 50% at 90% 24%,
+      color-mix(in oklab, var(--color-violet) 17%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      26% 40% at 100% 62%,
+      color-mix(in oklab, var(--color-blue) 12%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      24% 40% at 0% 58%,
+      color-mix(in oklab, var(--color-pink) 9%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      60% 30% at 50% 100%,
+      color-mix(in oklab, var(--color-blue) 12%, transparent),
+      transparent 80%
+    );
+}
+
+/* Sol : bande plus claire, grain en paillettes, reflets rose et bleu sous les
+   cartes des extrémités. */
+.floor {
+  position: absolute;
+  inset: auto 0 0;
+  height: 7rem;
+  background:
+    radial-gradient(
+      26% 70% at 6% 100%,
+      color-mix(in oklab, var(--color-pink) 22%, transparent),
+      transparent 75%
+    ),
+    radial-gradient(
+      22% 80% at 96% 100%,
+      color-mix(in oklab, var(--color-blue) 34%, transparent),
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      color-mix(in oklab, var(--color-indigo) 9%, transparent)
+    );
+}
+
+/* Paillettes : un bruit très fin, seuillé, visible seulement sous les
+   lumières. */
+.floor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.3' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+  -webkit-mask-image:
+    radial-gradient(30% 90% at 6% 100%, #000, transparent 80%),
+    radial-gradient(26% 90% at 95% 100%, #000, transparent 80%);
+  mask-image:
+    radial-gradient(30% 90% at 6% 100%, #000, transparent 80%),
+    radial-gradient(26% 90% at 95% 100%, #000, transparent 80%);
+}
+
+/* --- En-tête ---------------------------------------------------------------- */
+
+.head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: clamp(2.25rem, 3.25vw + 1.2rem, 4.125rem);
+  line-height: 0.94;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  text-shadow: 0 0 1.75rem color-mix(in oklab, var(--color-ink) 22%, transparent);
+}
+
+/* Fin du titre : rose clair vers lavande. Le halo passe par un filtre : une
+   ombre de texte recouvrirait le dégradé, peint dans le texte. */
+.highlight {
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in oklab, color-mix(in oklab, var(--color-pink) 50%, var(--color-magenta)) 62%, var(--color-ink)),
+    color-mix(in oklab, color-mix(in oklab, var(--color-magenta) 50%, var(--color-violet-bright)) 85%, var(--color-ink)) 45%,
+    color-mix(in oklab, var(--color-violet-bright) 85%, var(--color-ink))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 0.9rem color-mix(in oklab, var(--color-magenta) 35%, transparent));
+}
+
+.lead {
+  margin-top: 1.2rem;
+  max-width: 44rem;
+  font-size: var(--text-lg);
+  line-height: 1.455;
+  color: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--color-ink) 90%, var(--color-violet-bright)) 84%,
+    transparent
+  );
+}
+
+/* Point de l'étiquette : rose, comme la maquette (le composant partagé le
+   dessine lavande). */
+.head :global(.eyebrow-dot) {
+  background: color-mix(in oklab, var(--color-pink) 45%, var(--color-ink));
+  box-shadow:
+    0 0 6px 1px var(--color-pink),
+    0 0 14px 3px color-mix(in oklab, var(--color-magenta) 55%, transparent);
+}
+
+/* Bouton : pilule violet profond → bleu, anneau néon rose → bleu. */
+.cta {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 1.1rem;
+  height: 3.65rem;
+  padding-inline: 2.5rem 2.35rem;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  color: var(--color-ink);
+  font-size: 1rem;
+  background:
+    linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-violet) 58%, var(--color-canvas)),
+        color-mix(in oklab, color-mix(in oklab, var(--color-violet) 40%, var(--color-blue)) 62%, var(--color-canvas)) 55%,
+        color-mix(in oklab, var(--color-blue) 72%, var(--color-canvas))
+      )
+      padding-box,
+    linear-gradient(
+        90deg,
+        color-mix(in oklab, var(--color-pink) 22%, var(--color-ink)),
+        color-mix(in oklab, var(--color-violet-bright) 70%, var(--color-violet)) 35%,
+        color-mix(in oklab, var(--color-violet-bright) 55%, var(--color-blue)) 65%,
+        color-mix(in oklab, var(--color-blue) 18%, var(--color-ink))
+      )
+      border-box;
+  box-shadow:
+    -0.6rem 0 1.25rem -0.1rem color-mix(in oklab, var(--color-magenta) 85%, transparent),
+    0.6rem 0 1.25rem -0.1rem color-mix(in oklab, var(--color-blue) 90%, transparent),
+    0 0 2.25rem 0 color-mix(in oklab, var(--color-violet) 60%, transparent),
+    inset 0.5rem 0 0.9rem -0.3rem color-mix(in oklab, var(--color-magenta) 55%, transparent),
+    inset -0.5rem 0 0.9rem -0.3rem color-mix(in oklab, var(--color-blue) 60%, transparent);
+}
+
+/* Survol : la lueur s'intensifie, en opacité seule. */
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    0 0 2.25rem 0 color-mix(in oklab, var(--color-violet) 80%, transparent),
+    0 0 4rem -0.5rem color-mix(in oklab, var(--color-magenta) 45%, transparent);
+  opacity: 0;
+  transition: opacity 320ms var(--ease-brand);
+}
+
+.cta:hover::after,
+.cta:focus-visible::after {
+  opacity: 1;
+}
+
+/* --- Atouts ------------------------------------------------------------------- */
+
+.features {
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 1rem;
+}
+
+.feature {
+  --f-tone: var(--color-pink);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature:nth-child(2) {
+  --f-tone: color-mix(in oklab, var(--color-magenta) 75%, var(--color-violet));
+}
+
+.feature:nth-child(3) {
+  --f-tone: color-mix(in oklab, var(--color-violet) 65%, var(--color-magenta));
+}
+
+.feature:nth-child(4) {
+  --f-tone: color-mix(in oklab, var(--color-violet-bright) 55%, var(--color-violet));
+}
+
+/* Pastille ronde : verre sombre teinté, anneau fin, icône néon. */
+.badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  color: color-mix(in oklab, var(--f-tone) 58%, var(--color-ink));
+  background: radial-gradient(
+    circle at 50% 40%,
+    color-mix(in oklab, var(--f-tone) 20%, var(--color-canvas)),
+    color-mix(in oklab, var(--f-tone) 9%, var(--color-canvas)) 78%
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--f-tone) 62%, transparent),
+    inset 0 0 0.9rem -0.2rem color-mix(in oklab, var(--f-tone) 45%, transparent),
+    0 0 1.4rem -0.3rem color-mix(in oklab, var(--f-tone) 50%, transparent);
+}
+
+.badge svg {
+  width: 1.625rem;
+  height: 1.625rem;
+  filter: drop-shadow(0 0 2px color-mix(in oklab, var(--f-tone) 85%, transparent))
+    drop-shadow(0 0 6px color-mix(in oklab, var(--f-tone) 55%, transparent));
+}
+
+.featureText {
+  font-size: 0.9375rem;
+  line-height: 1.35;
+  color: color-mix(in oklab, var(--color-ink) 92%, transparent);
+  white-space: pre-line;
+}
+
+/* --- Frise ---------------------------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  margin-top: 4.06rem;
+}
+
+.steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--gap-y) var(--gap-x);
+}
+
+.step {
+  --tone: var(--tone-1);
+  --tone-next: var(--tone-2);
+  position: relative;
+}
+
+.step:nth-child(2) {
+  --tone: var(--tone-2);
+  --tone-next: var(--tone-3);
+}
+
+.step:nth-child(3) {
+  --tone: var(--tone-3);
+  --tone-next: var(--tone-4);
+}
+
+.step:nth-child(4) {
+  --tone: var(--tone-4);
+  --tone-next: var(--tone-4);
+}
+
+/* Carte : verre sombre à peine teinté, les traînées se devinent au travers.
+   Pas de flou d'arrière-plan : il coûterait à chaque image du défilement. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.5rem 1.5rem 1.4rem;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(
+      70% 22% at 50% 0%,
+      color-mix(in oklab, var(--tone) 12%, transparent),
+      transparent
+    ),
+    linear-gradient(
+      150deg,
+      color-mix(in oklab, var(--color-ink) 4%, transparent),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, color-mix(in oklab, var(--tone) 10%, var(--color-canvas)) 78%, transparent),
+      color-mix(in oklab, color-mix(in oklab, var(--tone) 8%, var(--color-canvas)) 70%, transparent)
+    );
+  box-shadow:
+    0 0 1rem -0.25rem color-mix(in oklab, var(--tone) 35%, transparent),
+    0 1rem 2rem -1.5rem color-mix(in oklab, var(--tone) 85%, transparent);
+}
+
+/* Liseré : teinté sur les côtés, vif en bas, là où le sol l'éclaire. */
+.edge {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.25px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--tone) 80%, var(--color-ink)),
+    color-mix(in oklab, var(--tone) 70%, transparent) 14%,
+    color-mix(in oklab, var(--tone) 55%, transparent) 50%,
+    color-mix(in oklab, var(--tone) 85%, transparent) 84%,
+    color-mix(in oklab, var(--tone) 70%, var(--color-ink))
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Bas de carte : le sol renvoie la lumière. Filet vif, dont la lueur suit
+   le dégradé (drop-shadow). */
+.card::before {
+  content: "";
+  position: absolute;
+  left: var(--radius-lg);
+  right: var(--radius-lg);
+  bottom: -1.5rem;
+  height: 3rem;
+  pointer-events: none;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--tone) 45%, var(--color-ink)) 25% 75%,
+      transparent
+    )
+    center / 100% 1.5px no-repeat;
+  filter: drop-shadow(0 0 3px var(--tone))
+    drop-shadow(0 0 8px color-mix(in oklab, var(--tone) 70%, transparent));
+}
+
+/* Survol : la lueur s'allume, en opacité seule. */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--tone) 45%, transparent),
+    0 0 2.5rem -0.5rem color-mix(in oklab, var(--tone) 70%, transparent);
+  opacity: 0;
+  transition: opacity 320ms var(--ease-brand);
+}
+
+.step:hover .card::after {
+  opacity: 1;
+}
+
+/* Tuile d'icône : verre teinté, liseré, icône néon. */
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: var(--radius-md);
+  color: color-mix(in oklab, var(--tone) 50%, var(--color-ink));
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--tone) 24%, var(--color-canvas)),
+    color-mix(in oklab, var(--tone) 11%, var(--color-canvas))
+  );
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--tone) 48%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-ink) 14%, transparent);
+}
+
+.tile svg {
+  filter: drop-shadow(0 0 2px color-mix(in oklab, var(--tone) 90%, transparent))
+    drop-shadow(0 0 7px color-mix(in oklab, var(--tone) 60%, transparent));
+}
+
+.stepTitle {
+  margin-top: 0.8rem;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.stepText {
+  margin-top: 0.8rem;
+  font-size: 0.875rem;
+  line-height: 1.47;
+  color: color-mix(in oklab, var(--color-ink) 74%, transparent);
+}
+
+/* Étiquettes : alignées sur le texte ; à xl, rangée centrée sur la carte et
+   plus large que le texte, comme sur la maquette. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 1.925rem;
+  padding-inline: 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  color: color-mix(in oklab, var(--color-ink) 94%, transparent);
+  background: color-mix(in oklab, var(--tone) 17%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--tone) 72%, transparent),
+    0 0 0.6rem -0.2rem color-mix(in oklab, var(--tone) 55%, transparent);
+}
+
+/* Filet de la frise, le long du bord haut de la carte. Sous xl, il s'arrête
+   au coin ; à xl, il franchit la gouttière jusqu'à la carte suivante. Cœur
+   presque blanc ; sa lueur est une copie floue de lui-même, qui suit le
+   dégradé. */
+.rail {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: var(--radius-lg);
+  right: var(--radius-lg);
+  height: 2px;
+  pointer-events: none;
+}
+
+.rail::before,
+.rail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Le cœur passe au-dessus de sa lueur. */
+.rail::before {
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--tone) 42%, var(--color-ink)),
+    color-mix(in oklab, var(--tone-next) 42%, var(--color-ink))
+  );
+}
+
+.rail::after {
+  inset: -4px 0;
+  background: linear-gradient(90deg, var(--tone), var(--tone-next));
+  filter: blur(5px);
+}
+
+/* Éclat sur le filet de la 01, là où l'orbite le croise (xl seulement). */
+.spark {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: calc((127 - 65) * var(--u));
+  width: 1.4rem;
+  height: 1.4rem;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    var(--m-white) 0 10%,
+    color-mix(in oklab, var(--color-pink) 75%, transparent) 26%,
+    transparent 70%
+  );
+}
+
+/* Pastille numérotée, centrée sur le bord haut. */
+.number {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.65rem;
+  height: 3.65rem;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--tone) 16%, var(--color-canvas)) 52%,
+    color-mix(in oklab, var(--tone) 42%, var(--color-canvas))
+  );
+  box-shadow:
+    inset 0 0 0 2.5px color-mix(in oklab, var(--tone) 22%, var(--color-ink)),
+    inset 0 0 0.7rem 0.15rem color-mix(in oklab, var(--tone) 75%, transparent),
+    0 0 0 1.5px color-mix(in oklab, var(--tone) 85%, transparent),
+    0 0 0.8rem 0.2rem color-mix(in oklab, var(--tone) 90%, transparent),
+    0 0 2.2rem 0.5rem color-mix(in oklab, var(--tone) 45%, transparent);
+}
+
+/* Nœud « → » : dans la gouttière, sur le filet. Sous md, il descend entre
+   deux cartes, à mi-chemin du numéro suivant, et la flèche tourne. */
+.next {
+  --node: color-mix(in oklab, var(--tone) 75%, var(--tone-next));
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + (var(--gap-y) - 1.825rem) / 2);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  translate: -50% -50%;
+  border-radius: 9999px;
+  color: color-mix(in oklab, var(--color-ink) 90%, var(--node));
+  background: color-mix(in oklab, var(--node) 16%, var(--color-canvas));
+  box-shadow:
+    inset 0 0 0 1.5px color-mix(in oklab, var(--node) 55%, var(--color-ink)),
+    0 0 0.8rem 0 color-mix(in oklab, var(--node) 55%, transparent);
+}
+
+.next svg {
+  rotate: 90deg;
+  stroke-width: 2;
+}
+
+/* Connecteur vertical (cartes empilées) : du bas de la carte au numéro de
+   la suivante, sous le nœud. */
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1.5px;
+  height: var(--gap-y);
+  translate: -50% 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--tone) 45%, var(--color-ink)),
+    color-mix(in oklab, var(--tone-next) 45%, var(--color-ink))
+  );
+  box-shadow: 0 0 6px 0 color-mix(in oklab, var(--tone) 70%, transparent);
+}
+
+/* --- Traînées : SVG en coordonnées de la maquette ------------------------------- */
+
+.streaks {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.streaks path {
+  fill: none;
+}
+
+.dotted {
+  stroke-width: 1.6;
+  stroke-dasharray: 0 6;
+  stroke-linecap: round;
+}
+
+.sparkCore {
+  fill: var(--m-white);
+}
+
+/* Orbites qui passent par les nœuds : calées sur la frise de 1 312 px, elles
+   ne s'affichent qu'à partir de 1440 px. */
+.nodeOrbit {
+  display: none;
+}
+
+/* Ancré au bord gauche de la frise : la carte 01 commence à x = 65 et le
+   filet passe à y = 458 dans la maquette. */
+.streaksLeft {
+  left: calc((-420 - 65) * var(--u));
+  top: calc((100 - 458) * var(--u));
+  width: calc(1100 * var(--u));
+  height: calc(720 * var(--u));
+}
+
+/* Ancré au bord droit : la carte 04 finit à x = 1342. */
+.streaksRight {
+  right: calc((1342 - 1900) * var(--u));
+  top: calc((-20 - 458) * var(--u));
+  width: calc(1140 * var(--u));
+  height: calc(820 * var(--u));
+}
+
+/* --- md : atouts et cartes en 2 × 2 ----------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .section {
+    --gap-y: 4rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Dans une rangée, le filet franchit la gouttière et le nœud s'y pose. */
+  .step:nth-child(odd) .rail {
+    right: calc(-1 * var(--gap-x) - var(--radius-lg));
+  }
+
+  .step:nth-child(odd) .next {
+    top: 0;
+    left: calc(100% + var(--gap-x) / 2);
+  }
+
+  .step:nth-child(odd) .next svg {
+    rotate: none;
+  }
+
+  .step:nth-child(even) .next,
+  .step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* --- lg : bouton à droite, atouts en ligne -------------------------------------- */
+
+@media (min-width: 64rem) {
+  .head {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .cta {
+    margin-top: 2.25rem;
+  }
+
+  /* Le bouton est passé à droite : les atouts suivent le chapô. */
+  .features {
+    margin-top: 0.9rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .feature {
+    position: relative;
+    gap: 1rem;
+  }
+
+  .feature + .feature {
+    padding-left: 1.5rem;
+  }
+
+  /* Filet vertical entre deux atouts, plus court que la pastille. */
+  .feature + .feature::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 2.9rem;
+    translate: 0 -50%;
+    background: var(--color-line-strong);
+  }
+
+  .badge {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}
+
+/* --- xl : la maquette -------------------------------------------------------------- */
+
+@media (min-width: 80rem) {
+  /* De 1280 à 1440 px, la frise se resserre : gouttière, débord et textes
+     suivent la largeur, jusqu'aux cotes de la maquette à 1440. */
+  .section {
+    --gap-x: clamp(1.75rem, 2.64vw, 2.375rem);
+  }
+
+  .head {
+    padding-inline: 2.15rem 1.9rem;
+  }
+
+  /* Retours à la ligne de la maquette, tenus à partir de xl seulement :
+     ailleurs, le texte s'écoule librement. */
+  .lead {
+    white-space: pre-line;
+  }
+
+  /* Colonnes de la maquette : les filets n'y sont pas équidistants. */
+  .features {
+    grid-template-columns: 270fr 326fr 298fr 297fr;
+    padding-inline: 2.6rem 1.9rem;
+  }
+
+  .feature {
+    gap: 1.55rem;
+  }
+
+  .feature + .feature {
+    padding-left: 3.5rem;
+  }
+
+  /* 1 312 px à 1440, décalée de 3 px vers la droite comme la maquette ; le
+     débord s'efface vers 1280 px, où il collerait les cartes au bord. */
+  .timeline {
+    margin-inline: calc(-1 * clamp(0px, (100vw - 80rem) * 0.155, 1.55rem))
+      calc(-1 * clamp(0px, (100vw - 80rem) * 0.195, 1.95rem));
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* Marges de la maquette : le texte file presque jusqu'au bord droit. */
+  .card {
+    padding: 2.5rem 1.2rem 1.4rem 2.25rem;
+  }
+
+  .stepTitle {
+    font-size: clamp(1.15rem, 1.422vw, 1.28rem);
+  }
+
+  .stepText {
+    font-size: clamp(0.8125rem, 0.972vw, 0.875rem);
+  }
+
+  .tags {
+    justify-content: center;
+    gap: clamp(0.4rem, 0.556vw, 0.5rem);
+    margin-inline: calc(0.6rem - 2.25rem) calc(0.6rem - 1.2rem);
+  }
+
+  .tag {
+    padding-inline: clamp(0.55rem, 0.78vw, 0.7rem);
+    font-size: clamp(0.6875rem, 0.8vw, 0.72rem);
+  }
+
+  /* Le filet de chaque carte file jusqu'à la suivante ; celui de la 01
+     démarre au coin, celui de la 04 s'éteint au sien. */
+  .step .rail {
+    right: calc(-1 * var(--gap-x) - var(--radius-lg));
+  }
+
+  .step:last-child .rail {
+    right: var(--radius-lg);
+  }
+
+  .step:last-child .rail::before {
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--tone) 42%, var(--color-ink)) 70%,
+      color-mix(in oklab, var(--tone) 60%, transparent)
+    );
+  }
+
+  .step .next {
+    top: 0;
+    left: calc(100% + var(--gap-x) / 2);
+  }
+
+  .step .next svg {
+    rotate: none;
+  }
+
+  .step:nth-child(even) .next {
+    display: flex;
+  }
+
+  .spark,
+  .streaks {
+    display: block;
+  }
+
+  /* Éclats aux coins extérieurs de la frise, là où les traînées touchent le
+     sol : rose sous la 01, bleu sous la 04. */
+  .step:first-child .card::before {
+    left: -1.75rem;
+    background:
+      radial-gradient(
+          closest-side,
+          var(--m-white),
+          color-mix(in oklab, var(--tone) 80%, transparent) 35%,
+          transparent
+        )
+        -0.25rem center / 4rem 1.5rem no-repeat,
+      linear-gradient(
+          90deg,
+          transparent 1.75rem,
+          color-mix(in oklab, var(--tone) 30%, var(--color-ink)) 3.5rem,
+          color-mix(in oklab, var(--tone) 50%, var(--color-ink)) 60%,
+          transparent
+        )
+        center / 100% 1.5px no-repeat;
+  }
+
+  .step:last-child .card::before {
+    right: -1.75rem;
+    background:
+      radial-gradient(
+          closest-side,
+          var(--m-white),
+          color-mix(in oklab, var(--tone) 80%, transparent) 35%,
+          transparent
+        )
+        calc(100% + 0.25rem) center / 4rem 1.5rem no-repeat,
+      linear-gradient(
+          90deg,
+          transparent,
+          color-mix(in oklab, var(--tone) 50%, var(--color-ink)) 40%,
+          color-mix(in oklab, var(--tone) 25%, var(--color-ink)) calc(100% - 3.5rem),
+          transparent calc(100% - 1.75rem)
+        )
+        center / 100% 1.5px no-repeat;
+  }
+}
+
+/* --- 1440 px : les cotes exactes de la maquette ------------------------------------- */
+
+@media (min-width: 90rem) {
+  /* Les lignes des cartes cassent comme sur la maquette : la colonne de
+     texte n'atteint sa largeur (244 px) qu'ici. */
+  .stepText {
+    white-space: pre-line;
+  }
+
+  .nodeOrbit {
+    display: inline;
+  }
+}

@@ -123,24 +123,36 @@
   },
   "method": {
     "eyebrow": "Notre méthode",
-    "title": "Vous savez toujours où en est votre projet.",
-    "lead": "Huit étapes, des points d'avancement réguliers, et aucun moment où vous vous demandez ce qui se passe.",
+    "titleStart": "Vous savez toujours",
+    "titleEnd": "où en est",
+    "titleHighlight": "votre projet.",
+    "lead": "Une méthode claire, des validations régulières et aucun angle mort.\nÀ chaque étape, vous savez ce que nous faisons, ce que nous validons ensemble\net ce qui arrive ensuite.",
+    "features": [
+      "Point de suivi\nrégulier",
+      "Validations\nà chaque étape",
+      "Accès direct\nà l'équipe",
+      "Mise en ligne\naccompagnée"
+    ],
     "steps": [
       {
-        "title": "On écoute",
-        "text": "Un échange pour comprendre votre activité, vos clients et ce que vous attendez vraiment."
+        "title": "On découvre",
+        "text": "Un premier échange pour\ncomprendre votre activité, vos\nobjectifs, vos contraintes et ce que\nvous attendez vraiment du projet.",
+        "tags": ["échange", "besoins", "objectifs"]
       },
       {
         "title": "On cadre",
-        "text": "Objectifs, fonctionnalités, budget et délais posés noir sur blanc avant d'écrire la moindre ligne."
+        "text": "Nous clarifions le périmètre,\nles priorités, les contenus,\nle planning et le budget avant\nde lancer la production.",
+        "tags": ["cadrage", "planning", "budget"]
       },
       {
-        "title": "On construit",
-        "text": "Développement par étapes, avec des démonstrations régulières et vos retours intégrés au fil de l'eau."
+        "title": "On conçoit & développe",
+        "text": "Maquettes, développements par\nitérations, démonstrations régulières\net retours intégrés au fil de\nl'avancement.",
+        "tags": ["maquettes", "démo", "validation"]
       },
       {
-        "title": "On accompagne",
-        "text": "Mise en ligne, formation à la prise en main, puis maintenance et évolutions."
+        "title": "On lance & on fait évoluer",
+        "text": "Mise en ligne, prise en main,\najustements, maintenance et\noptimisations pour faire durer\nles résultats.",
+        "tags": ["mise en ligne", "maintenance", "évolution"]
       }
     ],
     "cta": "Voir la méthode en détail"

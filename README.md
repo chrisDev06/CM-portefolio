@@ -117,7 +117,7 @@ Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4.
 
 | Route FR | Route EN | Contenu |
 |---|---|---|
-| `/fr` | `/en` | Accueil : hero, services (scène néon, 6 cartes illustrées), modèles, différence, binôme, méthode, technos |
+| `/fr` | `/en` | Accueil : hero, services (scène néon, 6 cartes illustrées), modèles, différence, binôme, méthode (frise néon des 4 étapes), technos |
 | `/fr/services` | `/en/services` | Vue d'ensemble des 6 services |
 | `/fr/services/[slug]` | `/en/services/[slug]` | 6 pages service complètes (à qui, problème, fonctionnalités, déroulé, inclus, délais, FAQ) |
 | `/fr/modeles` | `/en/ready-to-launch` | Catalogue des sites prêts à lancer, filtrable |

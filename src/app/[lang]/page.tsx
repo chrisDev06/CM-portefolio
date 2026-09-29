@@ -8,14 +8,14 @@ import {
   Icon,
   type IconName,
   Section,
-  SectionHeading,
 } from "@/components/ui";
-import { HeroServiceCard, NumberedStep, TechRow } from "@/components/blocks";
+import { HeroServiceCard, TechRow } from "@/components/blocks";
 import { HeroBackground } from "@/components/hero-background";
 import { ServicesShowcase } from "@/components/services-showcase";
 import { ModelShowcase } from "@/components/model-showcase";
 import { DifferenceSection } from "@/components/difference";
 import { DuoSection } from "@/components/duo";
+import { MethodSection } from "@/components/method";
 
 /** Icônes des atouts du hero, dans l'ordre de `home.heroFeatures`. */
 const HERO_FEATURE_ICONS: IconName[] = ["bolt", "diamond", "user", "shieldCheck"];
@@ -144,34 +144,7 @@ export default async function HomePage() {
       <DuoSection content={home.duo} locale={locale} />
 
       {/* Méthode */}
-      <Section>
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow={home.method.eyebrow}
-              title={home.method.title}
-              lead={home.method.lead}
-            />
-            <Button
-              href={path("method", locale)}
-              variant="ghost"
-              className="shrink-0"
-            >
-              {home.method.cta}
-            </Button>
-          </div>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {home.method.steps.map((step, index) => (
-              <NumberedStep
-                key={step.title}
-                index={index}
-                title={step.title}
-                text={step.text}
-              />
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <MethodSection content={home.method} locale={locale} />
 
       {/* Technologies */}
       <Section className="py-14 sm:py-16">

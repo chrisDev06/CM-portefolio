@@ -48,6 +48,15 @@
   --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Extrémités du spectre néon (section Méthode) : un rose plus chaud que le
+   magenta, un bleu électrique plus saturé que l'indigo. `static` : elles ne
+   servent que dans un module CSS, que Tailwind ne lit pas ; sans cela, il ne
+   les émettrait pas. */
+@theme static {
+  --color-pink: #e040b0;
+  --color-blue: #3d5afe;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

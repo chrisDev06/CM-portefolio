@@ -148,7 +148,7 @@ Soit **10 gabarits uniques** (les 6 services partagent un gabarit, les fiches mo
 
 | Page | Objectif unique | Sections | CTA | Requête SEO visée |
 |---|---|---|---|---|
-| Accueil | Comprendre en 5 s + déclencher le contact | Hero (**un modèle réel, cliquable**) · 4 services · section Services sur la scène néon, 6 cartes illustrées (maquette du 28/09/2026 ; pastille « Populaire » sur l'e-commerce : à confirmer, §12) · 2 modèles en vedette · « le digital sans intermédiaire » · binôme · méthode en 4 temps · technos · CTA | Lancer mon projet | agence web / création site internet \<ville\> |
+| Accueil | Comprendre en 5 s + déclencher le contact | Hero (**un modèle réel, cliquable**) · 4 services · section Services sur la scène néon, 6 cartes illustrées (maquette du 28/09/2026 ; pastille « Populaire » sur l'e-commerce : à confirmer, §12) · 2 modèles en vedette · « le digital sans intermédiaire » · binôme · méthode en 4 temps, frise néon du rose au bleu (maquette du 29/09/2026) · technos · CTA | Lancer mon projet | agence web / création site internet \<ville\> |
 | Services | Orienter vers sa problématique | 6 cartes détaillées + comparatif « quelle solution pour moi ? » + passerelle vers les modèles | Voir le service | création site internet |
 | Service ×6 | Convertir + SEO | À qui · problème résolu · ce qu'on crée · fonctionnalités · déroulé · technos · inclus · délais · après la mise en ligne · FAQ · estimation | Demander une estimation | création site vitrine / e-commerce / app mobile… |
 | Sites prêts à lancer | Preuve **et** vente | Promesse (« en ligne en X jours ») · grille filtrable par secteur et par type · comment se passe la personnalisation · ce qui est inclus | Voir la démo en direct | site web clé en main / template site vitrine |

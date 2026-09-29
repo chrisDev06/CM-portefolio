@@ -117,24 +117,36 @@
   },
   "method": {
     "eyebrow": "How we work",
-    "title": "You always know where your project stands.",
-    "lead": "Eight steps, regular progress updates, and never a moment where you wonder what is happening.",
+    "titleStart": "You always know",
+    "titleEnd": "where",
+    "titleHighlight": "your project stands.",
+    "lead": "A clear method, regular sign-offs and no blind spots.\nAt every stage, you know what we are doing, what we are signing off together\nand what comes next.",
+    "features": [
+      "Regular\ncheck-ins",
+      "Sign-off\nat every stage",
+      "Direct access\nto the team",
+      "Guided\nlaunch"
+    ],
     "steps": [
       {
-        "title": "We listen",
-        "text": "A conversation to understand your business, your customers and what you actually expect."
+        "title": "We discover",
+        "text": "A first conversation to understand your business, your goals, your constraints and what you really expect from the project.",
+        "tags": ["conversation", "needs", "goals"]
       },
       {
         "title": "We scope",
-        "text": "Goals, features, budget and timeline agreed in writing before a single line is written."
+        "text": "We clarify the scope, priorities, content, timeline and budget before production starts.",
+        "tags": ["scoping", "timeline", "budget"]
       },
       {
-        "title": "We build",
-        "text": "Step-by-step development, with regular demos and your feedback folded in as we go."
+        "title": "We design & build",
+        "text": "Mockups, iterative development, regular demos and your feedback folded in as the work progresses.",
+        "tags": ["mockups", "demo", "sign-off"]
       },
       {
-        "title": "We support",
-        "text": "Launch, hands-on training, then maintenance and new features."
+        "title": "We launch & evolve",
+        "text": "Go-live, onboarding, fine-tuning, maintenance and optimisation to make the results last.",
+        "tags": ["launch", "maintenance", "evolution"]
       }
     ],
     "cta": "See the full method"
