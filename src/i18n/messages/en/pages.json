@@ -538,7 +538,7 @@
       },
       {
         "title": "Hosting provider",
-        "body": "Name, company details and address of the hosting provider to be completed before launch."
+        "body": "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States — vercel.com. The site is served from the Paris (France) region."
       },
       {
         "title": "Intellectual property",
@@ -576,7 +576,7 @@
       },
       {
         "title": "Data hosting",
-        "body": "Data is hosted within the European Union."
+        "body": "The site is hosted by Vercel Inc., a US company, and runs in its Paris region. Any transfer of data to the United States is covered by the EU–US Data Privacy Framework and the European Commission's standard contractual clauses."
       }
     ]
   },

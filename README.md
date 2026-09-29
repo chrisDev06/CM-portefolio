@@ -185,5 +185,5 @@ que rien ne le signale. Même précaution pour `sm`, `lg`, `xl`.
 | Portraits | Bloc binôme en initiales, en attendant les photos (docs/ASSETS.md §5). |
 | Logo, favicon, OG | Non fournis. |
 | Envoi du formulaire | Le configurateur affiche un récapitulatif ; l'envoi (Resend + Turnstile) n'est pas branché. |
-| Mentions légales | SIREN, statut, adresse et hébergeur manquants. |
+| Mentions légales | SIREN, statut, adresse et directeur de la publication manquants (hébergeur renseigné : Vercel). |
 | `NEXT_PUBLIC_SITE_URL` | À définir pour que les URL canoniques et OG soient absolues. |

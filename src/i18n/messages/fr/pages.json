@@ -538,7 +538,7 @@
       },
       {
         "title": "Hébergeur",
-        "body": "Nom, raison sociale et adresse de l'hébergeur à compléter avant la mise en ligne."
+        "body": "Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — vercel.com. Le site est servi depuis la région de Paris (France)."
       },
       {
         "title": "Propriété intellectuelle",
@@ -576,7 +576,7 @@
       },
       {
         "title": "Hébergement des données",
-        "body": "Les données sont hébergées dans l'Union européenne."
+        "body": "Le site est hébergé par Vercel Inc., société américaine, et exécuté dans sa région de Paris. Les éventuels transferts de données vers les États-Unis sont encadrés par le Data Privacy Framework UE–États-Unis et les clauses contractuelles types de la Commission européenne."
       }
     ]
   },
