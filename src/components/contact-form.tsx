@@ -1,38 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import type { Dictionary } from "@/i18n/dictionaries";
+import { useState, useTransition } from "react";
+import { sendContact } from "@/app/[lang]/contact/actions";
+import {
+  EMPTY_ANSWERS,
+  canSubmit,
+  recapRows,
+  type ContactAnswers,
+  type ContactError,
+  type ContactFormDict,
+} from "@/lib/contact";
+import { Turnstile } from "./turnstile";
 import { Icon } from "./ui";
-
-type FormDict = Dictionary["pages"]["contact"]["form"];
-
-type Answers = {
-  projectType: string;
-  features: string[];
-  company: string;
-  activity: string;
-  existing: string;
-  budget: string;
-  deadline: string;
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
-
-const EMPTY: Answers = {
-  projectType: "",
-  features: [],
-  company: "",
-  activity: "",
-  existing: "",
-  budget: "",
-  deadline: "",
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
-};
 
 const FIELD_BASE =
   "w-full rounded-md border border-line bg-surface-2 px-4 py-3 text-sm text-ink outline-none transition-colors duration-200 ease-brand placeholder:text-ink-muted/60 focus:border-violet";
@@ -84,16 +63,32 @@ function Field({
   );
 }
 
-export function ContactForm({ form }: { form: FormDict }) {
+export function ContactForm({
+  form,
+  locale,
+  turnstileSiteKey,
+}: {
+  form: ContactFormDict;
+  locale: string;
+  turnstileSiteKey?: string;
+}) {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<Answers>(EMPTY);
+  const [answers, setAnswers] = useState<ContactAnswers>(EMPTY_ANSWERS);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState<ContactError | null>(null);
+  const [token, setToken] = useState("");
+  const [captchaRound, setCaptchaRound] = useState(0);
+  const [honeypot, setHoneypot] = useState("");
+  const [pending, startTransition] = useTransition();
 
   const total = form.steps.length;
   const current = form.steps[step];
   const progress = Math.round(((step + 1) / total) * 100);
 
-  function set<K extends keyof Answers>(key: K, value: Answers[K]) {
+  function set<K extends keyof ContactAnswers>(
+    key: K,
+    value: ContactAnswers[K],
+  ) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
   }
 
@@ -106,29 +101,31 @@ export function ContactForm({ form }: { form: FormDict }) {
     }));
   }
 
-  if (done) {
-    const recap: [string, string][] = [
-      [form.steps[0].title, answers.projectType],
-      [form.steps[1].title, answers.features.join(", ")],
-      [form.fields.company, answers.company],
-      [form.fields.activity, answers.activity],
-      [form.fields.existing, answers.existing],
-      [form.steps[3].title, `${answers.budget} — ${answers.deadline}`],
-      [form.fields.name, answers.name],
-      [form.fields.email, answers.email],
-      [form.fields.phone, answers.phone],
-      [form.fields.message, answers.message],
-    ];
+  const ready =
+    canSubmit(answers) && (!turnstileSiteKey || Boolean(token)) && !pending;
 
+  function submit() {
+    setError(null);
+    startTransition(async () => {
+      const result = await sendContact({ locale, answers, token, honeypot });
+      if (result.ok) {
+        setDone(true);
+      } else {
+        setError(result.error);
+        // Le jeton Turnstile est consommé : il en faut un nouveau.
+        setCaptchaRound((round) => round + 1);
+      }
+    });
+  }
+
+  if (done) {
     return (
       <div className="rounded-lg border border-line bg-surface/60 p-8">
         <h2 className="text-2xl">{form.summary.title}</h2>
         <p className="mt-3 text-ink-muted">{form.summary.lead}</p>
 
         <dl className="mt-8 divide-y divide-line border-y border-line">
-          {recap
-            .filter(([, value]) => value)
-            .map(([label, value]) => (
+          {recapRows(form, answers).map(([label, value]) => (
               <div key={label} className="grid gap-1 py-3 sm:grid-cols-[1fr_2fr]">
                 <dt className="text-sm text-ink-muted">{label}</dt>
                 <dd className="text-sm">{value}</dd>
@@ -139,9 +136,10 @@ export function ContactForm({ form }: { form: FormDict }) {
         <button
           type="button"
           onClick={() => {
-            setAnswers(EMPTY);
+            setAnswers(EMPTY_ANSWERS);
             setStep(0);
             setDone(false);
+            setCaptchaRound((round) => round + 1);
           }}
           className="mt-8 inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-sm transition-colors duration-200 ease-brand hover:border-violet"
         >
@@ -268,6 +266,8 @@ export function ContactForm({ form }: { form: FormDict }) {
             <Field label={form.fields.name} id="name">
               <input
                 id="name"
+                required
+                autoComplete="name"
                 className={FIELD_BASE}
                 value={answers.name}
                 onChange={(event) => set("name", event.target.value)}
@@ -277,6 +277,8 @@ export function ContactForm({ form }: { form: FormDict }) {
               <input
                 id="email"
                 type="email"
+                required
+                autoComplete="email"
                 className={FIELD_BASE}
                 value={answers.email}
                 onChange={(event) => set("email", event.target.value)}
@@ -286,6 +288,7 @@ export function ContactForm({ form }: { form: FormDict }) {
               <input
                 id="phone"
                 type="tel"
+                autoComplete="tel"
                 className={FIELD_BASE}
                 value={answers.phone}
                 onChange={(event) => set("phone", event.target.value)}
@@ -305,9 +308,36 @@ export function ContactForm({ form }: { form: FormDict }) {
             <p className="text-xs leading-relaxed text-ink-muted sm:col-span-2">
               {form.consent}
             </p>
+            {/* Invisible pour un humain, rempli par les robots. */}
+            <div aria-hidden="true" className="absolute -left-[9999px]">
+              <label htmlFor="website">{form.honeypot}</label>
+              <input
+                id="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(event) => setHoneypot(event.target.value)}
+              />
+            </div>
+            {turnstileSiteKey ? (
+              <div className="sm:col-span-2">
+                <Turnstile
+                  siteKey={turnstileSiteKey}
+                  locale={locale}
+                  onToken={setToken}
+                  resetKey={captchaRound}
+                />
+              </div>
+            ) : null}
           </div>
         ) : null}
       </div>
+
+      {error ? (
+        <p role="alert" className="mt-6 text-sm text-magenta">
+          {form.errors[error]}
+        </p>
+      ) : null}
 
       <div className="mt-10 flex items-center justify-between gap-4">
         <button
@@ -331,10 +361,11 @@ export function ContactForm({ form }: { form: FormDict }) {
         ) : (
           <button
             type="button"
-            onClick={() => setDone(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-violet to-magenta px-6 py-3 text-sm font-medium shadow-[0_0_24px_-6px_var(--color-magenta)]"
+            onClick={submit}
+            disabled={!ready}
+            className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-violet to-magenta px-6 py-3 text-sm font-medium shadow-[0_0_24px_-6px_var(--color-magenta)] disabled:opacity-50"
           >
-            {form.submit}
+            {pending ? form.sending : form.submit}
             <Icon name="arrow" className="size-4" />
           </button>
         )}

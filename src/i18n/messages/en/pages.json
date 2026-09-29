@@ -497,9 +497,22 @@
         "message": "A word about your project"
       },
       "summary": {
-        "title": "Your enquiry is ready.",
-        "lead": "Here is what would be sent to Manon. Sending is not wired up in this version of the site yet.",
-        "restart": "Start over"
+        "title": "Your request is on its way.",
+        "lead": "Manon will get back to you within 48 business hours. Here is a summary of what you sent us.",
+        "restart": "New request"
+      },
+      "sending": "Sending…",
+      "honeypot": "Leave this field empty",
+      "errors": {
+        "invalid": "Please enter your name and a valid email address.",
+        "captcha": "The spam check did not go through. Please try again.",
+        "send": "Sending failed. Please try again in a moment, or write to us directly."
+      },
+      "mail": {
+        "subject": "New request",
+        "intro": "New request received from the website form.",
+        "locale": "Visitor language",
+        "reply": "Reply to this email to write to the prospect."
       },
       "consent": "This information is used solely to get back to you about your project. It is never resold or used for anything else."
     },
@@ -577,6 +590,10 @@
       {
         "title": "Data hosting",
         "body": "The site is hosted by Vercel Inc., a US company, and runs in its Paris region. Any transfer of data to the United States is covered by the EU–US Data Privacy Framework and the European Commission's standard contractual clauses."
+      },
+      {
+        "title": "Processors",
+        "body": "Requests sent through the form pass through Resend (Plus Five Five, Inc., United States), which delivers the email to our inbox, and Cloudflare Turnstile (Cloudflare, Inc., United States), which filters automated submissions without advertising cookies. These transfers are covered by the European Commission's standard contractual clauses."
       }
     ]
   },

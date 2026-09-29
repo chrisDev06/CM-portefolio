@@ -184,6 +184,6 @@ que rien ne le signale. Même précaution pour `sm`, `lg`, `xl`.
 | Visuels des modèles | Maquettes d'interface générées (PNG), pas des captures des démos réelles. Procédure de remplacement ci-dessus. |
 | Portraits | Bloc binôme en initiales, en attendant les photos (docs/ASSETS.md §5). |
 | Logo, favicon, OG | Non fournis. |
-| Envoi du formulaire | Le configurateur affiche un récapitulatif ; l'envoi (Resend + Turnstile) n'est pas branché. |
+| Envoi du formulaire | Branché (Resend + Turnstile + honeypot). Reste à créer les comptes et saisir les clés : `docs/SETUP-CONTACT.md`. À faire ensuite : `docs/FEATURES.md`. |
 | Mentions légales | SIREN, statut, adresse et directeur de la publication manquants (hébergeur renseigné : Vercel). |
 | `NEXT_PUBLIC_SITE_URL` | À définir pour que les URL canoniques et OG soient absolues. |

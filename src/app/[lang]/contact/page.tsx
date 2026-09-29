@@ -47,7 +47,11 @@ export default async function ContactPage() {
               </p>
 
               <div className="mt-10">
-                <ContactForm form={form} />
+                <ContactForm
+                  form={form}
+                  locale={locale}
+                  turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                />
               </div>
             </div>
 

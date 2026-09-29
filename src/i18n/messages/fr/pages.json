@@ -497,9 +497,22 @@
         "message": "Un mot sur votre projet"
       },
       "summary": {
-        "title": "Votre demande est prête.",
-        "lead": "Voici ce qui serait envoyé à Manon. L'envoi n'est pas encore branché sur cette version du site.",
-        "restart": "Recommencer"
+        "title": "Votre demande est bien partie.",
+        "lead": "Manon vous répond sous 48 heures ouvrées. Voici le récapitulatif de ce que vous nous avez envoyé.",
+        "restart": "Nouvelle demande"
+      },
+      "sending": "Envoi en cours…",
+      "honeypot": "Laissez ce champ vide",
+      "errors": {
+        "invalid": "Indiquez votre nom et une adresse email valide.",
+        "captcha": "La vérification anti-spam n'a pas abouti. Réessayez.",
+        "send": "L'envoi a échoué. Réessayez dans un instant, ou écrivez-nous directement."
+      },
+      "mail": {
+        "subject": "Nouvelle demande",
+        "intro": "Nouvelle demande reçue depuis le formulaire du site.",
+        "locale": "Langue du visiteur",
+        "reply": "Répondez directement à ce mail pour écrire au prospect."
       },
       "consent": "Ces informations servent uniquement à vous recontacter au sujet de votre projet. Elles ne sont ni revendues ni utilisées à d'autres fins."
     },
@@ -577,6 +590,10 @@
       {
         "title": "Hébergement des données",
         "body": "Le site est hébergé par Vercel Inc., société américaine, et exécuté dans sa région de Paris. Les éventuels transferts de données vers les États-Unis sont encadrés par le Data Privacy Framework UE–États-Unis et les clauses contractuelles types de la Commission européenne."
+      },
+      {
+        "title": "Sous-traitants",
+        "body": "Les demandes envoyées par le formulaire transitent par Resend (Plus Five Five, Inc., États-Unis), qui achemine l'email jusqu'à notre boîte, et par Cloudflare Turnstile (Cloudflare, Inc., États-Unis), qui filtre les envois automatisés sans cookie publicitaire. Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne."
       }
     ]
   },

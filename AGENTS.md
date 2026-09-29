@@ -16,4 +16,4 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Pas de couleur, rayon ou durée en dur : tokens `@theme` dans `src/app/globals.css`.
 - Pas de texte en dur dans un composant : `src/i18n/messages/{fr,en}.json`.
 - `middleware.ts` n'existe pas en Next 16 : c'est `src/proxy.ts`.
-- Contexte produit et décisions : `docs/PLAN.md`. Assets attendus : `docs/ASSETS.md`.
+- Contexte produit et décisions : `docs/PLAN.md`. Assets attendus : `docs/ASSETS.md`. Fonctionnalités à faire : `docs/FEATURES.md`.
