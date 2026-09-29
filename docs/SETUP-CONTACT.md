@@ -50,6 +50,7 @@ honeypot et la validation serveur restent actifs).
 | `CONTACT_FROM` | `C&M Agency <onboarding@resend.dev>` (jusqu'au domaine) |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Site Key Turnstile (étape 2) |
 | `TURNSTILE_SECRET_KEY` | Secret Key Turnstile (étape 2) |
+| `LEAD_SIGNING_KEY` | clé affichée par le back-office (étape 5) |
 
 - [ ] Ajouter les variables ci-dessus.
 - [ ] *Deployments* → dernier déploiement → *Redeploy* (les variables
@@ -80,6 +81,9 @@ Resend, le mail est affiché dans le terminal au lieu d'être envoyé.
       `imap.gmail.com`, port 993, SSL, identifiant
       `helloocm.agency@gmail.com`, mot de passe d'application (étape 4),
       puis *Tester*.
+- [ ] Page **Demandes** → *Connexion au site* → *Copier* la clé, la coller
+      dans Vercel sous `LEAD_SIGNING_KEY`, puis *Redeploy*. Le BO n'enregistre
+      que les demandes signées avec cette clé : un e-mail forgé ne crée rien.
 - [ ] Envoyer une demande de test depuis le site : sous une minute, elle
       apparaît dans le menu **Demandes** (badge), avec la fiche du prospect
       (statut « Réponse »), une tâche P1 « Répondre » dans *Aujourd'hui*

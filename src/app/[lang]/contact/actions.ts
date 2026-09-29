@@ -1,5 +1,6 @@
 "use server";
 
+import { createHmac } from "node:crypto";
 import { headers } from "next/headers";
 import { getDictionary } from "@/i18n/dictionaries";
 import { isLocale } from "@/i18n/config";
@@ -111,6 +112,14 @@ ${rows
     submittedAt: new Date().toISOString(),
     answers,
   };
+  const leadBody = Buffer.from(JSON.stringify(lead, null, 2));
+  // Le back-office n'enregistre que les demandes signées avec la clé qu'il affiche
+  // (page « Demandes » > Connexion au site) : un e-mail forgé ne crée rien.
+  const signingKey = process.env.LEAD_SIGNING_KEY;
+  const signature = signingKey
+    ? { "X-CM-Lead-Signature": `sha256=${createHmac("sha256", signingKey).update(leadBody).digest("hex")}` }
+    : {};
+  if (!signingKey) console.warn("[contact] LEAD_SIGNING_KEY absent : le back-office ignorera cette demande");
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
@@ -137,11 +146,11 @@ ${rows
         subject,
         text,
         html,
-        headers: { "X-CM-Lead": "1" },
+        headers: { "X-CM-Lead": "1", ...signature },
         attachments: [
           {
             filename: "lead.json",
-            content: Buffer.from(JSON.stringify(lead, null, 2)).toString("base64"),
+            content: leadBody.toString("base64"),
           },
         ],
       }),
