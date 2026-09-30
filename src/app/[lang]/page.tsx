@@ -16,6 +16,7 @@ import { ModelShowcase } from "@/components/model-showcase";
 import { DifferenceSection } from "@/components/difference";
 import { DuoSection } from "@/components/duo";
 import { MethodSection } from "@/components/method";
+import { Typewriter } from "@/components/typewriter";
 
 /** Icônes des atouts du hero, dans l'ordre de `home.heroFeatures`. */
 const HERO_FEATURE_ICONS: IconName[] = ["bolt", "diamond", "user", "shieldCheck"];
@@ -52,7 +53,7 @@ export default async function HomePage() {
               className="hero-rise text-xs uppercase tracking-[0.22em] text-ink/70"
               style={rise(0.35)}
             >
-              {home.eyebrow}
+              <Typewriter text={home.eyebrow} delay={0.9} />
             </p>
             <h1
               className="hero-rise mt-6 text-5xl max-[389px]:text-[2rem] sm:text-6xl [@media(max-height:760px)]:sm:text-5xl"

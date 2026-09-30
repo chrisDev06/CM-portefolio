@@ -1,0 +1,35 @@
+/* Le texte fantôme et le texte tapé occupent la même case : la largeur et la
+   hauteur finales sont réservées dès le premier rendu. */
+.root {
+  display: inline-grid;
+}
+
+.ghost,
+.typed {
+  grid-area: 1 / 1;
+}
+
+.ghost {
+  visibility: hidden;
+}
+
+/* Curseur de barre d'adresse : fixe pendant la frappe, clignote à l'arrêt. */
+.caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 1.15em;
+  margin-left: 0.2em;
+  vertical-align: -0.2em;
+  background: var(--color-violet-bright);
+  box-shadow: 0 0 6px var(--color-violet);
+}
+
+.idle {
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
