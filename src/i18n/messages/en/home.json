@@ -3,7 +3,7 @@
   "titleStart": "Win more customers.",
   "titleHighlight": "Get your time back.",
   "subtitle": "C&M Agency is Manon and Christopher. We design and build custom websites, online stores, business apps and AI automations for small businesses.",
-  "ctaPrimary": "Let's talk about your project",
+  "ctaPrimary": "Discuss your project",
   "ctaSecondary": "See our projects",
   "heroFeatures": [
     { "title": "Reply within 24 h", "text": "On working days" },
@@ -24,26 +24,26 @@
   ],
   "services": {
     "eyebrow": "Our services",
-    "titleStart": "Digital solutions",
-    "titleHighlight": "built to sell, convince and grow.",
-    "lead": "From first sketch to launch day, we support you at every step\nand turn your ideas into high-performing digital experiences\nthat deliver real results.",
-    "screen": "Ideas\nthat perform.",
+    "titleStart": "From websites to AI,",
+    "titleHighlight": "all built by the two of us.",
+    "lead": "Every project starts with a free, detailed, line-by-line quote\nand ends with the code and every access handed over in your name.",
+    "screen": "Your site,\nyour keys.",
     "features": [
       { "title": "Dedicated duo", "text": "From quote to launch" },
-      { "title": "Strategy + design + code", "text": "A complete approach" },
-      { "title": "Human follow-up", "text": "Available and responsive" },
-      { "title": "Performance", "text": "Results-driven" }
+      { "title": "Approved mockup", "text": "Before any development" },
+      { "title": "Regular demos", "text": "At every key stage" },
+      { "title": "Fixes included", "text": "For a month after launch" }
     ]
   },
   "models": {
     "eyebrow": "Ready-to-launch sites",
-    "titleStart": "Sites already online,",
-    "titleEnd": "ready to win over",
-    "titleHighlight": "your future customers.",
-    "lead": "Our competitors show screenshots. We give you the link: open the demo, click everywhere, try it on your phone. Every template can be tailored to your business.",
+    "titleStart": "Turnkey websites,",
+    "titleEnd": "tailored to",
+    "titleHighlight": "your business.",
+    "lead": "We designed and built these templates ourselves: they are demonstration projects, not client work. You pick a base and we adapt it to your copy, photos and colours.",
     "features": [
-      { "title": "Live demos", "text": "to try right now" },
-      { "title": "100%", "text": "customisable" },
+      { "title": "Already built", "text": "faster launch" },
+      { "title": "Your colours", "text": "copy and photos" },
       { "title": "Mobile-ready", "text": "and desktop too" }
     ]
   },
@@ -51,10 +51,10 @@
     "eyebrow": "What sets us apart",
     "titleStart": "Digital, with",
     "titleHighlight": "no middleman.",
-    "lead": "In a large agency your project travels through a salesperson, a project manager, a studio and then a technical team. Something is lost at every handover. Here, there is nobody between you and the solution.",
+    "lead": "Your needs are never rephrased by a go-between: the person who listens to you and the person who builds work on the same file, and you talk to both directly.",
     "features": [
       { "title": "A direct relationship", "text": "From the first call to launch day" },
-      { "title": "More clarity", "text": "Faster, better-aligned projects" }
+      { "title": "More clarity", "text": "One question, one direct answer" }
     ],
     "points": [
       {
@@ -62,65 +62,65 @@
         "text": "Manon has known your project since the first call. You never have to explain your needs twice."
       },
       {
-        "title": "Direct access to the developer",
-        "text": "A technical question? You talk to the person writing the code, not to someone who will pass it on."
+        "title": "Direct line to the developer",
+        "text": "A technical question? Ask Christopher directly: he writes the code."
       },
       {
         "title": "No subcontracting",
-        "text": "Your project is never resold to a third party. What you see is who does the work."
+        "text": "Your project is never resold or handed to a third party, in France or abroad."
       },
       {
         "title": "You own the code",
-        "text": "Source code, accounts, hosting: everything is in your name. You are never locked in."
+        "text": "Source code, accounts, hosting: everything is in your name. No leasing, no forced subscription."
       }
     ]
   },
   "duo": {
     "eyebrow": "Your duo",
-    "titleStart": "Two skill sets.",
-    "titleEnd": "One goal:",
-    "titleHighlight": "making your project succeed.",
+    "titleStart": "Manon listens.",
+    "titleEnd": "Christopher",
+    "titleHighlight": "builds.",
     "lead": "No fake agency of thirty people. Two people, whom you know by name, from the first call to launch day.",
     "people": [
       {
         "name": "Manon",
         "role": "Sales & client relations",
-        "text": "First contact, understanding your needs, quotes, planning and follow-up. She turns your business into a brief and stays your point of reference throughout the project.",
+        "text": "She answers your first enquiry, gets to know your business, prepares the quote and keeps you posted at every stage. She is your point of reference until launch.",
         "skills": [
-          "Understanding your needs",
-          "Clear, regular updates",
-          "Project organisation",
-          "Client relations from A to Z"
+          "Listening to your needs",
+          "Detailed quotes",
+          "Planning and follow-up",
+          "Client relations"
         ]
       },
       {
         "name": "Christopher",
         "role": "Development & engineering",
-        "text": "Architecture, technical UX, web and mobile development, integrations, performance, deployment and maintenance. He builds what you signed off.",
+        "text": "He develops your website, app or automations, puts them online and maintains them. He builds what you signed off and explains his choices plainly.",
         "skills": [
-          "Custom development",
-          "UX & architecture",
-          "Performance & optimisation",
-          "Maintenance and scalability"
+          "Sites, apps and tools",
+          "AI integration",
+          "Performance and security",
+          "Maintenance and upgrades"
         ]
       }
     ],
     "hub": { "title": "You", "text": "Your project at the centre" },
     "spin": "Spin {name}'s medallion",
     "stats": [
-      { "title": "Fast response", "text": "Within 24h" },
-      { "title": "Human follow-up", "text": "Always the two of us" },
-      { "title": "Zero subcontracting", "text": "Everything done in-house" }
+      { "title": "Fast response", "text": "Within 1 working day" },
+      { "title": "Direct contact", "text": "With those who build" },
+      { "title": "All in-house", "text": "No subcontractors" }
     ],
     "cta": "Meet the agency",
-    "tagline": "Two complementary people, fully on your side"
+    "tagline": "The C and the M in C&M Agency"
   },
   "method": {
     "eyebrow": "How we work",
     "titleStart": "You always know",
     "titleEnd": "where",
     "titleHighlight": "your project stands.",
-    "lead": "A clear method, regular sign-offs and no blind spots.\nAt every stage, you know what we are doing, what we are signing off together\nand what comes next.",
+    "lead": "Four stages, with your sign-off at the end of each one.\nYou follow progress through demos, and nothing outside the quote\nis billed without your written agreement.",
     "features": [
       "Regular\ncheck-ins",
       "Sign-off\nat every stage",

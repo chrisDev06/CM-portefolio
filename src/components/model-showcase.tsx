@@ -73,9 +73,10 @@ function ShowcaseCard({
 }) {
   const model = dict.models.items[id];
   const tags = [model.type, model.sector, model.highlight];
+  // Sans démo en ligne, le bouton mène à la fiche : il ne promet pas de démo.
   const cta = (
     <>
-      {dict.common.tryDemo}
+      {model.demo ? dict.common.tryDemo : dict.common.seeModel}
       <Icon
         name="arrow"
         className="size-4 transition-transform duration-200 ease-brand group-hover:translate-x-0.5"

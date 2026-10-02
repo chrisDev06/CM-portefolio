@@ -5,7 +5,7 @@
     "lead": "Six manières de vous accompagner, du simple site vitrine à l'outil métier sur mesure. Si vous hésitez, commencez par nous décrire votre activité : c'est souvent la question qui tranche."
   },
   "labels": {
-    "popular": "Populaire",
+    "featured": "Nouveau : IA",
     "for": "À qui ça s'adresse",
     "problem": "Le problème que ça résout",
     "deliver": "Ce que nous créons",
@@ -21,7 +21,7 @@
   "items": {
     "site-web": {
       "name": "Site vitrine",
-      "short": "Présenter votre activité, obtenir des contacts, gagner en crédibilité.",
+      "short": "Visible sur Google, avec un formulaire qui vous envoie les demandes.",
       "title": "Un site qui vous représente, et qui vous amène des clients.",
       "lead": "Votre site est souvent le premier contact entre vous et un client. En quelques secondes, il décide si vous êtes sérieux. Nous construisons cette première impression.",
       "for": [
@@ -81,7 +81,7 @@
     },
     "e-commerce": {
       "name": "E-commerce",
-      "short": "Catalogue, paiement, commandes, comptes clients, administration.",
+      "short": "Vendez en ligne avec paiement sécurisé, stocks et suivi des commandes.",
       "title": "Une boutique en ligne que vous pilotez vous-même.",
       "lead": "Vendre en ligne, ce n'est pas seulement afficher des produits. C'est un tunnel de commande qui ne perd personne, un back-office que vous maîtrisez et des paiements qui arrivent.",
       "for": [
@@ -147,7 +147,7 @@
     },
     "mobile": {
       "name": "Application mobile",
-      "short": "iOS et Android, authentification, notifications, API, fonctionnalités métier.",
+      "short": "Une app iPhone et Android pour vos clients ou vos équipes sur le terrain.",
       "title": "Une application que vos utilisateurs gardent sur leur écran d'accueil.",
       "lead": "Une application ne se juge pas au nombre de fonctionnalités, mais à la fréquence à laquelle on l'ouvre. Nous construisons pour l'usage réel, pas pour la démo.",
       "for": [
@@ -213,7 +213,7 @@
     },
     "sur-mesure": {
       "name": "Solution sur mesure",
-      "short": "Outils internes, espace client, automatisations et IA, API.",
+      "short": "Outils métier, espace client, automatisations : avec ou sans IA.",
       "title": "L'outil qui correspond à votre métier, pas l'inverse.",
       "lead": "Quand votre activité tourne sur un tableur partagé, des copier-coller et trois logiciels qui ne se parlent pas, le problème n'est plus l'organisation. C'est l'outil.",
       "for": [
@@ -279,7 +279,7 @@
     },
     "refonte": {
       "name": "Refonte & optimisation",
-      "short": "Modernisation, responsive, UX, performances, SEO technique.",
+      "short": "Votre site actuel rendu rapide, lisible sur mobile et mieux référencé.",
       "title": "Votre site existe déjà. Rendons-le efficace.",
       "lead": "Tout refaire n'est pas toujours la bonne réponse. Parfois, un site lent, mal affiché sur mobile ou illisible pour Google se rattrape sans repartir de zéro.",
       "for": [
@@ -339,7 +339,7 @@
     },
     "maintenance": {
       "name": "Maintenance & évolution",
-      "short": "Corrections, sécurité, mises à jour et nouvelles fonctionnalités.",
+      "short": "Mises à jour, sauvegardes et petites évolutions, sans durée minimale.",
       "title": "Un site livré n'est pas un site terminé.",
       "lead": "Les navigateurs changent, les dépendances vieillissent, les failles apparaissent. Sans suivi, un site parfaitement fonctionnel devient un risque en dix-huit mois.",
       "for": [

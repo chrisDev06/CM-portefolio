@@ -91,7 +91,7 @@ export function ServiceShowcaseCard({
   id: ServiceId;
   locale: Locale;
   dict: Dictionary;
-  /** Liseré néon et pastille « Populaire ». */
+  /** Liseré néon et pastille `services.labels.featured`. */
   featured?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -129,8 +129,8 @@ export function ServiceShowcaseCard({
         </span>
         {featured ? (
           <span className="neon-badge absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 rounded-full py-1 pr-3 pl-2.5 text-xs font-medium">
-            <Icon name="star" className="size-3.5 fill-current" />
-            {dict.services.labels.popular}
+            <Icon name="sparkle" className="size-3.5 fill-current" />
+            {dict.services.labels.featured}
           </span>
         ) : null}
       </Spotlight>

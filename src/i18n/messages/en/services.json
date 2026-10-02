@@ -5,7 +5,7 @@
     "lead": "Six ways to work together, from a simple business website to a custom internal tool. If you are unsure, start by describing your business: that question usually settles it."
   },
   "labels": {
-    "popular": "Popular",
+    "featured": "New: AI",
     "for": "Who it is for",
     "problem": "The problem it solves",
     "deliver": "What we build",
@@ -21,7 +21,7 @@
   "items": {
     "site-web": {
       "name": "Business website",
-      "short": "Present your business, generate enquiries, build credibility.",
+      "short": "Found on Google, with a form that sends enquiries straight to you.",
       "title": "A website that represents you, and brings you customers.",
       "lead": "Your website is often the first contact between you and a customer. In a few seconds it decides whether you look serious. We build that first impression.",
       "for": [
@@ -81,7 +81,7 @@
     },
     "e-commerce": {
       "name": "E-commerce",
-      "short": "Catalogue, payments, orders, customer accounts, admin.",
+      "short": "Sell online with secure payments, stock control and order tracking.",
       "title": "An online store you actually run yourself.",
       "lead": "Selling online is not just displaying products. It is a checkout that loses nobody, a back office you master, and payments that land.",
       "for": [
@@ -141,7 +141,7 @@
     },
     "mobile": {
       "name": "Mobile app",
-      "short": "iOS and Android, authentication, notifications, API, business features.",
+      "short": "An iPhone and Android app for your customers or your field teams.",
       "title": "An app your users keep on their home screen.",
       "lead": "An app is not judged by its number of features, but by how often it gets opened. We build for real use, not for the demo.",
       "for": [
@@ -201,7 +201,7 @@
     },
     "sur-mesure": {
       "name": "Custom software",
-      "short": "Internal tools, client portals, automation and AI, APIs.",
+      "short": "Business tools, client portals, automation: with or without AI.",
       "title": "A tool that fits your business, not the other way round.",
       "lead": "When your company runs on a shared spreadsheet, copy-paste and three systems that do not talk to each other, the problem is no longer your organisation. It is the tool.",
       "for": [
@@ -261,7 +261,7 @@
     },
     "refonte": {
       "name": "Redesign & optimisation",
-      "short": "Modernisation, responsive, UX, performance, technical SEO.",
+      "short": "Your current site made fast, readable on mobile and easier to find.",
       "title": "Your site already exists. Let's make it work.",
       "lead": "Rebuilding everything is not always the right answer. Sometimes a slow site, broken on mobile or unreadable to Google, can be rescued without starting over.",
       "for": [
@@ -321,7 +321,7 @@
     },
     "maintenance": {
       "name": "Maintenance & support",
-      "short": "Fixes, security, updates and new features.",
+      "short": "Updates, backups and small improvements, with no minimum term.",
       "title": "A site that has shipped is not a site that is finished.",
       "lead": "Browsers change, dependencies age, vulnerabilities appear. Without upkeep, a perfectly working site becomes a liability within eighteen months.",
       "for": [

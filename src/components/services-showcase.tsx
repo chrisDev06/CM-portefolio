@@ -5,10 +5,12 @@ import { ServicesBackground } from "./services-background";
 import { Container, Eyebrow, Icon, type IconName } from "./ui";
 
 /** Icônes des atouts, dans l'ordre de `home.services.features`. */
-const FEATURE_ICONS: IconName[] = ["user", "diamond", "heart", "bars"];
+const FEATURE_ICONS: IconName[] = ["user", "diamond", "heart", "shieldCheck"];
 
-/** Service mis en avant : liseré néon et pastille « Populaire ». */
-const FEATURED: ServiceId = "e-commerce";
+/** Service mis en avant : liseré néon et pastille « Nouveau : IA ».
+    Une pastille de popularité n'a sa place qu'avec des chiffres pour la
+    prouver (Code de la consommation, L121-2). */
+const FEATURED: ServiceId = "sur-mesure";
 
 /**
  * Section Services de l'accueil : la scène néon des appareils en fond (voir

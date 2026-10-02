@@ -44,14 +44,14 @@
     "gallery": "Aperçus de l'interface"
   },
   "cta": {
-    "eyebrow": "Prêt à démarrer ?",
-    "title": "Votre projet digital commence ici.",
-    "lead": "Parlons de vos idées, de vos objectifs, et construisons ensemble la solution qui vous correspond.",
+    "eyebrow": "Un projet en tête ?",
+    "title": "Décrivez-le, Manon vous répond.",
+    "lead": "Sous 24 h ouvrées. Ensuite, un devis gratuit et détaillé, ligne par ligne, sans engagement.",
     "button": "Parlons de votre projet",
-    "secondary": "Voir les sites prêts à lancer"
+    "secondary": "Voir nos projets"
   },
   "tech": {
-    "eyebrow": "Technologies modernes. Résultats concrets.",
+    "eyebrow": "Technologies standard : tout développeur peut reprendre votre code",
     "items": [
       "React",
       "Next.js",

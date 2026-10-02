@@ -215,7 +215,7 @@ export function DuoSection({
           {/* Une ligne par bloc : l'équilibrage se fait ligne à ligne, jamais
               « projet. » seul sous le reste. */}
           <h2 className="mt-6 text-[clamp(2.25rem,2vw+1.5rem,3.5rem)] leading-[1.08] font-bold tracking-[-0.025em] xl:mt-5">
-            <span className="block">{content.titleStart}</span>
+            <span className="block">{content.titleStart}</span>{" "}
             <span className="block">
               {content.titleEnd}{" "}
               <span className={styles.highlight}>

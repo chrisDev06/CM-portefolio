@@ -26,7 +26,7 @@
     },
     {
       "title": "IA & automatisation",
-      "text": "Relances, saisies, tri des e‑mails : automatisés."
+      "text": "Tri des e-mails, relances, saisies : automatisés."
     }
   ],
   "facts": [
@@ -36,37 +36,37 @@
   ],
   "services": {
     "eyebrow": "Nos services",
-    "titleStart": "Des solutions digitales",
-    "titleHighlight": "pensées pour vendre, convaincre et grandir.",
-    "lead": "De la conception à la mise en ligne, nous vous accompagnons à chaque étape\npour transformer vos idées en expériences digitales performantes\nqui génèrent de vrais résultats.",
-    "screen": "Des idées\nqui performent.",
+    "titleStart": "Du site vitrine à l'IA,",
+    "titleHighlight": "tout est fait par nous deux.",
+    "lead": "Chaque projet commence par un devis gratuit et détaillé, ligne par ligne,\net se termine avec le code et les accès livrés à votre nom.",
+    "screen": "Votre site,\nvos clés.",
     "features": [
       { "title": "Binôme dédié", "text": "Du devis à la mise en ligne" },
-      { "title": "Stratégie + design + code", "text": "Une approche complète" },
-      { "title": "Suivi humain", "text": "Disponible et réactif" },
-      { "title": "Performances", "text": "Orienté résultats" }
+      { "title": "Maquette validée", "text": "Avant tout développement" },
+      { "title": "Démos régulières", "text": "À chaque étape clé" },
+      { "title": "Corrections incluses", "text": "1 mois après la mise en ligne" }
     ]
   },
   "models": {
     "eyebrow": "Sites prêts à lancer",
-    "titleStart": "Des sites déjà en ligne,",
-    "titleEnd": "prêts à convaincre",
-    "titleHighlight": "vos futurs clients.",
-    "lead": "Nos concurrents montrent des captures d'écran. Nous vous donnons le lien : ouvrez la démo, cliquez partout, testez sur votre téléphone. Chaque modèle est personnalisable à votre activité.",
+    "titleStart": "Des sites clés en main,",
+    "titleEnd": "à adapter à",
+    "titleHighlight": "votre activité.",
+    "lead": "Ces modèles, nous les avons conçus nous-mêmes : ce sont des projets de démonstration, pas des réalisations clients. Vous choisissez une base, nous l'adaptons à vos textes, vos photos et vos couleurs.",
     "features": [
-      { "title": "Démos en ligne", "text": "à tester maintenant" },
-      { "title": "100 %", "text": "personnalisables" },
-      { "title": "Adaptés mobile", "text": "et ordinateur" }
+      { "title": "Base déjà construite", "text": "lancement accéléré" },
+      { "title": "À vos couleurs", "text": "textes et photos" },
+      { "title": "Adaptés au mobile", "text": "et à l'ordinateur" }
     ]
   },
   "difference": {
     "eyebrow": "Notre différence",
     "titleStart": "Le digital sans",
     "titleHighlight": "intermédiaire.",
-    "lead": "Dans une grande agence, votre projet passe par un commercial, un chef de projet, un studio, puis une équipe technique. À chaque passage, une partie de votre besoin se perd. Ici, il n'y a personne entre vous et la solution.",
+    "lead": "Votre besoin n'est jamais reformulé par un intermédiaire : la personne qui vous écoute et celle qui développe travaillent sur le même dossier, et vous parlez directement aux deux.",
     "features": [
       { "title": "Relation directe", "text": "Du premier échange à la mise en ligne" },
-      { "title": "Plus de clarté", "text": "Des projets plus rapides et plus alignés" }
+      { "title": "Plus de clarté", "text": "Une question, une réponse directe" }
     ],
     "points": [
       {
@@ -74,65 +74,65 @@
         "text": "Manon connaît votre dossier depuis le premier échange. Vous ne répétez jamais votre besoin."
       },
       {
-        "title": "Un accès direct au développeur",
-        "text": "Une question technique ? Vous parlez à celui qui écrit le code, pas à un intermédiaire qui transmettra."
+        "title": "Accès direct au développeur",
+        "text": "Une question technique ? Vous la posez directement à Christopher, qui écrit le code."
       },
       {
         "title": "Aucun sous-traitant",
-        "text": "Votre projet n'est jamais revendu à un tiers. Ce que vous voyez, c'est qui travaille."
+        "text": "Votre projet n'est jamais revendu ni confié à un tiers, en France comme à l'étranger."
       },
       {
         "title": "Le code vous appartient",
-        "text": "Sources, comptes, hébergement : tout est à votre nom. Vous n'êtes prisonnier de personne."
+        "text": "Code, comptes, hébergement : tout est à votre nom. Pas de location, pas d'abonnement imposé."
       }
     ]
   },
   "duo": {
     "eyebrow": "Votre binôme",
-    "titleStart": "Deux expertises.",
-    "titleEnd": "Un seul objectif :",
-    "titleHighlight": "faire réussir votre projet.",
+    "titleStart": "Manon vous écoute.",
+    "titleEnd": "Christopher",
+    "titleHighlight": "construit.",
     "lead": "Pas de fausse agence de trente personnes. Deux personnes, que vous connaissez par leur prénom, du premier appel à la mise en ligne.",
     "people": [
       {
         "name": "Manon",
         "role": "Commercial & relation client",
-        "text": "Premier contact, compréhension du besoin, devis, organisation et suivi. Elle traduit votre activité en cahier des charges et reste votre point de repère tout au long du projet.",
+        "text": "Elle répond à votre première demande, comprend votre activité, prépare le devis et vous tient au courant à chaque étape. C'est votre point de repère jusqu'à la mise en ligne.",
         "skills": [
-          "Compréhension du besoin",
-          "Suivi clair et régulier",
-          "Organisation du projet",
-          "Relation client de A à Z"
+          "Écoute du besoin",
+          "Devis détaillé",
+          "Planning et suivi",
+          "Relation client"
         ]
       },
       {
         "name": "Christopher",
         "role": "Développement & technique",
-        "text": "Architecture, UX technique, développement web et mobile, intégrations, performances, déploiement et maintenance. Il construit ce que vous avez validé.",
+        "text": "Il développe votre site, votre application ou vos automatisations, les met en ligne et les maintient. Il construit ce que vous avez validé et explique ses choix simplement.",
         "skills": [
-          "Développement sur mesure",
-          "UX & architecture",
-          "Performance et optimisation",
-          "Maintenance et évolutivité"
+          "Sites, apps et outils",
+          "Intégration de l'IA",
+          "Performance et sécurité",
+          "Maintenance et évolutions"
         ]
       }
     ],
     "hub": { "title": "Vous", "text": "Votre projet au centre" },
     "spin": "Faire tourner le médaillon de {name}",
     "stats": [
-      { "title": "Réponse rapide", "text": "Sous 24 h" },
-      { "title": "Suivi humain", "text": "Toujours avec nous" },
-      { "title": "Zéro sous-traitance", "text": "Tout est fait en interne" }
+      { "title": "Réponse rapide", "text": "Sous 24 h ouvrées" },
+      { "title": "Contact direct", "text": "Avec ceux qui font" },
+      { "title": "Tout en interne", "text": "Aucun sous-traitant" }
     ],
     "cta": "Découvrir l'agence",
-    "tagline": "Un binôme complémentaire, engagé à vos côtés"
+    "tagline": "Le C et le M de C&M Agency"
   },
   "method": {
     "eyebrow": "Notre méthode",
     "titleStart": "Vous savez toujours",
     "titleEnd": "où en est",
     "titleHighlight": "votre projet.",
-    "lead": "Une méthode claire, des validations régulières et aucun angle mort.\nÀ chaque étape, vous savez ce que nous faisons, ce que nous validons ensemble\net ce qui arrive ensuite.",
+    "lead": "Quatre étapes, et votre validation à la fin de chacune.\nVous suivez l'avancement en démonstration, et rien n'est facturé\nhors du devis sans votre accord écrit.",
     "features": [
       "Point de suivi\nrégulier",
       "Validations\nà chaque étape",
