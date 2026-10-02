@@ -25,7 +25,7 @@ export async function generateMetadata({
       process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
     ),
     title: {
-      default: `${dict.meta.siteName} — ${dict.meta.tagline}`,
+      default: `${dict.meta.title} — ${dict.meta.siteName}`,
       template: `%s — ${dict.meta.siteName}`,
     },
     description: dict.meta.description,

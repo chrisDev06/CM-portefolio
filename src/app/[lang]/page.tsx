@@ -53,7 +53,7 @@ export default async function HomePage() {
               className="hero-rise text-xs uppercase tracking-[0.22em] text-ink/70"
               style={rise(0.35)}
             >
-              <Typewriter text={home.eyebrow} delay={0.9} />
+              <Typewriter text={home.eyebrow} delay={0.9} loop={false} />
             </p>
             <h1
               className="hero-rise mt-6 text-5xl max-[389px]:text-[2rem] sm:text-6xl [@media(max-height:760px)]:sm:text-5xl"

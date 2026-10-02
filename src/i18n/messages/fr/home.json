@@ -1,30 +1,36 @@
 {
-  "eyebrow": "Des idées. Du code. Des résultats.",
-  "titleStart": "Votre projet digital,",
-  "titleHighlight": "sans intermédiaire.",
-  "subtitle": "Sites web, e-commerce, applications mobiles. Un seul interlocuteur pour comprendre votre activité, un seul pour construire votre solution.",
-  "ctaPrimary": "Lancer mon projet",
-  "ctaSecondary": "Voir nos sites prêts à lancer",
+  "eyebrow": "Agence web & IA pour TPE et PME",
+  "titleStart": "Trouvez plus de clients.",
+  "titleHighlight": "Gagnez du temps.",
+  "subtitle": "C&M Agency, c'est Manon et Christopher. Nous concevons sur mesure les sites internet, boutiques en ligne, applications métier et automatisations IA des TPE et PME.",
+  "ctaPrimary": "Parlons de votre projet",
+  "ctaSecondary": "Voir nos projets",
   "heroFeatures": [
-    { "title": "Réponse rapide", "text": "Moins de 24h" },
-    { "title": "Sur-mesure", "text": "100% adapté" },
-    { "title": "Freelance direct", "text": "Sans intermédiaire" },
-    { "title": "Accompagnement", "text": "De A à Z" }
+    { "title": "Réponse sous 24 h", "text": "En jours ouvrés" },
+    { "title": "Devis détaillé", "text": "Avant tout engagement" },
+    { "title": "Deux interlocuteurs", "text": "Aucun intermédiaire" },
+    { "title": "Code à votre nom", "text": "Sources et accès livrés" }
   ],
   "heroCards": [
     {
-      "title": "Sites vitrines",
-      "text": "Une présence en ligne qui vous ressemble."
+      "title": "Sites internet",
+      "text": "Être trouvé sur Google et recevoir des demandes."
     },
-    { "title": "E-commerce", "text": "Vendez plus, simplement." },
-    { "title": "Applications mobiles", "text": "Des apps utiles, performantes." },
     {
-      "title": "Solutions sur-mesure",
-      "text": "Parce que chaque projet est unique."
+      "title": "E-commerce",
+      "text": "Une boutique en ligne que vous pilotez vous-même."
+    },
+    {
+      "title": "Applications métier",
+      "text": "Mobiles ou web, à votre façon de travailler."
+    },
+    {
+      "title": "IA & automatisation",
+      "text": "Relances, saisies, tri des e‑mails : automatisés."
     }
   ],
   "facts": [
-    { "value": "48 h", "label": "Délai de réponse" },
+    { "value": "24 h", "label": "Délai de réponse" },
     { "value": "2", "label": "Interlocuteurs, pas dix" },
     { "value": "100 %", "label": "Code qui vous appartient" }
   ],
@@ -35,7 +41,7 @@
     "lead": "De la conception à la mise en ligne, nous vous accompagnons à chaque étape\npour transformer vos idées en expériences digitales performantes\nqui génèrent de vrais résultats.",
     "screen": "Des idées\nqui performent.",
     "features": [
-      { "title": "Freelance direct", "text": "Un seul interlocuteur" },
+      { "title": "Binôme dédié", "text": "Du devis à la mise en ligne" },
       { "title": "Stratégie + design + code", "text": "Une approche complète" },
       { "title": "Suivi humain", "text": "Disponible et réactif" },
       { "title": "Performances", "text": "Orienté résultats" }

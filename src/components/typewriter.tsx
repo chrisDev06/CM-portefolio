@@ -27,11 +27,15 @@ const HOLD = 1500;
 export function Typewriter({
   text,
   delay = 0,
+  loop = true,
   className = "",
 }: {
   text: string;
   /** Attente avant la première frappe, en secondes. */
   delay?: number;
+  /** Sans boucle, la phrase est tapée une fois puis reste, sans curseur :
+      moins de 5 s de mouvement (WCAG 2.2.2). */
+  loop?: boolean;
   className?: string;
 }) {
   const [count, setCount] = useState(0);
@@ -56,7 +60,7 @@ export function Typewriter({
         timer = setTimeout(type, keyDelay(text[typed - 1]));
       } else {
         setIdle(true);
-        timer = setTimeout(erase, HOLD);
+        if (loop) timer = setTimeout(erase, HOLD);
       }
     };
     // Touche Suppr maintenue : plus rapide que la frappe, jamais régulière.
@@ -73,7 +77,9 @@ export function Typewriter({
     };
     timer = setTimeout(type, delay * 1000);
     return () => clearTimeout(timer);
-  }, [text, delay]);
+  }, [text, delay, loop]);
+
+  const finished = !loop && count >= text.length;
 
   return (
     <span className={`${styles.root} ${className}`}>
@@ -83,7 +89,9 @@ export function Typewriter({
       </span>
       <span aria-hidden="true" className={styles.typed}>
         {text.slice(0, count)}
-        <span className={`${styles.caret} ${idle ? styles.idle : ""}`} />
+        {finished ? null : (
+          <span className={`${styles.caret} ${idle ? styles.idle : ""}`} />
+        )}
       </span>
     </span>
   );

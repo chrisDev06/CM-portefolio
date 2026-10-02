@@ -75,7 +75,7 @@
       "eyebrow": "Nos engagements",
       "title": "Ce que nous nous engageons à tenir.",
       "items": [
-        "Une réponse à votre demande sous 48 heures ouvrées",
+        "Une réponse à votre demande sous 24 heures ouvrées",
         "Un devis détaillé, ligne par ligne, avant tout engagement",
         "Aucun changement de périmètre facturé sans votre accord écrit",
         "Le code source et tous les accès livrés à votre nom",
@@ -403,7 +403,7 @@
           },
           {
             "q": "Sous quel délai répondez-vous ?",
-            "a": "Sous 48 heures ouvrées pour une première demande. En cours de projet, c'est généralement le jour même."
+            "a": "Sous 24 heures ouvrées pour une première demande. En cours de projet, c'est généralement le jour même."
           }
         ]
       }
@@ -474,7 +474,7 @@
         },
         {
           "title": "Comment vous joindre ?",
-          "lead": "Manon vous répond sous 48 heures ouvrées.",
+          "lead": "Manon vous répond sous 24 heures ouvrées.",
           "field": "contact",
           "options": []
         }
@@ -498,7 +498,7 @@
       },
       "summary": {
         "title": "Votre demande est bien partie.",
-        "lead": "Manon vous répond sous 48 heures ouvrées. Voici le récapitulatif de ce que vous nous avez envoyé.",
+        "lead": "Manon vous répond sous 24 heures ouvrées. Voici le récapitulatif de ce que vous nous avez envoyé.",
         "restart": "Nouvelle demande"
       },
       "sending": "Envoi en cours…",
@@ -537,7 +537,7 @@
         { "label": "Email", "value": "À compléter" },
         { "label": "Téléphone", "value": "À compléter" },
         { "label": "Zone d'intervention", "value": "France entière, à distance" },
-        { "label": "Délai de réponse", "value": "48 heures ouvrées" }
+        { "label": "Délai de réponse", "value": "24 heures ouvrées" }
       ]
     }
   },

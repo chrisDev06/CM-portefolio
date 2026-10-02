@@ -201,7 +201,7 @@
     },
     "sur-mesure": {
       "name": "Custom software",
-      "short": "Dashboards, client portals, automation, internal tools, APIs.",
+      "short": "Internal tools, client portals, automation and AI, APIs.",
       "title": "A tool that fits your business, not the other way round.",
       "lead": "When your company runs on a shared spreadsheet, copy-paste and three systems that do not talk to each other, the problem is no longer your organisation. It is the tool.",
       "for": [
@@ -219,7 +219,7 @@
       ],
       "features": [
         "Client portal with documents and tracking",
-        "Automation of repetitive tasks",
+        "Automation of repetitive tasks, with or without AI",
         "Quote and invoice generation",
         "Scheduling and resource planning",
         "Data import and export",

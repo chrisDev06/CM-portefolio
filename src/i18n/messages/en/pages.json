@@ -75,7 +75,7 @@
       "eyebrow": "Our commitments",
       "title": "What we commit to.",
       "items": [
-        "A reply to your enquiry within two working days",
+        "A reply to your enquiry within one working day",
         "A detailed, line-by-line quote before any commitment",
         "No change of scope billed without your written approval",
         "Source code and every access delivered in your name",
@@ -403,7 +403,7 @@
           },
           {
             "q": "How quickly do you reply?",
-            "a": "Within two working days for a first enquiry. During a project, usually the same day."
+            "a": "Within one working day for a first enquiry. During a project, usually the same day."
           }
         ]
       }
@@ -474,7 +474,7 @@
         },
         {
           "title": "How can we reach you?",
-          "lead": "Manon replies within two working days.",
+          "lead": "Manon replies within one working day.",
           "field": "contact",
           "options": []
         }
@@ -498,7 +498,7 @@
       },
       "summary": {
         "title": "Your request is on its way.",
-        "lead": "Manon will get back to you within 48 business hours. Here is a summary of what you sent us.",
+        "lead": "Manon will get back to you within one working day. Here is a summary of what you sent us.",
         "restart": "New request"
       },
       "sending": "Sending…",
@@ -537,7 +537,7 @@
         { "label": "Email", "value": "To be added" },
         { "label": "Phone", "value": "To be added" },
         { "label": "Coverage", "value": "All of France, remotely" },
-        { "label": "Response time", "value": "Two working days" }
+        { "label": "Response time", "value": "One working day" }
       ]
     }
   },

@@ -1,24 +1,24 @@
 {
-  "eyebrow": "Ideas. Code. Results.",
-  "titleStart": "Your digital project,",
-  "titleHighlight": "with no middleman.",
-  "subtitle": "Websites, online stores, mobile apps. One person to understand your business, one to build your solution.",
-  "ctaPrimary": "Start my project",
-  "ctaSecondary": "See our ready-to-launch sites",
+  "eyebrow": "Web & AI agency for small businesses",
+  "titleStart": "Win more customers.",
+  "titleHighlight": "Get your time back.",
+  "subtitle": "C&M Agency is Manon and Christopher. We design and build custom websites, online stores, business apps and AI automations for small businesses.",
+  "ctaPrimary": "Let's talk about your project",
+  "ctaSecondary": "See our projects",
   "heroFeatures": [
-    { "title": "Fast response", "text": "Within 24h" },
-    { "title": "Tailor-made", "text": "100% adapted" },
-    { "title": "Direct freelance", "text": "No middleman" },
-    { "title": "Full support", "text": "From A to Z" }
+    { "title": "Reply within 24 h", "text": "On working days" },
+    { "title": "Detailed quote", "text": "Before you commit" },
+    { "title": "Two people", "text": "No middleman" },
+    { "title": "Code in your name", "text": "Every access handed over" }
   ],
   "heroCards": [
-    { "title": "Business websites", "text": "An online presence that looks like you." },
-    { "title": "E-commerce", "text": "Sell more, without the friction." },
-    { "title": "Mobile apps", "text": "Useful apps that actually perform." },
-    { "title": "Custom software", "text": "Because no two businesses are alike." }
+    { "title": "Websites", "text": "Get found on Google and receive enquiries." },
+    { "title": "E-commerce", "text": "An online store you run yourself." },
+    { "title": "Business apps", "text": "Mobile or web, built around how you work." },
+    { "title": "AI & automation", "text": "Follow-ups, data entry, email sorting: automated." }
   ],
   "facts": [
-    { "value": "48 h", "label": "Response time" },
+    { "value": "24 h", "label": "Response time" },
     { "value": "2", "label": "People, not ten" },
     { "value": "100 %", "label": "Code you own" }
   ],
@@ -29,7 +29,7 @@
     "lead": "From first sketch to launch day, we support you at every step\nand turn your ideas into high-performing digital experiences\nthat deliver real results.",
     "screen": "Ideas\nthat perform.",
     "features": [
-      { "title": "Direct freelance", "text": "A single point of contact" },
+      { "title": "Dedicated duo", "text": "From quote to launch" },
       { "title": "Strategy + design + code", "text": "A complete approach" },
       { "title": "Human follow-up", "text": "Available and responsive" },
       { "title": "Performance", "text": "Results-driven" }

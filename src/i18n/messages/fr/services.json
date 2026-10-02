@@ -213,7 +213,7 @@
     },
     "sur-mesure": {
       "name": "Solution sur mesure",
-      "short": "Dashboard, espace client, automatisations, outils internes, API.",
+      "short": "Outils internes, espace client, automatisations et IA, API.",
       "title": "L'outil qui correspond à votre métier, pas l'inverse.",
       "lead": "Quand votre activité tourne sur un tableur partagé, des copier-coller et trois logiciels qui ne se parlent pas, le problème n'est plus l'organisation. C'est l'outil.",
       "for": [
@@ -231,7 +231,7 @@
       ],
       "features": [
         "Espace client avec documents et suivi",
-        "Automatisation des tâches répétitives",
+        "Automatisation des tâches répétitives, avec ou sans IA",
         "Génération de devis et de factures",
         "Planning et gestion des ressources",
         "Import et export de données",
